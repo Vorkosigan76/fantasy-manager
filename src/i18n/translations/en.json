@@ -1,0 +1,199 @@
+{
+  "Administration": {
+    "actions": {
+      "ban": "Ban",
+      "cancel": "Cancel",
+      "change_role": "Change",
+      "impersonate": "Impersonate",
+      "unban": "Unban"
+    },
+    "columns": {
+      "actions": "Actions",
+      "email": "Email",
+      "joined": "Joined",
+      "name": "Name",
+      "role": "Role",
+      "status": "Status",
+      "verified": "Verified"
+    },
+    "fields": {
+      "ban": {
+        "duration": "Duration",
+        "reason": "Reason"
+      },
+      "role": {
+        "admin": "Admin",
+        "user": "User"
+      },
+      "status": {
+        "is_active": "Active",
+        "is_inactive": "Inactive"
+      },
+      "userrole": "Role"
+    },
+    "text": {
+      "ban_duration": {
+        "default": "Permanent",
+        "one_day": "1 day",
+        "one_week": "1 week",
+        "one_month": "1 month"
+      },
+      "ban_reason": {
+        "default": "No reason provided",
+        "behaviour": "Bad behaviour",
+        "cheating": "Cheating",
+        "spam": "Spam"
+      },
+      "ban_user": "Are you sure you want to ban this user?",
+      "change_userrole": "Are you sure you want to change this user's role?"
+    },
+    "title": {
+      "ban_user": "Ban User",
+      "change_userrole": "Change User Role",
+      "users": "Users"
+    },
+    "toasts": {
+      "errors": {
+        "ban_failed": "Ban failed.",
+        "impersonate_failed": "Impersonate failed.",
+        "rolechange_failed": "Role change failed.",
+        "unban_failed": "Unban failed."
+      },
+      "success": {
+        "ban_successfull": "User banned.",
+        "impersonate_successfull": "Impersonation started.",
+        "rolechange_successfull": "User role changed.",
+        "unban_successfull": "User unbanned."
+      }
+    }
+  },
+
+  "Authentication": {
+    "button": {
+      "register": "Register",
+      "reset_password": "Reset Password",
+      "save": "Save",
+      "settings": "Settings",
+      "signin": "Sign In",
+      "signout": "Sign Out",
+      "users": "Users"
+    },
+    "field": {
+      "accounts": "Accounts",
+      "confirmation": "Password confirmation",
+      "email": "Email address",
+      "name": "Name",
+      "role": "Role",
+      "password": "Password",
+      "verified": "Verified"
+    },
+    "link": {
+      "forgot": "Forgotten your password?",
+      "register": "Register now",
+      "signin": "Sign In"
+    },
+    "messages": {
+      "success": {
+        "email_verified_redirect": "Email verified successfully. Redirecting in {seconds} seconds.",
+        "registration_successfull": "Registration successful. Please check your email to confirm your account."
+      },
+      "errors": {
+        "email_in_use": "This email is already in use."
+      }
+    },
+    "placeholder": {
+      "confirmation": "Confirm your password",
+      "email": "Enter your email",
+      "name": "Enter your name",
+      "password": "Enter your password"
+    },
+    "text": {
+      "already-account": "Already a member?",
+      "no-account": "Not a member?"
+    },
+    "title": {
+      "forgot-password": "Forgotten your password",
+      "register": "Register",
+      "reset_password": "Reset Password",
+      "settings": "Personal Settings",
+      "signin": "Sign In"
+    },
+    "toasts": {
+      "errors": {
+        "email_in_use": "This email is already in use.",
+        "email_not_verified": "Email not verified.",
+        "email_unknown": "Email not found.",
+        "invalid_credentials": "Invalid email & password.",
+        "please_verify_email": "Please check your mailbox.",
+        "registration_failed": "Registration failed.",
+        "reset_password_failed": "Reset Password failed.",
+        "update_profile_failed": "Profile update failed.",
+        "signin_failed": "Sign in failed."
+      },
+      "success": {
+        "check_email": "Check your email.",
+        "registration_successfull": "Registration successful.",
+        "reset_password_successfull": "Reset Password successfull",
+        "update_profile_successfull": "Profile updated successfully.",
+        "signin_successfull": "Sign in successful."
+      }
+    },
+    "zod": {
+      "errors": {
+        "invalid": {
+          "email": "This is not a valid email.",
+          "name_too_long": "This name is too long.",
+          "password_too_short": "This password is too short.",
+          "password_too_long": "This password is too long.",
+          "password_mismatch": "The passwords do not match."
+        },
+        "required": {
+          "email": "Email is required.",
+          "password": "Password is required.",
+          "name": "Name is required."
+        }
+      }
+    }
+  },
+
+  "Errors": {
+    "401": {
+      "description": "You are not authorized to access this page.",
+      "title": "Unauthorized"
+    },
+    "404": {
+      "description": "The page you are looking for does not exist.",
+      "title": "Page not found"
+    },
+    "500": {
+      "description": "An unexpected error occurred.",
+      "title": "Internal server error"
+    }
+  },
+
+  "Footer": {
+    "copyright": "© 2025 Cédric Lefebvre. All rights reserved."
+  },
+
+  "LocaleSwitcher": {
+    "locale_en": "English",
+    "locale_fr": "French"
+  },
+
+  "Metadata": {
+    "title": "Boilerplate",
+    "description": "Cedric's Boilerplate."
+  },
+
+  "Table": {
+    "goto_first_page": "Go to first page",
+    "goto_last_page": "Go to last page",
+    "goto_next_page": "Go to next page",
+    "goto_previous_page": "Go to previous page",
+    "no_data": "No results.",
+    "page_of": "Page {current_page} of {total_pages}",
+    "rows_per_page": "Rows per page",
+    "search_label": "Search:",
+    "search_placeholder": "word search..."
+  }
+}

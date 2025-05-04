@@ -1,0 +1,199 @@
+{
+  "Administration": {
+    "actions": {
+      "ban": "Banir",
+      "cancel": "Annuler",
+      "change_role": "Changer",
+      "impersonate": "Usurper",
+      "unban": "Accepter"
+    },
+    "columns": {
+      "actions": "Actions",
+      "email": "Email",
+      "joined": "Inscrit",
+      "name": "Nom",
+      "role": "Rôle",
+      "status": "Statut",
+      "verified": "Verifié"
+    },
+    "fields": {
+      "ban": {
+        "duration": "Durée",
+        "reason": "Raison"
+      },
+      "role": {
+        "admin": "Admin",
+        "user": "Utilisateur"
+      },
+      "status": {
+        "is_active": "Actif",
+        "is_inactive": "Inactif"
+      },
+      "userrole": "Rôle"
+    },
+    "text": {
+      "ban_duration": {
+        "default": "Permanent",
+        "one_day": "1 day",
+        "one_week": "1 week",
+        "one_month": "1 month"
+      },
+      "ban_reason": {
+        "default": "Aucune raison fournie",
+        "behaviour": "Mauvais comportement",
+        "cheating": "Tricherie",
+        "spam": "Spam"
+      },
+      "ban_user": "Êtes-vous sûr de vouloir bannir cet utilisateur ?",
+      "change_userrole": "Êtes-vous sûr de vouloir changer le rôle de cet utilisateur ?"
+    },
+    "title": {
+      "ban_user": "Bannir l'utilisateur",
+      "change_userrole": "Changer le rôle de l'utilisateur",
+      "users": "Utilisateurs"
+    },
+    "toasts": {
+      "errors": {
+        "ban_failed": "Échec du bannissement.",
+        "impersonate_failed": "Échec de l'usurpation.",
+        "rolechange_failed": "Échec du changement de rôle.",
+        "unban_failed": "Échec de l'acceptation."
+      },
+      "success": {
+        "ban_successfull": "User banni",
+        "impersonate_successfull": "Usurpation commencée.",
+        "rolechange_successfull": "Rôle changé.",
+        "unban_successfull": "User accueilli."
+      }
+    }
+  },
+
+  "Authentication": {
+    "button": {
+      "register": "Inscription",
+      "reset_password": "Réinitialiser le mot de passe",
+      "save": "Sauvegarder",
+      "settings": "Paramètres",
+      "signin": "Se Connecter",
+      "signout": "Se Déconnecter",
+      "users": "Utilisateurs"
+    },
+    "field": {
+      "accounts": "Comptes",
+      "confirmation": "Confirmation",
+      "email": "Adresse email",
+      "name": "Nom",
+      "password": "Mot de passe",
+      "role": "Rôle",
+      "verified": "Vérifié"
+    },
+    "link": {
+      "forgot": "Mot de passe oublié ?",
+      "register": "Inscrivez-vous maintenant",
+      "signin": "Connectez-vous"
+    },
+    "messages": {
+      "success": {
+        "email_verified_redirect": "Email vérifié avec succès. Redirection dans {seconds} secondes.",
+        "registration_successfull": "Inscription réussie. Veuillez vérifier votre email pour confirmer votre compte."
+      },
+      "errors": {
+        "email_in_use": "Cet email est déjà utilisé."
+      }
+    },
+    "placeholder": {
+      "confirmation": "Confirmez votre mot de passe",
+      "name": "Entrez votre nom",
+      "email": "Votre email",
+      "password": "Votre mot de passe"
+    },
+    "text": {
+      "already-account": "Déjà inscrit ?",
+      "no-account": "Pas encore inscrit ?"
+    },
+    "title": {
+      "forgot-password": "Mot de passe oublié",
+      "register": "Inscription",
+      "reset_password": "Réinitialiser le mot de passe",
+      "settings": "Paramètres Personnels",
+      "signin": "Connexion"
+    },
+    "toasts": {
+      "errors": {
+        "email_in_use": "Cet email est déjà utilisé.",
+        "email_not_verified": "Email non vérifié.",
+        "email_unknown": "Email introuvable.",
+        "invalid_credentials": "Email ou mot de passe invalide.",
+        "please_verify_email": "Veuillez vérifier votre mail.",
+        "registration_failed": "Échec de l'inscription.",
+        "reset_password_failed": "Échec de la réinitialisation.",
+        "update_profile_failed": "Échec de la mise à jour du profil.",
+        "signin_failed": "Échec de la connexion."
+      },
+      "success": {
+        "check_email": "Vérifiez votre email.",
+        "registration_successfull": "Inscription réussie.",
+        "reset_password_successfull": "Réinitialisation du mot de passe réussie.",
+        "update_profile_successfull": "Profil mis à jour avec succès.",
+        "signin_successfull": "Connexion réussie."
+      }
+    },
+    "zod": {
+      "errors": {
+        "invalid": {
+          "email": "Cet email n'est pas valide.",
+          "name_too_long": "Ce nom est trop long.",
+          "password_too_short": "Ce mot de passe est trop court.",
+          "password_too_long": "Ce mot de passe est trop long.",
+          "password_mismatch": "Les mots de passe ne correspondent pas."
+        },
+        "required": {
+          "email": "L'email est requis.",
+          "password": "Le mot de passe est requis.",
+          "name": "Le nom est requis."
+        }
+      }
+    }
+  },
+
+  "Errors": {
+    "401": {
+      "description": "Vous n'êtes pas autorisé à accéder à cette page.",
+      "title": "Accès non autorisé"
+    },
+    "404": {
+      "description": "La page que vous recherchez n'existe pas.",
+      "title": "Page introuvable"
+    },
+    "500": {
+      "description": "Une erreur interne s'est produite.",
+      "title": "Erreur interne du serveur"
+    }
+  },
+
+  "Footer": {
+    "copyright": "© 2025 Cédric Lefebvre. Tous droits réservés."
+  },
+
+  "LocaleSwitcher": {
+    "locale_en": "Anglais",
+    "locale_fr": "Français"
+  },
+
+  "Metadata": {
+    "title": "Boilerplate",
+    "description": "Cedric's Boilerplate."
+  },
+
+  "Table": {
+    "goto_first_page": "Aller à la 1ère page",
+    "goto_last_page": "Aller à la dernière page",
+    "goto_next_page": "Aller à la prochaine page",
+    "goto_previous_page": "Aller à la page précédente",
+    "no_data": "Pas de résultats.",
+    "page_of": "Page {current_page} sur {total_pages}",
+    "rows_per_page": "Lignes par page",
+    "search_label": "Rechercher:",
+    "search_placeholder": "mot recherché..."
+  }
+}
