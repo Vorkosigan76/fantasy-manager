@@ -33,6 +33,116 @@ export type Account = $Result.DefaultSelection<Prisma.$AccountPayload>
  * 
  */
 export type Verification = $Result.DefaultSelection<Prisma.$VerificationPayload>
+/**
+ * Model Region
+ * 
+ */
+export type Region = $Result.DefaultSelection<Prisma.$RegionPayload>
+/**
+ * Model RegionI18n
+ * 
+ */
+export type RegionI18n = $Result.DefaultSelection<Prisma.$RegionI18nPayload>
+/**
+ * Model Location
+ * 
+ */
+export type Location = $Result.DefaultSelection<Prisma.$LocationPayload>
+/**
+ * Model LocationI18n
+ * 
+ */
+export type LocationI18n = $Result.DefaultSelection<Prisma.$LocationI18nPayload>
+/**
+ * Model TownInformation
+ * 
+ */
+export type TownInformation = $Result.DefaultSelection<Prisma.$TownInformationPayload>
+/**
+ * Model Route
+ * 
+ */
+export type Route = $Result.DefaultSelection<Prisma.$RoutePayload>
+/**
+ * Model BuildingType
+ * 
+ */
+export type BuildingType = $Result.DefaultSelection<Prisma.$BuildingTypePayload>
+/**
+ * Model BuildingTypeI18n
+ * 
+ */
+export type BuildingTypeI18n = $Result.DefaultSelection<Prisma.$BuildingTypeI18nPayload>
+/**
+ * Model Building
+ * 
+ */
+export type Building = $Result.DefaultSelection<Prisma.$BuildingPayload>
+/**
+ * Model BuildingI18n
+ * 
+ */
+export type BuildingI18n = $Result.DefaultSelection<Prisma.$BuildingI18nPayload>
+/**
+ * Model StadiumInfo
+ * 
+ */
+export type StadiumInfo = $Result.DefaultSelection<Prisma.$StadiumInfoPayload>
+/**
+ * Model Race
+ * 
+ */
+export type Race = $Result.DefaultSelection<Prisma.$RacePayload>
+/**
+ * Model RaceI18n
+ * 
+ */
+export type RaceI18n = $Result.DefaultSelection<Prisma.$RaceI18nPayload>
+/**
+ * Model Person
+ * 
+ */
+export type Person = $Result.DefaultSelection<Prisma.$PersonPayload>
+/**
+ * Model PlayerCharacteristics
+ * 
+ */
+export type PlayerCharacteristics = $Result.DefaultSelection<Prisma.$PlayerCharacteristicsPayload>
+/**
+ * Model Team
+ * 
+ */
+export type Team = $Result.DefaultSelection<Prisma.$TeamPayload>
+
+/**
+ * Enums
+ */
+export namespace $Enums {
+  export const LocationType: {
+  town: 'town'
+};
+
+export type LocationType = (typeof LocationType)[keyof typeof LocationType]
+
+
+export const RouteType: {
+  road_paved: 'road_paved',
+  road_unpaved: 'road_unpaved',
+  river_upstream: 'river_upstream',
+  river_downstream: 'river_downstream'
+};
+
+export type RouteType = (typeof RouteType)[keyof typeof RouteType]
+
+}
+
+export type LocationType = $Enums.LocationType
+
+export const LocationType: typeof $Enums.LocationType
+
+export type RouteType = $Enums.RouteType
+
+export const RouteType: typeof $Enums.RouteType
 
 /**
  * ##  Prisma Client ʲˢ
@@ -198,6 +308,166 @@ export class PrismaClient<
     * ```
     */
   get verification(): Prisma.VerificationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.region`: Exposes CRUD operations for the **Region** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Regions
+    * const regions = await prisma.region.findMany()
+    * ```
+    */
+  get region(): Prisma.RegionDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.regionI18n`: Exposes CRUD operations for the **RegionI18n** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more RegionI18ns
+    * const regionI18ns = await prisma.regionI18n.findMany()
+    * ```
+    */
+  get regionI18n(): Prisma.RegionI18nDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.location`: Exposes CRUD operations for the **Location** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Locations
+    * const locations = await prisma.location.findMany()
+    * ```
+    */
+  get location(): Prisma.LocationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.locationI18n`: Exposes CRUD operations for the **LocationI18n** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more LocationI18ns
+    * const locationI18ns = await prisma.locationI18n.findMany()
+    * ```
+    */
+  get locationI18n(): Prisma.LocationI18nDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.townInformation`: Exposes CRUD operations for the **TownInformation** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TownInformations
+    * const townInformations = await prisma.townInformation.findMany()
+    * ```
+    */
+  get townInformation(): Prisma.TownInformationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.route`: Exposes CRUD operations for the **Route** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Routes
+    * const routes = await prisma.route.findMany()
+    * ```
+    */
+  get route(): Prisma.RouteDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.buildingType`: Exposes CRUD operations for the **BuildingType** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BuildingTypes
+    * const buildingTypes = await prisma.buildingType.findMany()
+    * ```
+    */
+  get buildingType(): Prisma.BuildingTypeDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.buildingTypeI18n`: Exposes CRUD operations for the **BuildingTypeI18n** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BuildingTypeI18ns
+    * const buildingTypeI18ns = await prisma.buildingTypeI18n.findMany()
+    * ```
+    */
+  get buildingTypeI18n(): Prisma.BuildingTypeI18nDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.building`: Exposes CRUD operations for the **Building** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Buildings
+    * const buildings = await prisma.building.findMany()
+    * ```
+    */
+  get building(): Prisma.BuildingDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.buildingI18n`: Exposes CRUD operations for the **BuildingI18n** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more BuildingI18ns
+    * const buildingI18ns = await prisma.buildingI18n.findMany()
+    * ```
+    */
+  get buildingI18n(): Prisma.BuildingI18nDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.stadiumInfo`: Exposes CRUD operations for the **StadiumInfo** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more StadiumInfos
+    * const stadiumInfos = await prisma.stadiumInfo.findMany()
+    * ```
+    */
+  get stadiumInfo(): Prisma.StadiumInfoDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.race`: Exposes CRUD operations for the **Race** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Races
+    * const races = await prisma.race.findMany()
+    * ```
+    */
+  get race(): Prisma.RaceDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.raceI18n`: Exposes CRUD operations for the **RaceI18n** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more RaceI18ns
+    * const raceI18ns = await prisma.raceI18n.findMany()
+    * ```
+    */
+  get raceI18n(): Prisma.RaceI18nDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.person`: Exposes CRUD operations for the **Person** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more People
+    * const people = await prisma.person.findMany()
+    * ```
+    */
+  get person(): Prisma.PersonDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.playerCharacteristics`: Exposes CRUD operations for the **PlayerCharacteristics** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more PlayerCharacteristics
+    * const playerCharacteristics = await prisma.playerCharacteristics.findMany()
+    * ```
+    */
+  get playerCharacteristics(): Prisma.PlayerCharacteristicsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.team`: Exposes CRUD operations for the **Team** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Teams
+    * const teams = await prisma.team.findMany()
+    * ```
+    */
+  get team(): Prisma.TeamDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -256,8 +526,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.6.0
-   * Query Engine version: f676762280b54cd07c770017ed3711ddde35f37a
+   * Prisma Client JS version: 6.8.2
+   * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
    */
   export type PrismaVersion = {
     client: string
@@ -641,7 +911,23 @@ export namespace Prisma {
     User: 'User',
     Session: 'Session',
     Account: 'Account',
-    Verification: 'Verification'
+    Verification: 'Verification',
+    Region: 'Region',
+    RegionI18n: 'RegionI18n',
+    Location: 'Location',
+    LocationI18n: 'LocationI18n',
+    TownInformation: 'TownInformation',
+    Route: 'Route',
+    BuildingType: 'BuildingType',
+    BuildingTypeI18n: 'BuildingTypeI18n',
+    Building: 'Building',
+    BuildingI18n: 'BuildingI18n',
+    StadiumInfo: 'StadiumInfo',
+    Race: 'Race',
+    RaceI18n: 'RaceI18n',
+    Person: 'Person',
+    PlayerCharacteristics: 'PlayerCharacteristics',
+    Team: 'Team'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -660,7 +946,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "session" | "account" | "verification"
+      modelProps: "user" | "session" | "account" | "verification" | "region" | "regionI18n" | "location" | "locationI18n" | "townInformation" | "route" | "buildingType" | "buildingTypeI18n" | "building" | "buildingI18n" | "stadiumInfo" | "race" | "raceI18n" | "person" | "playerCharacteristics" | "team"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -960,6 +1246,1190 @@ export namespace Prisma {
           }
         }
       }
+      Region: {
+        payload: Prisma.$RegionPayload<ExtArgs>
+        fields: Prisma.RegionFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RegionFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RegionFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload>
+          }
+          findFirst: {
+            args: Prisma.RegionFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RegionFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload>
+          }
+          findMany: {
+            args: Prisma.RegionFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload>[]
+          }
+          create: {
+            args: Prisma.RegionCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload>
+          }
+          createMany: {
+            args: Prisma.RegionCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RegionCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload>[]
+          }
+          delete: {
+            args: Prisma.RegionDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload>
+          }
+          update: {
+            args: Prisma.RegionUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload>
+          }
+          deleteMany: {
+            args: Prisma.RegionDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RegionUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RegionUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload>[]
+          }
+          upsert: {
+            args: Prisma.RegionUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPayload>
+          }
+          aggregate: {
+            args: Prisma.RegionAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRegion>
+          }
+          groupBy: {
+            args: Prisma.RegionGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RegionGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RegionCountArgs<ExtArgs>
+            result: $Utils.Optional<RegionCountAggregateOutputType> | number
+          }
+        }
+      }
+      RegionI18n: {
+        payload: Prisma.$RegionI18nPayload<ExtArgs>
+        fields: Prisma.RegionI18nFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RegionI18nFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RegionI18nFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload>
+          }
+          findFirst: {
+            args: Prisma.RegionI18nFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RegionI18nFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload>
+          }
+          findMany: {
+            args: Prisma.RegionI18nFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload>[]
+          }
+          create: {
+            args: Prisma.RegionI18nCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload>
+          }
+          createMany: {
+            args: Prisma.RegionI18nCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RegionI18nCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload>[]
+          }
+          delete: {
+            args: Prisma.RegionI18nDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload>
+          }
+          update: {
+            args: Prisma.RegionI18nUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload>
+          }
+          deleteMany: {
+            args: Prisma.RegionI18nDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RegionI18nUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RegionI18nUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload>[]
+          }
+          upsert: {
+            args: Prisma.RegionI18nUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionI18nPayload>
+          }
+          aggregate: {
+            args: Prisma.RegionI18nAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRegionI18n>
+          }
+          groupBy: {
+            args: Prisma.RegionI18nGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RegionI18nGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RegionI18nCountArgs<ExtArgs>
+            result: $Utils.Optional<RegionI18nCountAggregateOutputType> | number
+          }
+        }
+      }
+      Location: {
+        payload: Prisma.$LocationPayload<ExtArgs>
+        fields: Prisma.LocationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.LocationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.LocationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          findFirst: {
+            args: Prisma.LocationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.LocationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          findMany: {
+            args: Prisma.LocationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>[]
+          }
+          create: {
+            args: Prisma.LocationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          createMany: {
+            args: Prisma.LocationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.LocationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>[]
+          }
+          delete: {
+            args: Prisma.LocationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          update: {
+            args: Prisma.LocationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          deleteMany: {
+            args: Prisma.LocationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.LocationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.LocationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>[]
+          }
+          upsert: {
+            args: Prisma.LocationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationPayload>
+          }
+          aggregate: {
+            args: Prisma.LocationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLocation>
+          }
+          groupBy: {
+            args: Prisma.LocationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<LocationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.LocationCountArgs<ExtArgs>
+            result: $Utils.Optional<LocationCountAggregateOutputType> | number
+          }
+        }
+      }
+      LocationI18n: {
+        payload: Prisma.$LocationI18nPayload<ExtArgs>
+        fields: Prisma.LocationI18nFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.LocationI18nFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.LocationI18nFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload>
+          }
+          findFirst: {
+            args: Prisma.LocationI18nFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.LocationI18nFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload>
+          }
+          findMany: {
+            args: Prisma.LocationI18nFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload>[]
+          }
+          create: {
+            args: Prisma.LocationI18nCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload>
+          }
+          createMany: {
+            args: Prisma.LocationI18nCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.LocationI18nCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload>[]
+          }
+          delete: {
+            args: Prisma.LocationI18nDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload>
+          }
+          update: {
+            args: Prisma.LocationI18nUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload>
+          }
+          deleteMany: {
+            args: Prisma.LocationI18nDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.LocationI18nUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.LocationI18nUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload>[]
+          }
+          upsert: {
+            args: Prisma.LocationI18nUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LocationI18nPayload>
+          }
+          aggregate: {
+            args: Prisma.LocationI18nAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLocationI18n>
+          }
+          groupBy: {
+            args: Prisma.LocationI18nGroupByArgs<ExtArgs>
+            result: $Utils.Optional<LocationI18nGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.LocationI18nCountArgs<ExtArgs>
+            result: $Utils.Optional<LocationI18nCountAggregateOutputType> | number
+          }
+        }
+      }
+      TownInformation: {
+        payload: Prisma.$TownInformationPayload<ExtArgs>
+        fields: Prisma.TownInformationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TownInformationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TownInformationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload>
+          }
+          findFirst: {
+            args: Prisma.TownInformationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TownInformationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload>
+          }
+          findMany: {
+            args: Prisma.TownInformationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload>[]
+          }
+          create: {
+            args: Prisma.TownInformationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload>
+          }
+          createMany: {
+            args: Prisma.TownInformationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TownInformationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload>[]
+          }
+          delete: {
+            args: Prisma.TownInformationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload>
+          }
+          update: {
+            args: Prisma.TownInformationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload>
+          }
+          deleteMany: {
+            args: Prisma.TownInformationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TownInformationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TownInformationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload>[]
+          }
+          upsert: {
+            args: Prisma.TownInformationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TownInformationPayload>
+          }
+          aggregate: {
+            args: Prisma.TownInformationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTownInformation>
+          }
+          groupBy: {
+            args: Prisma.TownInformationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TownInformationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TownInformationCountArgs<ExtArgs>
+            result: $Utils.Optional<TownInformationCountAggregateOutputType> | number
+          }
+        }
+      }
+      Route: {
+        payload: Prisma.$RoutePayload<ExtArgs>
+        fields: Prisma.RouteFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RouteFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RouteFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload>
+          }
+          findFirst: {
+            args: Prisma.RouteFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RouteFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload>
+          }
+          findMany: {
+            args: Prisma.RouteFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload>[]
+          }
+          create: {
+            args: Prisma.RouteCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload>
+          }
+          createMany: {
+            args: Prisma.RouteCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RouteCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload>[]
+          }
+          delete: {
+            args: Prisma.RouteDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload>
+          }
+          update: {
+            args: Prisma.RouteUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload>
+          }
+          deleteMany: {
+            args: Prisma.RouteDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RouteUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RouteUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload>[]
+          }
+          upsert: {
+            args: Prisma.RouteUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RoutePayload>
+          }
+          aggregate: {
+            args: Prisma.RouteAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRoute>
+          }
+          groupBy: {
+            args: Prisma.RouteGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RouteGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RouteCountArgs<ExtArgs>
+            result: $Utils.Optional<RouteCountAggregateOutputType> | number
+          }
+        }
+      }
+      BuildingType: {
+        payload: Prisma.$BuildingTypePayload<ExtArgs>
+        fields: Prisma.BuildingTypeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BuildingTypeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BuildingTypeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload>
+          }
+          findFirst: {
+            args: Prisma.BuildingTypeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BuildingTypeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload>
+          }
+          findMany: {
+            args: Prisma.BuildingTypeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload>[]
+          }
+          create: {
+            args: Prisma.BuildingTypeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload>
+          }
+          createMany: {
+            args: Prisma.BuildingTypeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BuildingTypeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload>[]
+          }
+          delete: {
+            args: Prisma.BuildingTypeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload>
+          }
+          update: {
+            args: Prisma.BuildingTypeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload>
+          }
+          deleteMany: {
+            args: Prisma.BuildingTypeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BuildingTypeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BuildingTypeUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload>[]
+          }
+          upsert: {
+            args: Prisma.BuildingTypeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypePayload>
+          }
+          aggregate: {
+            args: Prisma.BuildingTypeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBuildingType>
+          }
+          groupBy: {
+            args: Prisma.BuildingTypeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BuildingTypeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BuildingTypeCountArgs<ExtArgs>
+            result: $Utils.Optional<BuildingTypeCountAggregateOutputType> | number
+          }
+        }
+      }
+      BuildingTypeI18n: {
+        payload: Prisma.$BuildingTypeI18nPayload<ExtArgs>
+        fields: Prisma.BuildingTypeI18nFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BuildingTypeI18nFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BuildingTypeI18nFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload>
+          }
+          findFirst: {
+            args: Prisma.BuildingTypeI18nFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BuildingTypeI18nFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload>
+          }
+          findMany: {
+            args: Prisma.BuildingTypeI18nFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload>[]
+          }
+          create: {
+            args: Prisma.BuildingTypeI18nCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload>
+          }
+          createMany: {
+            args: Prisma.BuildingTypeI18nCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BuildingTypeI18nCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload>[]
+          }
+          delete: {
+            args: Prisma.BuildingTypeI18nDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload>
+          }
+          update: {
+            args: Prisma.BuildingTypeI18nUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload>
+          }
+          deleteMany: {
+            args: Prisma.BuildingTypeI18nDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BuildingTypeI18nUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BuildingTypeI18nUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload>[]
+          }
+          upsert: {
+            args: Prisma.BuildingTypeI18nUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingTypeI18nPayload>
+          }
+          aggregate: {
+            args: Prisma.BuildingTypeI18nAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBuildingTypeI18n>
+          }
+          groupBy: {
+            args: Prisma.BuildingTypeI18nGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BuildingTypeI18nGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BuildingTypeI18nCountArgs<ExtArgs>
+            result: $Utils.Optional<BuildingTypeI18nCountAggregateOutputType> | number
+          }
+        }
+      }
+      Building: {
+        payload: Prisma.$BuildingPayload<ExtArgs>
+        fields: Prisma.BuildingFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BuildingFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BuildingFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload>
+          }
+          findFirst: {
+            args: Prisma.BuildingFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BuildingFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload>
+          }
+          findMany: {
+            args: Prisma.BuildingFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload>[]
+          }
+          create: {
+            args: Prisma.BuildingCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload>
+          }
+          createMany: {
+            args: Prisma.BuildingCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BuildingCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload>[]
+          }
+          delete: {
+            args: Prisma.BuildingDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload>
+          }
+          update: {
+            args: Prisma.BuildingUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload>
+          }
+          deleteMany: {
+            args: Prisma.BuildingDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BuildingUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BuildingUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload>[]
+          }
+          upsert: {
+            args: Prisma.BuildingUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingPayload>
+          }
+          aggregate: {
+            args: Prisma.BuildingAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBuilding>
+          }
+          groupBy: {
+            args: Prisma.BuildingGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BuildingGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BuildingCountArgs<ExtArgs>
+            result: $Utils.Optional<BuildingCountAggregateOutputType> | number
+          }
+        }
+      }
+      BuildingI18n: {
+        payload: Prisma.$BuildingI18nPayload<ExtArgs>
+        fields: Prisma.BuildingI18nFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.BuildingI18nFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.BuildingI18nFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload>
+          }
+          findFirst: {
+            args: Prisma.BuildingI18nFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.BuildingI18nFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload>
+          }
+          findMany: {
+            args: Prisma.BuildingI18nFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload>[]
+          }
+          create: {
+            args: Prisma.BuildingI18nCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload>
+          }
+          createMany: {
+            args: Prisma.BuildingI18nCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.BuildingI18nCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload>[]
+          }
+          delete: {
+            args: Prisma.BuildingI18nDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload>
+          }
+          update: {
+            args: Prisma.BuildingI18nUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload>
+          }
+          deleteMany: {
+            args: Prisma.BuildingI18nDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.BuildingI18nUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.BuildingI18nUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload>[]
+          }
+          upsert: {
+            args: Prisma.BuildingI18nUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$BuildingI18nPayload>
+          }
+          aggregate: {
+            args: Prisma.BuildingI18nAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateBuildingI18n>
+          }
+          groupBy: {
+            args: Prisma.BuildingI18nGroupByArgs<ExtArgs>
+            result: $Utils.Optional<BuildingI18nGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.BuildingI18nCountArgs<ExtArgs>
+            result: $Utils.Optional<BuildingI18nCountAggregateOutputType> | number
+          }
+        }
+      }
+      StadiumInfo: {
+        payload: Prisma.$StadiumInfoPayload<ExtArgs>
+        fields: Prisma.StadiumInfoFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.StadiumInfoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.StadiumInfoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload>
+          }
+          findFirst: {
+            args: Prisma.StadiumInfoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.StadiumInfoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload>
+          }
+          findMany: {
+            args: Prisma.StadiumInfoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload>[]
+          }
+          create: {
+            args: Prisma.StadiumInfoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload>
+          }
+          createMany: {
+            args: Prisma.StadiumInfoCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.StadiumInfoCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload>[]
+          }
+          delete: {
+            args: Prisma.StadiumInfoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload>
+          }
+          update: {
+            args: Prisma.StadiumInfoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload>
+          }
+          deleteMany: {
+            args: Prisma.StadiumInfoDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.StadiumInfoUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.StadiumInfoUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload>[]
+          }
+          upsert: {
+            args: Prisma.StadiumInfoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$StadiumInfoPayload>
+          }
+          aggregate: {
+            args: Prisma.StadiumInfoAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateStadiumInfo>
+          }
+          groupBy: {
+            args: Prisma.StadiumInfoGroupByArgs<ExtArgs>
+            result: $Utils.Optional<StadiumInfoGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.StadiumInfoCountArgs<ExtArgs>
+            result: $Utils.Optional<StadiumInfoCountAggregateOutputType> | number
+          }
+        }
+      }
+      Race: {
+        payload: Prisma.$RacePayload<ExtArgs>
+        fields: Prisma.RaceFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RaceFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RaceFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload>
+          }
+          findFirst: {
+            args: Prisma.RaceFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RaceFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload>
+          }
+          findMany: {
+            args: Prisma.RaceFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload>[]
+          }
+          create: {
+            args: Prisma.RaceCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload>
+          }
+          createMany: {
+            args: Prisma.RaceCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RaceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload>[]
+          }
+          delete: {
+            args: Prisma.RaceDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload>
+          }
+          update: {
+            args: Prisma.RaceUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload>
+          }
+          deleteMany: {
+            args: Prisma.RaceDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RaceUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RaceUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload>[]
+          }
+          upsert: {
+            args: Prisma.RaceUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RacePayload>
+          }
+          aggregate: {
+            args: Prisma.RaceAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRace>
+          }
+          groupBy: {
+            args: Prisma.RaceGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RaceGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RaceCountArgs<ExtArgs>
+            result: $Utils.Optional<RaceCountAggregateOutputType> | number
+          }
+        }
+      }
+      RaceI18n: {
+        payload: Prisma.$RaceI18nPayload<ExtArgs>
+        fields: Prisma.RaceI18nFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RaceI18nFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RaceI18nFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload>
+          }
+          findFirst: {
+            args: Prisma.RaceI18nFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RaceI18nFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload>
+          }
+          findMany: {
+            args: Prisma.RaceI18nFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload>[]
+          }
+          create: {
+            args: Prisma.RaceI18nCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload>
+          }
+          createMany: {
+            args: Prisma.RaceI18nCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RaceI18nCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload>[]
+          }
+          delete: {
+            args: Prisma.RaceI18nDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload>
+          }
+          update: {
+            args: Prisma.RaceI18nUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload>
+          }
+          deleteMany: {
+            args: Prisma.RaceI18nDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RaceI18nUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RaceI18nUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload>[]
+          }
+          upsert: {
+            args: Prisma.RaceI18nUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RaceI18nPayload>
+          }
+          aggregate: {
+            args: Prisma.RaceI18nAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRaceI18n>
+          }
+          groupBy: {
+            args: Prisma.RaceI18nGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RaceI18nGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RaceI18nCountArgs<ExtArgs>
+            result: $Utils.Optional<RaceI18nCountAggregateOutputType> | number
+          }
+        }
+      }
+      Person: {
+        payload: Prisma.$PersonPayload<ExtArgs>
+        fields: Prisma.PersonFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PersonFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PersonFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload>
+          }
+          findFirst: {
+            args: Prisma.PersonFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PersonFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload>
+          }
+          findMany: {
+            args: Prisma.PersonFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload>[]
+          }
+          create: {
+            args: Prisma.PersonCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload>
+          }
+          createMany: {
+            args: Prisma.PersonCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.PersonCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload>[]
+          }
+          delete: {
+            args: Prisma.PersonDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload>
+          }
+          update: {
+            args: Prisma.PersonUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload>
+          }
+          deleteMany: {
+            args: Prisma.PersonDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PersonUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.PersonUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload>[]
+          }
+          upsert: {
+            args: Prisma.PersonUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonPayload>
+          }
+          aggregate: {
+            args: Prisma.PersonAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePerson>
+          }
+          groupBy: {
+            args: Prisma.PersonGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PersonGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.PersonCountArgs<ExtArgs>
+            result: $Utils.Optional<PersonCountAggregateOutputType> | number
+          }
+        }
+      }
+      PlayerCharacteristics: {
+        payload: Prisma.$PlayerCharacteristicsPayload<ExtArgs>
+        fields: Prisma.PlayerCharacteristicsFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PlayerCharacteristicsFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PlayerCharacteristicsFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload>
+          }
+          findFirst: {
+            args: Prisma.PlayerCharacteristicsFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PlayerCharacteristicsFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload>
+          }
+          findMany: {
+            args: Prisma.PlayerCharacteristicsFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload>[]
+          }
+          create: {
+            args: Prisma.PlayerCharacteristicsCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload>
+          }
+          createMany: {
+            args: Prisma.PlayerCharacteristicsCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.PlayerCharacteristicsCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload>[]
+          }
+          delete: {
+            args: Prisma.PlayerCharacteristicsDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload>
+          }
+          update: {
+            args: Prisma.PlayerCharacteristicsUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload>
+          }
+          deleteMany: {
+            args: Prisma.PlayerCharacteristicsDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PlayerCharacteristicsUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.PlayerCharacteristicsUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload>[]
+          }
+          upsert: {
+            args: Prisma.PlayerCharacteristicsUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PlayerCharacteristicsPayload>
+          }
+          aggregate: {
+            args: Prisma.PlayerCharacteristicsAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePlayerCharacteristics>
+          }
+          groupBy: {
+            args: Prisma.PlayerCharacteristicsGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PlayerCharacteristicsGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.PlayerCharacteristicsCountArgs<ExtArgs>
+            result: $Utils.Optional<PlayerCharacteristicsCountAggregateOutputType> | number
+          }
+        }
+      }
+      Team: {
+        payload: Prisma.$TeamPayload<ExtArgs>
+        fields: Prisma.TeamFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TeamFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TeamFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          findFirst: {
+            args: Prisma.TeamFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TeamFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          findMany: {
+            args: Prisma.TeamFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>[]
+          }
+          create: {
+            args: Prisma.TeamCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          createMany: {
+            args: Prisma.TeamCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TeamCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>[]
+          }
+          delete: {
+            args: Prisma.TeamDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          update: {
+            args: Prisma.TeamUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          deleteMany: {
+            args: Prisma.TeamDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TeamUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TeamUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>[]
+          }
+          upsert: {
+            args: Prisma.TeamUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamPayload>
+          }
+          aggregate: {
+            args: Prisma.TeamAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTeam>
+          }
+          groupBy: {
+            args: Prisma.TeamGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TeamGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TeamCountArgs<ExtArgs>
+            result: $Utils.Optional<TeamCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1048,6 +2518,22 @@ export namespace Prisma {
     session?: SessionOmit
     account?: AccountOmit
     verification?: VerificationOmit
+    region?: RegionOmit
+    regionI18n?: RegionI18nOmit
+    location?: LocationOmit
+    locationI18n?: LocationI18nOmit
+    townInformation?: TownInformationOmit
+    route?: RouteOmit
+    buildingType?: BuildingTypeOmit
+    buildingTypeI18n?: BuildingTypeI18nOmit
+    building?: BuildingOmit
+    buildingI18n?: BuildingI18nOmit
+    stadiumInfo?: StadiumInfoOmit
+    race?: RaceOmit
+    raceI18n?: RaceI18nOmit
+    person?: PersonOmit
+    playerCharacteristics?: PlayerCharacteristicsOmit
+    team?: TeamOmit
   }
 
   /* Types for Logging */
@@ -1144,11 +2630,13 @@ export namespace Prisma {
   export type UserCountOutputType = {
     sessions: number
     accounts: number
+    teams: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sessions?: boolean | UserCountOutputTypeCountSessionsArgs
     accounts?: boolean | UserCountOutputTypeCountAccountsArgs
+    teams?: boolean | UserCountOutputTypeCountTeamsArgs
   }
 
   // Custom InputTypes
@@ -1174,6 +2662,222 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountAccountsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: AccountWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountTeamsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TeamWhereInput
+  }
+
+
+  /**
+   * Count Type RegionCountOutputType
+   */
+
+  export type RegionCountOutputType = {
+    i18n: number
+    locations: number
+  }
+
+  export type RegionCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | RegionCountOutputTypeCountI18nArgs
+    locations?: boolean | RegionCountOutputTypeCountLocationsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * RegionCountOutputType without action
+   */
+  export type RegionCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionCountOutputType
+     */
+    select?: RegionCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * RegionCountOutputType without action
+   */
+  export type RegionCountOutputTypeCountI18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RegionI18nWhereInput
+  }
+
+  /**
+   * RegionCountOutputType without action
+   */
+  export type RegionCountOutputTypeCountLocationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LocationWhereInput
+  }
+
+
+  /**
+   * Count Type LocationCountOutputType
+   */
+
+  export type LocationCountOutputType = {
+    i18n: number
+    routesFrom: number
+    routesTo: number
+    buildings: number
+  }
+
+  export type LocationCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | LocationCountOutputTypeCountI18nArgs
+    routesFrom?: boolean | LocationCountOutputTypeCountRoutesFromArgs
+    routesTo?: boolean | LocationCountOutputTypeCountRoutesToArgs
+    buildings?: boolean | LocationCountOutputTypeCountBuildingsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * LocationCountOutputType without action
+   */
+  export type LocationCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationCountOutputType
+     */
+    select?: LocationCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * LocationCountOutputType without action
+   */
+  export type LocationCountOutputTypeCountI18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LocationI18nWhereInput
+  }
+
+  /**
+   * LocationCountOutputType without action
+   */
+  export type LocationCountOutputTypeCountRoutesFromArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RouteWhereInput
+  }
+
+  /**
+   * LocationCountOutputType without action
+   */
+  export type LocationCountOutputTypeCountRoutesToArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RouteWhereInput
+  }
+
+  /**
+   * LocationCountOutputType without action
+   */
+  export type LocationCountOutputTypeCountBuildingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BuildingWhereInput
+  }
+
+
+  /**
+   * Count Type BuildingTypeCountOutputType
+   */
+
+  export type BuildingTypeCountOutputType = {
+    i18n: number
+    buildings: number
+  }
+
+  export type BuildingTypeCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | BuildingTypeCountOutputTypeCountI18nArgs
+    buildings?: boolean | BuildingTypeCountOutputTypeCountBuildingsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * BuildingTypeCountOutputType without action
+   */
+  export type BuildingTypeCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeCountOutputType
+     */
+    select?: BuildingTypeCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * BuildingTypeCountOutputType without action
+   */
+  export type BuildingTypeCountOutputTypeCountI18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BuildingTypeI18nWhereInput
+  }
+
+  /**
+   * BuildingTypeCountOutputType without action
+   */
+  export type BuildingTypeCountOutputTypeCountBuildingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BuildingWhereInput
+  }
+
+
+  /**
+   * Count Type BuildingCountOutputType
+   */
+
+  export type BuildingCountOutputType = {
+    i18n: number
+  }
+
+  export type BuildingCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | BuildingCountOutputTypeCountI18nArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * BuildingCountOutputType without action
+   */
+  export type BuildingCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingCountOutputType
+     */
+    select?: BuildingCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * BuildingCountOutputType without action
+   */
+  export type BuildingCountOutputTypeCountI18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BuildingI18nWhereInput
+  }
+
+
+  /**
+   * Count Type RaceCountOutputType
+   */
+
+  export type RaceCountOutputType = {
+    i18n: number
+    persons: number
+  }
+
+  export type RaceCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | RaceCountOutputTypeCountI18nArgs
+    persons?: boolean | RaceCountOutputTypeCountPersonsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * RaceCountOutputType without action
+   */
+  export type RaceCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceCountOutputType
+     */
+    select?: RaceCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * RaceCountOutputType without action
+   */
+  export type RaceCountOutputTypeCountI18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RaceI18nWhereInput
+  }
+
+  /**
+   * RaceCountOutputType without action
+   */
+  export type RaceCountOutputTypeCountPersonsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PersonWhereInput
   }
 
 
@@ -1395,6 +3099,7 @@ export namespace Prisma {
     banExpires?: boolean
     sessions?: boolean | User$sessionsArgs<ExtArgs>
     accounts?: boolean | User$accountsArgs<ExtArgs>
+    teams?: boolean | User$teamsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1444,6 +3149,7 @@ export namespace Prisma {
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     sessions?: boolean | User$sessionsArgs<ExtArgs>
     accounts?: boolean | User$accountsArgs<ExtArgs>
+    teams?: boolean | User$teamsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1454,6 +3160,7 @@ export namespace Prisma {
     objects: {
       sessions: Prisma.$SessionPayload<ExtArgs>[]
       accounts: Prisma.$AccountPayload<ExtArgs>[]
+      teams: Prisma.$TeamPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -1863,6 +3570,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     sessions<T extends User$sessionsArgs<ExtArgs> = {}>(args?: Subset<T, User$sessionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$SessionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     accounts<T extends User$accountsArgs<ExtArgs> = {}>(args?: Subset<T, User$accountsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$AccountPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    teams<T extends User$teamsArgs<ExtArgs> = {}>(args?: Subset<T, User$teamsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2336,6 +4044,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: AccountScalarFieldEnum | AccountScalarFieldEnum[]
+  }
+
+  /**
+   * User.teams
+   */
+  export type User$teamsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    where?: TeamWhereInput
+    orderBy?: TeamOrderByWithRelationInput | TeamOrderByWithRelationInput[]
+    cursor?: TeamWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: TeamScalarFieldEnum | TeamScalarFieldEnum[]
   }
 
   /**
@@ -5638,6 +7370,17520 @@ export namespace Prisma {
 
 
   /**
+   * Model Region
+   */
+
+  export type AggregateRegion = {
+    _count: RegionCountAggregateOutputType | null
+    _min: RegionMinAggregateOutputType | null
+    _max: RegionMaxAggregateOutputType | null
+  }
+
+  export type RegionMinAggregateOutputType = {
+    id: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RegionMaxAggregateOutputType = {
+    id: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RegionCountAggregateOutputType = {
+    id: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type RegionMinAggregateInputType = {
+    id?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RegionMaxAggregateInputType = {
+    id?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RegionCountAggregateInputType = {
+    id?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type RegionAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Region to aggregate.
+     */
+    where?: RegionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Regions to fetch.
+     */
+    orderBy?: RegionOrderByWithRelationInput | RegionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RegionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Regions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Regions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Regions
+    **/
+    _count?: true | RegionCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RegionMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RegionMaxAggregateInputType
+  }
+
+  export type GetRegionAggregateType<T extends RegionAggregateArgs> = {
+        [P in keyof T & keyof AggregateRegion]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRegion[P]>
+      : GetScalarType<T[P], AggregateRegion[P]>
+  }
+
+
+
+
+  export type RegionGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RegionWhereInput
+    orderBy?: RegionOrderByWithAggregationInput | RegionOrderByWithAggregationInput[]
+    by: RegionScalarFieldEnum[] | RegionScalarFieldEnum
+    having?: RegionScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RegionCountAggregateInputType | true
+    _min?: RegionMinAggregateInputType
+    _max?: RegionMaxAggregateInputType
+  }
+
+  export type RegionGroupByOutputType = {
+    id: string
+    updatedAt: Date
+    createdAt: Date
+    _count: RegionCountAggregateOutputType | null
+    _min: RegionMinAggregateOutputType | null
+    _max: RegionMaxAggregateOutputType | null
+  }
+
+  type GetRegionGroupByPayload<T extends RegionGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RegionGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RegionGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RegionGroupByOutputType[P]>
+            : GetScalarType<T[P], RegionGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RegionSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    i18n?: boolean | Region$i18nArgs<ExtArgs>
+    locations?: boolean | Region$locationsArgs<ExtArgs>
+    _count?: boolean | RegionCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["region"]>
+
+  export type RegionSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["region"]>
+
+  export type RegionSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["region"]>
+
+  export type RegionSelectScalar = {
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type RegionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "updatedAt" | "createdAt", ExtArgs["result"]["region"]>
+  export type RegionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | Region$i18nArgs<ExtArgs>
+    locations?: boolean | Region$locationsArgs<ExtArgs>
+    _count?: boolean | RegionCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type RegionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type RegionIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $RegionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Region"
+    objects: {
+      i18n: Prisma.$RegionI18nPayload<ExtArgs>[]
+      locations: Prisma.$LocationPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["region"]>
+    composites: {}
+  }
+
+  type RegionGetPayload<S extends boolean | null | undefined | RegionDefaultArgs> = $Result.GetResult<Prisma.$RegionPayload, S>
+
+  type RegionCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RegionFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RegionCountAggregateInputType | true
+    }
+
+  export interface RegionDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Region'], meta: { name: 'Region' } }
+    /**
+     * Find zero or one Region that matches the filter.
+     * @param {RegionFindUniqueArgs} args - Arguments to find a Region
+     * @example
+     * // Get one Region
+     * const region = await prisma.region.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RegionFindUniqueArgs>(args: SelectSubset<T, RegionFindUniqueArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Region that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RegionFindUniqueOrThrowArgs} args - Arguments to find a Region
+     * @example
+     * // Get one Region
+     * const region = await prisma.region.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RegionFindUniqueOrThrowArgs>(args: SelectSubset<T, RegionFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Region that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionFindFirstArgs} args - Arguments to find a Region
+     * @example
+     * // Get one Region
+     * const region = await prisma.region.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RegionFindFirstArgs>(args?: SelectSubset<T, RegionFindFirstArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Region that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionFindFirstOrThrowArgs} args - Arguments to find a Region
+     * @example
+     * // Get one Region
+     * const region = await prisma.region.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RegionFindFirstOrThrowArgs>(args?: SelectSubset<T, RegionFindFirstOrThrowArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Regions that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Regions
+     * const regions = await prisma.region.findMany()
+     * 
+     * // Get first 10 Regions
+     * const regions = await prisma.region.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const regionWithIdOnly = await prisma.region.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RegionFindManyArgs>(args?: SelectSubset<T, RegionFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Region.
+     * @param {RegionCreateArgs} args - Arguments to create a Region.
+     * @example
+     * // Create one Region
+     * const Region = await prisma.region.create({
+     *   data: {
+     *     // ... data to create a Region
+     *   }
+     * })
+     * 
+     */
+    create<T extends RegionCreateArgs>(args: SelectSubset<T, RegionCreateArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Regions.
+     * @param {RegionCreateManyArgs} args - Arguments to create many Regions.
+     * @example
+     * // Create many Regions
+     * const region = await prisma.region.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RegionCreateManyArgs>(args?: SelectSubset<T, RegionCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Regions and returns the data saved in the database.
+     * @param {RegionCreateManyAndReturnArgs} args - Arguments to create many Regions.
+     * @example
+     * // Create many Regions
+     * const region = await prisma.region.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Regions and only return the `id`
+     * const regionWithIdOnly = await prisma.region.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RegionCreateManyAndReturnArgs>(args?: SelectSubset<T, RegionCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Region.
+     * @param {RegionDeleteArgs} args - Arguments to delete one Region.
+     * @example
+     * // Delete one Region
+     * const Region = await prisma.region.delete({
+     *   where: {
+     *     // ... filter to delete one Region
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RegionDeleteArgs>(args: SelectSubset<T, RegionDeleteArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Region.
+     * @param {RegionUpdateArgs} args - Arguments to update one Region.
+     * @example
+     * // Update one Region
+     * const region = await prisma.region.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RegionUpdateArgs>(args: SelectSubset<T, RegionUpdateArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Regions.
+     * @param {RegionDeleteManyArgs} args - Arguments to filter Regions to delete.
+     * @example
+     * // Delete a few Regions
+     * const { count } = await prisma.region.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RegionDeleteManyArgs>(args?: SelectSubset<T, RegionDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Regions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Regions
+     * const region = await prisma.region.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RegionUpdateManyArgs>(args: SelectSubset<T, RegionUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Regions and returns the data updated in the database.
+     * @param {RegionUpdateManyAndReturnArgs} args - Arguments to update many Regions.
+     * @example
+     * // Update many Regions
+     * const region = await prisma.region.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Regions and only return the `id`
+     * const regionWithIdOnly = await prisma.region.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RegionUpdateManyAndReturnArgs>(args: SelectSubset<T, RegionUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Region.
+     * @param {RegionUpsertArgs} args - Arguments to update or create a Region.
+     * @example
+     * // Update or create a Region
+     * const region = await prisma.region.upsert({
+     *   create: {
+     *     // ... data to create a Region
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Region we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RegionUpsertArgs>(args: SelectSubset<T, RegionUpsertArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Regions.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionCountArgs} args - Arguments to filter Regions to count.
+     * @example
+     * // Count the number of Regions
+     * const count = await prisma.region.count({
+     *   where: {
+     *     // ... the filter for the Regions we want to count
+     *   }
+     * })
+    **/
+    count<T extends RegionCountArgs>(
+      args?: Subset<T, RegionCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RegionCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Region.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RegionAggregateArgs>(args: Subset<T, RegionAggregateArgs>): Prisma.PrismaPromise<GetRegionAggregateType<T>>
+
+    /**
+     * Group by Region.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RegionGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RegionGroupByArgs['orderBy'] }
+        : { orderBy?: RegionGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RegionGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRegionGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Region model
+   */
+  readonly fields: RegionFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Region.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RegionClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    i18n<T extends Region$i18nArgs<ExtArgs> = {}>(args?: Subset<T, Region$i18nArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    locations<T extends Region$locationsArgs<ExtArgs> = {}>(args?: Subset<T, Region$locationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Region model
+   */
+  interface RegionFieldRefs {
+    readonly id: FieldRef<"Region", 'String'>
+    readonly updatedAt: FieldRef<"Region", 'DateTime'>
+    readonly createdAt: FieldRef<"Region", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Region findUnique
+   */
+  export type RegionFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+    /**
+     * Filter, which Region to fetch.
+     */
+    where: RegionWhereUniqueInput
+  }
+
+  /**
+   * Region findUniqueOrThrow
+   */
+  export type RegionFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+    /**
+     * Filter, which Region to fetch.
+     */
+    where: RegionWhereUniqueInput
+  }
+
+  /**
+   * Region findFirst
+   */
+  export type RegionFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+    /**
+     * Filter, which Region to fetch.
+     */
+    where?: RegionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Regions to fetch.
+     */
+    orderBy?: RegionOrderByWithRelationInput | RegionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Regions.
+     */
+    cursor?: RegionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Regions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Regions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Regions.
+     */
+    distinct?: RegionScalarFieldEnum | RegionScalarFieldEnum[]
+  }
+
+  /**
+   * Region findFirstOrThrow
+   */
+  export type RegionFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+    /**
+     * Filter, which Region to fetch.
+     */
+    where?: RegionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Regions to fetch.
+     */
+    orderBy?: RegionOrderByWithRelationInput | RegionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Regions.
+     */
+    cursor?: RegionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Regions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Regions.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Regions.
+     */
+    distinct?: RegionScalarFieldEnum | RegionScalarFieldEnum[]
+  }
+
+  /**
+   * Region findMany
+   */
+  export type RegionFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+    /**
+     * Filter, which Regions to fetch.
+     */
+    where?: RegionWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Regions to fetch.
+     */
+    orderBy?: RegionOrderByWithRelationInput | RegionOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Regions.
+     */
+    cursor?: RegionWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Regions from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Regions.
+     */
+    skip?: number
+    distinct?: RegionScalarFieldEnum | RegionScalarFieldEnum[]
+  }
+
+  /**
+   * Region create
+   */
+  export type RegionCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Region.
+     */
+    data: XOR<RegionCreateInput, RegionUncheckedCreateInput>
+  }
+
+  /**
+   * Region createMany
+   */
+  export type RegionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Regions.
+     */
+    data: RegionCreateManyInput | RegionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Region createManyAndReturn
+   */
+  export type RegionCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * The data used to create many Regions.
+     */
+    data: RegionCreateManyInput | RegionCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Region update
+   */
+  export type RegionUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Region.
+     */
+    data: XOR<RegionUpdateInput, RegionUncheckedUpdateInput>
+    /**
+     * Choose, which Region to update.
+     */
+    where: RegionWhereUniqueInput
+  }
+
+  /**
+   * Region updateMany
+   */
+  export type RegionUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Regions.
+     */
+    data: XOR<RegionUpdateManyMutationInput, RegionUncheckedUpdateManyInput>
+    /**
+     * Filter which Regions to update
+     */
+    where?: RegionWhereInput
+    /**
+     * Limit how many Regions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Region updateManyAndReturn
+   */
+  export type RegionUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * The data used to update Regions.
+     */
+    data: XOR<RegionUpdateManyMutationInput, RegionUncheckedUpdateManyInput>
+    /**
+     * Filter which Regions to update
+     */
+    where?: RegionWhereInput
+    /**
+     * Limit how many Regions to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Region upsert
+   */
+  export type RegionUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Region to update in case it exists.
+     */
+    where: RegionWhereUniqueInput
+    /**
+     * In case the Region found by the `where` argument doesn't exist, create a new Region with this data.
+     */
+    create: XOR<RegionCreateInput, RegionUncheckedCreateInput>
+    /**
+     * In case the Region was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RegionUpdateInput, RegionUncheckedUpdateInput>
+  }
+
+  /**
+   * Region delete
+   */
+  export type RegionDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+    /**
+     * Filter which Region to delete.
+     */
+    where: RegionWhereUniqueInput
+  }
+
+  /**
+   * Region deleteMany
+   */
+  export type RegionDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Regions to delete
+     */
+    where?: RegionWhereInput
+    /**
+     * Limit how many Regions to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Region.i18n
+   */
+  export type Region$i18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    where?: RegionI18nWhereInput
+    orderBy?: RegionI18nOrderByWithRelationInput | RegionI18nOrderByWithRelationInput[]
+    cursor?: RegionI18nWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RegionI18nScalarFieldEnum | RegionI18nScalarFieldEnum[]
+  }
+
+  /**
+   * Region.locations
+   */
+  export type Region$locationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    where?: LocationWhereInput
+    orderBy?: LocationOrderByWithRelationInput | LocationOrderByWithRelationInput[]
+    cursor?: LocationWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: LocationScalarFieldEnum | LocationScalarFieldEnum[]
+  }
+
+  /**
+   * Region without action
+   */
+  export type RegionDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Region
+     */
+    select?: RegionSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Region
+     */
+    omit?: RegionOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model RegionI18n
+   */
+
+  export type AggregateRegionI18n = {
+    _count: RegionI18nCountAggregateOutputType | null
+    _min: RegionI18nMinAggregateOutputType | null
+    _max: RegionI18nMaxAggregateOutputType | null
+  }
+
+  export type RegionI18nMinAggregateOutputType = {
+    id: string | null
+    regionId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RegionI18nMaxAggregateOutputType = {
+    id: string | null
+    regionId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RegionI18nCountAggregateOutputType = {
+    id: number
+    regionId: number
+    language: number
+    name: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type RegionI18nMinAggregateInputType = {
+    id?: true
+    regionId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RegionI18nMaxAggregateInputType = {
+    id?: true
+    regionId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RegionI18nCountAggregateInputType = {
+    id?: true
+    regionId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type RegionI18nAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RegionI18n to aggregate.
+     */
+    where?: RegionI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RegionI18ns to fetch.
+     */
+    orderBy?: RegionI18nOrderByWithRelationInput | RegionI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RegionI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RegionI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RegionI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned RegionI18ns
+    **/
+    _count?: true | RegionI18nCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RegionI18nMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RegionI18nMaxAggregateInputType
+  }
+
+  export type GetRegionI18nAggregateType<T extends RegionI18nAggregateArgs> = {
+        [P in keyof T & keyof AggregateRegionI18n]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRegionI18n[P]>
+      : GetScalarType<T[P], AggregateRegionI18n[P]>
+  }
+
+
+
+
+  export type RegionI18nGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RegionI18nWhereInput
+    orderBy?: RegionI18nOrderByWithAggregationInput | RegionI18nOrderByWithAggregationInput[]
+    by: RegionI18nScalarFieldEnum[] | RegionI18nScalarFieldEnum
+    having?: RegionI18nScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RegionI18nCountAggregateInputType | true
+    _min?: RegionI18nMinAggregateInputType
+    _max?: RegionI18nMaxAggregateInputType
+  }
+
+  export type RegionI18nGroupByOutputType = {
+    id: string
+    regionId: string
+    language: string
+    name: string
+    updatedAt: Date
+    createdAt: Date
+    _count: RegionI18nCountAggregateOutputType | null
+    _min: RegionI18nMinAggregateOutputType | null
+    _max: RegionI18nMaxAggregateOutputType | null
+  }
+
+  type GetRegionI18nGroupByPayload<T extends RegionI18nGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RegionI18nGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RegionI18nGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RegionI18nGroupByOutputType[P]>
+            : GetScalarType<T[P], RegionI18nGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RegionI18nSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    regionId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["regionI18n"]>
+
+  export type RegionI18nSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    regionId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["regionI18n"]>
+
+  export type RegionI18nSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    regionId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["regionI18n"]>
+
+  export type RegionI18nSelectScalar = {
+    id?: boolean
+    regionId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type RegionI18nOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "regionId" | "language" | "name" | "updatedAt" | "createdAt", ExtArgs["result"]["regionI18n"]>
+  export type RegionI18nInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }
+  export type RegionI18nIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }
+  export type RegionI18nIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }
+
+  export type $RegionI18nPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RegionI18n"
+    objects: {
+      region: Prisma.$RegionPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      regionId: string
+      language: string
+      name: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["regionI18n"]>
+    composites: {}
+  }
+
+  type RegionI18nGetPayload<S extends boolean | null | undefined | RegionI18nDefaultArgs> = $Result.GetResult<Prisma.$RegionI18nPayload, S>
+
+  type RegionI18nCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RegionI18nFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RegionI18nCountAggregateInputType | true
+    }
+
+  export interface RegionI18nDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RegionI18n'], meta: { name: 'RegionI18n' } }
+    /**
+     * Find zero or one RegionI18n that matches the filter.
+     * @param {RegionI18nFindUniqueArgs} args - Arguments to find a RegionI18n
+     * @example
+     * // Get one RegionI18n
+     * const regionI18n = await prisma.regionI18n.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RegionI18nFindUniqueArgs>(args: SelectSubset<T, RegionI18nFindUniqueArgs<ExtArgs>>): Prisma__RegionI18nClient<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one RegionI18n that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RegionI18nFindUniqueOrThrowArgs} args - Arguments to find a RegionI18n
+     * @example
+     * // Get one RegionI18n
+     * const regionI18n = await prisma.regionI18n.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RegionI18nFindUniqueOrThrowArgs>(args: SelectSubset<T, RegionI18nFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RegionI18nClient<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RegionI18n that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionI18nFindFirstArgs} args - Arguments to find a RegionI18n
+     * @example
+     * // Get one RegionI18n
+     * const regionI18n = await prisma.regionI18n.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RegionI18nFindFirstArgs>(args?: SelectSubset<T, RegionI18nFindFirstArgs<ExtArgs>>): Prisma__RegionI18nClient<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RegionI18n that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionI18nFindFirstOrThrowArgs} args - Arguments to find a RegionI18n
+     * @example
+     * // Get one RegionI18n
+     * const regionI18n = await prisma.regionI18n.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RegionI18nFindFirstOrThrowArgs>(args?: SelectSubset<T, RegionI18nFindFirstOrThrowArgs<ExtArgs>>): Prisma__RegionI18nClient<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more RegionI18ns that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionI18nFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all RegionI18ns
+     * const regionI18ns = await prisma.regionI18n.findMany()
+     * 
+     * // Get first 10 RegionI18ns
+     * const regionI18ns = await prisma.regionI18n.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const regionI18nWithIdOnly = await prisma.regionI18n.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RegionI18nFindManyArgs>(args?: SelectSubset<T, RegionI18nFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a RegionI18n.
+     * @param {RegionI18nCreateArgs} args - Arguments to create a RegionI18n.
+     * @example
+     * // Create one RegionI18n
+     * const RegionI18n = await prisma.regionI18n.create({
+     *   data: {
+     *     // ... data to create a RegionI18n
+     *   }
+     * })
+     * 
+     */
+    create<T extends RegionI18nCreateArgs>(args: SelectSubset<T, RegionI18nCreateArgs<ExtArgs>>): Prisma__RegionI18nClient<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many RegionI18ns.
+     * @param {RegionI18nCreateManyArgs} args - Arguments to create many RegionI18ns.
+     * @example
+     * // Create many RegionI18ns
+     * const regionI18n = await prisma.regionI18n.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RegionI18nCreateManyArgs>(args?: SelectSubset<T, RegionI18nCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many RegionI18ns and returns the data saved in the database.
+     * @param {RegionI18nCreateManyAndReturnArgs} args - Arguments to create many RegionI18ns.
+     * @example
+     * // Create many RegionI18ns
+     * const regionI18n = await prisma.regionI18n.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many RegionI18ns and only return the `id`
+     * const regionI18nWithIdOnly = await prisma.regionI18n.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RegionI18nCreateManyAndReturnArgs>(args?: SelectSubset<T, RegionI18nCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a RegionI18n.
+     * @param {RegionI18nDeleteArgs} args - Arguments to delete one RegionI18n.
+     * @example
+     * // Delete one RegionI18n
+     * const RegionI18n = await prisma.regionI18n.delete({
+     *   where: {
+     *     // ... filter to delete one RegionI18n
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RegionI18nDeleteArgs>(args: SelectSubset<T, RegionI18nDeleteArgs<ExtArgs>>): Prisma__RegionI18nClient<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one RegionI18n.
+     * @param {RegionI18nUpdateArgs} args - Arguments to update one RegionI18n.
+     * @example
+     * // Update one RegionI18n
+     * const regionI18n = await prisma.regionI18n.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RegionI18nUpdateArgs>(args: SelectSubset<T, RegionI18nUpdateArgs<ExtArgs>>): Prisma__RegionI18nClient<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more RegionI18ns.
+     * @param {RegionI18nDeleteManyArgs} args - Arguments to filter RegionI18ns to delete.
+     * @example
+     * // Delete a few RegionI18ns
+     * const { count } = await prisma.regionI18n.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RegionI18nDeleteManyArgs>(args?: SelectSubset<T, RegionI18nDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RegionI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionI18nUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many RegionI18ns
+     * const regionI18n = await prisma.regionI18n.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RegionI18nUpdateManyArgs>(args: SelectSubset<T, RegionI18nUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RegionI18ns and returns the data updated in the database.
+     * @param {RegionI18nUpdateManyAndReturnArgs} args - Arguments to update many RegionI18ns.
+     * @example
+     * // Update many RegionI18ns
+     * const regionI18n = await prisma.regionI18n.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more RegionI18ns and only return the `id`
+     * const regionI18nWithIdOnly = await prisma.regionI18n.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RegionI18nUpdateManyAndReturnArgs>(args: SelectSubset<T, RegionI18nUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one RegionI18n.
+     * @param {RegionI18nUpsertArgs} args - Arguments to update or create a RegionI18n.
+     * @example
+     * // Update or create a RegionI18n
+     * const regionI18n = await prisma.regionI18n.upsert({
+     *   create: {
+     *     // ... data to create a RegionI18n
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the RegionI18n we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RegionI18nUpsertArgs>(args: SelectSubset<T, RegionI18nUpsertArgs<ExtArgs>>): Prisma__RegionI18nClient<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of RegionI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionI18nCountArgs} args - Arguments to filter RegionI18ns to count.
+     * @example
+     * // Count the number of RegionI18ns
+     * const count = await prisma.regionI18n.count({
+     *   where: {
+     *     // ... the filter for the RegionI18ns we want to count
+     *   }
+     * })
+    **/
+    count<T extends RegionI18nCountArgs>(
+      args?: Subset<T, RegionI18nCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RegionI18nCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a RegionI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionI18nAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RegionI18nAggregateArgs>(args: Subset<T, RegionI18nAggregateArgs>): Prisma.PrismaPromise<GetRegionI18nAggregateType<T>>
+
+    /**
+     * Group by RegionI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionI18nGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RegionI18nGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RegionI18nGroupByArgs['orderBy'] }
+        : { orderBy?: RegionI18nGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RegionI18nGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRegionI18nGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the RegionI18n model
+   */
+  readonly fields: RegionI18nFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for RegionI18n.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RegionI18nClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    region<T extends RegionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RegionDefaultArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the RegionI18n model
+   */
+  interface RegionI18nFieldRefs {
+    readonly id: FieldRef<"RegionI18n", 'String'>
+    readonly regionId: FieldRef<"RegionI18n", 'String'>
+    readonly language: FieldRef<"RegionI18n", 'String'>
+    readonly name: FieldRef<"RegionI18n", 'String'>
+    readonly updatedAt: FieldRef<"RegionI18n", 'DateTime'>
+    readonly createdAt: FieldRef<"RegionI18n", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * RegionI18n findUnique
+   */
+  export type RegionI18nFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionI18n to fetch.
+     */
+    where: RegionI18nWhereUniqueInput
+  }
+
+  /**
+   * RegionI18n findUniqueOrThrow
+   */
+  export type RegionI18nFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionI18n to fetch.
+     */
+    where: RegionI18nWhereUniqueInput
+  }
+
+  /**
+   * RegionI18n findFirst
+   */
+  export type RegionI18nFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionI18n to fetch.
+     */
+    where?: RegionI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RegionI18ns to fetch.
+     */
+    orderBy?: RegionI18nOrderByWithRelationInput | RegionI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RegionI18ns.
+     */
+    cursor?: RegionI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RegionI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RegionI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RegionI18ns.
+     */
+    distinct?: RegionI18nScalarFieldEnum | RegionI18nScalarFieldEnum[]
+  }
+
+  /**
+   * RegionI18n findFirstOrThrow
+   */
+  export type RegionI18nFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionI18n to fetch.
+     */
+    where?: RegionI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RegionI18ns to fetch.
+     */
+    orderBy?: RegionI18nOrderByWithRelationInput | RegionI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RegionI18ns.
+     */
+    cursor?: RegionI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RegionI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RegionI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RegionI18ns.
+     */
+    distinct?: RegionI18nScalarFieldEnum | RegionI18nScalarFieldEnum[]
+  }
+
+  /**
+   * RegionI18n findMany
+   */
+  export type RegionI18nFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionI18ns to fetch.
+     */
+    where?: RegionI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RegionI18ns to fetch.
+     */
+    orderBy?: RegionI18nOrderByWithRelationInput | RegionI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing RegionI18ns.
+     */
+    cursor?: RegionI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RegionI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RegionI18ns.
+     */
+    skip?: number
+    distinct?: RegionI18nScalarFieldEnum | RegionI18nScalarFieldEnum[]
+  }
+
+  /**
+   * RegionI18n create
+   */
+  export type RegionI18nCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to create a RegionI18n.
+     */
+    data: XOR<RegionI18nCreateInput, RegionI18nUncheckedCreateInput>
+  }
+
+  /**
+   * RegionI18n createMany
+   */
+  export type RegionI18nCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many RegionI18ns.
+     */
+    data: RegionI18nCreateManyInput | RegionI18nCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RegionI18n createManyAndReturn
+   */
+  export type RegionI18nCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * The data used to create many RegionI18ns.
+     */
+    data: RegionI18nCreateManyInput | RegionI18nCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RegionI18n update
+   */
+  export type RegionI18nUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to update a RegionI18n.
+     */
+    data: XOR<RegionI18nUpdateInput, RegionI18nUncheckedUpdateInput>
+    /**
+     * Choose, which RegionI18n to update.
+     */
+    where: RegionI18nWhereUniqueInput
+  }
+
+  /**
+   * RegionI18n updateMany
+   */
+  export type RegionI18nUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update RegionI18ns.
+     */
+    data: XOR<RegionI18nUpdateManyMutationInput, RegionI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which RegionI18ns to update
+     */
+    where?: RegionI18nWhereInput
+    /**
+     * Limit how many RegionI18ns to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RegionI18n updateManyAndReturn
+   */
+  export type RegionI18nUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * The data used to update RegionI18ns.
+     */
+    data: XOR<RegionI18nUpdateManyMutationInput, RegionI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which RegionI18ns to update
+     */
+    where?: RegionI18nWhereInput
+    /**
+     * Limit how many RegionI18ns to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RegionI18n upsert
+   */
+  export type RegionI18nUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    /**
+     * The filter to search for the RegionI18n to update in case it exists.
+     */
+    where: RegionI18nWhereUniqueInput
+    /**
+     * In case the RegionI18n found by the `where` argument doesn't exist, create a new RegionI18n with this data.
+     */
+    create: XOR<RegionI18nCreateInput, RegionI18nUncheckedCreateInput>
+    /**
+     * In case the RegionI18n was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RegionI18nUpdateInput, RegionI18nUncheckedUpdateInput>
+  }
+
+  /**
+   * RegionI18n delete
+   */
+  export type RegionI18nDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+    /**
+     * Filter which RegionI18n to delete.
+     */
+    where: RegionI18nWhereUniqueInput
+  }
+
+  /**
+   * RegionI18n deleteMany
+   */
+  export type RegionI18nDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RegionI18ns to delete
+     */
+    where?: RegionI18nWhereInput
+    /**
+     * Limit how many RegionI18ns to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * RegionI18n without action
+   */
+  export type RegionI18nDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionI18n
+     */
+    select?: RegionI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionI18n
+     */
+    omit?: RegionI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionI18nInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Location
+   */
+
+  export type AggregateLocation = {
+    _count: LocationCountAggregateOutputType | null
+    _avg: LocationAvgAggregateOutputType | null
+    _sum: LocationSumAggregateOutputType | null
+    _min: LocationMinAggregateOutputType | null
+    _max: LocationMaxAggregateOutputType | null
+  }
+
+  export type LocationAvgAggregateOutputType = {
+    latitude: number | null
+    longitude: number | null
+  }
+
+  export type LocationSumAggregateOutputType = {
+    latitude: number | null
+    longitude: number | null
+  }
+
+  export type LocationMinAggregateOutputType = {
+    id: string | null
+    type: $Enums.LocationType | null
+    regionId: string | null
+    latitude: number | null
+    longitude: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type LocationMaxAggregateOutputType = {
+    id: string | null
+    type: $Enums.LocationType | null
+    regionId: string | null
+    latitude: number | null
+    longitude: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type LocationCountAggregateOutputType = {
+    id: number
+    type: number
+    regionId: number
+    latitude: number
+    longitude: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type LocationAvgAggregateInputType = {
+    latitude?: true
+    longitude?: true
+  }
+
+  export type LocationSumAggregateInputType = {
+    latitude?: true
+    longitude?: true
+  }
+
+  export type LocationMinAggregateInputType = {
+    id?: true
+    type?: true
+    regionId?: true
+    latitude?: true
+    longitude?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type LocationMaxAggregateInputType = {
+    id?: true
+    type?: true
+    regionId?: true
+    latitude?: true
+    longitude?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type LocationCountAggregateInputType = {
+    id?: true
+    type?: true
+    regionId?: true
+    latitude?: true
+    longitude?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type LocationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Location to aggregate.
+     */
+    where?: LocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Locations to fetch.
+     */
+    orderBy?: LocationOrderByWithRelationInput | LocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: LocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Locations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Locations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Locations
+    **/
+    _count?: true | LocationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: LocationAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: LocationSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: LocationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: LocationMaxAggregateInputType
+  }
+
+  export type GetLocationAggregateType<T extends LocationAggregateArgs> = {
+        [P in keyof T & keyof AggregateLocation]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLocation[P]>
+      : GetScalarType<T[P], AggregateLocation[P]>
+  }
+
+
+
+
+  export type LocationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LocationWhereInput
+    orderBy?: LocationOrderByWithAggregationInput | LocationOrderByWithAggregationInput[]
+    by: LocationScalarFieldEnum[] | LocationScalarFieldEnum
+    having?: LocationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: LocationCountAggregateInputType | true
+    _avg?: LocationAvgAggregateInputType
+    _sum?: LocationSumAggregateInputType
+    _min?: LocationMinAggregateInputType
+    _max?: LocationMaxAggregateInputType
+  }
+
+  export type LocationGroupByOutputType = {
+    id: string
+    type: $Enums.LocationType
+    regionId: string
+    latitude: number
+    longitude: number
+    updatedAt: Date
+    createdAt: Date
+    _count: LocationCountAggregateOutputType | null
+    _avg: LocationAvgAggregateOutputType | null
+    _sum: LocationSumAggregateOutputType | null
+    _min: LocationMinAggregateOutputType | null
+    _max: LocationMaxAggregateOutputType | null
+  }
+
+  type GetLocationGroupByPayload<T extends LocationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LocationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof LocationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], LocationGroupByOutputType[P]>
+            : GetScalarType<T[P], LocationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type LocationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    type?: boolean
+    regionId?: boolean
+    latitude?: boolean
+    longitude?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    i18n?: boolean | Location$i18nArgs<ExtArgs>
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+    routesFrom?: boolean | Location$routesFromArgs<ExtArgs>
+    routesTo?: boolean | Location$routesToArgs<ExtArgs>
+    buildings?: boolean | Location$buildingsArgs<ExtArgs>
+    townInfo?: boolean | Location$townInfoArgs<ExtArgs>
+    _count?: boolean | LocationCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["location"]>
+
+  export type LocationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    type?: boolean
+    regionId?: boolean
+    latitude?: boolean
+    longitude?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["location"]>
+
+  export type LocationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    type?: boolean
+    regionId?: boolean
+    latitude?: boolean
+    longitude?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["location"]>
+
+  export type LocationSelectScalar = {
+    id?: boolean
+    type?: boolean
+    regionId?: boolean
+    latitude?: boolean
+    longitude?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type LocationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "type" | "regionId" | "latitude" | "longitude" | "updatedAt" | "createdAt", ExtArgs["result"]["location"]>
+  export type LocationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | Location$i18nArgs<ExtArgs>
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+    routesFrom?: boolean | Location$routesFromArgs<ExtArgs>
+    routesTo?: boolean | Location$routesToArgs<ExtArgs>
+    buildings?: boolean | Location$buildingsArgs<ExtArgs>
+    townInfo?: boolean | Location$townInfoArgs<ExtArgs>
+    _count?: boolean | LocationCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type LocationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }
+  export type LocationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+  }
+
+  export type $LocationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Location"
+    objects: {
+      i18n: Prisma.$LocationI18nPayload<ExtArgs>[]
+      region: Prisma.$RegionPayload<ExtArgs>
+      routesFrom: Prisma.$RoutePayload<ExtArgs>[]
+      routesTo: Prisma.$RoutePayload<ExtArgs>[]
+      buildings: Prisma.$BuildingPayload<ExtArgs>[]
+      townInfo: Prisma.$TownInformationPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      type: $Enums.LocationType
+      regionId: string
+      latitude: number
+      longitude: number
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["location"]>
+    composites: {}
+  }
+
+  type LocationGetPayload<S extends boolean | null | undefined | LocationDefaultArgs> = $Result.GetResult<Prisma.$LocationPayload, S>
+
+  type LocationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<LocationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LocationCountAggregateInputType | true
+    }
+
+  export interface LocationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Location'], meta: { name: 'Location' } }
+    /**
+     * Find zero or one Location that matches the filter.
+     * @param {LocationFindUniqueArgs} args - Arguments to find a Location
+     * @example
+     * // Get one Location
+     * const location = await prisma.location.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends LocationFindUniqueArgs>(args: SelectSubset<T, LocationFindUniqueArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Location that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {LocationFindUniqueOrThrowArgs} args - Arguments to find a Location
+     * @example
+     * // Get one Location
+     * const location = await prisma.location.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends LocationFindUniqueOrThrowArgs>(args: SelectSubset<T, LocationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Location that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationFindFirstArgs} args - Arguments to find a Location
+     * @example
+     * // Get one Location
+     * const location = await prisma.location.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends LocationFindFirstArgs>(args?: SelectSubset<T, LocationFindFirstArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Location that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationFindFirstOrThrowArgs} args - Arguments to find a Location
+     * @example
+     * // Get one Location
+     * const location = await prisma.location.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends LocationFindFirstOrThrowArgs>(args?: SelectSubset<T, LocationFindFirstOrThrowArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Locations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Locations
+     * const locations = await prisma.location.findMany()
+     * 
+     * // Get first 10 Locations
+     * const locations = await prisma.location.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const locationWithIdOnly = await prisma.location.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends LocationFindManyArgs>(args?: SelectSubset<T, LocationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Location.
+     * @param {LocationCreateArgs} args - Arguments to create a Location.
+     * @example
+     * // Create one Location
+     * const Location = await prisma.location.create({
+     *   data: {
+     *     // ... data to create a Location
+     *   }
+     * })
+     * 
+     */
+    create<T extends LocationCreateArgs>(args: SelectSubset<T, LocationCreateArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Locations.
+     * @param {LocationCreateManyArgs} args - Arguments to create many Locations.
+     * @example
+     * // Create many Locations
+     * const location = await prisma.location.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends LocationCreateManyArgs>(args?: SelectSubset<T, LocationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Locations and returns the data saved in the database.
+     * @param {LocationCreateManyAndReturnArgs} args - Arguments to create many Locations.
+     * @example
+     * // Create many Locations
+     * const location = await prisma.location.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Locations and only return the `id`
+     * const locationWithIdOnly = await prisma.location.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends LocationCreateManyAndReturnArgs>(args?: SelectSubset<T, LocationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Location.
+     * @param {LocationDeleteArgs} args - Arguments to delete one Location.
+     * @example
+     * // Delete one Location
+     * const Location = await prisma.location.delete({
+     *   where: {
+     *     // ... filter to delete one Location
+     *   }
+     * })
+     * 
+     */
+    delete<T extends LocationDeleteArgs>(args: SelectSubset<T, LocationDeleteArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Location.
+     * @param {LocationUpdateArgs} args - Arguments to update one Location.
+     * @example
+     * // Update one Location
+     * const location = await prisma.location.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends LocationUpdateArgs>(args: SelectSubset<T, LocationUpdateArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Locations.
+     * @param {LocationDeleteManyArgs} args - Arguments to filter Locations to delete.
+     * @example
+     * // Delete a few Locations
+     * const { count } = await prisma.location.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends LocationDeleteManyArgs>(args?: SelectSubset<T, LocationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Locations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Locations
+     * const location = await prisma.location.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends LocationUpdateManyArgs>(args: SelectSubset<T, LocationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Locations and returns the data updated in the database.
+     * @param {LocationUpdateManyAndReturnArgs} args - Arguments to update many Locations.
+     * @example
+     * // Update many Locations
+     * const location = await prisma.location.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Locations and only return the `id`
+     * const locationWithIdOnly = await prisma.location.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends LocationUpdateManyAndReturnArgs>(args: SelectSubset<T, LocationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Location.
+     * @param {LocationUpsertArgs} args - Arguments to update or create a Location.
+     * @example
+     * // Update or create a Location
+     * const location = await prisma.location.upsert({
+     *   create: {
+     *     // ... data to create a Location
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Location we want to update
+     *   }
+     * })
+     */
+    upsert<T extends LocationUpsertArgs>(args: SelectSubset<T, LocationUpsertArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Locations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationCountArgs} args - Arguments to filter Locations to count.
+     * @example
+     * // Count the number of Locations
+     * const count = await prisma.location.count({
+     *   where: {
+     *     // ... the filter for the Locations we want to count
+     *   }
+     * })
+    **/
+    count<T extends LocationCountArgs>(
+      args?: Subset<T, LocationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LocationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Location.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends LocationAggregateArgs>(args: Subset<T, LocationAggregateArgs>): Prisma.PrismaPromise<GetLocationAggregateType<T>>
+
+    /**
+     * Group by Location.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends LocationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: LocationGroupByArgs['orderBy'] }
+        : { orderBy?: LocationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, LocationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLocationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Location model
+   */
+  readonly fields: LocationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Location.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__LocationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    i18n<T extends Location$i18nArgs<ExtArgs> = {}>(args?: Subset<T, Location$i18nArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    region<T extends RegionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RegionDefaultArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    routesFrom<T extends Location$routesFromArgs<ExtArgs> = {}>(args?: Subset<T, Location$routesFromArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    routesTo<T extends Location$routesToArgs<ExtArgs> = {}>(args?: Subset<T, Location$routesToArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    buildings<T extends Location$buildingsArgs<ExtArgs> = {}>(args?: Subset<T, Location$buildingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    townInfo<T extends Location$townInfoArgs<ExtArgs> = {}>(args?: Subset<T, Location$townInfoArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Location model
+   */
+  interface LocationFieldRefs {
+    readonly id: FieldRef<"Location", 'String'>
+    readonly type: FieldRef<"Location", 'LocationType'>
+    readonly regionId: FieldRef<"Location", 'String'>
+    readonly latitude: FieldRef<"Location", 'Float'>
+    readonly longitude: FieldRef<"Location", 'Float'>
+    readonly updatedAt: FieldRef<"Location", 'DateTime'>
+    readonly createdAt: FieldRef<"Location", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Location findUnique
+   */
+  export type LocationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Location to fetch.
+     */
+    where: LocationWhereUniqueInput
+  }
+
+  /**
+   * Location findUniqueOrThrow
+   */
+  export type LocationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Location to fetch.
+     */
+    where: LocationWhereUniqueInput
+  }
+
+  /**
+   * Location findFirst
+   */
+  export type LocationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Location to fetch.
+     */
+    where?: LocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Locations to fetch.
+     */
+    orderBy?: LocationOrderByWithRelationInput | LocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Locations.
+     */
+    cursor?: LocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Locations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Locations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Locations.
+     */
+    distinct?: LocationScalarFieldEnum | LocationScalarFieldEnum[]
+  }
+
+  /**
+   * Location findFirstOrThrow
+   */
+  export type LocationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Location to fetch.
+     */
+    where?: LocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Locations to fetch.
+     */
+    orderBy?: LocationOrderByWithRelationInput | LocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Locations.
+     */
+    cursor?: LocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Locations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Locations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Locations.
+     */
+    distinct?: LocationScalarFieldEnum | LocationScalarFieldEnum[]
+  }
+
+  /**
+   * Location findMany
+   */
+  export type LocationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter, which Locations to fetch.
+     */
+    where?: LocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Locations to fetch.
+     */
+    orderBy?: LocationOrderByWithRelationInput | LocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Locations.
+     */
+    cursor?: LocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Locations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Locations.
+     */
+    skip?: number
+    distinct?: LocationScalarFieldEnum | LocationScalarFieldEnum[]
+  }
+
+  /**
+   * Location create
+   */
+  export type LocationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Location.
+     */
+    data: XOR<LocationCreateInput, LocationUncheckedCreateInput>
+  }
+
+  /**
+   * Location createMany
+   */
+  export type LocationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Locations.
+     */
+    data: LocationCreateManyInput | LocationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Location createManyAndReturn
+   */
+  export type LocationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * The data used to create many Locations.
+     */
+    data: LocationCreateManyInput | LocationCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Location update
+   */
+  export type LocationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Location.
+     */
+    data: XOR<LocationUpdateInput, LocationUncheckedUpdateInput>
+    /**
+     * Choose, which Location to update.
+     */
+    where: LocationWhereUniqueInput
+  }
+
+  /**
+   * Location updateMany
+   */
+  export type LocationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Locations.
+     */
+    data: XOR<LocationUpdateManyMutationInput, LocationUncheckedUpdateManyInput>
+    /**
+     * Filter which Locations to update
+     */
+    where?: LocationWhereInput
+    /**
+     * Limit how many Locations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Location updateManyAndReturn
+   */
+  export type LocationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * The data used to update Locations.
+     */
+    data: XOR<LocationUpdateManyMutationInput, LocationUncheckedUpdateManyInput>
+    /**
+     * Filter which Locations to update
+     */
+    where?: LocationWhereInput
+    /**
+     * Limit how many Locations to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Location upsert
+   */
+  export type LocationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Location to update in case it exists.
+     */
+    where: LocationWhereUniqueInput
+    /**
+     * In case the Location found by the `where` argument doesn't exist, create a new Location with this data.
+     */
+    create: XOR<LocationCreateInput, LocationUncheckedCreateInput>
+    /**
+     * In case the Location was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<LocationUpdateInput, LocationUncheckedUpdateInput>
+  }
+
+  /**
+   * Location delete
+   */
+  export type LocationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+    /**
+     * Filter which Location to delete.
+     */
+    where: LocationWhereUniqueInput
+  }
+
+  /**
+   * Location deleteMany
+   */
+  export type LocationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Locations to delete
+     */
+    where?: LocationWhereInput
+    /**
+     * Limit how many Locations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Location.i18n
+   */
+  export type Location$i18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    where?: LocationI18nWhereInput
+    orderBy?: LocationI18nOrderByWithRelationInput | LocationI18nOrderByWithRelationInput[]
+    cursor?: LocationI18nWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: LocationI18nScalarFieldEnum | LocationI18nScalarFieldEnum[]
+  }
+
+  /**
+   * Location.routesFrom
+   */
+  export type Location$routesFromArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    where?: RouteWhereInput
+    orderBy?: RouteOrderByWithRelationInput | RouteOrderByWithRelationInput[]
+    cursor?: RouteWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RouteScalarFieldEnum | RouteScalarFieldEnum[]
+  }
+
+  /**
+   * Location.routesTo
+   */
+  export type Location$routesToArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    where?: RouteWhereInput
+    orderBy?: RouteOrderByWithRelationInput | RouteOrderByWithRelationInput[]
+    cursor?: RouteWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RouteScalarFieldEnum | RouteScalarFieldEnum[]
+  }
+
+  /**
+   * Location.buildings
+   */
+  export type Location$buildingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    where?: BuildingWhereInput
+    orderBy?: BuildingOrderByWithRelationInput | BuildingOrderByWithRelationInput[]
+    cursor?: BuildingWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BuildingScalarFieldEnum | BuildingScalarFieldEnum[]
+  }
+
+  /**
+   * Location.townInfo
+   */
+  export type Location$townInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    where?: TownInformationWhereInput
+  }
+
+  /**
+   * Location without action
+   */
+  export type LocationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Location
+     */
+    select?: LocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Location
+     */
+    omit?: LocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model LocationI18n
+   */
+
+  export type AggregateLocationI18n = {
+    _count: LocationI18nCountAggregateOutputType | null
+    _min: LocationI18nMinAggregateOutputType | null
+    _max: LocationI18nMaxAggregateOutputType | null
+  }
+
+  export type LocationI18nMinAggregateOutputType = {
+    id: string | null
+    locationId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type LocationI18nMaxAggregateOutputType = {
+    id: string | null
+    locationId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type LocationI18nCountAggregateOutputType = {
+    id: number
+    locationId: number
+    language: number
+    name: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type LocationI18nMinAggregateInputType = {
+    id?: true
+    locationId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type LocationI18nMaxAggregateInputType = {
+    id?: true
+    locationId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type LocationI18nCountAggregateInputType = {
+    id?: true
+    locationId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type LocationI18nAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LocationI18n to aggregate.
+     */
+    where?: LocationI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LocationI18ns to fetch.
+     */
+    orderBy?: LocationI18nOrderByWithRelationInput | LocationI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: LocationI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LocationI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LocationI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned LocationI18ns
+    **/
+    _count?: true | LocationI18nCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: LocationI18nMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: LocationI18nMaxAggregateInputType
+  }
+
+  export type GetLocationI18nAggregateType<T extends LocationI18nAggregateArgs> = {
+        [P in keyof T & keyof AggregateLocationI18n]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLocationI18n[P]>
+      : GetScalarType<T[P], AggregateLocationI18n[P]>
+  }
+
+
+
+
+  export type LocationI18nGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LocationI18nWhereInput
+    orderBy?: LocationI18nOrderByWithAggregationInput | LocationI18nOrderByWithAggregationInput[]
+    by: LocationI18nScalarFieldEnum[] | LocationI18nScalarFieldEnum
+    having?: LocationI18nScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: LocationI18nCountAggregateInputType | true
+    _min?: LocationI18nMinAggregateInputType
+    _max?: LocationI18nMaxAggregateInputType
+  }
+
+  export type LocationI18nGroupByOutputType = {
+    id: string
+    locationId: string
+    language: string
+    name: string
+    updatedAt: Date
+    createdAt: Date
+    _count: LocationI18nCountAggregateOutputType | null
+    _min: LocationI18nMinAggregateOutputType | null
+    _max: LocationI18nMaxAggregateOutputType | null
+  }
+
+  type GetLocationI18nGroupByPayload<T extends LocationI18nGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LocationI18nGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof LocationI18nGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], LocationI18nGroupByOutputType[P]>
+            : GetScalarType<T[P], LocationI18nGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type LocationI18nSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    locationId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["locationI18n"]>
+
+  export type LocationI18nSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    locationId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["locationI18n"]>
+
+  export type LocationI18nSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    locationId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["locationI18n"]>
+
+  export type LocationI18nSelectScalar = {
+    id?: boolean
+    locationId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type LocationI18nOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "locationId" | "language" | "name" | "updatedAt" | "createdAt", ExtArgs["result"]["locationI18n"]>
+  export type LocationI18nInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+  export type LocationI18nIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+  export type LocationI18nIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+
+  export type $LocationI18nPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "LocationI18n"
+    objects: {
+      location: Prisma.$LocationPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      locationId: string
+      language: string
+      name: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["locationI18n"]>
+    composites: {}
+  }
+
+  type LocationI18nGetPayload<S extends boolean | null | undefined | LocationI18nDefaultArgs> = $Result.GetResult<Prisma.$LocationI18nPayload, S>
+
+  type LocationI18nCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<LocationI18nFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LocationI18nCountAggregateInputType | true
+    }
+
+  export interface LocationI18nDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['LocationI18n'], meta: { name: 'LocationI18n' } }
+    /**
+     * Find zero or one LocationI18n that matches the filter.
+     * @param {LocationI18nFindUniqueArgs} args - Arguments to find a LocationI18n
+     * @example
+     * // Get one LocationI18n
+     * const locationI18n = await prisma.locationI18n.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends LocationI18nFindUniqueArgs>(args: SelectSubset<T, LocationI18nFindUniqueArgs<ExtArgs>>): Prisma__LocationI18nClient<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one LocationI18n that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {LocationI18nFindUniqueOrThrowArgs} args - Arguments to find a LocationI18n
+     * @example
+     * // Get one LocationI18n
+     * const locationI18n = await prisma.locationI18n.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends LocationI18nFindUniqueOrThrowArgs>(args: SelectSubset<T, LocationI18nFindUniqueOrThrowArgs<ExtArgs>>): Prisma__LocationI18nClient<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LocationI18n that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationI18nFindFirstArgs} args - Arguments to find a LocationI18n
+     * @example
+     * // Get one LocationI18n
+     * const locationI18n = await prisma.locationI18n.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends LocationI18nFindFirstArgs>(args?: SelectSubset<T, LocationI18nFindFirstArgs<ExtArgs>>): Prisma__LocationI18nClient<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LocationI18n that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationI18nFindFirstOrThrowArgs} args - Arguments to find a LocationI18n
+     * @example
+     * // Get one LocationI18n
+     * const locationI18n = await prisma.locationI18n.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends LocationI18nFindFirstOrThrowArgs>(args?: SelectSubset<T, LocationI18nFindFirstOrThrowArgs<ExtArgs>>): Prisma__LocationI18nClient<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more LocationI18ns that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationI18nFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all LocationI18ns
+     * const locationI18ns = await prisma.locationI18n.findMany()
+     * 
+     * // Get first 10 LocationI18ns
+     * const locationI18ns = await prisma.locationI18n.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const locationI18nWithIdOnly = await prisma.locationI18n.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends LocationI18nFindManyArgs>(args?: SelectSubset<T, LocationI18nFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a LocationI18n.
+     * @param {LocationI18nCreateArgs} args - Arguments to create a LocationI18n.
+     * @example
+     * // Create one LocationI18n
+     * const LocationI18n = await prisma.locationI18n.create({
+     *   data: {
+     *     // ... data to create a LocationI18n
+     *   }
+     * })
+     * 
+     */
+    create<T extends LocationI18nCreateArgs>(args: SelectSubset<T, LocationI18nCreateArgs<ExtArgs>>): Prisma__LocationI18nClient<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many LocationI18ns.
+     * @param {LocationI18nCreateManyArgs} args - Arguments to create many LocationI18ns.
+     * @example
+     * // Create many LocationI18ns
+     * const locationI18n = await prisma.locationI18n.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends LocationI18nCreateManyArgs>(args?: SelectSubset<T, LocationI18nCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many LocationI18ns and returns the data saved in the database.
+     * @param {LocationI18nCreateManyAndReturnArgs} args - Arguments to create many LocationI18ns.
+     * @example
+     * // Create many LocationI18ns
+     * const locationI18n = await prisma.locationI18n.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many LocationI18ns and only return the `id`
+     * const locationI18nWithIdOnly = await prisma.locationI18n.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends LocationI18nCreateManyAndReturnArgs>(args?: SelectSubset<T, LocationI18nCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a LocationI18n.
+     * @param {LocationI18nDeleteArgs} args - Arguments to delete one LocationI18n.
+     * @example
+     * // Delete one LocationI18n
+     * const LocationI18n = await prisma.locationI18n.delete({
+     *   where: {
+     *     // ... filter to delete one LocationI18n
+     *   }
+     * })
+     * 
+     */
+    delete<T extends LocationI18nDeleteArgs>(args: SelectSubset<T, LocationI18nDeleteArgs<ExtArgs>>): Prisma__LocationI18nClient<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one LocationI18n.
+     * @param {LocationI18nUpdateArgs} args - Arguments to update one LocationI18n.
+     * @example
+     * // Update one LocationI18n
+     * const locationI18n = await prisma.locationI18n.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends LocationI18nUpdateArgs>(args: SelectSubset<T, LocationI18nUpdateArgs<ExtArgs>>): Prisma__LocationI18nClient<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more LocationI18ns.
+     * @param {LocationI18nDeleteManyArgs} args - Arguments to filter LocationI18ns to delete.
+     * @example
+     * // Delete a few LocationI18ns
+     * const { count } = await prisma.locationI18n.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends LocationI18nDeleteManyArgs>(args?: SelectSubset<T, LocationI18nDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LocationI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationI18nUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many LocationI18ns
+     * const locationI18n = await prisma.locationI18n.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends LocationI18nUpdateManyArgs>(args: SelectSubset<T, LocationI18nUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LocationI18ns and returns the data updated in the database.
+     * @param {LocationI18nUpdateManyAndReturnArgs} args - Arguments to update many LocationI18ns.
+     * @example
+     * // Update many LocationI18ns
+     * const locationI18n = await prisma.locationI18n.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more LocationI18ns and only return the `id`
+     * const locationI18nWithIdOnly = await prisma.locationI18n.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends LocationI18nUpdateManyAndReturnArgs>(args: SelectSubset<T, LocationI18nUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one LocationI18n.
+     * @param {LocationI18nUpsertArgs} args - Arguments to update or create a LocationI18n.
+     * @example
+     * // Update or create a LocationI18n
+     * const locationI18n = await prisma.locationI18n.upsert({
+     *   create: {
+     *     // ... data to create a LocationI18n
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the LocationI18n we want to update
+     *   }
+     * })
+     */
+    upsert<T extends LocationI18nUpsertArgs>(args: SelectSubset<T, LocationI18nUpsertArgs<ExtArgs>>): Prisma__LocationI18nClient<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of LocationI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationI18nCountArgs} args - Arguments to filter LocationI18ns to count.
+     * @example
+     * // Count the number of LocationI18ns
+     * const count = await prisma.locationI18n.count({
+     *   where: {
+     *     // ... the filter for the LocationI18ns we want to count
+     *   }
+     * })
+    **/
+    count<T extends LocationI18nCountArgs>(
+      args?: Subset<T, LocationI18nCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LocationI18nCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a LocationI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationI18nAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends LocationI18nAggregateArgs>(args: Subset<T, LocationI18nAggregateArgs>): Prisma.PrismaPromise<GetLocationI18nAggregateType<T>>
+
+    /**
+     * Group by LocationI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LocationI18nGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends LocationI18nGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: LocationI18nGroupByArgs['orderBy'] }
+        : { orderBy?: LocationI18nGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, LocationI18nGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLocationI18nGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the LocationI18n model
+   */
+  readonly fields: LocationI18nFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for LocationI18n.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__LocationI18nClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    location<T extends LocationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, LocationDefaultArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the LocationI18n model
+   */
+  interface LocationI18nFieldRefs {
+    readonly id: FieldRef<"LocationI18n", 'String'>
+    readonly locationId: FieldRef<"LocationI18n", 'String'>
+    readonly language: FieldRef<"LocationI18n", 'String'>
+    readonly name: FieldRef<"LocationI18n", 'String'>
+    readonly updatedAt: FieldRef<"LocationI18n", 'DateTime'>
+    readonly createdAt: FieldRef<"LocationI18n", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * LocationI18n findUnique
+   */
+  export type LocationI18nFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which LocationI18n to fetch.
+     */
+    where: LocationI18nWhereUniqueInput
+  }
+
+  /**
+   * LocationI18n findUniqueOrThrow
+   */
+  export type LocationI18nFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which LocationI18n to fetch.
+     */
+    where: LocationI18nWhereUniqueInput
+  }
+
+  /**
+   * LocationI18n findFirst
+   */
+  export type LocationI18nFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which LocationI18n to fetch.
+     */
+    where?: LocationI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LocationI18ns to fetch.
+     */
+    orderBy?: LocationI18nOrderByWithRelationInput | LocationI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LocationI18ns.
+     */
+    cursor?: LocationI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LocationI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LocationI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LocationI18ns.
+     */
+    distinct?: LocationI18nScalarFieldEnum | LocationI18nScalarFieldEnum[]
+  }
+
+  /**
+   * LocationI18n findFirstOrThrow
+   */
+  export type LocationI18nFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which LocationI18n to fetch.
+     */
+    where?: LocationI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LocationI18ns to fetch.
+     */
+    orderBy?: LocationI18nOrderByWithRelationInput | LocationI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LocationI18ns.
+     */
+    cursor?: LocationI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LocationI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LocationI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LocationI18ns.
+     */
+    distinct?: LocationI18nScalarFieldEnum | LocationI18nScalarFieldEnum[]
+  }
+
+  /**
+   * LocationI18n findMany
+   */
+  export type LocationI18nFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which LocationI18ns to fetch.
+     */
+    where?: LocationI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LocationI18ns to fetch.
+     */
+    orderBy?: LocationI18nOrderByWithRelationInput | LocationI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing LocationI18ns.
+     */
+    cursor?: LocationI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LocationI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LocationI18ns.
+     */
+    skip?: number
+    distinct?: LocationI18nScalarFieldEnum | LocationI18nScalarFieldEnum[]
+  }
+
+  /**
+   * LocationI18n create
+   */
+  export type LocationI18nCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to create a LocationI18n.
+     */
+    data: XOR<LocationI18nCreateInput, LocationI18nUncheckedCreateInput>
+  }
+
+  /**
+   * LocationI18n createMany
+   */
+  export type LocationI18nCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many LocationI18ns.
+     */
+    data: LocationI18nCreateManyInput | LocationI18nCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * LocationI18n createManyAndReturn
+   */
+  export type LocationI18nCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * The data used to create many LocationI18ns.
+     */
+    data: LocationI18nCreateManyInput | LocationI18nCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * LocationI18n update
+   */
+  export type LocationI18nUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to update a LocationI18n.
+     */
+    data: XOR<LocationI18nUpdateInput, LocationI18nUncheckedUpdateInput>
+    /**
+     * Choose, which LocationI18n to update.
+     */
+    where: LocationI18nWhereUniqueInput
+  }
+
+  /**
+   * LocationI18n updateMany
+   */
+  export type LocationI18nUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update LocationI18ns.
+     */
+    data: XOR<LocationI18nUpdateManyMutationInput, LocationI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which LocationI18ns to update
+     */
+    where?: LocationI18nWhereInput
+    /**
+     * Limit how many LocationI18ns to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * LocationI18n updateManyAndReturn
+   */
+  export type LocationI18nUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * The data used to update LocationI18ns.
+     */
+    data: XOR<LocationI18nUpdateManyMutationInput, LocationI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which LocationI18ns to update
+     */
+    where?: LocationI18nWhereInput
+    /**
+     * Limit how many LocationI18ns to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * LocationI18n upsert
+   */
+  export type LocationI18nUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    /**
+     * The filter to search for the LocationI18n to update in case it exists.
+     */
+    where: LocationI18nWhereUniqueInput
+    /**
+     * In case the LocationI18n found by the `where` argument doesn't exist, create a new LocationI18n with this data.
+     */
+    create: XOR<LocationI18nCreateInput, LocationI18nUncheckedCreateInput>
+    /**
+     * In case the LocationI18n was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<LocationI18nUpdateInput, LocationI18nUncheckedUpdateInput>
+  }
+
+  /**
+   * LocationI18n delete
+   */
+  export type LocationI18nDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+    /**
+     * Filter which LocationI18n to delete.
+     */
+    where: LocationI18nWhereUniqueInput
+  }
+
+  /**
+   * LocationI18n deleteMany
+   */
+  export type LocationI18nDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LocationI18ns to delete
+     */
+    where?: LocationI18nWhereInput
+    /**
+     * Limit how many LocationI18ns to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * LocationI18n without action
+   */
+  export type LocationI18nDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LocationI18n
+     */
+    select?: LocationI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LocationI18n
+     */
+    omit?: LocationI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LocationI18nInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TownInformation
+   */
+
+  export type AggregateTownInformation = {
+    _count: TownInformationCountAggregateOutputType | null
+    _avg: TownInformationAvgAggregateOutputType | null
+    _sum: TownInformationSumAggregateOutputType | null
+    _min: TownInformationMinAggregateOutputType | null
+    _max: TownInformationMaxAggregateOutputType | null
+  }
+
+  export type TownInformationAvgAggregateOutputType = {
+    population: number | null
+  }
+
+  export type TownInformationSumAggregateOutputType = {
+    population: number | null
+  }
+
+  export type TownInformationMinAggregateOutputType = {
+    id: string | null
+    locationId: string | null
+    population: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type TownInformationMaxAggregateOutputType = {
+    id: string | null
+    locationId: string | null
+    population: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type TownInformationCountAggregateOutputType = {
+    id: number
+    locationId: number
+    population: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type TownInformationAvgAggregateInputType = {
+    population?: true
+  }
+
+  export type TownInformationSumAggregateInputType = {
+    population?: true
+  }
+
+  export type TownInformationMinAggregateInputType = {
+    id?: true
+    locationId?: true
+    population?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type TownInformationMaxAggregateInputType = {
+    id?: true
+    locationId?: true
+    population?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type TownInformationCountAggregateInputType = {
+    id?: true
+    locationId?: true
+    population?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type TownInformationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TownInformation to aggregate.
+     */
+    where?: TownInformationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TownInformations to fetch.
+     */
+    orderBy?: TownInformationOrderByWithRelationInput | TownInformationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TownInformationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TownInformations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TownInformations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TownInformations
+    **/
+    _count?: true | TownInformationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TownInformationAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TownInformationSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TownInformationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TownInformationMaxAggregateInputType
+  }
+
+  export type GetTownInformationAggregateType<T extends TownInformationAggregateArgs> = {
+        [P in keyof T & keyof AggregateTownInformation]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTownInformation[P]>
+      : GetScalarType<T[P], AggregateTownInformation[P]>
+  }
+
+
+
+
+  export type TownInformationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TownInformationWhereInput
+    orderBy?: TownInformationOrderByWithAggregationInput | TownInformationOrderByWithAggregationInput[]
+    by: TownInformationScalarFieldEnum[] | TownInformationScalarFieldEnum
+    having?: TownInformationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TownInformationCountAggregateInputType | true
+    _avg?: TownInformationAvgAggregateInputType
+    _sum?: TownInformationSumAggregateInputType
+    _min?: TownInformationMinAggregateInputType
+    _max?: TownInformationMaxAggregateInputType
+  }
+
+  export type TownInformationGroupByOutputType = {
+    id: string
+    locationId: string
+    population: number
+    updatedAt: Date
+    createdAt: Date
+    _count: TownInformationCountAggregateOutputType | null
+    _avg: TownInformationAvgAggregateOutputType | null
+    _sum: TownInformationSumAggregateOutputType | null
+    _min: TownInformationMinAggregateOutputType | null
+    _max: TownInformationMaxAggregateOutputType | null
+  }
+
+  type GetTownInformationGroupByPayload<T extends TownInformationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TownInformationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TownInformationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TownInformationGroupByOutputType[P]>
+            : GetScalarType<T[P], TownInformationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TownInformationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    locationId?: boolean
+    population?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["townInformation"]>
+
+  export type TownInformationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    locationId?: boolean
+    population?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["townInformation"]>
+
+  export type TownInformationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    locationId?: boolean
+    population?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["townInformation"]>
+
+  export type TownInformationSelectScalar = {
+    id?: boolean
+    locationId?: boolean
+    population?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type TownInformationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "locationId" | "population" | "updatedAt" | "createdAt", ExtArgs["result"]["townInformation"]>
+  export type TownInformationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+  export type TownInformationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+  export type TownInformationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+
+  export type $TownInformationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TownInformation"
+    objects: {
+      location: Prisma.$LocationPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      locationId: string
+      population: number
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["townInformation"]>
+    composites: {}
+  }
+
+  type TownInformationGetPayload<S extends boolean | null | undefined | TownInformationDefaultArgs> = $Result.GetResult<Prisma.$TownInformationPayload, S>
+
+  type TownInformationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TownInformationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TownInformationCountAggregateInputType | true
+    }
+
+  export interface TownInformationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TownInformation'], meta: { name: 'TownInformation' } }
+    /**
+     * Find zero or one TownInformation that matches the filter.
+     * @param {TownInformationFindUniqueArgs} args - Arguments to find a TownInformation
+     * @example
+     * // Get one TownInformation
+     * const townInformation = await prisma.townInformation.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TownInformationFindUniqueArgs>(args: SelectSubset<T, TownInformationFindUniqueArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one TownInformation that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TownInformationFindUniqueOrThrowArgs} args - Arguments to find a TownInformation
+     * @example
+     * // Get one TownInformation
+     * const townInformation = await prisma.townInformation.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TownInformationFindUniqueOrThrowArgs>(args: SelectSubset<T, TownInformationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TownInformation that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TownInformationFindFirstArgs} args - Arguments to find a TownInformation
+     * @example
+     * // Get one TownInformation
+     * const townInformation = await prisma.townInformation.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TownInformationFindFirstArgs>(args?: SelectSubset<T, TownInformationFindFirstArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TownInformation that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TownInformationFindFirstOrThrowArgs} args - Arguments to find a TownInformation
+     * @example
+     * // Get one TownInformation
+     * const townInformation = await prisma.townInformation.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TownInformationFindFirstOrThrowArgs>(args?: SelectSubset<T, TownInformationFindFirstOrThrowArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more TownInformations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TownInformationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TownInformations
+     * const townInformations = await prisma.townInformation.findMany()
+     * 
+     * // Get first 10 TownInformations
+     * const townInformations = await prisma.townInformation.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const townInformationWithIdOnly = await prisma.townInformation.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends TownInformationFindManyArgs>(args?: SelectSubset<T, TownInformationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a TownInformation.
+     * @param {TownInformationCreateArgs} args - Arguments to create a TownInformation.
+     * @example
+     * // Create one TownInformation
+     * const TownInformation = await prisma.townInformation.create({
+     *   data: {
+     *     // ... data to create a TownInformation
+     *   }
+     * })
+     * 
+     */
+    create<T extends TownInformationCreateArgs>(args: SelectSubset<T, TownInformationCreateArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many TownInformations.
+     * @param {TownInformationCreateManyArgs} args - Arguments to create many TownInformations.
+     * @example
+     * // Create many TownInformations
+     * const townInformation = await prisma.townInformation.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TownInformationCreateManyArgs>(args?: SelectSubset<T, TownInformationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many TownInformations and returns the data saved in the database.
+     * @param {TownInformationCreateManyAndReturnArgs} args - Arguments to create many TownInformations.
+     * @example
+     * // Create many TownInformations
+     * const townInformation = await prisma.townInformation.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many TownInformations and only return the `id`
+     * const townInformationWithIdOnly = await prisma.townInformation.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TownInformationCreateManyAndReturnArgs>(args?: SelectSubset<T, TownInformationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a TownInformation.
+     * @param {TownInformationDeleteArgs} args - Arguments to delete one TownInformation.
+     * @example
+     * // Delete one TownInformation
+     * const TownInformation = await prisma.townInformation.delete({
+     *   where: {
+     *     // ... filter to delete one TownInformation
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TownInformationDeleteArgs>(args: SelectSubset<T, TownInformationDeleteArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one TownInformation.
+     * @param {TownInformationUpdateArgs} args - Arguments to update one TownInformation.
+     * @example
+     * // Update one TownInformation
+     * const townInformation = await prisma.townInformation.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TownInformationUpdateArgs>(args: SelectSubset<T, TownInformationUpdateArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more TownInformations.
+     * @param {TownInformationDeleteManyArgs} args - Arguments to filter TownInformations to delete.
+     * @example
+     * // Delete a few TownInformations
+     * const { count } = await prisma.townInformation.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TownInformationDeleteManyArgs>(args?: SelectSubset<T, TownInformationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TownInformations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TownInformationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TownInformations
+     * const townInformation = await prisma.townInformation.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TownInformationUpdateManyArgs>(args: SelectSubset<T, TownInformationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TownInformations and returns the data updated in the database.
+     * @param {TownInformationUpdateManyAndReturnArgs} args - Arguments to update many TownInformations.
+     * @example
+     * // Update many TownInformations
+     * const townInformation = await prisma.townInformation.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more TownInformations and only return the `id`
+     * const townInformationWithIdOnly = await prisma.townInformation.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TownInformationUpdateManyAndReturnArgs>(args: SelectSubset<T, TownInformationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one TownInformation.
+     * @param {TownInformationUpsertArgs} args - Arguments to update or create a TownInformation.
+     * @example
+     * // Update or create a TownInformation
+     * const townInformation = await prisma.townInformation.upsert({
+     *   create: {
+     *     // ... data to create a TownInformation
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TownInformation we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TownInformationUpsertArgs>(args: SelectSubset<T, TownInformationUpsertArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of TownInformations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TownInformationCountArgs} args - Arguments to filter TownInformations to count.
+     * @example
+     * // Count the number of TownInformations
+     * const count = await prisma.townInformation.count({
+     *   where: {
+     *     // ... the filter for the TownInformations we want to count
+     *   }
+     * })
+    **/
+    count<T extends TownInformationCountArgs>(
+      args?: Subset<T, TownInformationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TownInformationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TownInformation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TownInformationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TownInformationAggregateArgs>(args: Subset<T, TownInformationAggregateArgs>): Prisma.PrismaPromise<GetTownInformationAggregateType<T>>
+
+    /**
+     * Group by TownInformation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TownInformationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TownInformationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TownInformationGroupByArgs['orderBy'] }
+        : { orderBy?: TownInformationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TownInformationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTownInformationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TownInformation model
+   */
+  readonly fields: TownInformationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TownInformation.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TownInformationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    location<T extends LocationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, LocationDefaultArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TownInformation model
+   */
+  interface TownInformationFieldRefs {
+    readonly id: FieldRef<"TownInformation", 'String'>
+    readonly locationId: FieldRef<"TownInformation", 'String'>
+    readonly population: FieldRef<"TownInformation", 'Int'>
+    readonly updatedAt: FieldRef<"TownInformation", 'DateTime'>
+    readonly createdAt: FieldRef<"TownInformation", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TownInformation findUnique
+   */
+  export type TownInformationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which TownInformation to fetch.
+     */
+    where: TownInformationWhereUniqueInput
+  }
+
+  /**
+   * TownInformation findUniqueOrThrow
+   */
+  export type TownInformationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which TownInformation to fetch.
+     */
+    where: TownInformationWhereUniqueInput
+  }
+
+  /**
+   * TownInformation findFirst
+   */
+  export type TownInformationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which TownInformation to fetch.
+     */
+    where?: TownInformationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TownInformations to fetch.
+     */
+    orderBy?: TownInformationOrderByWithRelationInput | TownInformationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TownInformations.
+     */
+    cursor?: TownInformationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TownInformations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TownInformations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TownInformations.
+     */
+    distinct?: TownInformationScalarFieldEnum | TownInformationScalarFieldEnum[]
+  }
+
+  /**
+   * TownInformation findFirstOrThrow
+   */
+  export type TownInformationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which TownInformation to fetch.
+     */
+    where?: TownInformationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TownInformations to fetch.
+     */
+    orderBy?: TownInformationOrderByWithRelationInput | TownInformationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TownInformations.
+     */
+    cursor?: TownInformationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TownInformations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TownInformations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TownInformations.
+     */
+    distinct?: TownInformationScalarFieldEnum | TownInformationScalarFieldEnum[]
+  }
+
+  /**
+   * TownInformation findMany
+   */
+  export type TownInformationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which TownInformations to fetch.
+     */
+    where?: TownInformationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TownInformations to fetch.
+     */
+    orderBy?: TownInformationOrderByWithRelationInput | TownInformationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TownInformations.
+     */
+    cursor?: TownInformationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TownInformations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TownInformations.
+     */
+    skip?: number
+    distinct?: TownInformationScalarFieldEnum | TownInformationScalarFieldEnum[]
+  }
+
+  /**
+   * TownInformation create
+   */
+  export type TownInformationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    /**
+     * The data needed to create a TownInformation.
+     */
+    data: XOR<TownInformationCreateInput, TownInformationUncheckedCreateInput>
+  }
+
+  /**
+   * TownInformation createMany
+   */
+  export type TownInformationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TownInformations.
+     */
+    data: TownInformationCreateManyInput | TownInformationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * TownInformation createManyAndReturn
+   */
+  export type TownInformationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * The data used to create many TownInformations.
+     */
+    data: TownInformationCreateManyInput | TownInformationCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TownInformation update
+   */
+  export type TownInformationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    /**
+     * The data needed to update a TownInformation.
+     */
+    data: XOR<TownInformationUpdateInput, TownInformationUncheckedUpdateInput>
+    /**
+     * Choose, which TownInformation to update.
+     */
+    where: TownInformationWhereUniqueInput
+  }
+
+  /**
+   * TownInformation updateMany
+   */
+  export type TownInformationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TownInformations.
+     */
+    data: XOR<TownInformationUpdateManyMutationInput, TownInformationUncheckedUpdateManyInput>
+    /**
+     * Filter which TownInformations to update
+     */
+    where?: TownInformationWhereInput
+    /**
+     * Limit how many TownInformations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * TownInformation updateManyAndReturn
+   */
+  export type TownInformationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * The data used to update TownInformations.
+     */
+    data: XOR<TownInformationUpdateManyMutationInput, TownInformationUncheckedUpdateManyInput>
+    /**
+     * Filter which TownInformations to update
+     */
+    where?: TownInformationWhereInput
+    /**
+     * Limit how many TownInformations to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TownInformation upsert
+   */
+  export type TownInformationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    /**
+     * The filter to search for the TownInformation to update in case it exists.
+     */
+    where: TownInformationWhereUniqueInput
+    /**
+     * In case the TownInformation found by the `where` argument doesn't exist, create a new TownInformation with this data.
+     */
+    create: XOR<TownInformationCreateInput, TownInformationUncheckedCreateInput>
+    /**
+     * In case the TownInformation was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TownInformationUpdateInput, TownInformationUncheckedUpdateInput>
+  }
+
+  /**
+   * TownInformation delete
+   */
+  export type TownInformationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+    /**
+     * Filter which TownInformation to delete.
+     */
+    where: TownInformationWhereUniqueInput
+  }
+
+  /**
+   * TownInformation deleteMany
+   */
+  export type TownInformationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TownInformations to delete
+     */
+    where?: TownInformationWhereInput
+    /**
+     * Limit how many TownInformations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * TownInformation without action
+   */
+  export type TownInformationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TownInformation
+     */
+    select?: TownInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TownInformation
+     */
+    omit?: TownInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TownInformationInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Route
+   */
+
+  export type AggregateRoute = {
+    _count: RouteCountAggregateOutputType | null
+    _avg: RouteAvgAggregateOutputType | null
+    _sum: RouteSumAggregateOutputType | null
+    _min: RouteMinAggregateOutputType | null
+    _max: RouteMaxAggregateOutputType | null
+  }
+
+  export type RouteAvgAggregateOutputType = {
+    distance: number | null
+  }
+
+  export type RouteSumAggregateOutputType = {
+    distance: number | null
+  }
+
+  export type RouteMinAggregateOutputType = {
+    id: string | null
+    type: $Enums.RouteType | null
+    fromId: string | null
+    toId: string | null
+    distance: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RouteMaxAggregateOutputType = {
+    id: string | null
+    type: $Enums.RouteType | null
+    fromId: string | null
+    toId: string | null
+    distance: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RouteCountAggregateOutputType = {
+    id: number
+    type: number
+    fromId: number
+    toId: number
+    distance: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type RouteAvgAggregateInputType = {
+    distance?: true
+  }
+
+  export type RouteSumAggregateInputType = {
+    distance?: true
+  }
+
+  export type RouteMinAggregateInputType = {
+    id?: true
+    type?: true
+    fromId?: true
+    toId?: true
+    distance?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RouteMaxAggregateInputType = {
+    id?: true
+    type?: true
+    fromId?: true
+    toId?: true
+    distance?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RouteCountAggregateInputType = {
+    id?: true
+    type?: true
+    fromId?: true
+    toId?: true
+    distance?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type RouteAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Route to aggregate.
+     */
+    where?: RouteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Routes to fetch.
+     */
+    orderBy?: RouteOrderByWithRelationInput | RouteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RouteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Routes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Routes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Routes
+    **/
+    _count?: true | RouteCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: RouteAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: RouteSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RouteMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RouteMaxAggregateInputType
+  }
+
+  export type GetRouteAggregateType<T extends RouteAggregateArgs> = {
+        [P in keyof T & keyof AggregateRoute]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRoute[P]>
+      : GetScalarType<T[P], AggregateRoute[P]>
+  }
+
+
+
+
+  export type RouteGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RouteWhereInput
+    orderBy?: RouteOrderByWithAggregationInput | RouteOrderByWithAggregationInput[]
+    by: RouteScalarFieldEnum[] | RouteScalarFieldEnum
+    having?: RouteScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RouteCountAggregateInputType | true
+    _avg?: RouteAvgAggregateInputType
+    _sum?: RouteSumAggregateInputType
+    _min?: RouteMinAggregateInputType
+    _max?: RouteMaxAggregateInputType
+  }
+
+  export type RouteGroupByOutputType = {
+    id: string
+    type: $Enums.RouteType
+    fromId: string
+    toId: string
+    distance: number
+    updatedAt: Date
+    createdAt: Date
+    _count: RouteCountAggregateOutputType | null
+    _avg: RouteAvgAggregateOutputType | null
+    _sum: RouteSumAggregateOutputType | null
+    _min: RouteMinAggregateOutputType | null
+    _max: RouteMaxAggregateOutputType | null
+  }
+
+  type GetRouteGroupByPayload<T extends RouteGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RouteGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RouteGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RouteGroupByOutputType[P]>
+            : GetScalarType<T[P], RouteGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RouteSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    type?: boolean
+    fromId?: boolean
+    toId?: boolean
+    distance?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    locationFrom?: boolean | LocationDefaultArgs<ExtArgs>
+    locationTo?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["route"]>
+
+  export type RouteSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    type?: boolean
+    fromId?: boolean
+    toId?: boolean
+    distance?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    locationFrom?: boolean | LocationDefaultArgs<ExtArgs>
+    locationTo?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["route"]>
+
+  export type RouteSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    type?: boolean
+    fromId?: boolean
+    toId?: boolean
+    distance?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    locationFrom?: boolean | LocationDefaultArgs<ExtArgs>
+    locationTo?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["route"]>
+
+  export type RouteSelectScalar = {
+    id?: boolean
+    type?: boolean
+    fromId?: boolean
+    toId?: boolean
+    distance?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type RouteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "type" | "fromId" | "toId" | "distance" | "updatedAt" | "createdAt", ExtArgs["result"]["route"]>
+  export type RouteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    locationFrom?: boolean | LocationDefaultArgs<ExtArgs>
+    locationTo?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+  export type RouteIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    locationFrom?: boolean | LocationDefaultArgs<ExtArgs>
+    locationTo?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+  export type RouteIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    locationFrom?: boolean | LocationDefaultArgs<ExtArgs>
+    locationTo?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+
+  export type $RoutePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Route"
+    objects: {
+      locationFrom: Prisma.$LocationPayload<ExtArgs>
+      locationTo: Prisma.$LocationPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      type: $Enums.RouteType
+      fromId: string
+      toId: string
+      distance: number
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["route"]>
+    composites: {}
+  }
+
+  type RouteGetPayload<S extends boolean | null | undefined | RouteDefaultArgs> = $Result.GetResult<Prisma.$RoutePayload, S>
+
+  type RouteCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RouteFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RouteCountAggregateInputType | true
+    }
+
+  export interface RouteDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Route'], meta: { name: 'Route' } }
+    /**
+     * Find zero or one Route that matches the filter.
+     * @param {RouteFindUniqueArgs} args - Arguments to find a Route
+     * @example
+     * // Get one Route
+     * const route = await prisma.route.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RouteFindUniqueArgs>(args: SelectSubset<T, RouteFindUniqueArgs<ExtArgs>>): Prisma__RouteClient<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Route that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RouteFindUniqueOrThrowArgs} args - Arguments to find a Route
+     * @example
+     * // Get one Route
+     * const route = await prisma.route.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RouteFindUniqueOrThrowArgs>(args: SelectSubset<T, RouteFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RouteClient<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Route that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteFindFirstArgs} args - Arguments to find a Route
+     * @example
+     * // Get one Route
+     * const route = await prisma.route.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RouteFindFirstArgs>(args?: SelectSubset<T, RouteFindFirstArgs<ExtArgs>>): Prisma__RouteClient<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Route that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteFindFirstOrThrowArgs} args - Arguments to find a Route
+     * @example
+     * // Get one Route
+     * const route = await prisma.route.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RouteFindFirstOrThrowArgs>(args?: SelectSubset<T, RouteFindFirstOrThrowArgs<ExtArgs>>): Prisma__RouteClient<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Routes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Routes
+     * const routes = await prisma.route.findMany()
+     * 
+     * // Get first 10 Routes
+     * const routes = await prisma.route.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const routeWithIdOnly = await prisma.route.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RouteFindManyArgs>(args?: SelectSubset<T, RouteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Route.
+     * @param {RouteCreateArgs} args - Arguments to create a Route.
+     * @example
+     * // Create one Route
+     * const Route = await prisma.route.create({
+     *   data: {
+     *     // ... data to create a Route
+     *   }
+     * })
+     * 
+     */
+    create<T extends RouteCreateArgs>(args: SelectSubset<T, RouteCreateArgs<ExtArgs>>): Prisma__RouteClient<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Routes.
+     * @param {RouteCreateManyArgs} args - Arguments to create many Routes.
+     * @example
+     * // Create many Routes
+     * const route = await prisma.route.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RouteCreateManyArgs>(args?: SelectSubset<T, RouteCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Routes and returns the data saved in the database.
+     * @param {RouteCreateManyAndReturnArgs} args - Arguments to create many Routes.
+     * @example
+     * // Create many Routes
+     * const route = await prisma.route.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Routes and only return the `id`
+     * const routeWithIdOnly = await prisma.route.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RouteCreateManyAndReturnArgs>(args?: SelectSubset<T, RouteCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Route.
+     * @param {RouteDeleteArgs} args - Arguments to delete one Route.
+     * @example
+     * // Delete one Route
+     * const Route = await prisma.route.delete({
+     *   where: {
+     *     // ... filter to delete one Route
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RouteDeleteArgs>(args: SelectSubset<T, RouteDeleteArgs<ExtArgs>>): Prisma__RouteClient<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Route.
+     * @param {RouteUpdateArgs} args - Arguments to update one Route.
+     * @example
+     * // Update one Route
+     * const route = await prisma.route.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RouteUpdateArgs>(args: SelectSubset<T, RouteUpdateArgs<ExtArgs>>): Prisma__RouteClient<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Routes.
+     * @param {RouteDeleteManyArgs} args - Arguments to filter Routes to delete.
+     * @example
+     * // Delete a few Routes
+     * const { count } = await prisma.route.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RouteDeleteManyArgs>(args?: SelectSubset<T, RouteDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Routes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Routes
+     * const route = await prisma.route.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RouteUpdateManyArgs>(args: SelectSubset<T, RouteUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Routes and returns the data updated in the database.
+     * @param {RouteUpdateManyAndReturnArgs} args - Arguments to update many Routes.
+     * @example
+     * // Update many Routes
+     * const route = await prisma.route.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Routes and only return the `id`
+     * const routeWithIdOnly = await prisma.route.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RouteUpdateManyAndReturnArgs>(args: SelectSubset<T, RouteUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Route.
+     * @param {RouteUpsertArgs} args - Arguments to update or create a Route.
+     * @example
+     * // Update or create a Route
+     * const route = await prisma.route.upsert({
+     *   create: {
+     *     // ... data to create a Route
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Route we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RouteUpsertArgs>(args: SelectSubset<T, RouteUpsertArgs<ExtArgs>>): Prisma__RouteClient<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Routes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteCountArgs} args - Arguments to filter Routes to count.
+     * @example
+     * // Count the number of Routes
+     * const count = await prisma.route.count({
+     *   where: {
+     *     // ... the filter for the Routes we want to count
+     *   }
+     * })
+    **/
+    count<T extends RouteCountArgs>(
+      args?: Subset<T, RouteCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RouteCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Route.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RouteAggregateArgs>(args: Subset<T, RouteAggregateArgs>): Prisma.PrismaPromise<GetRouteAggregateType<T>>
+
+    /**
+     * Group by Route.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RouteGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RouteGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RouteGroupByArgs['orderBy'] }
+        : { orderBy?: RouteGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RouteGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRouteGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Route model
+   */
+  readonly fields: RouteFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Route.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RouteClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    locationFrom<T extends LocationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, LocationDefaultArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    locationTo<T extends LocationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, LocationDefaultArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Route model
+   */
+  interface RouteFieldRefs {
+    readonly id: FieldRef<"Route", 'String'>
+    readonly type: FieldRef<"Route", 'RouteType'>
+    readonly fromId: FieldRef<"Route", 'String'>
+    readonly toId: FieldRef<"Route", 'String'>
+    readonly distance: FieldRef<"Route", 'Float'>
+    readonly updatedAt: FieldRef<"Route", 'DateTime'>
+    readonly createdAt: FieldRef<"Route", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Route findUnique
+   */
+  export type RouteFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    /**
+     * Filter, which Route to fetch.
+     */
+    where: RouteWhereUniqueInput
+  }
+
+  /**
+   * Route findUniqueOrThrow
+   */
+  export type RouteFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    /**
+     * Filter, which Route to fetch.
+     */
+    where: RouteWhereUniqueInput
+  }
+
+  /**
+   * Route findFirst
+   */
+  export type RouteFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    /**
+     * Filter, which Route to fetch.
+     */
+    where?: RouteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Routes to fetch.
+     */
+    orderBy?: RouteOrderByWithRelationInput | RouteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Routes.
+     */
+    cursor?: RouteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Routes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Routes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Routes.
+     */
+    distinct?: RouteScalarFieldEnum | RouteScalarFieldEnum[]
+  }
+
+  /**
+   * Route findFirstOrThrow
+   */
+  export type RouteFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    /**
+     * Filter, which Route to fetch.
+     */
+    where?: RouteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Routes to fetch.
+     */
+    orderBy?: RouteOrderByWithRelationInput | RouteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Routes.
+     */
+    cursor?: RouteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Routes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Routes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Routes.
+     */
+    distinct?: RouteScalarFieldEnum | RouteScalarFieldEnum[]
+  }
+
+  /**
+   * Route findMany
+   */
+  export type RouteFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    /**
+     * Filter, which Routes to fetch.
+     */
+    where?: RouteWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Routes to fetch.
+     */
+    orderBy?: RouteOrderByWithRelationInput | RouteOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Routes.
+     */
+    cursor?: RouteWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Routes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Routes.
+     */
+    skip?: number
+    distinct?: RouteScalarFieldEnum | RouteScalarFieldEnum[]
+  }
+
+  /**
+   * Route create
+   */
+  export type RouteCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Route.
+     */
+    data: XOR<RouteCreateInput, RouteUncheckedCreateInput>
+  }
+
+  /**
+   * Route createMany
+   */
+  export type RouteCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Routes.
+     */
+    data: RouteCreateManyInput | RouteCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Route createManyAndReturn
+   */
+  export type RouteCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * The data used to create many Routes.
+     */
+    data: RouteCreateManyInput | RouteCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Route update
+   */
+  export type RouteUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Route.
+     */
+    data: XOR<RouteUpdateInput, RouteUncheckedUpdateInput>
+    /**
+     * Choose, which Route to update.
+     */
+    where: RouteWhereUniqueInput
+  }
+
+  /**
+   * Route updateMany
+   */
+  export type RouteUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Routes.
+     */
+    data: XOR<RouteUpdateManyMutationInput, RouteUncheckedUpdateManyInput>
+    /**
+     * Filter which Routes to update
+     */
+    where?: RouteWhereInput
+    /**
+     * Limit how many Routes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Route updateManyAndReturn
+   */
+  export type RouteUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * The data used to update Routes.
+     */
+    data: XOR<RouteUpdateManyMutationInput, RouteUncheckedUpdateManyInput>
+    /**
+     * Filter which Routes to update
+     */
+    where?: RouteWhereInput
+    /**
+     * Limit how many Routes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Route upsert
+   */
+  export type RouteUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Route to update in case it exists.
+     */
+    where: RouteWhereUniqueInput
+    /**
+     * In case the Route found by the `where` argument doesn't exist, create a new Route with this data.
+     */
+    create: XOR<RouteCreateInput, RouteUncheckedCreateInput>
+    /**
+     * In case the Route was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RouteUpdateInput, RouteUncheckedUpdateInput>
+  }
+
+  /**
+   * Route delete
+   */
+  export type RouteDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+    /**
+     * Filter which Route to delete.
+     */
+    where: RouteWhereUniqueInput
+  }
+
+  /**
+   * Route deleteMany
+   */
+  export type RouteDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Routes to delete
+     */
+    where?: RouteWhereInput
+    /**
+     * Limit how many Routes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Route without action
+   */
+  export type RouteDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Route
+     */
+    select?: RouteSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Route
+     */
+    omit?: RouteOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RouteInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model BuildingType
+   */
+
+  export type AggregateBuildingType = {
+    _count: BuildingTypeCountAggregateOutputType | null
+    _min: BuildingTypeMinAggregateOutputType | null
+    _max: BuildingTypeMaxAggregateOutputType | null
+  }
+
+  export type BuildingTypeMinAggregateOutputType = {
+    id: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type BuildingTypeMaxAggregateOutputType = {
+    id: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type BuildingTypeCountAggregateOutputType = {
+    id: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type BuildingTypeMinAggregateInputType = {
+    id?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type BuildingTypeMaxAggregateInputType = {
+    id?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type BuildingTypeCountAggregateInputType = {
+    id?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type BuildingTypeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BuildingType to aggregate.
+     */
+    where?: BuildingTypeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingTypes to fetch.
+     */
+    orderBy?: BuildingTypeOrderByWithRelationInput | BuildingTypeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BuildingTypeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingTypes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingTypes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BuildingTypes
+    **/
+    _count?: true | BuildingTypeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BuildingTypeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BuildingTypeMaxAggregateInputType
+  }
+
+  export type GetBuildingTypeAggregateType<T extends BuildingTypeAggregateArgs> = {
+        [P in keyof T & keyof AggregateBuildingType]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBuildingType[P]>
+      : GetScalarType<T[P], AggregateBuildingType[P]>
+  }
+
+
+
+
+  export type BuildingTypeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BuildingTypeWhereInput
+    orderBy?: BuildingTypeOrderByWithAggregationInput | BuildingTypeOrderByWithAggregationInput[]
+    by: BuildingTypeScalarFieldEnum[] | BuildingTypeScalarFieldEnum
+    having?: BuildingTypeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BuildingTypeCountAggregateInputType | true
+    _min?: BuildingTypeMinAggregateInputType
+    _max?: BuildingTypeMaxAggregateInputType
+  }
+
+  export type BuildingTypeGroupByOutputType = {
+    id: string
+    updatedAt: Date
+    createdAt: Date
+    _count: BuildingTypeCountAggregateOutputType | null
+    _min: BuildingTypeMinAggregateOutputType | null
+    _max: BuildingTypeMaxAggregateOutputType | null
+  }
+
+  type GetBuildingTypeGroupByPayload<T extends BuildingTypeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BuildingTypeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BuildingTypeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BuildingTypeGroupByOutputType[P]>
+            : GetScalarType<T[P], BuildingTypeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BuildingTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    i18n?: boolean | BuildingType$i18nArgs<ExtArgs>
+    buildings?: boolean | BuildingType$buildingsArgs<ExtArgs>
+    _count?: boolean | BuildingTypeCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["buildingType"]>
+
+  export type BuildingTypeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["buildingType"]>
+
+  export type BuildingTypeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["buildingType"]>
+
+  export type BuildingTypeSelectScalar = {
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type BuildingTypeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "updatedAt" | "createdAt", ExtArgs["result"]["buildingType"]>
+  export type BuildingTypeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | BuildingType$i18nArgs<ExtArgs>
+    buildings?: boolean | BuildingType$buildingsArgs<ExtArgs>
+    _count?: boolean | BuildingTypeCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type BuildingTypeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type BuildingTypeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $BuildingTypePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BuildingType"
+    objects: {
+      i18n: Prisma.$BuildingTypeI18nPayload<ExtArgs>[]
+      buildings: Prisma.$BuildingPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["buildingType"]>
+    composites: {}
+  }
+
+  type BuildingTypeGetPayload<S extends boolean | null | undefined | BuildingTypeDefaultArgs> = $Result.GetResult<Prisma.$BuildingTypePayload, S>
+
+  type BuildingTypeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BuildingTypeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BuildingTypeCountAggregateInputType | true
+    }
+
+  export interface BuildingTypeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BuildingType'], meta: { name: 'BuildingType' } }
+    /**
+     * Find zero or one BuildingType that matches the filter.
+     * @param {BuildingTypeFindUniqueArgs} args - Arguments to find a BuildingType
+     * @example
+     * // Get one BuildingType
+     * const buildingType = await prisma.buildingType.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BuildingTypeFindUniqueArgs>(args: SelectSubset<T, BuildingTypeFindUniqueArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one BuildingType that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BuildingTypeFindUniqueOrThrowArgs} args - Arguments to find a BuildingType
+     * @example
+     * // Get one BuildingType
+     * const buildingType = await prisma.buildingType.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BuildingTypeFindUniqueOrThrowArgs>(args: SelectSubset<T, BuildingTypeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BuildingType that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeFindFirstArgs} args - Arguments to find a BuildingType
+     * @example
+     * // Get one BuildingType
+     * const buildingType = await prisma.buildingType.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BuildingTypeFindFirstArgs>(args?: SelectSubset<T, BuildingTypeFindFirstArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BuildingType that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeFindFirstOrThrowArgs} args - Arguments to find a BuildingType
+     * @example
+     * // Get one BuildingType
+     * const buildingType = await prisma.buildingType.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BuildingTypeFindFirstOrThrowArgs>(args?: SelectSubset<T, BuildingTypeFindFirstOrThrowArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more BuildingTypes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BuildingTypes
+     * const buildingTypes = await prisma.buildingType.findMany()
+     * 
+     * // Get first 10 BuildingTypes
+     * const buildingTypes = await prisma.buildingType.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const buildingTypeWithIdOnly = await prisma.buildingType.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BuildingTypeFindManyArgs>(args?: SelectSubset<T, BuildingTypeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a BuildingType.
+     * @param {BuildingTypeCreateArgs} args - Arguments to create a BuildingType.
+     * @example
+     * // Create one BuildingType
+     * const BuildingType = await prisma.buildingType.create({
+     *   data: {
+     *     // ... data to create a BuildingType
+     *   }
+     * })
+     * 
+     */
+    create<T extends BuildingTypeCreateArgs>(args: SelectSubset<T, BuildingTypeCreateArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many BuildingTypes.
+     * @param {BuildingTypeCreateManyArgs} args - Arguments to create many BuildingTypes.
+     * @example
+     * // Create many BuildingTypes
+     * const buildingType = await prisma.buildingType.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BuildingTypeCreateManyArgs>(args?: SelectSubset<T, BuildingTypeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BuildingTypes and returns the data saved in the database.
+     * @param {BuildingTypeCreateManyAndReturnArgs} args - Arguments to create many BuildingTypes.
+     * @example
+     * // Create many BuildingTypes
+     * const buildingType = await prisma.buildingType.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BuildingTypes and only return the `id`
+     * const buildingTypeWithIdOnly = await prisma.buildingType.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BuildingTypeCreateManyAndReturnArgs>(args?: SelectSubset<T, BuildingTypeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a BuildingType.
+     * @param {BuildingTypeDeleteArgs} args - Arguments to delete one BuildingType.
+     * @example
+     * // Delete one BuildingType
+     * const BuildingType = await prisma.buildingType.delete({
+     *   where: {
+     *     // ... filter to delete one BuildingType
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BuildingTypeDeleteArgs>(args: SelectSubset<T, BuildingTypeDeleteArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one BuildingType.
+     * @param {BuildingTypeUpdateArgs} args - Arguments to update one BuildingType.
+     * @example
+     * // Update one BuildingType
+     * const buildingType = await prisma.buildingType.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BuildingTypeUpdateArgs>(args: SelectSubset<T, BuildingTypeUpdateArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more BuildingTypes.
+     * @param {BuildingTypeDeleteManyArgs} args - Arguments to filter BuildingTypes to delete.
+     * @example
+     * // Delete a few BuildingTypes
+     * const { count } = await prisma.buildingType.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BuildingTypeDeleteManyArgs>(args?: SelectSubset<T, BuildingTypeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BuildingTypes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BuildingTypes
+     * const buildingType = await prisma.buildingType.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BuildingTypeUpdateManyArgs>(args: SelectSubset<T, BuildingTypeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BuildingTypes and returns the data updated in the database.
+     * @param {BuildingTypeUpdateManyAndReturnArgs} args - Arguments to update many BuildingTypes.
+     * @example
+     * // Update many BuildingTypes
+     * const buildingType = await prisma.buildingType.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more BuildingTypes and only return the `id`
+     * const buildingTypeWithIdOnly = await prisma.buildingType.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BuildingTypeUpdateManyAndReturnArgs>(args: SelectSubset<T, BuildingTypeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one BuildingType.
+     * @param {BuildingTypeUpsertArgs} args - Arguments to update or create a BuildingType.
+     * @example
+     * // Update or create a BuildingType
+     * const buildingType = await prisma.buildingType.upsert({
+     *   create: {
+     *     // ... data to create a BuildingType
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BuildingType we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BuildingTypeUpsertArgs>(args: SelectSubset<T, BuildingTypeUpsertArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of BuildingTypes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeCountArgs} args - Arguments to filter BuildingTypes to count.
+     * @example
+     * // Count the number of BuildingTypes
+     * const count = await prisma.buildingType.count({
+     *   where: {
+     *     // ... the filter for the BuildingTypes we want to count
+     *   }
+     * })
+    **/
+    count<T extends BuildingTypeCountArgs>(
+      args?: Subset<T, BuildingTypeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BuildingTypeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BuildingType.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BuildingTypeAggregateArgs>(args: Subset<T, BuildingTypeAggregateArgs>): Prisma.PrismaPromise<GetBuildingTypeAggregateType<T>>
+
+    /**
+     * Group by BuildingType.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BuildingTypeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BuildingTypeGroupByArgs['orderBy'] }
+        : { orderBy?: BuildingTypeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BuildingTypeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBuildingTypeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BuildingType model
+   */
+  readonly fields: BuildingTypeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BuildingType.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BuildingTypeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    i18n<T extends BuildingType$i18nArgs<ExtArgs> = {}>(args?: Subset<T, BuildingType$i18nArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    buildings<T extends BuildingType$buildingsArgs<ExtArgs> = {}>(args?: Subset<T, BuildingType$buildingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BuildingType model
+   */
+  interface BuildingTypeFieldRefs {
+    readonly id: FieldRef<"BuildingType", 'String'>
+    readonly updatedAt: FieldRef<"BuildingType", 'DateTime'>
+    readonly createdAt: FieldRef<"BuildingType", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BuildingType findUnique
+   */
+  export type BuildingTypeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingType to fetch.
+     */
+    where: BuildingTypeWhereUniqueInput
+  }
+
+  /**
+   * BuildingType findUniqueOrThrow
+   */
+  export type BuildingTypeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingType to fetch.
+     */
+    where: BuildingTypeWhereUniqueInput
+  }
+
+  /**
+   * BuildingType findFirst
+   */
+  export type BuildingTypeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingType to fetch.
+     */
+    where?: BuildingTypeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingTypes to fetch.
+     */
+    orderBy?: BuildingTypeOrderByWithRelationInput | BuildingTypeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BuildingTypes.
+     */
+    cursor?: BuildingTypeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingTypes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingTypes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BuildingTypes.
+     */
+    distinct?: BuildingTypeScalarFieldEnum | BuildingTypeScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingType findFirstOrThrow
+   */
+  export type BuildingTypeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingType to fetch.
+     */
+    where?: BuildingTypeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingTypes to fetch.
+     */
+    orderBy?: BuildingTypeOrderByWithRelationInput | BuildingTypeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BuildingTypes.
+     */
+    cursor?: BuildingTypeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingTypes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingTypes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BuildingTypes.
+     */
+    distinct?: BuildingTypeScalarFieldEnum | BuildingTypeScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingType findMany
+   */
+  export type BuildingTypeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingTypes to fetch.
+     */
+    where?: BuildingTypeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingTypes to fetch.
+     */
+    orderBy?: BuildingTypeOrderByWithRelationInput | BuildingTypeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BuildingTypes.
+     */
+    cursor?: BuildingTypeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingTypes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingTypes.
+     */
+    skip?: number
+    distinct?: BuildingTypeScalarFieldEnum | BuildingTypeScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingType create
+   */
+  export type BuildingTypeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+    /**
+     * The data needed to create a BuildingType.
+     */
+    data: XOR<BuildingTypeCreateInput, BuildingTypeUncheckedCreateInput>
+  }
+
+  /**
+   * BuildingType createMany
+   */
+  export type BuildingTypeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BuildingTypes.
+     */
+    data: BuildingTypeCreateManyInput | BuildingTypeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BuildingType createManyAndReturn
+   */
+  export type BuildingTypeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * The data used to create many BuildingTypes.
+     */
+    data: BuildingTypeCreateManyInput | BuildingTypeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BuildingType update
+   */
+  export type BuildingTypeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+    /**
+     * The data needed to update a BuildingType.
+     */
+    data: XOR<BuildingTypeUpdateInput, BuildingTypeUncheckedUpdateInput>
+    /**
+     * Choose, which BuildingType to update.
+     */
+    where: BuildingTypeWhereUniqueInput
+  }
+
+  /**
+   * BuildingType updateMany
+   */
+  export type BuildingTypeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BuildingTypes.
+     */
+    data: XOR<BuildingTypeUpdateManyMutationInput, BuildingTypeUncheckedUpdateManyInput>
+    /**
+     * Filter which BuildingTypes to update
+     */
+    where?: BuildingTypeWhereInput
+    /**
+     * Limit how many BuildingTypes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BuildingType updateManyAndReturn
+   */
+  export type BuildingTypeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * The data used to update BuildingTypes.
+     */
+    data: XOR<BuildingTypeUpdateManyMutationInput, BuildingTypeUncheckedUpdateManyInput>
+    /**
+     * Filter which BuildingTypes to update
+     */
+    where?: BuildingTypeWhereInput
+    /**
+     * Limit how many BuildingTypes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BuildingType upsert
+   */
+  export type BuildingTypeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+    /**
+     * The filter to search for the BuildingType to update in case it exists.
+     */
+    where: BuildingTypeWhereUniqueInput
+    /**
+     * In case the BuildingType found by the `where` argument doesn't exist, create a new BuildingType with this data.
+     */
+    create: XOR<BuildingTypeCreateInput, BuildingTypeUncheckedCreateInput>
+    /**
+     * In case the BuildingType was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BuildingTypeUpdateInput, BuildingTypeUncheckedUpdateInput>
+  }
+
+  /**
+   * BuildingType delete
+   */
+  export type BuildingTypeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+    /**
+     * Filter which BuildingType to delete.
+     */
+    where: BuildingTypeWhereUniqueInput
+  }
+
+  /**
+   * BuildingType deleteMany
+   */
+  export type BuildingTypeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BuildingTypes to delete
+     */
+    where?: BuildingTypeWhereInput
+    /**
+     * Limit how many BuildingTypes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * BuildingType.i18n
+   */
+  export type BuildingType$i18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    where?: BuildingTypeI18nWhereInput
+    orderBy?: BuildingTypeI18nOrderByWithRelationInput | BuildingTypeI18nOrderByWithRelationInput[]
+    cursor?: BuildingTypeI18nWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BuildingTypeI18nScalarFieldEnum | BuildingTypeI18nScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingType.buildings
+   */
+  export type BuildingType$buildingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    where?: BuildingWhereInput
+    orderBy?: BuildingOrderByWithRelationInput | BuildingOrderByWithRelationInput[]
+    cursor?: BuildingWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BuildingScalarFieldEnum | BuildingScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingType without action
+   */
+  export type BuildingTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingType
+     */
+    select?: BuildingTypeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingType
+     */
+    omit?: BuildingTypeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model BuildingTypeI18n
+   */
+
+  export type AggregateBuildingTypeI18n = {
+    _count: BuildingTypeI18nCountAggregateOutputType | null
+    _min: BuildingTypeI18nMinAggregateOutputType | null
+    _max: BuildingTypeI18nMaxAggregateOutputType | null
+  }
+
+  export type BuildingTypeI18nMinAggregateOutputType = {
+    id: string | null
+    buildingTypeId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type BuildingTypeI18nMaxAggregateOutputType = {
+    id: string | null
+    buildingTypeId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type BuildingTypeI18nCountAggregateOutputType = {
+    id: number
+    buildingTypeId: number
+    language: number
+    name: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type BuildingTypeI18nMinAggregateInputType = {
+    id?: true
+    buildingTypeId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type BuildingTypeI18nMaxAggregateInputType = {
+    id?: true
+    buildingTypeId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type BuildingTypeI18nCountAggregateInputType = {
+    id?: true
+    buildingTypeId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type BuildingTypeI18nAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BuildingTypeI18n to aggregate.
+     */
+    where?: BuildingTypeI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingTypeI18ns to fetch.
+     */
+    orderBy?: BuildingTypeI18nOrderByWithRelationInput | BuildingTypeI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BuildingTypeI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingTypeI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingTypeI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BuildingTypeI18ns
+    **/
+    _count?: true | BuildingTypeI18nCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BuildingTypeI18nMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BuildingTypeI18nMaxAggregateInputType
+  }
+
+  export type GetBuildingTypeI18nAggregateType<T extends BuildingTypeI18nAggregateArgs> = {
+        [P in keyof T & keyof AggregateBuildingTypeI18n]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBuildingTypeI18n[P]>
+      : GetScalarType<T[P], AggregateBuildingTypeI18n[P]>
+  }
+
+
+
+
+  export type BuildingTypeI18nGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BuildingTypeI18nWhereInput
+    orderBy?: BuildingTypeI18nOrderByWithAggregationInput | BuildingTypeI18nOrderByWithAggregationInput[]
+    by: BuildingTypeI18nScalarFieldEnum[] | BuildingTypeI18nScalarFieldEnum
+    having?: BuildingTypeI18nScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BuildingTypeI18nCountAggregateInputType | true
+    _min?: BuildingTypeI18nMinAggregateInputType
+    _max?: BuildingTypeI18nMaxAggregateInputType
+  }
+
+  export type BuildingTypeI18nGroupByOutputType = {
+    id: string
+    buildingTypeId: string
+    language: string
+    name: string
+    updatedAt: Date
+    createdAt: Date
+    _count: BuildingTypeI18nCountAggregateOutputType | null
+    _min: BuildingTypeI18nMinAggregateOutputType | null
+    _max: BuildingTypeI18nMaxAggregateOutputType | null
+  }
+
+  type GetBuildingTypeI18nGroupByPayload<T extends BuildingTypeI18nGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BuildingTypeI18nGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BuildingTypeI18nGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BuildingTypeI18nGroupByOutputType[P]>
+            : GetScalarType<T[P], BuildingTypeI18nGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BuildingTypeI18nSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingTypeId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["buildingTypeI18n"]>
+
+  export type BuildingTypeI18nSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingTypeId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["buildingTypeI18n"]>
+
+  export type BuildingTypeI18nSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingTypeId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["buildingTypeI18n"]>
+
+  export type BuildingTypeI18nSelectScalar = {
+    id?: boolean
+    buildingTypeId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type BuildingTypeI18nOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "buildingTypeId" | "language" | "name" | "updatedAt" | "createdAt", ExtArgs["result"]["buildingTypeI18n"]>
+  export type BuildingTypeI18nInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+  }
+  export type BuildingTypeI18nIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+  }
+  export type BuildingTypeI18nIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+  }
+
+  export type $BuildingTypeI18nPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BuildingTypeI18n"
+    objects: {
+      buildingType: Prisma.$BuildingTypePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      buildingTypeId: string
+      language: string
+      name: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["buildingTypeI18n"]>
+    composites: {}
+  }
+
+  type BuildingTypeI18nGetPayload<S extends boolean | null | undefined | BuildingTypeI18nDefaultArgs> = $Result.GetResult<Prisma.$BuildingTypeI18nPayload, S>
+
+  type BuildingTypeI18nCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BuildingTypeI18nFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BuildingTypeI18nCountAggregateInputType | true
+    }
+
+  export interface BuildingTypeI18nDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BuildingTypeI18n'], meta: { name: 'BuildingTypeI18n' } }
+    /**
+     * Find zero or one BuildingTypeI18n that matches the filter.
+     * @param {BuildingTypeI18nFindUniqueArgs} args - Arguments to find a BuildingTypeI18n
+     * @example
+     * // Get one BuildingTypeI18n
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BuildingTypeI18nFindUniqueArgs>(args: SelectSubset<T, BuildingTypeI18nFindUniqueArgs<ExtArgs>>): Prisma__BuildingTypeI18nClient<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one BuildingTypeI18n that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BuildingTypeI18nFindUniqueOrThrowArgs} args - Arguments to find a BuildingTypeI18n
+     * @example
+     * // Get one BuildingTypeI18n
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BuildingTypeI18nFindUniqueOrThrowArgs>(args: SelectSubset<T, BuildingTypeI18nFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BuildingTypeI18nClient<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BuildingTypeI18n that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeI18nFindFirstArgs} args - Arguments to find a BuildingTypeI18n
+     * @example
+     * // Get one BuildingTypeI18n
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BuildingTypeI18nFindFirstArgs>(args?: SelectSubset<T, BuildingTypeI18nFindFirstArgs<ExtArgs>>): Prisma__BuildingTypeI18nClient<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BuildingTypeI18n that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeI18nFindFirstOrThrowArgs} args - Arguments to find a BuildingTypeI18n
+     * @example
+     * // Get one BuildingTypeI18n
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BuildingTypeI18nFindFirstOrThrowArgs>(args?: SelectSubset<T, BuildingTypeI18nFindFirstOrThrowArgs<ExtArgs>>): Prisma__BuildingTypeI18nClient<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more BuildingTypeI18ns that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeI18nFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BuildingTypeI18ns
+     * const buildingTypeI18ns = await prisma.buildingTypeI18n.findMany()
+     * 
+     * // Get first 10 BuildingTypeI18ns
+     * const buildingTypeI18ns = await prisma.buildingTypeI18n.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const buildingTypeI18nWithIdOnly = await prisma.buildingTypeI18n.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BuildingTypeI18nFindManyArgs>(args?: SelectSubset<T, BuildingTypeI18nFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a BuildingTypeI18n.
+     * @param {BuildingTypeI18nCreateArgs} args - Arguments to create a BuildingTypeI18n.
+     * @example
+     * // Create one BuildingTypeI18n
+     * const BuildingTypeI18n = await prisma.buildingTypeI18n.create({
+     *   data: {
+     *     // ... data to create a BuildingTypeI18n
+     *   }
+     * })
+     * 
+     */
+    create<T extends BuildingTypeI18nCreateArgs>(args: SelectSubset<T, BuildingTypeI18nCreateArgs<ExtArgs>>): Prisma__BuildingTypeI18nClient<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many BuildingTypeI18ns.
+     * @param {BuildingTypeI18nCreateManyArgs} args - Arguments to create many BuildingTypeI18ns.
+     * @example
+     * // Create many BuildingTypeI18ns
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BuildingTypeI18nCreateManyArgs>(args?: SelectSubset<T, BuildingTypeI18nCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BuildingTypeI18ns and returns the data saved in the database.
+     * @param {BuildingTypeI18nCreateManyAndReturnArgs} args - Arguments to create many BuildingTypeI18ns.
+     * @example
+     * // Create many BuildingTypeI18ns
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BuildingTypeI18ns and only return the `id`
+     * const buildingTypeI18nWithIdOnly = await prisma.buildingTypeI18n.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BuildingTypeI18nCreateManyAndReturnArgs>(args?: SelectSubset<T, BuildingTypeI18nCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a BuildingTypeI18n.
+     * @param {BuildingTypeI18nDeleteArgs} args - Arguments to delete one BuildingTypeI18n.
+     * @example
+     * // Delete one BuildingTypeI18n
+     * const BuildingTypeI18n = await prisma.buildingTypeI18n.delete({
+     *   where: {
+     *     // ... filter to delete one BuildingTypeI18n
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BuildingTypeI18nDeleteArgs>(args: SelectSubset<T, BuildingTypeI18nDeleteArgs<ExtArgs>>): Prisma__BuildingTypeI18nClient<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one BuildingTypeI18n.
+     * @param {BuildingTypeI18nUpdateArgs} args - Arguments to update one BuildingTypeI18n.
+     * @example
+     * // Update one BuildingTypeI18n
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BuildingTypeI18nUpdateArgs>(args: SelectSubset<T, BuildingTypeI18nUpdateArgs<ExtArgs>>): Prisma__BuildingTypeI18nClient<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more BuildingTypeI18ns.
+     * @param {BuildingTypeI18nDeleteManyArgs} args - Arguments to filter BuildingTypeI18ns to delete.
+     * @example
+     * // Delete a few BuildingTypeI18ns
+     * const { count } = await prisma.buildingTypeI18n.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BuildingTypeI18nDeleteManyArgs>(args?: SelectSubset<T, BuildingTypeI18nDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BuildingTypeI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeI18nUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BuildingTypeI18ns
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BuildingTypeI18nUpdateManyArgs>(args: SelectSubset<T, BuildingTypeI18nUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BuildingTypeI18ns and returns the data updated in the database.
+     * @param {BuildingTypeI18nUpdateManyAndReturnArgs} args - Arguments to update many BuildingTypeI18ns.
+     * @example
+     * // Update many BuildingTypeI18ns
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more BuildingTypeI18ns and only return the `id`
+     * const buildingTypeI18nWithIdOnly = await prisma.buildingTypeI18n.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BuildingTypeI18nUpdateManyAndReturnArgs>(args: SelectSubset<T, BuildingTypeI18nUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one BuildingTypeI18n.
+     * @param {BuildingTypeI18nUpsertArgs} args - Arguments to update or create a BuildingTypeI18n.
+     * @example
+     * // Update or create a BuildingTypeI18n
+     * const buildingTypeI18n = await prisma.buildingTypeI18n.upsert({
+     *   create: {
+     *     // ... data to create a BuildingTypeI18n
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BuildingTypeI18n we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BuildingTypeI18nUpsertArgs>(args: SelectSubset<T, BuildingTypeI18nUpsertArgs<ExtArgs>>): Prisma__BuildingTypeI18nClient<$Result.GetResult<Prisma.$BuildingTypeI18nPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of BuildingTypeI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeI18nCountArgs} args - Arguments to filter BuildingTypeI18ns to count.
+     * @example
+     * // Count the number of BuildingTypeI18ns
+     * const count = await prisma.buildingTypeI18n.count({
+     *   where: {
+     *     // ... the filter for the BuildingTypeI18ns we want to count
+     *   }
+     * })
+    **/
+    count<T extends BuildingTypeI18nCountArgs>(
+      args?: Subset<T, BuildingTypeI18nCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BuildingTypeI18nCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BuildingTypeI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeI18nAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BuildingTypeI18nAggregateArgs>(args: Subset<T, BuildingTypeI18nAggregateArgs>): Prisma.PrismaPromise<GetBuildingTypeI18nAggregateType<T>>
+
+    /**
+     * Group by BuildingTypeI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingTypeI18nGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BuildingTypeI18nGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BuildingTypeI18nGroupByArgs['orderBy'] }
+        : { orderBy?: BuildingTypeI18nGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BuildingTypeI18nGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBuildingTypeI18nGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BuildingTypeI18n model
+   */
+  readonly fields: BuildingTypeI18nFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BuildingTypeI18n.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BuildingTypeI18nClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    buildingType<T extends BuildingTypeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BuildingTypeDefaultArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BuildingTypeI18n model
+   */
+  interface BuildingTypeI18nFieldRefs {
+    readonly id: FieldRef<"BuildingTypeI18n", 'String'>
+    readonly buildingTypeId: FieldRef<"BuildingTypeI18n", 'String'>
+    readonly language: FieldRef<"BuildingTypeI18n", 'String'>
+    readonly name: FieldRef<"BuildingTypeI18n", 'String'>
+    readonly updatedAt: FieldRef<"BuildingTypeI18n", 'DateTime'>
+    readonly createdAt: FieldRef<"BuildingTypeI18n", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BuildingTypeI18n findUnique
+   */
+  export type BuildingTypeI18nFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingTypeI18n to fetch.
+     */
+    where: BuildingTypeI18nWhereUniqueInput
+  }
+
+  /**
+   * BuildingTypeI18n findUniqueOrThrow
+   */
+  export type BuildingTypeI18nFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingTypeI18n to fetch.
+     */
+    where: BuildingTypeI18nWhereUniqueInput
+  }
+
+  /**
+   * BuildingTypeI18n findFirst
+   */
+  export type BuildingTypeI18nFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingTypeI18n to fetch.
+     */
+    where?: BuildingTypeI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingTypeI18ns to fetch.
+     */
+    orderBy?: BuildingTypeI18nOrderByWithRelationInput | BuildingTypeI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BuildingTypeI18ns.
+     */
+    cursor?: BuildingTypeI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingTypeI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingTypeI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BuildingTypeI18ns.
+     */
+    distinct?: BuildingTypeI18nScalarFieldEnum | BuildingTypeI18nScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingTypeI18n findFirstOrThrow
+   */
+  export type BuildingTypeI18nFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingTypeI18n to fetch.
+     */
+    where?: BuildingTypeI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingTypeI18ns to fetch.
+     */
+    orderBy?: BuildingTypeI18nOrderByWithRelationInput | BuildingTypeI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BuildingTypeI18ns.
+     */
+    cursor?: BuildingTypeI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingTypeI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingTypeI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BuildingTypeI18ns.
+     */
+    distinct?: BuildingTypeI18nScalarFieldEnum | BuildingTypeI18nScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingTypeI18n findMany
+   */
+  export type BuildingTypeI18nFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingTypeI18ns to fetch.
+     */
+    where?: BuildingTypeI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingTypeI18ns to fetch.
+     */
+    orderBy?: BuildingTypeI18nOrderByWithRelationInput | BuildingTypeI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BuildingTypeI18ns.
+     */
+    cursor?: BuildingTypeI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingTypeI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingTypeI18ns.
+     */
+    skip?: number
+    distinct?: BuildingTypeI18nScalarFieldEnum | BuildingTypeI18nScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingTypeI18n create
+   */
+  export type BuildingTypeI18nCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to create a BuildingTypeI18n.
+     */
+    data: XOR<BuildingTypeI18nCreateInput, BuildingTypeI18nUncheckedCreateInput>
+  }
+
+  /**
+   * BuildingTypeI18n createMany
+   */
+  export type BuildingTypeI18nCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BuildingTypeI18ns.
+     */
+    data: BuildingTypeI18nCreateManyInput | BuildingTypeI18nCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BuildingTypeI18n createManyAndReturn
+   */
+  export type BuildingTypeI18nCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * The data used to create many BuildingTypeI18ns.
+     */
+    data: BuildingTypeI18nCreateManyInput | BuildingTypeI18nCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BuildingTypeI18n update
+   */
+  export type BuildingTypeI18nUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to update a BuildingTypeI18n.
+     */
+    data: XOR<BuildingTypeI18nUpdateInput, BuildingTypeI18nUncheckedUpdateInput>
+    /**
+     * Choose, which BuildingTypeI18n to update.
+     */
+    where: BuildingTypeI18nWhereUniqueInput
+  }
+
+  /**
+   * BuildingTypeI18n updateMany
+   */
+  export type BuildingTypeI18nUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BuildingTypeI18ns.
+     */
+    data: XOR<BuildingTypeI18nUpdateManyMutationInput, BuildingTypeI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which BuildingTypeI18ns to update
+     */
+    where?: BuildingTypeI18nWhereInput
+    /**
+     * Limit how many BuildingTypeI18ns to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BuildingTypeI18n updateManyAndReturn
+   */
+  export type BuildingTypeI18nUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * The data used to update BuildingTypeI18ns.
+     */
+    data: XOR<BuildingTypeI18nUpdateManyMutationInput, BuildingTypeI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which BuildingTypeI18ns to update
+     */
+    where?: BuildingTypeI18nWhereInput
+    /**
+     * Limit how many BuildingTypeI18ns to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BuildingTypeI18n upsert
+   */
+  export type BuildingTypeI18nUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    /**
+     * The filter to search for the BuildingTypeI18n to update in case it exists.
+     */
+    where: BuildingTypeI18nWhereUniqueInput
+    /**
+     * In case the BuildingTypeI18n found by the `where` argument doesn't exist, create a new BuildingTypeI18n with this data.
+     */
+    create: XOR<BuildingTypeI18nCreateInput, BuildingTypeI18nUncheckedCreateInput>
+    /**
+     * In case the BuildingTypeI18n was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BuildingTypeI18nUpdateInput, BuildingTypeI18nUncheckedUpdateInput>
+  }
+
+  /**
+   * BuildingTypeI18n delete
+   */
+  export type BuildingTypeI18nDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+    /**
+     * Filter which BuildingTypeI18n to delete.
+     */
+    where: BuildingTypeI18nWhereUniqueInput
+  }
+
+  /**
+   * BuildingTypeI18n deleteMany
+   */
+  export type BuildingTypeI18nDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BuildingTypeI18ns to delete
+     */
+    where?: BuildingTypeI18nWhereInput
+    /**
+     * Limit how many BuildingTypeI18ns to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * BuildingTypeI18n without action
+   */
+  export type BuildingTypeI18nDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingTypeI18n
+     */
+    select?: BuildingTypeI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingTypeI18n
+     */
+    omit?: BuildingTypeI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingTypeI18nInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Building
+   */
+
+  export type AggregateBuilding = {
+    _count: BuildingCountAggregateOutputType | null
+    _min: BuildingMinAggregateOutputType | null
+    _max: BuildingMaxAggregateOutputType | null
+  }
+
+  export type BuildingMinAggregateOutputType = {
+    id: string | null
+    buildingTypeId: string | null
+    locationId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type BuildingMaxAggregateOutputType = {
+    id: string | null
+    buildingTypeId: string | null
+    locationId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type BuildingCountAggregateOutputType = {
+    id: number
+    buildingTypeId: number
+    locationId: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type BuildingMinAggregateInputType = {
+    id?: true
+    buildingTypeId?: true
+    locationId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type BuildingMaxAggregateInputType = {
+    id?: true
+    buildingTypeId?: true
+    locationId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type BuildingCountAggregateInputType = {
+    id?: true
+    buildingTypeId?: true
+    locationId?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type BuildingAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Building to aggregate.
+     */
+    where?: BuildingWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Buildings to fetch.
+     */
+    orderBy?: BuildingOrderByWithRelationInput | BuildingOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BuildingWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Buildings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Buildings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Buildings
+    **/
+    _count?: true | BuildingCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BuildingMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BuildingMaxAggregateInputType
+  }
+
+  export type GetBuildingAggregateType<T extends BuildingAggregateArgs> = {
+        [P in keyof T & keyof AggregateBuilding]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBuilding[P]>
+      : GetScalarType<T[P], AggregateBuilding[P]>
+  }
+
+
+
+
+  export type BuildingGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BuildingWhereInput
+    orderBy?: BuildingOrderByWithAggregationInput | BuildingOrderByWithAggregationInput[]
+    by: BuildingScalarFieldEnum[] | BuildingScalarFieldEnum
+    having?: BuildingScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BuildingCountAggregateInputType | true
+    _min?: BuildingMinAggregateInputType
+    _max?: BuildingMaxAggregateInputType
+  }
+
+  export type BuildingGroupByOutputType = {
+    id: string
+    buildingTypeId: string
+    locationId: string
+    updatedAt: Date
+    createdAt: Date
+    _count: BuildingCountAggregateOutputType | null
+    _min: BuildingMinAggregateOutputType | null
+    _max: BuildingMaxAggregateOutputType | null
+  }
+
+  type GetBuildingGroupByPayload<T extends BuildingGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BuildingGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BuildingGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BuildingGroupByOutputType[P]>
+            : GetScalarType<T[P], BuildingGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BuildingSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingTypeId?: boolean
+    locationId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+    i18n?: boolean | Building$i18nArgs<ExtArgs>
+    stadiumInfo?: boolean | Building$stadiumInfoArgs<ExtArgs>
+    _count?: boolean | BuildingCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["building"]>
+
+  export type BuildingSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingTypeId?: boolean
+    locationId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["building"]>
+
+  export type BuildingSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingTypeId?: boolean
+    locationId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["building"]>
+
+  export type BuildingSelectScalar = {
+    id?: boolean
+    buildingTypeId?: boolean
+    locationId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type BuildingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "buildingTypeId" | "locationId" | "updatedAt" | "createdAt", ExtArgs["result"]["building"]>
+  export type BuildingInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+    i18n?: boolean | Building$i18nArgs<ExtArgs>
+    stadiumInfo?: boolean | Building$stadiumInfoArgs<ExtArgs>
+    _count?: boolean | BuildingCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type BuildingIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+  export type BuildingIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    buildingType?: boolean | BuildingTypeDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+
+  export type $BuildingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Building"
+    objects: {
+      buildingType: Prisma.$BuildingTypePayload<ExtArgs>
+      location: Prisma.$LocationPayload<ExtArgs>
+      i18n: Prisma.$BuildingI18nPayload<ExtArgs>[]
+      stadiumInfo: Prisma.$StadiumInfoPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      buildingTypeId: string
+      locationId: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["building"]>
+    composites: {}
+  }
+
+  type BuildingGetPayload<S extends boolean | null | undefined | BuildingDefaultArgs> = $Result.GetResult<Prisma.$BuildingPayload, S>
+
+  type BuildingCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BuildingFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BuildingCountAggregateInputType | true
+    }
+
+  export interface BuildingDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Building'], meta: { name: 'Building' } }
+    /**
+     * Find zero or one Building that matches the filter.
+     * @param {BuildingFindUniqueArgs} args - Arguments to find a Building
+     * @example
+     * // Get one Building
+     * const building = await prisma.building.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BuildingFindUniqueArgs>(args: SelectSubset<T, BuildingFindUniqueArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Building that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BuildingFindUniqueOrThrowArgs} args - Arguments to find a Building
+     * @example
+     * // Get one Building
+     * const building = await prisma.building.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BuildingFindUniqueOrThrowArgs>(args: SelectSubset<T, BuildingFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Building that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingFindFirstArgs} args - Arguments to find a Building
+     * @example
+     * // Get one Building
+     * const building = await prisma.building.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BuildingFindFirstArgs>(args?: SelectSubset<T, BuildingFindFirstArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Building that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingFindFirstOrThrowArgs} args - Arguments to find a Building
+     * @example
+     * // Get one Building
+     * const building = await prisma.building.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BuildingFindFirstOrThrowArgs>(args?: SelectSubset<T, BuildingFindFirstOrThrowArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Buildings that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Buildings
+     * const buildings = await prisma.building.findMany()
+     * 
+     * // Get first 10 Buildings
+     * const buildings = await prisma.building.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const buildingWithIdOnly = await prisma.building.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BuildingFindManyArgs>(args?: SelectSubset<T, BuildingFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Building.
+     * @param {BuildingCreateArgs} args - Arguments to create a Building.
+     * @example
+     * // Create one Building
+     * const Building = await prisma.building.create({
+     *   data: {
+     *     // ... data to create a Building
+     *   }
+     * })
+     * 
+     */
+    create<T extends BuildingCreateArgs>(args: SelectSubset<T, BuildingCreateArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Buildings.
+     * @param {BuildingCreateManyArgs} args - Arguments to create many Buildings.
+     * @example
+     * // Create many Buildings
+     * const building = await prisma.building.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BuildingCreateManyArgs>(args?: SelectSubset<T, BuildingCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Buildings and returns the data saved in the database.
+     * @param {BuildingCreateManyAndReturnArgs} args - Arguments to create many Buildings.
+     * @example
+     * // Create many Buildings
+     * const building = await prisma.building.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Buildings and only return the `id`
+     * const buildingWithIdOnly = await prisma.building.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BuildingCreateManyAndReturnArgs>(args?: SelectSubset<T, BuildingCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Building.
+     * @param {BuildingDeleteArgs} args - Arguments to delete one Building.
+     * @example
+     * // Delete one Building
+     * const Building = await prisma.building.delete({
+     *   where: {
+     *     // ... filter to delete one Building
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BuildingDeleteArgs>(args: SelectSubset<T, BuildingDeleteArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Building.
+     * @param {BuildingUpdateArgs} args - Arguments to update one Building.
+     * @example
+     * // Update one Building
+     * const building = await prisma.building.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BuildingUpdateArgs>(args: SelectSubset<T, BuildingUpdateArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Buildings.
+     * @param {BuildingDeleteManyArgs} args - Arguments to filter Buildings to delete.
+     * @example
+     * // Delete a few Buildings
+     * const { count } = await prisma.building.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BuildingDeleteManyArgs>(args?: SelectSubset<T, BuildingDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Buildings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Buildings
+     * const building = await prisma.building.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BuildingUpdateManyArgs>(args: SelectSubset<T, BuildingUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Buildings and returns the data updated in the database.
+     * @param {BuildingUpdateManyAndReturnArgs} args - Arguments to update many Buildings.
+     * @example
+     * // Update many Buildings
+     * const building = await prisma.building.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Buildings and only return the `id`
+     * const buildingWithIdOnly = await prisma.building.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BuildingUpdateManyAndReturnArgs>(args: SelectSubset<T, BuildingUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Building.
+     * @param {BuildingUpsertArgs} args - Arguments to update or create a Building.
+     * @example
+     * // Update or create a Building
+     * const building = await prisma.building.upsert({
+     *   create: {
+     *     // ... data to create a Building
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Building we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BuildingUpsertArgs>(args: SelectSubset<T, BuildingUpsertArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Buildings.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingCountArgs} args - Arguments to filter Buildings to count.
+     * @example
+     * // Count the number of Buildings
+     * const count = await prisma.building.count({
+     *   where: {
+     *     // ... the filter for the Buildings we want to count
+     *   }
+     * })
+    **/
+    count<T extends BuildingCountArgs>(
+      args?: Subset<T, BuildingCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BuildingCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Building.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BuildingAggregateArgs>(args: Subset<T, BuildingAggregateArgs>): Prisma.PrismaPromise<GetBuildingAggregateType<T>>
+
+    /**
+     * Group by Building.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BuildingGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BuildingGroupByArgs['orderBy'] }
+        : { orderBy?: BuildingGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BuildingGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBuildingGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Building model
+   */
+  readonly fields: BuildingFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Building.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BuildingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    buildingType<T extends BuildingTypeDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BuildingTypeDefaultArgs<ExtArgs>>): Prisma__BuildingTypeClient<$Result.GetResult<Prisma.$BuildingTypePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    location<T extends LocationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, LocationDefaultArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    i18n<T extends Building$i18nArgs<ExtArgs> = {}>(args?: Subset<T, Building$i18nArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    stadiumInfo<T extends Building$stadiumInfoArgs<ExtArgs> = {}>(args?: Subset<T, Building$stadiumInfoArgs<ExtArgs>>): Prisma__StadiumInfoClient<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Building model
+   */
+  interface BuildingFieldRefs {
+    readonly id: FieldRef<"Building", 'String'>
+    readonly buildingTypeId: FieldRef<"Building", 'String'>
+    readonly locationId: FieldRef<"Building", 'String'>
+    readonly updatedAt: FieldRef<"Building", 'DateTime'>
+    readonly createdAt: FieldRef<"Building", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Building findUnique
+   */
+  export type BuildingFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    /**
+     * Filter, which Building to fetch.
+     */
+    where: BuildingWhereUniqueInput
+  }
+
+  /**
+   * Building findUniqueOrThrow
+   */
+  export type BuildingFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    /**
+     * Filter, which Building to fetch.
+     */
+    where: BuildingWhereUniqueInput
+  }
+
+  /**
+   * Building findFirst
+   */
+  export type BuildingFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    /**
+     * Filter, which Building to fetch.
+     */
+    where?: BuildingWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Buildings to fetch.
+     */
+    orderBy?: BuildingOrderByWithRelationInput | BuildingOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Buildings.
+     */
+    cursor?: BuildingWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Buildings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Buildings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Buildings.
+     */
+    distinct?: BuildingScalarFieldEnum | BuildingScalarFieldEnum[]
+  }
+
+  /**
+   * Building findFirstOrThrow
+   */
+  export type BuildingFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    /**
+     * Filter, which Building to fetch.
+     */
+    where?: BuildingWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Buildings to fetch.
+     */
+    orderBy?: BuildingOrderByWithRelationInput | BuildingOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Buildings.
+     */
+    cursor?: BuildingWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Buildings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Buildings.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Buildings.
+     */
+    distinct?: BuildingScalarFieldEnum | BuildingScalarFieldEnum[]
+  }
+
+  /**
+   * Building findMany
+   */
+  export type BuildingFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    /**
+     * Filter, which Buildings to fetch.
+     */
+    where?: BuildingWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Buildings to fetch.
+     */
+    orderBy?: BuildingOrderByWithRelationInput | BuildingOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Buildings.
+     */
+    cursor?: BuildingWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Buildings from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Buildings.
+     */
+    skip?: number
+    distinct?: BuildingScalarFieldEnum | BuildingScalarFieldEnum[]
+  }
+
+  /**
+   * Building create
+   */
+  export type BuildingCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Building.
+     */
+    data: XOR<BuildingCreateInput, BuildingUncheckedCreateInput>
+  }
+
+  /**
+   * Building createMany
+   */
+  export type BuildingCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Buildings.
+     */
+    data: BuildingCreateManyInput | BuildingCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Building createManyAndReturn
+   */
+  export type BuildingCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * The data used to create many Buildings.
+     */
+    data: BuildingCreateManyInput | BuildingCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Building update
+   */
+  export type BuildingUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Building.
+     */
+    data: XOR<BuildingUpdateInput, BuildingUncheckedUpdateInput>
+    /**
+     * Choose, which Building to update.
+     */
+    where: BuildingWhereUniqueInput
+  }
+
+  /**
+   * Building updateMany
+   */
+  export type BuildingUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Buildings.
+     */
+    data: XOR<BuildingUpdateManyMutationInput, BuildingUncheckedUpdateManyInput>
+    /**
+     * Filter which Buildings to update
+     */
+    where?: BuildingWhereInput
+    /**
+     * Limit how many Buildings to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Building updateManyAndReturn
+   */
+  export type BuildingUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * The data used to update Buildings.
+     */
+    data: XOR<BuildingUpdateManyMutationInput, BuildingUncheckedUpdateManyInput>
+    /**
+     * Filter which Buildings to update
+     */
+    where?: BuildingWhereInput
+    /**
+     * Limit how many Buildings to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Building upsert
+   */
+  export type BuildingUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Building to update in case it exists.
+     */
+    where: BuildingWhereUniqueInput
+    /**
+     * In case the Building found by the `where` argument doesn't exist, create a new Building with this data.
+     */
+    create: XOR<BuildingCreateInput, BuildingUncheckedCreateInput>
+    /**
+     * In case the Building was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BuildingUpdateInput, BuildingUncheckedUpdateInput>
+  }
+
+  /**
+   * Building delete
+   */
+  export type BuildingDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    /**
+     * Filter which Building to delete.
+     */
+    where: BuildingWhereUniqueInput
+  }
+
+  /**
+   * Building deleteMany
+   */
+  export type BuildingDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Buildings to delete
+     */
+    where?: BuildingWhereInput
+    /**
+     * Limit how many Buildings to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Building.i18n
+   */
+  export type Building$i18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    where?: BuildingI18nWhereInput
+    orderBy?: BuildingI18nOrderByWithRelationInput | BuildingI18nOrderByWithRelationInput[]
+    cursor?: BuildingI18nWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BuildingI18nScalarFieldEnum | BuildingI18nScalarFieldEnum[]
+  }
+
+  /**
+   * Building.stadiumInfo
+   */
+  export type Building$stadiumInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    where?: StadiumInfoWhereInput
+  }
+
+  /**
+   * Building without action
+   */
+  export type BuildingDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model BuildingI18n
+   */
+
+  export type AggregateBuildingI18n = {
+    _count: BuildingI18nCountAggregateOutputType | null
+    _min: BuildingI18nMinAggregateOutputType | null
+    _max: BuildingI18nMaxAggregateOutputType | null
+  }
+
+  export type BuildingI18nMinAggregateOutputType = {
+    id: string | null
+    buildingId: string | null
+    language: string | null
+    name: string | null
+    description: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type BuildingI18nMaxAggregateOutputType = {
+    id: string | null
+    buildingId: string | null
+    language: string | null
+    name: string | null
+    description: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type BuildingI18nCountAggregateOutputType = {
+    id: number
+    buildingId: number
+    language: number
+    name: number
+    description: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type BuildingI18nMinAggregateInputType = {
+    id?: true
+    buildingId?: true
+    language?: true
+    name?: true
+    description?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type BuildingI18nMaxAggregateInputType = {
+    id?: true
+    buildingId?: true
+    language?: true
+    name?: true
+    description?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type BuildingI18nCountAggregateInputType = {
+    id?: true
+    buildingId?: true
+    language?: true
+    name?: true
+    description?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type BuildingI18nAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BuildingI18n to aggregate.
+     */
+    where?: BuildingI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingI18ns to fetch.
+     */
+    orderBy?: BuildingI18nOrderByWithRelationInput | BuildingI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: BuildingI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned BuildingI18ns
+    **/
+    _count?: true | BuildingI18nCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: BuildingI18nMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: BuildingI18nMaxAggregateInputType
+  }
+
+  export type GetBuildingI18nAggregateType<T extends BuildingI18nAggregateArgs> = {
+        [P in keyof T & keyof AggregateBuildingI18n]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateBuildingI18n[P]>
+      : GetScalarType<T[P], AggregateBuildingI18n[P]>
+  }
+
+
+
+
+  export type BuildingI18nGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BuildingI18nWhereInput
+    orderBy?: BuildingI18nOrderByWithAggregationInput | BuildingI18nOrderByWithAggregationInput[]
+    by: BuildingI18nScalarFieldEnum[] | BuildingI18nScalarFieldEnum
+    having?: BuildingI18nScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: BuildingI18nCountAggregateInputType | true
+    _min?: BuildingI18nMinAggregateInputType
+    _max?: BuildingI18nMaxAggregateInputType
+  }
+
+  export type BuildingI18nGroupByOutputType = {
+    id: string
+    buildingId: string
+    language: string
+    name: string
+    description: string | null
+    updatedAt: Date
+    createdAt: Date
+    _count: BuildingI18nCountAggregateOutputType | null
+    _min: BuildingI18nMinAggregateOutputType | null
+    _max: BuildingI18nMaxAggregateOutputType | null
+  }
+
+  type GetBuildingI18nGroupByPayload<T extends BuildingI18nGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<BuildingI18nGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof BuildingI18nGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], BuildingI18nGroupByOutputType[P]>
+            : GetScalarType<T[P], BuildingI18nGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type BuildingI18nSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingId?: boolean
+    language?: boolean
+    name?: boolean
+    description?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["buildingI18n"]>
+
+  export type BuildingI18nSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingId?: boolean
+    language?: boolean
+    name?: boolean
+    description?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["buildingI18n"]>
+
+  export type BuildingI18nSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingId?: boolean
+    language?: boolean
+    name?: boolean
+    description?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["buildingI18n"]>
+
+  export type BuildingI18nSelectScalar = {
+    id?: boolean
+    buildingId?: boolean
+    language?: boolean
+    name?: boolean
+    description?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type BuildingI18nOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "buildingId" | "language" | "name" | "description" | "updatedAt" | "createdAt", ExtArgs["result"]["buildingI18n"]>
+  export type BuildingI18nInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }
+  export type BuildingI18nIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }
+  export type BuildingI18nIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }
+
+  export type $BuildingI18nPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "BuildingI18n"
+    objects: {
+      building: Prisma.$BuildingPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      buildingId: string
+      language: string
+      name: string
+      description: string | null
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["buildingI18n"]>
+    composites: {}
+  }
+
+  type BuildingI18nGetPayload<S extends boolean | null | undefined | BuildingI18nDefaultArgs> = $Result.GetResult<Prisma.$BuildingI18nPayload, S>
+
+  type BuildingI18nCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<BuildingI18nFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: BuildingI18nCountAggregateInputType | true
+    }
+
+  export interface BuildingI18nDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['BuildingI18n'], meta: { name: 'BuildingI18n' } }
+    /**
+     * Find zero or one BuildingI18n that matches the filter.
+     * @param {BuildingI18nFindUniqueArgs} args - Arguments to find a BuildingI18n
+     * @example
+     * // Get one BuildingI18n
+     * const buildingI18n = await prisma.buildingI18n.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends BuildingI18nFindUniqueArgs>(args: SelectSubset<T, BuildingI18nFindUniqueArgs<ExtArgs>>): Prisma__BuildingI18nClient<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one BuildingI18n that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {BuildingI18nFindUniqueOrThrowArgs} args - Arguments to find a BuildingI18n
+     * @example
+     * // Get one BuildingI18n
+     * const buildingI18n = await prisma.buildingI18n.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends BuildingI18nFindUniqueOrThrowArgs>(args: SelectSubset<T, BuildingI18nFindUniqueOrThrowArgs<ExtArgs>>): Prisma__BuildingI18nClient<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BuildingI18n that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingI18nFindFirstArgs} args - Arguments to find a BuildingI18n
+     * @example
+     * // Get one BuildingI18n
+     * const buildingI18n = await prisma.buildingI18n.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends BuildingI18nFindFirstArgs>(args?: SelectSubset<T, BuildingI18nFindFirstArgs<ExtArgs>>): Prisma__BuildingI18nClient<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first BuildingI18n that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingI18nFindFirstOrThrowArgs} args - Arguments to find a BuildingI18n
+     * @example
+     * // Get one BuildingI18n
+     * const buildingI18n = await prisma.buildingI18n.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends BuildingI18nFindFirstOrThrowArgs>(args?: SelectSubset<T, BuildingI18nFindFirstOrThrowArgs<ExtArgs>>): Prisma__BuildingI18nClient<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more BuildingI18ns that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingI18nFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all BuildingI18ns
+     * const buildingI18ns = await prisma.buildingI18n.findMany()
+     * 
+     * // Get first 10 BuildingI18ns
+     * const buildingI18ns = await prisma.buildingI18n.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const buildingI18nWithIdOnly = await prisma.buildingI18n.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends BuildingI18nFindManyArgs>(args?: SelectSubset<T, BuildingI18nFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a BuildingI18n.
+     * @param {BuildingI18nCreateArgs} args - Arguments to create a BuildingI18n.
+     * @example
+     * // Create one BuildingI18n
+     * const BuildingI18n = await prisma.buildingI18n.create({
+     *   data: {
+     *     // ... data to create a BuildingI18n
+     *   }
+     * })
+     * 
+     */
+    create<T extends BuildingI18nCreateArgs>(args: SelectSubset<T, BuildingI18nCreateArgs<ExtArgs>>): Prisma__BuildingI18nClient<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many BuildingI18ns.
+     * @param {BuildingI18nCreateManyArgs} args - Arguments to create many BuildingI18ns.
+     * @example
+     * // Create many BuildingI18ns
+     * const buildingI18n = await prisma.buildingI18n.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends BuildingI18nCreateManyArgs>(args?: SelectSubset<T, BuildingI18nCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many BuildingI18ns and returns the data saved in the database.
+     * @param {BuildingI18nCreateManyAndReturnArgs} args - Arguments to create many BuildingI18ns.
+     * @example
+     * // Create many BuildingI18ns
+     * const buildingI18n = await prisma.buildingI18n.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many BuildingI18ns and only return the `id`
+     * const buildingI18nWithIdOnly = await prisma.buildingI18n.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends BuildingI18nCreateManyAndReturnArgs>(args?: SelectSubset<T, BuildingI18nCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a BuildingI18n.
+     * @param {BuildingI18nDeleteArgs} args - Arguments to delete one BuildingI18n.
+     * @example
+     * // Delete one BuildingI18n
+     * const BuildingI18n = await prisma.buildingI18n.delete({
+     *   where: {
+     *     // ... filter to delete one BuildingI18n
+     *   }
+     * })
+     * 
+     */
+    delete<T extends BuildingI18nDeleteArgs>(args: SelectSubset<T, BuildingI18nDeleteArgs<ExtArgs>>): Prisma__BuildingI18nClient<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one BuildingI18n.
+     * @param {BuildingI18nUpdateArgs} args - Arguments to update one BuildingI18n.
+     * @example
+     * // Update one BuildingI18n
+     * const buildingI18n = await prisma.buildingI18n.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends BuildingI18nUpdateArgs>(args: SelectSubset<T, BuildingI18nUpdateArgs<ExtArgs>>): Prisma__BuildingI18nClient<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more BuildingI18ns.
+     * @param {BuildingI18nDeleteManyArgs} args - Arguments to filter BuildingI18ns to delete.
+     * @example
+     * // Delete a few BuildingI18ns
+     * const { count } = await prisma.buildingI18n.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends BuildingI18nDeleteManyArgs>(args?: SelectSubset<T, BuildingI18nDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BuildingI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingI18nUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many BuildingI18ns
+     * const buildingI18n = await prisma.buildingI18n.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends BuildingI18nUpdateManyArgs>(args: SelectSubset<T, BuildingI18nUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more BuildingI18ns and returns the data updated in the database.
+     * @param {BuildingI18nUpdateManyAndReturnArgs} args - Arguments to update many BuildingI18ns.
+     * @example
+     * // Update many BuildingI18ns
+     * const buildingI18n = await prisma.buildingI18n.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more BuildingI18ns and only return the `id`
+     * const buildingI18nWithIdOnly = await prisma.buildingI18n.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends BuildingI18nUpdateManyAndReturnArgs>(args: SelectSubset<T, BuildingI18nUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one BuildingI18n.
+     * @param {BuildingI18nUpsertArgs} args - Arguments to update or create a BuildingI18n.
+     * @example
+     * // Update or create a BuildingI18n
+     * const buildingI18n = await prisma.buildingI18n.upsert({
+     *   create: {
+     *     // ... data to create a BuildingI18n
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the BuildingI18n we want to update
+     *   }
+     * })
+     */
+    upsert<T extends BuildingI18nUpsertArgs>(args: SelectSubset<T, BuildingI18nUpsertArgs<ExtArgs>>): Prisma__BuildingI18nClient<$Result.GetResult<Prisma.$BuildingI18nPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of BuildingI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingI18nCountArgs} args - Arguments to filter BuildingI18ns to count.
+     * @example
+     * // Count the number of BuildingI18ns
+     * const count = await prisma.buildingI18n.count({
+     *   where: {
+     *     // ... the filter for the BuildingI18ns we want to count
+     *   }
+     * })
+    **/
+    count<T extends BuildingI18nCountArgs>(
+      args?: Subset<T, BuildingI18nCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], BuildingI18nCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a BuildingI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingI18nAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends BuildingI18nAggregateArgs>(args: Subset<T, BuildingI18nAggregateArgs>): Prisma.PrismaPromise<GetBuildingI18nAggregateType<T>>
+
+    /**
+     * Group by BuildingI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {BuildingI18nGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends BuildingI18nGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: BuildingI18nGroupByArgs['orderBy'] }
+        : { orderBy?: BuildingI18nGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, BuildingI18nGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetBuildingI18nGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the BuildingI18n model
+   */
+  readonly fields: BuildingI18nFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for BuildingI18n.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__BuildingI18nClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    building<T extends BuildingDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BuildingDefaultArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the BuildingI18n model
+   */
+  interface BuildingI18nFieldRefs {
+    readonly id: FieldRef<"BuildingI18n", 'String'>
+    readonly buildingId: FieldRef<"BuildingI18n", 'String'>
+    readonly language: FieldRef<"BuildingI18n", 'String'>
+    readonly name: FieldRef<"BuildingI18n", 'String'>
+    readonly description: FieldRef<"BuildingI18n", 'String'>
+    readonly updatedAt: FieldRef<"BuildingI18n", 'DateTime'>
+    readonly createdAt: FieldRef<"BuildingI18n", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * BuildingI18n findUnique
+   */
+  export type BuildingI18nFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingI18n to fetch.
+     */
+    where: BuildingI18nWhereUniqueInput
+  }
+
+  /**
+   * BuildingI18n findUniqueOrThrow
+   */
+  export type BuildingI18nFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingI18n to fetch.
+     */
+    where: BuildingI18nWhereUniqueInput
+  }
+
+  /**
+   * BuildingI18n findFirst
+   */
+  export type BuildingI18nFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingI18n to fetch.
+     */
+    where?: BuildingI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingI18ns to fetch.
+     */
+    orderBy?: BuildingI18nOrderByWithRelationInput | BuildingI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BuildingI18ns.
+     */
+    cursor?: BuildingI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BuildingI18ns.
+     */
+    distinct?: BuildingI18nScalarFieldEnum | BuildingI18nScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingI18n findFirstOrThrow
+   */
+  export type BuildingI18nFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingI18n to fetch.
+     */
+    where?: BuildingI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingI18ns to fetch.
+     */
+    orderBy?: BuildingI18nOrderByWithRelationInput | BuildingI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for BuildingI18ns.
+     */
+    cursor?: BuildingI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of BuildingI18ns.
+     */
+    distinct?: BuildingI18nScalarFieldEnum | BuildingI18nScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingI18n findMany
+   */
+  export type BuildingI18nFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which BuildingI18ns to fetch.
+     */
+    where?: BuildingI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of BuildingI18ns to fetch.
+     */
+    orderBy?: BuildingI18nOrderByWithRelationInput | BuildingI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing BuildingI18ns.
+     */
+    cursor?: BuildingI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` BuildingI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` BuildingI18ns.
+     */
+    skip?: number
+    distinct?: BuildingI18nScalarFieldEnum | BuildingI18nScalarFieldEnum[]
+  }
+
+  /**
+   * BuildingI18n create
+   */
+  export type BuildingI18nCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to create a BuildingI18n.
+     */
+    data: XOR<BuildingI18nCreateInput, BuildingI18nUncheckedCreateInput>
+  }
+
+  /**
+   * BuildingI18n createMany
+   */
+  export type BuildingI18nCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many BuildingI18ns.
+     */
+    data: BuildingI18nCreateManyInput | BuildingI18nCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * BuildingI18n createManyAndReturn
+   */
+  export type BuildingI18nCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * The data used to create many BuildingI18ns.
+     */
+    data: BuildingI18nCreateManyInput | BuildingI18nCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BuildingI18n update
+   */
+  export type BuildingI18nUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to update a BuildingI18n.
+     */
+    data: XOR<BuildingI18nUpdateInput, BuildingI18nUncheckedUpdateInput>
+    /**
+     * Choose, which BuildingI18n to update.
+     */
+    where: BuildingI18nWhereUniqueInput
+  }
+
+  /**
+   * BuildingI18n updateMany
+   */
+  export type BuildingI18nUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update BuildingI18ns.
+     */
+    data: XOR<BuildingI18nUpdateManyMutationInput, BuildingI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which BuildingI18ns to update
+     */
+    where?: BuildingI18nWhereInput
+    /**
+     * Limit how many BuildingI18ns to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * BuildingI18n updateManyAndReturn
+   */
+  export type BuildingI18nUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * The data used to update BuildingI18ns.
+     */
+    data: XOR<BuildingI18nUpdateManyMutationInput, BuildingI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which BuildingI18ns to update
+     */
+    where?: BuildingI18nWhereInput
+    /**
+     * Limit how many BuildingI18ns to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * BuildingI18n upsert
+   */
+  export type BuildingI18nUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    /**
+     * The filter to search for the BuildingI18n to update in case it exists.
+     */
+    where: BuildingI18nWhereUniqueInput
+    /**
+     * In case the BuildingI18n found by the `where` argument doesn't exist, create a new BuildingI18n with this data.
+     */
+    create: XOR<BuildingI18nCreateInput, BuildingI18nUncheckedCreateInput>
+    /**
+     * In case the BuildingI18n was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<BuildingI18nUpdateInput, BuildingI18nUncheckedUpdateInput>
+  }
+
+  /**
+   * BuildingI18n delete
+   */
+  export type BuildingI18nDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+    /**
+     * Filter which BuildingI18n to delete.
+     */
+    where: BuildingI18nWhereUniqueInput
+  }
+
+  /**
+   * BuildingI18n deleteMany
+   */
+  export type BuildingI18nDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which BuildingI18ns to delete
+     */
+    where?: BuildingI18nWhereInput
+    /**
+     * Limit how many BuildingI18ns to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * BuildingI18n without action
+   */
+  export type BuildingI18nDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the BuildingI18n
+     */
+    select?: BuildingI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the BuildingI18n
+     */
+    omit?: BuildingI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingI18nInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model StadiumInfo
+   */
+
+  export type AggregateStadiumInfo = {
+    _count: StadiumInfoCountAggregateOutputType | null
+    _avg: StadiumInfoAvgAggregateOutputType | null
+    _sum: StadiumInfoSumAggregateOutputType | null
+    _min: StadiumInfoMinAggregateOutputType | null
+    _max: StadiumInfoMaxAggregateOutputType | null
+  }
+
+  export type StadiumInfoAvgAggregateOutputType = {
+    capacity: number | null
+  }
+
+  export type StadiumInfoSumAggregateOutputType = {
+    capacity: number | null
+  }
+
+  export type StadiumInfoMinAggregateOutputType = {
+    id: string | null
+    buildingId: string | null
+    capacity: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type StadiumInfoMaxAggregateOutputType = {
+    id: string | null
+    buildingId: string | null
+    capacity: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type StadiumInfoCountAggregateOutputType = {
+    id: number
+    buildingId: number
+    capacity: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type StadiumInfoAvgAggregateInputType = {
+    capacity?: true
+  }
+
+  export type StadiumInfoSumAggregateInputType = {
+    capacity?: true
+  }
+
+  export type StadiumInfoMinAggregateInputType = {
+    id?: true
+    buildingId?: true
+    capacity?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type StadiumInfoMaxAggregateInputType = {
+    id?: true
+    buildingId?: true
+    capacity?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type StadiumInfoCountAggregateInputType = {
+    id?: true
+    buildingId?: true
+    capacity?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type StadiumInfoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which StadiumInfo to aggregate.
+     */
+    where?: StadiumInfoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of StadiumInfos to fetch.
+     */
+    orderBy?: StadiumInfoOrderByWithRelationInput | StadiumInfoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: StadiumInfoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` StadiumInfos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` StadiumInfos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned StadiumInfos
+    **/
+    _count?: true | StadiumInfoCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: StadiumInfoAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: StadiumInfoSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: StadiumInfoMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: StadiumInfoMaxAggregateInputType
+  }
+
+  export type GetStadiumInfoAggregateType<T extends StadiumInfoAggregateArgs> = {
+        [P in keyof T & keyof AggregateStadiumInfo]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateStadiumInfo[P]>
+      : GetScalarType<T[P], AggregateStadiumInfo[P]>
+  }
+
+
+
+
+  export type StadiumInfoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: StadiumInfoWhereInput
+    orderBy?: StadiumInfoOrderByWithAggregationInput | StadiumInfoOrderByWithAggregationInput[]
+    by: StadiumInfoScalarFieldEnum[] | StadiumInfoScalarFieldEnum
+    having?: StadiumInfoScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: StadiumInfoCountAggregateInputType | true
+    _avg?: StadiumInfoAvgAggregateInputType
+    _sum?: StadiumInfoSumAggregateInputType
+    _min?: StadiumInfoMinAggregateInputType
+    _max?: StadiumInfoMaxAggregateInputType
+  }
+
+  export type StadiumInfoGroupByOutputType = {
+    id: string
+    buildingId: string
+    capacity: number
+    updatedAt: Date
+    createdAt: Date
+    _count: StadiumInfoCountAggregateOutputType | null
+    _avg: StadiumInfoAvgAggregateOutputType | null
+    _sum: StadiumInfoSumAggregateOutputType | null
+    _min: StadiumInfoMinAggregateOutputType | null
+    _max: StadiumInfoMaxAggregateOutputType | null
+  }
+
+  type GetStadiumInfoGroupByPayload<T extends StadiumInfoGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<StadiumInfoGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof StadiumInfoGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], StadiumInfoGroupByOutputType[P]>
+            : GetScalarType<T[P], StadiumInfoGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type StadiumInfoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingId?: boolean
+    capacity?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["stadiumInfo"]>
+
+  export type StadiumInfoSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingId?: boolean
+    capacity?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["stadiumInfo"]>
+
+  export type StadiumInfoSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    buildingId?: boolean
+    capacity?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["stadiumInfo"]>
+
+  export type StadiumInfoSelectScalar = {
+    id?: boolean
+    buildingId?: boolean
+    capacity?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type StadiumInfoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "buildingId" | "capacity" | "updatedAt" | "createdAt", ExtArgs["result"]["stadiumInfo"]>
+  export type StadiumInfoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }
+  export type StadiumInfoIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }
+  export type StadiumInfoIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    building?: boolean | BuildingDefaultArgs<ExtArgs>
+  }
+
+  export type $StadiumInfoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "StadiumInfo"
+    objects: {
+      building: Prisma.$BuildingPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      buildingId: string
+      capacity: number
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["stadiumInfo"]>
+    composites: {}
+  }
+
+  type StadiumInfoGetPayload<S extends boolean | null | undefined | StadiumInfoDefaultArgs> = $Result.GetResult<Prisma.$StadiumInfoPayload, S>
+
+  type StadiumInfoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<StadiumInfoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: StadiumInfoCountAggregateInputType | true
+    }
+
+  export interface StadiumInfoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['StadiumInfo'], meta: { name: 'StadiumInfo' } }
+    /**
+     * Find zero or one StadiumInfo that matches the filter.
+     * @param {StadiumInfoFindUniqueArgs} args - Arguments to find a StadiumInfo
+     * @example
+     * // Get one StadiumInfo
+     * const stadiumInfo = await prisma.stadiumInfo.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends StadiumInfoFindUniqueArgs>(args: SelectSubset<T, StadiumInfoFindUniqueArgs<ExtArgs>>): Prisma__StadiumInfoClient<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one StadiumInfo that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {StadiumInfoFindUniqueOrThrowArgs} args - Arguments to find a StadiumInfo
+     * @example
+     * // Get one StadiumInfo
+     * const stadiumInfo = await prisma.stadiumInfo.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends StadiumInfoFindUniqueOrThrowArgs>(args: SelectSubset<T, StadiumInfoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__StadiumInfoClient<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first StadiumInfo that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StadiumInfoFindFirstArgs} args - Arguments to find a StadiumInfo
+     * @example
+     * // Get one StadiumInfo
+     * const stadiumInfo = await prisma.stadiumInfo.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends StadiumInfoFindFirstArgs>(args?: SelectSubset<T, StadiumInfoFindFirstArgs<ExtArgs>>): Prisma__StadiumInfoClient<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first StadiumInfo that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StadiumInfoFindFirstOrThrowArgs} args - Arguments to find a StadiumInfo
+     * @example
+     * // Get one StadiumInfo
+     * const stadiumInfo = await prisma.stadiumInfo.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends StadiumInfoFindFirstOrThrowArgs>(args?: SelectSubset<T, StadiumInfoFindFirstOrThrowArgs<ExtArgs>>): Prisma__StadiumInfoClient<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more StadiumInfos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StadiumInfoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all StadiumInfos
+     * const stadiumInfos = await prisma.stadiumInfo.findMany()
+     * 
+     * // Get first 10 StadiumInfos
+     * const stadiumInfos = await prisma.stadiumInfo.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const stadiumInfoWithIdOnly = await prisma.stadiumInfo.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends StadiumInfoFindManyArgs>(args?: SelectSubset<T, StadiumInfoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a StadiumInfo.
+     * @param {StadiumInfoCreateArgs} args - Arguments to create a StadiumInfo.
+     * @example
+     * // Create one StadiumInfo
+     * const StadiumInfo = await prisma.stadiumInfo.create({
+     *   data: {
+     *     // ... data to create a StadiumInfo
+     *   }
+     * })
+     * 
+     */
+    create<T extends StadiumInfoCreateArgs>(args: SelectSubset<T, StadiumInfoCreateArgs<ExtArgs>>): Prisma__StadiumInfoClient<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many StadiumInfos.
+     * @param {StadiumInfoCreateManyArgs} args - Arguments to create many StadiumInfos.
+     * @example
+     * // Create many StadiumInfos
+     * const stadiumInfo = await prisma.stadiumInfo.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends StadiumInfoCreateManyArgs>(args?: SelectSubset<T, StadiumInfoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many StadiumInfos and returns the data saved in the database.
+     * @param {StadiumInfoCreateManyAndReturnArgs} args - Arguments to create many StadiumInfos.
+     * @example
+     * // Create many StadiumInfos
+     * const stadiumInfo = await prisma.stadiumInfo.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many StadiumInfos and only return the `id`
+     * const stadiumInfoWithIdOnly = await prisma.stadiumInfo.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends StadiumInfoCreateManyAndReturnArgs>(args?: SelectSubset<T, StadiumInfoCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a StadiumInfo.
+     * @param {StadiumInfoDeleteArgs} args - Arguments to delete one StadiumInfo.
+     * @example
+     * // Delete one StadiumInfo
+     * const StadiumInfo = await prisma.stadiumInfo.delete({
+     *   where: {
+     *     // ... filter to delete one StadiumInfo
+     *   }
+     * })
+     * 
+     */
+    delete<T extends StadiumInfoDeleteArgs>(args: SelectSubset<T, StadiumInfoDeleteArgs<ExtArgs>>): Prisma__StadiumInfoClient<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one StadiumInfo.
+     * @param {StadiumInfoUpdateArgs} args - Arguments to update one StadiumInfo.
+     * @example
+     * // Update one StadiumInfo
+     * const stadiumInfo = await prisma.stadiumInfo.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends StadiumInfoUpdateArgs>(args: SelectSubset<T, StadiumInfoUpdateArgs<ExtArgs>>): Prisma__StadiumInfoClient<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more StadiumInfos.
+     * @param {StadiumInfoDeleteManyArgs} args - Arguments to filter StadiumInfos to delete.
+     * @example
+     * // Delete a few StadiumInfos
+     * const { count } = await prisma.stadiumInfo.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends StadiumInfoDeleteManyArgs>(args?: SelectSubset<T, StadiumInfoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more StadiumInfos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StadiumInfoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many StadiumInfos
+     * const stadiumInfo = await prisma.stadiumInfo.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends StadiumInfoUpdateManyArgs>(args: SelectSubset<T, StadiumInfoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more StadiumInfos and returns the data updated in the database.
+     * @param {StadiumInfoUpdateManyAndReturnArgs} args - Arguments to update many StadiumInfos.
+     * @example
+     * // Update many StadiumInfos
+     * const stadiumInfo = await prisma.stadiumInfo.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more StadiumInfos and only return the `id`
+     * const stadiumInfoWithIdOnly = await prisma.stadiumInfo.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends StadiumInfoUpdateManyAndReturnArgs>(args: SelectSubset<T, StadiumInfoUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one StadiumInfo.
+     * @param {StadiumInfoUpsertArgs} args - Arguments to update or create a StadiumInfo.
+     * @example
+     * // Update or create a StadiumInfo
+     * const stadiumInfo = await prisma.stadiumInfo.upsert({
+     *   create: {
+     *     // ... data to create a StadiumInfo
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the StadiumInfo we want to update
+     *   }
+     * })
+     */
+    upsert<T extends StadiumInfoUpsertArgs>(args: SelectSubset<T, StadiumInfoUpsertArgs<ExtArgs>>): Prisma__StadiumInfoClient<$Result.GetResult<Prisma.$StadiumInfoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of StadiumInfos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StadiumInfoCountArgs} args - Arguments to filter StadiumInfos to count.
+     * @example
+     * // Count the number of StadiumInfos
+     * const count = await prisma.stadiumInfo.count({
+     *   where: {
+     *     // ... the filter for the StadiumInfos we want to count
+     *   }
+     * })
+    **/
+    count<T extends StadiumInfoCountArgs>(
+      args?: Subset<T, StadiumInfoCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], StadiumInfoCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a StadiumInfo.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StadiumInfoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends StadiumInfoAggregateArgs>(args: Subset<T, StadiumInfoAggregateArgs>): Prisma.PrismaPromise<GetStadiumInfoAggregateType<T>>
+
+    /**
+     * Group by StadiumInfo.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {StadiumInfoGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends StadiumInfoGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: StadiumInfoGroupByArgs['orderBy'] }
+        : { orderBy?: StadiumInfoGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, StadiumInfoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetStadiumInfoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the StadiumInfo model
+   */
+  readonly fields: StadiumInfoFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for StadiumInfo.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__StadiumInfoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    building<T extends BuildingDefaultArgs<ExtArgs> = {}>(args?: Subset<T, BuildingDefaultArgs<ExtArgs>>): Prisma__BuildingClient<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the StadiumInfo model
+   */
+  interface StadiumInfoFieldRefs {
+    readonly id: FieldRef<"StadiumInfo", 'String'>
+    readonly buildingId: FieldRef<"StadiumInfo", 'String'>
+    readonly capacity: FieldRef<"StadiumInfo", 'Int'>
+    readonly updatedAt: FieldRef<"StadiumInfo", 'DateTime'>
+    readonly createdAt: FieldRef<"StadiumInfo", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * StadiumInfo findUnique
+   */
+  export type StadiumInfoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which StadiumInfo to fetch.
+     */
+    where: StadiumInfoWhereUniqueInput
+  }
+
+  /**
+   * StadiumInfo findUniqueOrThrow
+   */
+  export type StadiumInfoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which StadiumInfo to fetch.
+     */
+    where: StadiumInfoWhereUniqueInput
+  }
+
+  /**
+   * StadiumInfo findFirst
+   */
+  export type StadiumInfoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which StadiumInfo to fetch.
+     */
+    where?: StadiumInfoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of StadiumInfos to fetch.
+     */
+    orderBy?: StadiumInfoOrderByWithRelationInput | StadiumInfoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for StadiumInfos.
+     */
+    cursor?: StadiumInfoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` StadiumInfos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` StadiumInfos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of StadiumInfos.
+     */
+    distinct?: StadiumInfoScalarFieldEnum | StadiumInfoScalarFieldEnum[]
+  }
+
+  /**
+   * StadiumInfo findFirstOrThrow
+   */
+  export type StadiumInfoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which StadiumInfo to fetch.
+     */
+    where?: StadiumInfoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of StadiumInfos to fetch.
+     */
+    orderBy?: StadiumInfoOrderByWithRelationInput | StadiumInfoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for StadiumInfos.
+     */
+    cursor?: StadiumInfoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` StadiumInfos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` StadiumInfos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of StadiumInfos.
+     */
+    distinct?: StadiumInfoScalarFieldEnum | StadiumInfoScalarFieldEnum[]
+  }
+
+  /**
+   * StadiumInfo findMany
+   */
+  export type StadiumInfoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which StadiumInfos to fetch.
+     */
+    where?: StadiumInfoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of StadiumInfos to fetch.
+     */
+    orderBy?: StadiumInfoOrderByWithRelationInput | StadiumInfoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing StadiumInfos.
+     */
+    cursor?: StadiumInfoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` StadiumInfos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` StadiumInfos.
+     */
+    skip?: number
+    distinct?: StadiumInfoScalarFieldEnum | StadiumInfoScalarFieldEnum[]
+  }
+
+  /**
+   * StadiumInfo create
+   */
+  export type StadiumInfoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    /**
+     * The data needed to create a StadiumInfo.
+     */
+    data: XOR<StadiumInfoCreateInput, StadiumInfoUncheckedCreateInput>
+  }
+
+  /**
+   * StadiumInfo createMany
+   */
+  export type StadiumInfoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many StadiumInfos.
+     */
+    data: StadiumInfoCreateManyInput | StadiumInfoCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * StadiumInfo createManyAndReturn
+   */
+  export type StadiumInfoCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * The data used to create many StadiumInfos.
+     */
+    data: StadiumInfoCreateManyInput | StadiumInfoCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * StadiumInfo update
+   */
+  export type StadiumInfoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    /**
+     * The data needed to update a StadiumInfo.
+     */
+    data: XOR<StadiumInfoUpdateInput, StadiumInfoUncheckedUpdateInput>
+    /**
+     * Choose, which StadiumInfo to update.
+     */
+    where: StadiumInfoWhereUniqueInput
+  }
+
+  /**
+   * StadiumInfo updateMany
+   */
+  export type StadiumInfoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update StadiumInfos.
+     */
+    data: XOR<StadiumInfoUpdateManyMutationInput, StadiumInfoUncheckedUpdateManyInput>
+    /**
+     * Filter which StadiumInfos to update
+     */
+    where?: StadiumInfoWhereInput
+    /**
+     * Limit how many StadiumInfos to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * StadiumInfo updateManyAndReturn
+   */
+  export type StadiumInfoUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * The data used to update StadiumInfos.
+     */
+    data: XOR<StadiumInfoUpdateManyMutationInput, StadiumInfoUncheckedUpdateManyInput>
+    /**
+     * Filter which StadiumInfos to update
+     */
+    where?: StadiumInfoWhereInput
+    /**
+     * Limit how many StadiumInfos to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * StadiumInfo upsert
+   */
+  export type StadiumInfoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    /**
+     * The filter to search for the StadiumInfo to update in case it exists.
+     */
+    where: StadiumInfoWhereUniqueInput
+    /**
+     * In case the StadiumInfo found by the `where` argument doesn't exist, create a new StadiumInfo with this data.
+     */
+    create: XOR<StadiumInfoCreateInput, StadiumInfoUncheckedCreateInput>
+    /**
+     * In case the StadiumInfo was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<StadiumInfoUpdateInput, StadiumInfoUncheckedUpdateInput>
+  }
+
+  /**
+   * StadiumInfo delete
+   */
+  export type StadiumInfoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+    /**
+     * Filter which StadiumInfo to delete.
+     */
+    where: StadiumInfoWhereUniqueInput
+  }
+
+  /**
+   * StadiumInfo deleteMany
+   */
+  export type StadiumInfoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which StadiumInfos to delete
+     */
+    where?: StadiumInfoWhereInput
+    /**
+     * Limit how many StadiumInfos to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * StadiumInfo without action
+   */
+  export type StadiumInfoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the StadiumInfo
+     */
+    select?: StadiumInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the StadiumInfo
+     */
+    omit?: StadiumInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: StadiumInfoInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Race
+   */
+
+  export type AggregateRace = {
+    _count: RaceCountAggregateOutputType | null
+    _min: RaceMinAggregateOutputType | null
+    _max: RaceMaxAggregateOutputType | null
+  }
+
+  export type RaceMinAggregateOutputType = {
+    id: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RaceMaxAggregateOutputType = {
+    id: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RaceCountAggregateOutputType = {
+    id: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type RaceMinAggregateInputType = {
+    id?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RaceMaxAggregateInputType = {
+    id?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RaceCountAggregateInputType = {
+    id?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type RaceAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Race to aggregate.
+     */
+    where?: RaceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Races to fetch.
+     */
+    orderBy?: RaceOrderByWithRelationInput | RaceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RaceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Races from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Races.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Races
+    **/
+    _count?: true | RaceCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RaceMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RaceMaxAggregateInputType
+  }
+
+  export type GetRaceAggregateType<T extends RaceAggregateArgs> = {
+        [P in keyof T & keyof AggregateRace]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRace[P]>
+      : GetScalarType<T[P], AggregateRace[P]>
+  }
+
+
+
+
+  export type RaceGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RaceWhereInput
+    orderBy?: RaceOrderByWithAggregationInput | RaceOrderByWithAggregationInput[]
+    by: RaceScalarFieldEnum[] | RaceScalarFieldEnum
+    having?: RaceScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RaceCountAggregateInputType | true
+    _min?: RaceMinAggregateInputType
+    _max?: RaceMaxAggregateInputType
+  }
+
+  export type RaceGroupByOutputType = {
+    id: string
+    updatedAt: Date
+    createdAt: Date
+    _count: RaceCountAggregateOutputType | null
+    _min: RaceMinAggregateOutputType | null
+    _max: RaceMaxAggregateOutputType | null
+  }
+
+  type GetRaceGroupByPayload<T extends RaceGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RaceGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RaceGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RaceGroupByOutputType[P]>
+            : GetScalarType<T[P], RaceGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RaceSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    i18n?: boolean | Race$i18nArgs<ExtArgs>
+    persons?: boolean | Race$personsArgs<ExtArgs>
+    _count?: boolean | RaceCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["race"]>
+
+  export type RaceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["race"]>
+
+  export type RaceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["race"]>
+
+  export type RaceSelectScalar = {
+    id?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type RaceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "updatedAt" | "createdAt", ExtArgs["result"]["race"]>
+  export type RaceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | Race$i18nArgs<ExtArgs>
+    persons?: boolean | Race$personsArgs<ExtArgs>
+    _count?: boolean | RaceCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type RaceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type RaceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $RacePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Race"
+    objects: {
+      i18n: Prisma.$RaceI18nPayload<ExtArgs>[]
+      persons: Prisma.$PersonPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["race"]>
+    composites: {}
+  }
+
+  type RaceGetPayload<S extends boolean | null | undefined | RaceDefaultArgs> = $Result.GetResult<Prisma.$RacePayload, S>
+
+  type RaceCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RaceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RaceCountAggregateInputType | true
+    }
+
+  export interface RaceDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Race'], meta: { name: 'Race' } }
+    /**
+     * Find zero or one Race that matches the filter.
+     * @param {RaceFindUniqueArgs} args - Arguments to find a Race
+     * @example
+     * // Get one Race
+     * const race = await prisma.race.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RaceFindUniqueArgs>(args: SelectSubset<T, RaceFindUniqueArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Race that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RaceFindUniqueOrThrowArgs} args - Arguments to find a Race
+     * @example
+     * // Get one Race
+     * const race = await prisma.race.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RaceFindUniqueOrThrowArgs>(args: SelectSubset<T, RaceFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Race that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceFindFirstArgs} args - Arguments to find a Race
+     * @example
+     * // Get one Race
+     * const race = await prisma.race.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RaceFindFirstArgs>(args?: SelectSubset<T, RaceFindFirstArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Race that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceFindFirstOrThrowArgs} args - Arguments to find a Race
+     * @example
+     * // Get one Race
+     * const race = await prisma.race.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RaceFindFirstOrThrowArgs>(args?: SelectSubset<T, RaceFindFirstOrThrowArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Races that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Races
+     * const races = await prisma.race.findMany()
+     * 
+     * // Get first 10 Races
+     * const races = await prisma.race.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const raceWithIdOnly = await prisma.race.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RaceFindManyArgs>(args?: SelectSubset<T, RaceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Race.
+     * @param {RaceCreateArgs} args - Arguments to create a Race.
+     * @example
+     * // Create one Race
+     * const Race = await prisma.race.create({
+     *   data: {
+     *     // ... data to create a Race
+     *   }
+     * })
+     * 
+     */
+    create<T extends RaceCreateArgs>(args: SelectSubset<T, RaceCreateArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Races.
+     * @param {RaceCreateManyArgs} args - Arguments to create many Races.
+     * @example
+     * // Create many Races
+     * const race = await prisma.race.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RaceCreateManyArgs>(args?: SelectSubset<T, RaceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Races and returns the data saved in the database.
+     * @param {RaceCreateManyAndReturnArgs} args - Arguments to create many Races.
+     * @example
+     * // Create many Races
+     * const race = await prisma.race.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Races and only return the `id`
+     * const raceWithIdOnly = await prisma.race.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RaceCreateManyAndReturnArgs>(args?: SelectSubset<T, RaceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Race.
+     * @param {RaceDeleteArgs} args - Arguments to delete one Race.
+     * @example
+     * // Delete one Race
+     * const Race = await prisma.race.delete({
+     *   where: {
+     *     // ... filter to delete one Race
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RaceDeleteArgs>(args: SelectSubset<T, RaceDeleteArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Race.
+     * @param {RaceUpdateArgs} args - Arguments to update one Race.
+     * @example
+     * // Update one Race
+     * const race = await prisma.race.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RaceUpdateArgs>(args: SelectSubset<T, RaceUpdateArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Races.
+     * @param {RaceDeleteManyArgs} args - Arguments to filter Races to delete.
+     * @example
+     * // Delete a few Races
+     * const { count } = await prisma.race.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RaceDeleteManyArgs>(args?: SelectSubset<T, RaceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Races.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Races
+     * const race = await prisma.race.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RaceUpdateManyArgs>(args: SelectSubset<T, RaceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Races and returns the data updated in the database.
+     * @param {RaceUpdateManyAndReturnArgs} args - Arguments to update many Races.
+     * @example
+     * // Update many Races
+     * const race = await prisma.race.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Races and only return the `id`
+     * const raceWithIdOnly = await prisma.race.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RaceUpdateManyAndReturnArgs>(args: SelectSubset<T, RaceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Race.
+     * @param {RaceUpsertArgs} args - Arguments to update or create a Race.
+     * @example
+     * // Update or create a Race
+     * const race = await prisma.race.upsert({
+     *   create: {
+     *     // ... data to create a Race
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Race we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RaceUpsertArgs>(args: SelectSubset<T, RaceUpsertArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Races.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceCountArgs} args - Arguments to filter Races to count.
+     * @example
+     * // Count the number of Races
+     * const count = await prisma.race.count({
+     *   where: {
+     *     // ... the filter for the Races we want to count
+     *   }
+     * })
+    **/
+    count<T extends RaceCountArgs>(
+      args?: Subset<T, RaceCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RaceCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Race.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RaceAggregateArgs>(args: Subset<T, RaceAggregateArgs>): Prisma.PrismaPromise<GetRaceAggregateType<T>>
+
+    /**
+     * Group by Race.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RaceGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RaceGroupByArgs['orderBy'] }
+        : { orderBy?: RaceGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RaceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRaceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Race model
+   */
+  readonly fields: RaceFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Race.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RaceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    i18n<T extends Race$i18nArgs<ExtArgs> = {}>(args?: Subset<T, Race$i18nArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    persons<T extends Race$personsArgs<ExtArgs> = {}>(args?: Subset<T, Race$personsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Race model
+   */
+  interface RaceFieldRefs {
+    readonly id: FieldRef<"Race", 'String'>
+    readonly updatedAt: FieldRef<"Race", 'DateTime'>
+    readonly createdAt: FieldRef<"Race", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Race findUnique
+   */
+  export type RaceFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+    /**
+     * Filter, which Race to fetch.
+     */
+    where: RaceWhereUniqueInput
+  }
+
+  /**
+   * Race findUniqueOrThrow
+   */
+  export type RaceFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+    /**
+     * Filter, which Race to fetch.
+     */
+    where: RaceWhereUniqueInput
+  }
+
+  /**
+   * Race findFirst
+   */
+  export type RaceFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+    /**
+     * Filter, which Race to fetch.
+     */
+    where?: RaceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Races to fetch.
+     */
+    orderBy?: RaceOrderByWithRelationInput | RaceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Races.
+     */
+    cursor?: RaceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Races from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Races.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Races.
+     */
+    distinct?: RaceScalarFieldEnum | RaceScalarFieldEnum[]
+  }
+
+  /**
+   * Race findFirstOrThrow
+   */
+  export type RaceFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+    /**
+     * Filter, which Race to fetch.
+     */
+    where?: RaceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Races to fetch.
+     */
+    orderBy?: RaceOrderByWithRelationInput | RaceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Races.
+     */
+    cursor?: RaceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Races from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Races.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Races.
+     */
+    distinct?: RaceScalarFieldEnum | RaceScalarFieldEnum[]
+  }
+
+  /**
+   * Race findMany
+   */
+  export type RaceFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+    /**
+     * Filter, which Races to fetch.
+     */
+    where?: RaceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Races to fetch.
+     */
+    orderBy?: RaceOrderByWithRelationInput | RaceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Races.
+     */
+    cursor?: RaceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Races from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Races.
+     */
+    skip?: number
+    distinct?: RaceScalarFieldEnum | RaceScalarFieldEnum[]
+  }
+
+  /**
+   * Race create
+   */
+  export type RaceCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Race.
+     */
+    data: XOR<RaceCreateInput, RaceUncheckedCreateInput>
+  }
+
+  /**
+   * Race createMany
+   */
+  export type RaceCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Races.
+     */
+    data: RaceCreateManyInput | RaceCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Race createManyAndReturn
+   */
+  export type RaceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * The data used to create many Races.
+     */
+    data: RaceCreateManyInput | RaceCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Race update
+   */
+  export type RaceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Race.
+     */
+    data: XOR<RaceUpdateInput, RaceUncheckedUpdateInput>
+    /**
+     * Choose, which Race to update.
+     */
+    where: RaceWhereUniqueInput
+  }
+
+  /**
+   * Race updateMany
+   */
+  export type RaceUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Races.
+     */
+    data: XOR<RaceUpdateManyMutationInput, RaceUncheckedUpdateManyInput>
+    /**
+     * Filter which Races to update
+     */
+    where?: RaceWhereInput
+    /**
+     * Limit how many Races to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Race updateManyAndReturn
+   */
+  export type RaceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * The data used to update Races.
+     */
+    data: XOR<RaceUpdateManyMutationInput, RaceUncheckedUpdateManyInput>
+    /**
+     * Filter which Races to update
+     */
+    where?: RaceWhereInput
+    /**
+     * Limit how many Races to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Race upsert
+   */
+  export type RaceUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Race to update in case it exists.
+     */
+    where: RaceWhereUniqueInput
+    /**
+     * In case the Race found by the `where` argument doesn't exist, create a new Race with this data.
+     */
+    create: XOR<RaceCreateInput, RaceUncheckedCreateInput>
+    /**
+     * In case the Race was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RaceUpdateInput, RaceUncheckedUpdateInput>
+  }
+
+  /**
+   * Race delete
+   */
+  export type RaceDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+    /**
+     * Filter which Race to delete.
+     */
+    where: RaceWhereUniqueInput
+  }
+
+  /**
+   * Race deleteMany
+   */
+  export type RaceDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Races to delete
+     */
+    where?: RaceWhereInput
+    /**
+     * Limit how many Races to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Race.i18n
+   */
+  export type Race$i18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    where?: RaceI18nWhereInput
+    orderBy?: RaceI18nOrderByWithRelationInput | RaceI18nOrderByWithRelationInput[]
+    cursor?: RaceI18nWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RaceI18nScalarFieldEnum | RaceI18nScalarFieldEnum[]
+  }
+
+  /**
+   * Race.persons
+   */
+  export type Race$personsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    where?: PersonWhereInput
+    orderBy?: PersonOrderByWithRelationInput | PersonOrderByWithRelationInput[]
+    cursor?: PersonWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PersonScalarFieldEnum | PersonScalarFieldEnum[]
+  }
+
+  /**
+   * Race without action
+   */
+  export type RaceDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Race
+     */
+    select?: RaceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Race
+     */
+    omit?: RaceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model RaceI18n
+   */
+
+  export type AggregateRaceI18n = {
+    _count: RaceI18nCountAggregateOutputType | null
+    _min: RaceI18nMinAggregateOutputType | null
+    _max: RaceI18nMaxAggregateOutputType | null
+  }
+
+  export type RaceI18nMinAggregateOutputType = {
+    id: string | null
+    raceId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RaceI18nMaxAggregateOutputType = {
+    id: string | null
+    raceId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RaceI18nCountAggregateOutputType = {
+    id: number
+    raceId: number
+    language: number
+    name: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type RaceI18nMinAggregateInputType = {
+    id?: true
+    raceId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RaceI18nMaxAggregateInputType = {
+    id?: true
+    raceId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RaceI18nCountAggregateInputType = {
+    id?: true
+    raceId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type RaceI18nAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RaceI18n to aggregate.
+     */
+    where?: RaceI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RaceI18ns to fetch.
+     */
+    orderBy?: RaceI18nOrderByWithRelationInput | RaceI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RaceI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RaceI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RaceI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned RaceI18ns
+    **/
+    _count?: true | RaceI18nCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RaceI18nMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RaceI18nMaxAggregateInputType
+  }
+
+  export type GetRaceI18nAggregateType<T extends RaceI18nAggregateArgs> = {
+        [P in keyof T & keyof AggregateRaceI18n]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRaceI18n[P]>
+      : GetScalarType<T[P], AggregateRaceI18n[P]>
+  }
+
+
+
+
+  export type RaceI18nGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RaceI18nWhereInput
+    orderBy?: RaceI18nOrderByWithAggregationInput | RaceI18nOrderByWithAggregationInput[]
+    by: RaceI18nScalarFieldEnum[] | RaceI18nScalarFieldEnum
+    having?: RaceI18nScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RaceI18nCountAggregateInputType | true
+    _min?: RaceI18nMinAggregateInputType
+    _max?: RaceI18nMaxAggregateInputType
+  }
+
+  export type RaceI18nGroupByOutputType = {
+    id: string
+    raceId: string
+    language: string
+    name: string
+    updatedAt: Date
+    createdAt: Date
+    _count: RaceI18nCountAggregateOutputType | null
+    _min: RaceI18nMinAggregateOutputType | null
+    _max: RaceI18nMaxAggregateOutputType | null
+  }
+
+  type GetRaceI18nGroupByPayload<T extends RaceI18nGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RaceI18nGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RaceI18nGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RaceI18nGroupByOutputType[P]>
+            : GetScalarType<T[P], RaceI18nGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RaceI18nSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    raceId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["raceI18n"]>
+
+  export type RaceI18nSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    raceId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["raceI18n"]>
+
+  export type RaceI18nSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    raceId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["raceI18n"]>
+
+  export type RaceI18nSelectScalar = {
+    id?: boolean
+    raceId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type RaceI18nOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "raceId" | "language" | "name" | "updatedAt" | "createdAt", ExtArgs["result"]["raceI18n"]>
+  export type RaceI18nInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }
+  export type RaceI18nIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }
+  export type RaceI18nIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }
+
+  export type $RaceI18nPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RaceI18n"
+    objects: {
+      race: Prisma.$RacePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      raceId: string
+      language: string
+      name: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["raceI18n"]>
+    composites: {}
+  }
+
+  type RaceI18nGetPayload<S extends boolean | null | undefined | RaceI18nDefaultArgs> = $Result.GetResult<Prisma.$RaceI18nPayload, S>
+
+  type RaceI18nCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RaceI18nFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RaceI18nCountAggregateInputType | true
+    }
+
+  export interface RaceI18nDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RaceI18n'], meta: { name: 'RaceI18n' } }
+    /**
+     * Find zero or one RaceI18n that matches the filter.
+     * @param {RaceI18nFindUniqueArgs} args - Arguments to find a RaceI18n
+     * @example
+     * // Get one RaceI18n
+     * const raceI18n = await prisma.raceI18n.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RaceI18nFindUniqueArgs>(args: SelectSubset<T, RaceI18nFindUniqueArgs<ExtArgs>>): Prisma__RaceI18nClient<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one RaceI18n that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RaceI18nFindUniqueOrThrowArgs} args - Arguments to find a RaceI18n
+     * @example
+     * // Get one RaceI18n
+     * const raceI18n = await prisma.raceI18n.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RaceI18nFindUniqueOrThrowArgs>(args: SelectSubset<T, RaceI18nFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RaceI18nClient<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RaceI18n that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceI18nFindFirstArgs} args - Arguments to find a RaceI18n
+     * @example
+     * // Get one RaceI18n
+     * const raceI18n = await prisma.raceI18n.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RaceI18nFindFirstArgs>(args?: SelectSubset<T, RaceI18nFindFirstArgs<ExtArgs>>): Prisma__RaceI18nClient<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RaceI18n that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceI18nFindFirstOrThrowArgs} args - Arguments to find a RaceI18n
+     * @example
+     * // Get one RaceI18n
+     * const raceI18n = await prisma.raceI18n.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RaceI18nFindFirstOrThrowArgs>(args?: SelectSubset<T, RaceI18nFindFirstOrThrowArgs<ExtArgs>>): Prisma__RaceI18nClient<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more RaceI18ns that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceI18nFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all RaceI18ns
+     * const raceI18ns = await prisma.raceI18n.findMany()
+     * 
+     * // Get first 10 RaceI18ns
+     * const raceI18ns = await prisma.raceI18n.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const raceI18nWithIdOnly = await prisma.raceI18n.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RaceI18nFindManyArgs>(args?: SelectSubset<T, RaceI18nFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a RaceI18n.
+     * @param {RaceI18nCreateArgs} args - Arguments to create a RaceI18n.
+     * @example
+     * // Create one RaceI18n
+     * const RaceI18n = await prisma.raceI18n.create({
+     *   data: {
+     *     // ... data to create a RaceI18n
+     *   }
+     * })
+     * 
+     */
+    create<T extends RaceI18nCreateArgs>(args: SelectSubset<T, RaceI18nCreateArgs<ExtArgs>>): Prisma__RaceI18nClient<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many RaceI18ns.
+     * @param {RaceI18nCreateManyArgs} args - Arguments to create many RaceI18ns.
+     * @example
+     * // Create many RaceI18ns
+     * const raceI18n = await prisma.raceI18n.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RaceI18nCreateManyArgs>(args?: SelectSubset<T, RaceI18nCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many RaceI18ns and returns the data saved in the database.
+     * @param {RaceI18nCreateManyAndReturnArgs} args - Arguments to create many RaceI18ns.
+     * @example
+     * // Create many RaceI18ns
+     * const raceI18n = await prisma.raceI18n.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many RaceI18ns and only return the `id`
+     * const raceI18nWithIdOnly = await prisma.raceI18n.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RaceI18nCreateManyAndReturnArgs>(args?: SelectSubset<T, RaceI18nCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a RaceI18n.
+     * @param {RaceI18nDeleteArgs} args - Arguments to delete one RaceI18n.
+     * @example
+     * // Delete one RaceI18n
+     * const RaceI18n = await prisma.raceI18n.delete({
+     *   where: {
+     *     // ... filter to delete one RaceI18n
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RaceI18nDeleteArgs>(args: SelectSubset<T, RaceI18nDeleteArgs<ExtArgs>>): Prisma__RaceI18nClient<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one RaceI18n.
+     * @param {RaceI18nUpdateArgs} args - Arguments to update one RaceI18n.
+     * @example
+     * // Update one RaceI18n
+     * const raceI18n = await prisma.raceI18n.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RaceI18nUpdateArgs>(args: SelectSubset<T, RaceI18nUpdateArgs<ExtArgs>>): Prisma__RaceI18nClient<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more RaceI18ns.
+     * @param {RaceI18nDeleteManyArgs} args - Arguments to filter RaceI18ns to delete.
+     * @example
+     * // Delete a few RaceI18ns
+     * const { count } = await prisma.raceI18n.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RaceI18nDeleteManyArgs>(args?: SelectSubset<T, RaceI18nDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RaceI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceI18nUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many RaceI18ns
+     * const raceI18n = await prisma.raceI18n.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RaceI18nUpdateManyArgs>(args: SelectSubset<T, RaceI18nUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RaceI18ns and returns the data updated in the database.
+     * @param {RaceI18nUpdateManyAndReturnArgs} args - Arguments to update many RaceI18ns.
+     * @example
+     * // Update many RaceI18ns
+     * const raceI18n = await prisma.raceI18n.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more RaceI18ns and only return the `id`
+     * const raceI18nWithIdOnly = await prisma.raceI18n.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RaceI18nUpdateManyAndReturnArgs>(args: SelectSubset<T, RaceI18nUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one RaceI18n.
+     * @param {RaceI18nUpsertArgs} args - Arguments to update or create a RaceI18n.
+     * @example
+     * // Update or create a RaceI18n
+     * const raceI18n = await prisma.raceI18n.upsert({
+     *   create: {
+     *     // ... data to create a RaceI18n
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the RaceI18n we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RaceI18nUpsertArgs>(args: SelectSubset<T, RaceI18nUpsertArgs<ExtArgs>>): Prisma__RaceI18nClient<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of RaceI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceI18nCountArgs} args - Arguments to filter RaceI18ns to count.
+     * @example
+     * // Count the number of RaceI18ns
+     * const count = await prisma.raceI18n.count({
+     *   where: {
+     *     // ... the filter for the RaceI18ns we want to count
+     *   }
+     * })
+    **/
+    count<T extends RaceI18nCountArgs>(
+      args?: Subset<T, RaceI18nCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RaceI18nCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a RaceI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceI18nAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RaceI18nAggregateArgs>(args: Subset<T, RaceI18nAggregateArgs>): Prisma.PrismaPromise<GetRaceI18nAggregateType<T>>
+
+    /**
+     * Group by RaceI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RaceI18nGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RaceI18nGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RaceI18nGroupByArgs['orderBy'] }
+        : { orderBy?: RaceI18nGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RaceI18nGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRaceI18nGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the RaceI18n model
+   */
+  readonly fields: RaceI18nFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for RaceI18n.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RaceI18nClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    race<T extends RaceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RaceDefaultArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the RaceI18n model
+   */
+  interface RaceI18nFieldRefs {
+    readonly id: FieldRef<"RaceI18n", 'String'>
+    readonly raceId: FieldRef<"RaceI18n", 'String'>
+    readonly language: FieldRef<"RaceI18n", 'String'>
+    readonly name: FieldRef<"RaceI18n", 'String'>
+    readonly updatedAt: FieldRef<"RaceI18n", 'DateTime'>
+    readonly createdAt: FieldRef<"RaceI18n", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * RaceI18n findUnique
+   */
+  export type RaceI18nFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RaceI18n to fetch.
+     */
+    where: RaceI18nWhereUniqueInput
+  }
+
+  /**
+   * RaceI18n findUniqueOrThrow
+   */
+  export type RaceI18nFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RaceI18n to fetch.
+     */
+    where: RaceI18nWhereUniqueInput
+  }
+
+  /**
+   * RaceI18n findFirst
+   */
+  export type RaceI18nFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RaceI18n to fetch.
+     */
+    where?: RaceI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RaceI18ns to fetch.
+     */
+    orderBy?: RaceI18nOrderByWithRelationInput | RaceI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RaceI18ns.
+     */
+    cursor?: RaceI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RaceI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RaceI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RaceI18ns.
+     */
+    distinct?: RaceI18nScalarFieldEnum | RaceI18nScalarFieldEnum[]
+  }
+
+  /**
+   * RaceI18n findFirstOrThrow
+   */
+  export type RaceI18nFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RaceI18n to fetch.
+     */
+    where?: RaceI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RaceI18ns to fetch.
+     */
+    orderBy?: RaceI18nOrderByWithRelationInput | RaceI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RaceI18ns.
+     */
+    cursor?: RaceI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RaceI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RaceI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RaceI18ns.
+     */
+    distinct?: RaceI18nScalarFieldEnum | RaceI18nScalarFieldEnum[]
+  }
+
+  /**
+   * RaceI18n findMany
+   */
+  export type RaceI18nFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which RaceI18ns to fetch.
+     */
+    where?: RaceI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RaceI18ns to fetch.
+     */
+    orderBy?: RaceI18nOrderByWithRelationInput | RaceI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing RaceI18ns.
+     */
+    cursor?: RaceI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RaceI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RaceI18ns.
+     */
+    skip?: number
+    distinct?: RaceI18nScalarFieldEnum | RaceI18nScalarFieldEnum[]
+  }
+
+  /**
+   * RaceI18n create
+   */
+  export type RaceI18nCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to create a RaceI18n.
+     */
+    data: XOR<RaceI18nCreateInput, RaceI18nUncheckedCreateInput>
+  }
+
+  /**
+   * RaceI18n createMany
+   */
+  export type RaceI18nCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many RaceI18ns.
+     */
+    data: RaceI18nCreateManyInput | RaceI18nCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RaceI18n createManyAndReturn
+   */
+  export type RaceI18nCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * The data used to create many RaceI18ns.
+     */
+    data: RaceI18nCreateManyInput | RaceI18nCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RaceI18n update
+   */
+  export type RaceI18nUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to update a RaceI18n.
+     */
+    data: XOR<RaceI18nUpdateInput, RaceI18nUncheckedUpdateInput>
+    /**
+     * Choose, which RaceI18n to update.
+     */
+    where: RaceI18nWhereUniqueInput
+  }
+
+  /**
+   * RaceI18n updateMany
+   */
+  export type RaceI18nUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update RaceI18ns.
+     */
+    data: XOR<RaceI18nUpdateManyMutationInput, RaceI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which RaceI18ns to update
+     */
+    where?: RaceI18nWhereInput
+    /**
+     * Limit how many RaceI18ns to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RaceI18n updateManyAndReturn
+   */
+  export type RaceI18nUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * The data used to update RaceI18ns.
+     */
+    data: XOR<RaceI18nUpdateManyMutationInput, RaceI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which RaceI18ns to update
+     */
+    where?: RaceI18nWhereInput
+    /**
+     * Limit how many RaceI18ns to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RaceI18n upsert
+   */
+  export type RaceI18nUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    /**
+     * The filter to search for the RaceI18n to update in case it exists.
+     */
+    where: RaceI18nWhereUniqueInput
+    /**
+     * In case the RaceI18n found by the `where` argument doesn't exist, create a new RaceI18n with this data.
+     */
+    create: XOR<RaceI18nCreateInput, RaceI18nUncheckedCreateInput>
+    /**
+     * In case the RaceI18n was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RaceI18nUpdateInput, RaceI18nUncheckedUpdateInput>
+  }
+
+  /**
+   * RaceI18n delete
+   */
+  export type RaceI18nDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+    /**
+     * Filter which RaceI18n to delete.
+     */
+    where: RaceI18nWhereUniqueInput
+  }
+
+  /**
+   * RaceI18n deleteMany
+   */
+  export type RaceI18nDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RaceI18ns to delete
+     */
+    where?: RaceI18nWhereInput
+    /**
+     * Limit how many RaceI18ns to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * RaceI18n without action
+   */
+  export type RaceI18nDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RaceI18n
+     */
+    select?: RaceI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RaceI18n
+     */
+    omit?: RaceI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RaceI18nInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Person
+   */
+
+  export type AggregatePerson = {
+    _count: PersonCountAggregateOutputType | null
+    _min: PersonMinAggregateOutputType | null
+    _max: PersonMaxAggregateOutputType | null
+  }
+
+  export type PersonMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    shortName: string | null
+    raceId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type PersonMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    shortName: string | null
+    raceId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type PersonCountAggregateOutputType = {
+    id: number
+    name: number
+    shortName: number
+    raceId: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type PersonMinAggregateInputType = {
+    id?: true
+    name?: true
+    shortName?: true
+    raceId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type PersonMaxAggregateInputType = {
+    id?: true
+    name?: true
+    shortName?: true
+    raceId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type PersonCountAggregateInputType = {
+    id?: true
+    name?: true
+    shortName?: true
+    raceId?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type PersonAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Person to aggregate.
+     */
+    where?: PersonWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of People to fetch.
+     */
+    orderBy?: PersonOrderByWithRelationInput | PersonOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: PersonWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` People from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` People.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned People
+    **/
+    _count?: true | PersonCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PersonMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PersonMaxAggregateInputType
+  }
+
+  export type GetPersonAggregateType<T extends PersonAggregateArgs> = {
+        [P in keyof T & keyof AggregatePerson]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePerson[P]>
+      : GetScalarType<T[P], AggregatePerson[P]>
+  }
+
+
+
+
+  export type PersonGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PersonWhereInput
+    orderBy?: PersonOrderByWithAggregationInput | PersonOrderByWithAggregationInput[]
+    by: PersonScalarFieldEnum[] | PersonScalarFieldEnum
+    having?: PersonScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PersonCountAggregateInputType | true
+    _min?: PersonMinAggregateInputType
+    _max?: PersonMaxAggregateInputType
+  }
+
+  export type PersonGroupByOutputType = {
+    id: string
+    name: string
+    shortName: string
+    raceId: string
+    updatedAt: Date
+    createdAt: Date
+    _count: PersonCountAggregateOutputType | null
+    _min: PersonMinAggregateOutputType | null
+    _max: PersonMaxAggregateOutputType | null
+  }
+
+  type GetPersonGroupByPayload<T extends PersonGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PersonGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PersonGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PersonGroupByOutputType[P]>
+            : GetScalarType<T[P], PersonGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type PersonSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    shortName?: boolean
+    raceId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+    playercharacteristics?: boolean | Person$playercharacteristicsArgs<ExtArgs>
+  }, ExtArgs["result"]["person"]>
+
+  export type PersonSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    shortName?: boolean
+    raceId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["person"]>
+
+  export type PersonSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    shortName?: boolean
+    raceId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["person"]>
+
+  export type PersonSelectScalar = {
+    id?: boolean
+    name?: boolean
+    shortName?: boolean
+    raceId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type PersonOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "shortName" | "raceId" | "updatedAt" | "createdAt", ExtArgs["result"]["person"]>
+  export type PersonInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+    playercharacteristics?: boolean | Person$playercharacteristicsArgs<ExtArgs>
+  }
+  export type PersonIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }
+  export type PersonIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }
+
+  export type $PersonPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Person"
+    objects: {
+      race: Prisma.$RacePayload<ExtArgs>
+      playercharacteristics: Prisma.$PlayerCharacteristicsPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      shortName: string
+      raceId: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["person"]>
+    composites: {}
+  }
+
+  type PersonGetPayload<S extends boolean | null | undefined | PersonDefaultArgs> = $Result.GetResult<Prisma.$PersonPayload, S>
+
+  type PersonCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PersonFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PersonCountAggregateInputType | true
+    }
+
+  export interface PersonDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Person'], meta: { name: 'Person' } }
+    /**
+     * Find zero or one Person that matches the filter.
+     * @param {PersonFindUniqueArgs} args - Arguments to find a Person
+     * @example
+     * // Get one Person
+     * const person = await prisma.person.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PersonFindUniqueArgs>(args: SelectSubset<T, PersonFindUniqueArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Person that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PersonFindUniqueOrThrowArgs} args - Arguments to find a Person
+     * @example
+     * // Get one Person
+     * const person = await prisma.person.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PersonFindUniqueOrThrowArgs>(args: SelectSubset<T, PersonFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Person that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonFindFirstArgs} args - Arguments to find a Person
+     * @example
+     * // Get one Person
+     * const person = await prisma.person.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PersonFindFirstArgs>(args?: SelectSubset<T, PersonFindFirstArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Person that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonFindFirstOrThrowArgs} args - Arguments to find a Person
+     * @example
+     * // Get one Person
+     * const person = await prisma.person.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PersonFindFirstOrThrowArgs>(args?: SelectSubset<T, PersonFindFirstOrThrowArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more People that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all People
+     * const people = await prisma.person.findMany()
+     * 
+     * // Get first 10 People
+     * const people = await prisma.person.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const personWithIdOnly = await prisma.person.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends PersonFindManyArgs>(args?: SelectSubset<T, PersonFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Person.
+     * @param {PersonCreateArgs} args - Arguments to create a Person.
+     * @example
+     * // Create one Person
+     * const Person = await prisma.person.create({
+     *   data: {
+     *     // ... data to create a Person
+     *   }
+     * })
+     * 
+     */
+    create<T extends PersonCreateArgs>(args: SelectSubset<T, PersonCreateArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many People.
+     * @param {PersonCreateManyArgs} args - Arguments to create many People.
+     * @example
+     * // Create many People
+     * const person = await prisma.person.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends PersonCreateManyArgs>(args?: SelectSubset<T, PersonCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many People and returns the data saved in the database.
+     * @param {PersonCreateManyAndReturnArgs} args - Arguments to create many People.
+     * @example
+     * // Create many People
+     * const person = await prisma.person.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many People and only return the `id`
+     * const personWithIdOnly = await prisma.person.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends PersonCreateManyAndReturnArgs>(args?: SelectSubset<T, PersonCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Person.
+     * @param {PersonDeleteArgs} args - Arguments to delete one Person.
+     * @example
+     * // Delete one Person
+     * const Person = await prisma.person.delete({
+     *   where: {
+     *     // ... filter to delete one Person
+     *   }
+     * })
+     * 
+     */
+    delete<T extends PersonDeleteArgs>(args: SelectSubset<T, PersonDeleteArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Person.
+     * @param {PersonUpdateArgs} args - Arguments to update one Person.
+     * @example
+     * // Update one Person
+     * const person = await prisma.person.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends PersonUpdateArgs>(args: SelectSubset<T, PersonUpdateArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more People.
+     * @param {PersonDeleteManyArgs} args - Arguments to filter People to delete.
+     * @example
+     * // Delete a few People
+     * const { count } = await prisma.person.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends PersonDeleteManyArgs>(args?: SelectSubset<T, PersonDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more People.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many People
+     * const person = await prisma.person.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends PersonUpdateManyArgs>(args: SelectSubset<T, PersonUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more People and returns the data updated in the database.
+     * @param {PersonUpdateManyAndReturnArgs} args - Arguments to update many People.
+     * @example
+     * // Update many People
+     * const person = await prisma.person.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more People and only return the `id`
+     * const personWithIdOnly = await prisma.person.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends PersonUpdateManyAndReturnArgs>(args: SelectSubset<T, PersonUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Person.
+     * @param {PersonUpsertArgs} args - Arguments to update or create a Person.
+     * @example
+     * // Update or create a Person
+     * const person = await prisma.person.upsert({
+     *   create: {
+     *     // ... data to create a Person
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Person we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PersonUpsertArgs>(args: SelectSubset<T, PersonUpsertArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of People.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonCountArgs} args - Arguments to filter People to count.
+     * @example
+     * // Count the number of People
+     * const count = await prisma.person.count({
+     *   where: {
+     *     // ... the filter for the People we want to count
+     *   }
+     * })
+    **/
+    count<T extends PersonCountArgs>(
+      args?: Subset<T, PersonCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PersonCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Person.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PersonAggregateArgs>(args: Subset<T, PersonAggregateArgs>): Prisma.PrismaPromise<GetPersonAggregateType<T>>
+
+    /**
+     * Group by Person.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends PersonGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: PersonGroupByArgs['orderBy'] }
+        : { orderBy?: PersonGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, PersonGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPersonGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Person model
+   */
+  readonly fields: PersonFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Person.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__PersonClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    race<T extends RaceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RaceDefaultArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    playercharacteristics<T extends Person$playercharacteristicsArgs<ExtArgs> = {}>(args?: Subset<T, Person$playercharacteristicsArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Person model
+   */
+  interface PersonFieldRefs {
+    readonly id: FieldRef<"Person", 'String'>
+    readonly name: FieldRef<"Person", 'String'>
+    readonly shortName: FieldRef<"Person", 'String'>
+    readonly raceId: FieldRef<"Person", 'String'>
+    readonly updatedAt: FieldRef<"Person", 'DateTime'>
+    readonly createdAt: FieldRef<"Person", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Person findUnique
+   */
+  export type PersonFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    /**
+     * Filter, which Person to fetch.
+     */
+    where: PersonWhereUniqueInput
+  }
+
+  /**
+   * Person findUniqueOrThrow
+   */
+  export type PersonFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    /**
+     * Filter, which Person to fetch.
+     */
+    where: PersonWhereUniqueInput
+  }
+
+  /**
+   * Person findFirst
+   */
+  export type PersonFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    /**
+     * Filter, which Person to fetch.
+     */
+    where?: PersonWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of People to fetch.
+     */
+    orderBy?: PersonOrderByWithRelationInput | PersonOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for People.
+     */
+    cursor?: PersonWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` People from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` People.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of People.
+     */
+    distinct?: PersonScalarFieldEnum | PersonScalarFieldEnum[]
+  }
+
+  /**
+   * Person findFirstOrThrow
+   */
+  export type PersonFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    /**
+     * Filter, which Person to fetch.
+     */
+    where?: PersonWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of People to fetch.
+     */
+    orderBy?: PersonOrderByWithRelationInput | PersonOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for People.
+     */
+    cursor?: PersonWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` People from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` People.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of People.
+     */
+    distinct?: PersonScalarFieldEnum | PersonScalarFieldEnum[]
+  }
+
+  /**
+   * Person findMany
+   */
+  export type PersonFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    /**
+     * Filter, which People to fetch.
+     */
+    where?: PersonWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of People to fetch.
+     */
+    orderBy?: PersonOrderByWithRelationInput | PersonOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing People.
+     */
+    cursor?: PersonWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` People from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` People.
+     */
+    skip?: number
+    distinct?: PersonScalarFieldEnum | PersonScalarFieldEnum[]
+  }
+
+  /**
+   * Person create
+   */
+  export type PersonCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Person.
+     */
+    data: XOR<PersonCreateInput, PersonUncheckedCreateInput>
+  }
+
+  /**
+   * Person createMany
+   */
+  export type PersonCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many People.
+     */
+    data: PersonCreateManyInput | PersonCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Person createManyAndReturn
+   */
+  export type PersonCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * The data used to create many People.
+     */
+    data: PersonCreateManyInput | PersonCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Person update
+   */
+  export type PersonUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Person.
+     */
+    data: XOR<PersonUpdateInput, PersonUncheckedUpdateInput>
+    /**
+     * Choose, which Person to update.
+     */
+    where: PersonWhereUniqueInput
+  }
+
+  /**
+   * Person updateMany
+   */
+  export type PersonUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update People.
+     */
+    data: XOR<PersonUpdateManyMutationInput, PersonUncheckedUpdateManyInput>
+    /**
+     * Filter which People to update
+     */
+    where?: PersonWhereInput
+    /**
+     * Limit how many People to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Person updateManyAndReturn
+   */
+  export type PersonUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * The data used to update People.
+     */
+    data: XOR<PersonUpdateManyMutationInput, PersonUncheckedUpdateManyInput>
+    /**
+     * Filter which People to update
+     */
+    where?: PersonWhereInput
+    /**
+     * Limit how many People to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Person upsert
+   */
+  export type PersonUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Person to update in case it exists.
+     */
+    where: PersonWhereUniqueInput
+    /**
+     * In case the Person found by the `where` argument doesn't exist, create a new Person with this data.
+     */
+    create: XOR<PersonCreateInput, PersonUncheckedCreateInput>
+    /**
+     * In case the Person was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PersonUpdateInput, PersonUncheckedUpdateInput>
+  }
+
+  /**
+   * Person delete
+   */
+  export type PersonDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+    /**
+     * Filter which Person to delete.
+     */
+    where: PersonWhereUniqueInput
+  }
+
+  /**
+   * Person deleteMany
+   */
+  export type PersonDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which People to delete
+     */
+    where?: PersonWhereInput
+    /**
+     * Limit how many People to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Person.playercharacteristics
+   */
+  export type Person$playercharacteristicsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    where?: PlayerCharacteristicsWhereInput
+  }
+
+  /**
+   * Person without action
+   */
+  export type PersonDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Person
+     */
+    select?: PersonSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Person
+     */
+    omit?: PersonOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model PlayerCharacteristics
+   */
+
+  export type AggregatePlayerCharacteristics = {
+    _count: PlayerCharacteristicsCountAggregateOutputType | null
+    _min: PlayerCharacteristicsMinAggregateOutputType | null
+    _max: PlayerCharacteristicsMaxAggregateOutputType | null
+  }
+
+  export type PlayerCharacteristicsMinAggregateOutputType = {
+    id: string | null
+    playerId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type PlayerCharacteristicsMaxAggregateOutputType = {
+    id: string | null
+    playerId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type PlayerCharacteristicsCountAggregateOutputType = {
+    id: number
+    playerId: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type PlayerCharacteristicsMinAggregateInputType = {
+    id?: true
+    playerId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type PlayerCharacteristicsMaxAggregateInputType = {
+    id?: true
+    playerId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type PlayerCharacteristicsCountAggregateInputType = {
+    id?: true
+    playerId?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type PlayerCharacteristicsAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PlayerCharacteristics to aggregate.
+     */
+    where?: PlayerCharacteristicsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PlayerCharacteristics to fetch.
+     */
+    orderBy?: PlayerCharacteristicsOrderByWithRelationInput | PlayerCharacteristicsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: PlayerCharacteristicsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PlayerCharacteristics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PlayerCharacteristics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned PlayerCharacteristics
+    **/
+    _count?: true | PlayerCharacteristicsCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PlayerCharacteristicsMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PlayerCharacteristicsMaxAggregateInputType
+  }
+
+  export type GetPlayerCharacteristicsAggregateType<T extends PlayerCharacteristicsAggregateArgs> = {
+        [P in keyof T & keyof AggregatePlayerCharacteristics]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePlayerCharacteristics[P]>
+      : GetScalarType<T[P], AggregatePlayerCharacteristics[P]>
+  }
+
+
+
+
+  export type PlayerCharacteristicsGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PlayerCharacteristicsWhereInput
+    orderBy?: PlayerCharacteristicsOrderByWithAggregationInput | PlayerCharacteristicsOrderByWithAggregationInput[]
+    by: PlayerCharacteristicsScalarFieldEnum[] | PlayerCharacteristicsScalarFieldEnum
+    having?: PlayerCharacteristicsScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PlayerCharacteristicsCountAggregateInputType | true
+    _min?: PlayerCharacteristicsMinAggregateInputType
+    _max?: PlayerCharacteristicsMaxAggregateInputType
+  }
+
+  export type PlayerCharacteristicsGroupByOutputType = {
+    id: string
+    playerId: string
+    updatedAt: Date
+    createdAt: Date
+    _count: PlayerCharacteristicsCountAggregateOutputType | null
+    _min: PlayerCharacteristicsMinAggregateOutputType | null
+    _max: PlayerCharacteristicsMaxAggregateOutputType | null
+  }
+
+  type GetPlayerCharacteristicsGroupByPayload<T extends PlayerCharacteristicsGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PlayerCharacteristicsGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PlayerCharacteristicsGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PlayerCharacteristicsGroupByOutputType[P]>
+            : GetScalarType<T[P], PlayerCharacteristicsGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type PlayerCharacteristicsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    playerId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    player?: boolean | PersonDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["playerCharacteristics"]>
+
+  export type PlayerCharacteristicsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    playerId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    player?: boolean | PersonDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["playerCharacteristics"]>
+
+  export type PlayerCharacteristicsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    playerId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    player?: boolean | PersonDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["playerCharacteristics"]>
+
+  export type PlayerCharacteristicsSelectScalar = {
+    id?: boolean
+    playerId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type PlayerCharacteristicsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "playerId" | "updatedAt" | "createdAt", ExtArgs["result"]["playerCharacteristics"]>
+  export type PlayerCharacteristicsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    player?: boolean | PersonDefaultArgs<ExtArgs>
+  }
+  export type PlayerCharacteristicsIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    player?: boolean | PersonDefaultArgs<ExtArgs>
+  }
+  export type PlayerCharacteristicsIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    player?: boolean | PersonDefaultArgs<ExtArgs>
+  }
+
+  export type $PlayerCharacteristicsPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "PlayerCharacteristics"
+    objects: {
+      player: Prisma.$PersonPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      playerId: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["playerCharacteristics"]>
+    composites: {}
+  }
+
+  type PlayerCharacteristicsGetPayload<S extends boolean | null | undefined | PlayerCharacteristicsDefaultArgs> = $Result.GetResult<Prisma.$PlayerCharacteristicsPayload, S>
+
+  type PlayerCharacteristicsCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PlayerCharacteristicsFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PlayerCharacteristicsCountAggregateInputType | true
+    }
+
+  export interface PlayerCharacteristicsDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PlayerCharacteristics'], meta: { name: 'PlayerCharacteristics' } }
+    /**
+     * Find zero or one PlayerCharacteristics that matches the filter.
+     * @param {PlayerCharacteristicsFindUniqueArgs} args - Arguments to find a PlayerCharacteristics
+     * @example
+     * // Get one PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PlayerCharacteristicsFindUniqueArgs>(args: SelectSubset<T, PlayerCharacteristicsFindUniqueArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one PlayerCharacteristics that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PlayerCharacteristicsFindUniqueOrThrowArgs} args - Arguments to find a PlayerCharacteristics
+     * @example
+     * // Get one PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PlayerCharacteristicsFindUniqueOrThrowArgs>(args: SelectSubset<T, PlayerCharacteristicsFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PlayerCharacteristics that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlayerCharacteristicsFindFirstArgs} args - Arguments to find a PlayerCharacteristics
+     * @example
+     * // Get one PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PlayerCharacteristicsFindFirstArgs>(args?: SelectSubset<T, PlayerCharacteristicsFindFirstArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PlayerCharacteristics that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlayerCharacteristicsFindFirstOrThrowArgs} args - Arguments to find a PlayerCharacteristics
+     * @example
+     * // Get one PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PlayerCharacteristicsFindFirstOrThrowArgs>(args?: SelectSubset<T, PlayerCharacteristicsFindFirstOrThrowArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more PlayerCharacteristics that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlayerCharacteristicsFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.findMany()
+     * 
+     * // Get first 10 PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const playerCharacteristicsWithIdOnly = await prisma.playerCharacteristics.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends PlayerCharacteristicsFindManyArgs>(args?: SelectSubset<T, PlayerCharacteristicsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a PlayerCharacteristics.
+     * @param {PlayerCharacteristicsCreateArgs} args - Arguments to create a PlayerCharacteristics.
+     * @example
+     * // Create one PlayerCharacteristics
+     * const PlayerCharacteristics = await prisma.playerCharacteristics.create({
+     *   data: {
+     *     // ... data to create a PlayerCharacteristics
+     *   }
+     * })
+     * 
+     */
+    create<T extends PlayerCharacteristicsCreateArgs>(args: SelectSubset<T, PlayerCharacteristicsCreateArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many PlayerCharacteristics.
+     * @param {PlayerCharacteristicsCreateManyArgs} args - Arguments to create many PlayerCharacteristics.
+     * @example
+     * // Create many PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends PlayerCharacteristicsCreateManyArgs>(args?: SelectSubset<T, PlayerCharacteristicsCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many PlayerCharacteristics and returns the data saved in the database.
+     * @param {PlayerCharacteristicsCreateManyAndReturnArgs} args - Arguments to create many PlayerCharacteristics.
+     * @example
+     * // Create many PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many PlayerCharacteristics and only return the `id`
+     * const playerCharacteristicsWithIdOnly = await prisma.playerCharacteristics.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends PlayerCharacteristicsCreateManyAndReturnArgs>(args?: SelectSubset<T, PlayerCharacteristicsCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a PlayerCharacteristics.
+     * @param {PlayerCharacteristicsDeleteArgs} args - Arguments to delete one PlayerCharacteristics.
+     * @example
+     * // Delete one PlayerCharacteristics
+     * const PlayerCharacteristics = await prisma.playerCharacteristics.delete({
+     *   where: {
+     *     // ... filter to delete one PlayerCharacteristics
+     *   }
+     * })
+     * 
+     */
+    delete<T extends PlayerCharacteristicsDeleteArgs>(args: SelectSubset<T, PlayerCharacteristicsDeleteArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one PlayerCharacteristics.
+     * @param {PlayerCharacteristicsUpdateArgs} args - Arguments to update one PlayerCharacteristics.
+     * @example
+     * // Update one PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends PlayerCharacteristicsUpdateArgs>(args: SelectSubset<T, PlayerCharacteristicsUpdateArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more PlayerCharacteristics.
+     * @param {PlayerCharacteristicsDeleteManyArgs} args - Arguments to filter PlayerCharacteristics to delete.
+     * @example
+     * // Delete a few PlayerCharacteristics
+     * const { count } = await prisma.playerCharacteristics.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends PlayerCharacteristicsDeleteManyArgs>(args?: SelectSubset<T, PlayerCharacteristicsDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PlayerCharacteristics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlayerCharacteristicsUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends PlayerCharacteristicsUpdateManyArgs>(args: SelectSubset<T, PlayerCharacteristicsUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PlayerCharacteristics and returns the data updated in the database.
+     * @param {PlayerCharacteristicsUpdateManyAndReturnArgs} args - Arguments to update many PlayerCharacteristics.
+     * @example
+     * // Update many PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more PlayerCharacteristics and only return the `id`
+     * const playerCharacteristicsWithIdOnly = await prisma.playerCharacteristics.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends PlayerCharacteristicsUpdateManyAndReturnArgs>(args: SelectSubset<T, PlayerCharacteristicsUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one PlayerCharacteristics.
+     * @param {PlayerCharacteristicsUpsertArgs} args - Arguments to update or create a PlayerCharacteristics.
+     * @example
+     * // Update or create a PlayerCharacteristics
+     * const playerCharacteristics = await prisma.playerCharacteristics.upsert({
+     *   create: {
+     *     // ... data to create a PlayerCharacteristics
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PlayerCharacteristics we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PlayerCharacteristicsUpsertArgs>(args: SelectSubset<T, PlayerCharacteristicsUpsertArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of PlayerCharacteristics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlayerCharacteristicsCountArgs} args - Arguments to filter PlayerCharacteristics to count.
+     * @example
+     * // Count the number of PlayerCharacteristics
+     * const count = await prisma.playerCharacteristics.count({
+     *   where: {
+     *     // ... the filter for the PlayerCharacteristics we want to count
+     *   }
+     * })
+    **/
+    count<T extends PlayerCharacteristicsCountArgs>(
+      args?: Subset<T, PlayerCharacteristicsCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PlayerCharacteristicsCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a PlayerCharacteristics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlayerCharacteristicsAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PlayerCharacteristicsAggregateArgs>(args: Subset<T, PlayerCharacteristicsAggregateArgs>): Prisma.PrismaPromise<GetPlayerCharacteristicsAggregateType<T>>
+
+    /**
+     * Group by PlayerCharacteristics.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PlayerCharacteristicsGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends PlayerCharacteristicsGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: PlayerCharacteristicsGroupByArgs['orderBy'] }
+        : { orderBy?: PlayerCharacteristicsGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, PlayerCharacteristicsGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlayerCharacteristicsGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the PlayerCharacteristics model
+   */
+  readonly fields: PlayerCharacteristicsFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for PlayerCharacteristics.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__PlayerCharacteristicsClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    player<T extends PersonDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PersonDefaultArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the PlayerCharacteristics model
+   */
+  interface PlayerCharacteristicsFieldRefs {
+    readonly id: FieldRef<"PlayerCharacteristics", 'String'>
+    readonly playerId: FieldRef<"PlayerCharacteristics", 'String'>
+    readonly updatedAt: FieldRef<"PlayerCharacteristics", 'DateTime'>
+    readonly createdAt: FieldRef<"PlayerCharacteristics", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * PlayerCharacteristics findUnique
+   */
+  export type PlayerCharacteristicsFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    /**
+     * Filter, which PlayerCharacteristics to fetch.
+     */
+    where: PlayerCharacteristicsWhereUniqueInput
+  }
+
+  /**
+   * PlayerCharacteristics findUniqueOrThrow
+   */
+  export type PlayerCharacteristicsFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    /**
+     * Filter, which PlayerCharacteristics to fetch.
+     */
+    where: PlayerCharacteristicsWhereUniqueInput
+  }
+
+  /**
+   * PlayerCharacteristics findFirst
+   */
+  export type PlayerCharacteristicsFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    /**
+     * Filter, which PlayerCharacteristics to fetch.
+     */
+    where?: PlayerCharacteristicsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PlayerCharacteristics to fetch.
+     */
+    orderBy?: PlayerCharacteristicsOrderByWithRelationInput | PlayerCharacteristicsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PlayerCharacteristics.
+     */
+    cursor?: PlayerCharacteristicsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PlayerCharacteristics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PlayerCharacteristics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PlayerCharacteristics.
+     */
+    distinct?: PlayerCharacteristicsScalarFieldEnum | PlayerCharacteristicsScalarFieldEnum[]
+  }
+
+  /**
+   * PlayerCharacteristics findFirstOrThrow
+   */
+  export type PlayerCharacteristicsFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    /**
+     * Filter, which PlayerCharacteristics to fetch.
+     */
+    where?: PlayerCharacteristicsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PlayerCharacteristics to fetch.
+     */
+    orderBy?: PlayerCharacteristicsOrderByWithRelationInput | PlayerCharacteristicsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PlayerCharacteristics.
+     */
+    cursor?: PlayerCharacteristicsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PlayerCharacteristics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PlayerCharacteristics.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PlayerCharacteristics.
+     */
+    distinct?: PlayerCharacteristicsScalarFieldEnum | PlayerCharacteristicsScalarFieldEnum[]
+  }
+
+  /**
+   * PlayerCharacteristics findMany
+   */
+  export type PlayerCharacteristicsFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    /**
+     * Filter, which PlayerCharacteristics to fetch.
+     */
+    where?: PlayerCharacteristicsWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PlayerCharacteristics to fetch.
+     */
+    orderBy?: PlayerCharacteristicsOrderByWithRelationInput | PlayerCharacteristicsOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing PlayerCharacteristics.
+     */
+    cursor?: PlayerCharacteristicsWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PlayerCharacteristics from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PlayerCharacteristics.
+     */
+    skip?: number
+    distinct?: PlayerCharacteristicsScalarFieldEnum | PlayerCharacteristicsScalarFieldEnum[]
+  }
+
+  /**
+   * PlayerCharacteristics create
+   */
+  export type PlayerCharacteristicsCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    /**
+     * The data needed to create a PlayerCharacteristics.
+     */
+    data: XOR<PlayerCharacteristicsCreateInput, PlayerCharacteristicsUncheckedCreateInput>
+  }
+
+  /**
+   * PlayerCharacteristics createMany
+   */
+  export type PlayerCharacteristicsCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PlayerCharacteristics.
+     */
+    data: PlayerCharacteristicsCreateManyInput | PlayerCharacteristicsCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * PlayerCharacteristics createManyAndReturn
+   */
+  export type PlayerCharacteristicsCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * The data used to create many PlayerCharacteristics.
+     */
+    data: PlayerCharacteristicsCreateManyInput | PlayerCharacteristicsCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PlayerCharacteristics update
+   */
+  export type PlayerCharacteristicsUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    /**
+     * The data needed to update a PlayerCharacteristics.
+     */
+    data: XOR<PlayerCharacteristicsUpdateInput, PlayerCharacteristicsUncheckedUpdateInput>
+    /**
+     * Choose, which PlayerCharacteristics to update.
+     */
+    where: PlayerCharacteristicsWhereUniqueInput
+  }
+
+  /**
+   * PlayerCharacteristics updateMany
+   */
+  export type PlayerCharacteristicsUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PlayerCharacteristics.
+     */
+    data: XOR<PlayerCharacteristicsUpdateManyMutationInput, PlayerCharacteristicsUncheckedUpdateManyInput>
+    /**
+     * Filter which PlayerCharacteristics to update
+     */
+    where?: PlayerCharacteristicsWhereInput
+    /**
+     * Limit how many PlayerCharacteristics to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * PlayerCharacteristics updateManyAndReturn
+   */
+  export type PlayerCharacteristicsUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * The data used to update PlayerCharacteristics.
+     */
+    data: XOR<PlayerCharacteristicsUpdateManyMutationInput, PlayerCharacteristicsUncheckedUpdateManyInput>
+    /**
+     * Filter which PlayerCharacteristics to update
+     */
+    where?: PlayerCharacteristicsWhereInput
+    /**
+     * Limit how many PlayerCharacteristics to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PlayerCharacteristics upsert
+   */
+  export type PlayerCharacteristicsUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    /**
+     * The filter to search for the PlayerCharacteristics to update in case it exists.
+     */
+    where: PlayerCharacteristicsWhereUniqueInput
+    /**
+     * In case the PlayerCharacteristics found by the `where` argument doesn't exist, create a new PlayerCharacteristics with this data.
+     */
+    create: XOR<PlayerCharacteristicsCreateInput, PlayerCharacteristicsUncheckedCreateInput>
+    /**
+     * In case the PlayerCharacteristics was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PlayerCharacteristicsUpdateInput, PlayerCharacteristicsUncheckedUpdateInput>
+  }
+
+  /**
+   * PlayerCharacteristics delete
+   */
+  export type PlayerCharacteristicsDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+    /**
+     * Filter which PlayerCharacteristics to delete.
+     */
+    where: PlayerCharacteristicsWhereUniqueInput
+  }
+
+  /**
+   * PlayerCharacteristics deleteMany
+   */
+  export type PlayerCharacteristicsDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PlayerCharacteristics to delete
+     */
+    where?: PlayerCharacteristicsWhereInput
+    /**
+     * Limit how many PlayerCharacteristics to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * PlayerCharacteristics without action
+   */
+  export type PlayerCharacteristicsDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PlayerCharacteristics
+     */
+    select?: PlayerCharacteristicsSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PlayerCharacteristics
+     */
+    omit?: PlayerCharacteristicsOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PlayerCharacteristicsInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Team
+   */
+
+  export type AggregateTeam = {
+    _count: TeamCountAggregateOutputType | null
+    _min: TeamMinAggregateOutputType | null
+    _max: TeamMaxAggregateOutputType | null
+  }
+
+  export type TeamMinAggregateOutputType = {
+    id: string | null
+    name: string | null
+    shortName: string | null
+    isActive: boolean | null
+    ownerId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type TeamMaxAggregateOutputType = {
+    id: string | null
+    name: string | null
+    shortName: string | null
+    isActive: boolean | null
+    ownerId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type TeamCountAggregateOutputType = {
+    id: number
+    name: number
+    shortName: number
+    isActive: number
+    ownerId: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type TeamMinAggregateInputType = {
+    id?: true
+    name?: true
+    shortName?: true
+    isActive?: true
+    ownerId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type TeamMaxAggregateInputType = {
+    id?: true
+    name?: true
+    shortName?: true
+    isActive?: true
+    ownerId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type TeamCountAggregateInputType = {
+    id?: true
+    name?: true
+    shortName?: true
+    isActive?: true
+    ownerId?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type TeamAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Team to aggregate.
+     */
+    where?: TeamWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Teams to fetch.
+     */
+    orderBy?: TeamOrderByWithRelationInput | TeamOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TeamWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Teams from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Teams.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Teams
+    **/
+    _count?: true | TeamCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TeamMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TeamMaxAggregateInputType
+  }
+
+  export type GetTeamAggregateType<T extends TeamAggregateArgs> = {
+        [P in keyof T & keyof AggregateTeam]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTeam[P]>
+      : GetScalarType<T[P], AggregateTeam[P]>
+  }
+
+
+
+
+  export type TeamGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TeamWhereInput
+    orderBy?: TeamOrderByWithAggregationInput | TeamOrderByWithAggregationInput[]
+    by: TeamScalarFieldEnum[] | TeamScalarFieldEnum
+    having?: TeamScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TeamCountAggregateInputType | true
+    _min?: TeamMinAggregateInputType
+    _max?: TeamMaxAggregateInputType
+  }
+
+  export type TeamGroupByOutputType = {
+    id: string
+    name: string
+    shortName: string
+    isActive: boolean
+    ownerId: string
+    updatedAt: Date
+    createdAt: Date
+    _count: TeamCountAggregateOutputType | null
+    _min: TeamMinAggregateOutputType | null
+    _max: TeamMaxAggregateOutputType | null
+  }
+
+  type GetTeamGroupByPayload<T extends TeamGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TeamGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TeamGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TeamGroupByOutputType[P]>
+            : GetScalarType<T[P], TeamGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TeamSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    shortName?: boolean
+    isActive?: boolean
+    ownerId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    owner?: boolean | Team$ownerArgs<ExtArgs>
+  }, ExtArgs["result"]["team"]>
+
+  export type TeamSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    shortName?: boolean
+    isActive?: boolean
+    ownerId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    owner?: boolean | Team$ownerArgs<ExtArgs>
+  }, ExtArgs["result"]["team"]>
+
+  export type TeamSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    shortName?: boolean
+    isActive?: boolean
+    ownerId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    owner?: boolean | Team$ownerArgs<ExtArgs>
+  }, ExtArgs["result"]["team"]>
+
+  export type TeamSelectScalar = {
+    id?: boolean
+    name?: boolean
+    shortName?: boolean
+    isActive?: boolean
+    ownerId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type TeamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "shortName" | "isActive" | "ownerId" | "updatedAt" | "createdAt", ExtArgs["result"]["team"]>
+  export type TeamInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    owner?: boolean | Team$ownerArgs<ExtArgs>
+  }
+  export type TeamIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    owner?: boolean | Team$ownerArgs<ExtArgs>
+  }
+  export type TeamIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    owner?: boolean | Team$ownerArgs<ExtArgs>
+  }
+
+  export type $TeamPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Team"
+    objects: {
+      owner: Prisma.$UserPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      name: string
+      shortName: string
+      isActive: boolean
+      ownerId: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["team"]>
+    composites: {}
+  }
+
+  type TeamGetPayload<S extends boolean | null | undefined | TeamDefaultArgs> = $Result.GetResult<Prisma.$TeamPayload, S>
+
+  type TeamCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TeamFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TeamCountAggregateInputType | true
+    }
+
+  export interface TeamDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Team'], meta: { name: 'Team' } }
+    /**
+     * Find zero or one Team that matches the filter.
+     * @param {TeamFindUniqueArgs} args - Arguments to find a Team
+     * @example
+     * // Get one Team
+     * const team = await prisma.team.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TeamFindUniqueArgs>(args: SelectSubset<T, TeamFindUniqueArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Team that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TeamFindUniqueOrThrowArgs} args - Arguments to find a Team
+     * @example
+     * // Get one Team
+     * const team = await prisma.team.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TeamFindUniqueOrThrowArgs>(args: SelectSubset<T, TeamFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Team that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamFindFirstArgs} args - Arguments to find a Team
+     * @example
+     * // Get one Team
+     * const team = await prisma.team.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TeamFindFirstArgs>(args?: SelectSubset<T, TeamFindFirstArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Team that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamFindFirstOrThrowArgs} args - Arguments to find a Team
+     * @example
+     * // Get one Team
+     * const team = await prisma.team.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TeamFindFirstOrThrowArgs>(args?: SelectSubset<T, TeamFindFirstOrThrowArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Teams that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Teams
+     * const teams = await prisma.team.findMany()
+     * 
+     * // Get first 10 Teams
+     * const teams = await prisma.team.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const teamWithIdOnly = await prisma.team.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends TeamFindManyArgs>(args?: SelectSubset<T, TeamFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Team.
+     * @param {TeamCreateArgs} args - Arguments to create a Team.
+     * @example
+     * // Create one Team
+     * const Team = await prisma.team.create({
+     *   data: {
+     *     // ... data to create a Team
+     *   }
+     * })
+     * 
+     */
+    create<T extends TeamCreateArgs>(args: SelectSubset<T, TeamCreateArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Teams.
+     * @param {TeamCreateManyArgs} args - Arguments to create many Teams.
+     * @example
+     * // Create many Teams
+     * const team = await prisma.team.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TeamCreateManyArgs>(args?: SelectSubset<T, TeamCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Teams and returns the data saved in the database.
+     * @param {TeamCreateManyAndReturnArgs} args - Arguments to create many Teams.
+     * @example
+     * // Create many Teams
+     * const team = await prisma.team.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Teams and only return the `id`
+     * const teamWithIdOnly = await prisma.team.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TeamCreateManyAndReturnArgs>(args?: SelectSubset<T, TeamCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Team.
+     * @param {TeamDeleteArgs} args - Arguments to delete one Team.
+     * @example
+     * // Delete one Team
+     * const Team = await prisma.team.delete({
+     *   where: {
+     *     // ... filter to delete one Team
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TeamDeleteArgs>(args: SelectSubset<T, TeamDeleteArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Team.
+     * @param {TeamUpdateArgs} args - Arguments to update one Team.
+     * @example
+     * // Update one Team
+     * const team = await prisma.team.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TeamUpdateArgs>(args: SelectSubset<T, TeamUpdateArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Teams.
+     * @param {TeamDeleteManyArgs} args - Arguments to filter Teams to delete.
+     * @example
+     * // Delete a few Teams
+     * const { count } = await prisma.team.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TeamDeleteManyArgs>(args?: SelectSubset<T, TeamDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Teams.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Teams
+     * const team = await prisma.team.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TeamUpdateManyArgs>(args: SelectSubset<T, TeamUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Teams and returns the data updated in the database.
+     * @param {TeamUpdateManyAndReturnArgs} args - Arguments to update many Teams.
+     * @example
+     * // Update many Teams
+     * const team = await prisma.team.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Teams and only return the `id`
+     * const teamWithIdOnly = await prisma.team.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TeamUpdateManyAndReturnArgs>(args: SelectSubset<T, TeamUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Team.
+     * @param {TeamUpsertArgs} args - Arguments to update or create a Team.
+     * @example
+     * // Update or create a Team
+     * const team = await prisma.team.upsert({
+     *   create: {
+     *     // ... data to create a Team
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Team we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TeamUpsertArgs>(args: SelectSubset<T, TeamUpsertArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Teams.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamCountArgs} args - Arguments to filter Teams to count.
+     * @example
+     * // Count the number of Teams
+     * const count = await prisma.team.count({
+     *   where: {
+     *     // ... the filter for the Teams we want to count
+     *   }
+     * })
+    **/
+    count<T extends TeamCountArgs>(
+      args?: Subset<T, TeamCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TeamCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Team.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TeamAggregateArgs>(args: Subset<T, TeamAggregateArgs>): Prisma.PrismaPromise<GetTeamAggregateType<T>>
+
+    /**
+     * Group by Team.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TeamGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TeamGroupByArgs['orderBy'] }
+        : { orderBy?: TeamGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TeamGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTeamGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Team model
+   */
+  readonly fields: TeamFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Team.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TeamClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    owner<T extends Team$ownerArgs<ExtArgs> = {}>(args?: Subset<T, Team$ownerArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Team model
+   */
+  interface TeamFieldRefs {
+    readonly id: FieldRef<"Team", 'String'>
+    readonly name: FieldRef<"Team", 'String'>
+    readonly shortName: FieldRef<"Team", 'String'>
+    readonly isActive: FieldRef<"Team", 'Boolean'>
+    readonly ownerId: FieldRef<"Team", 'String'>
+    readonly updatedAt: FieldRef<"Team", 'DateTime'>
+    readonly createdAt: FieldRef<"Team", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Team findUnique
+   */
+  export type TeamFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Team to fetch.
+     */
+    where: TeamWhereUniqueInput
+  }
+
+  /**
+   * Team findUniqueOrThrow
+   */
+  export type TeamFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Team to fetch.
+     */
+    where: TeamWhereUniqueInput
+  }
+
+  /**
+   * Team findFirst
+   */
+  export type TeamFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Team to fetch.
+     */
+    where?: TeamWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Teams to fetch.
+     */
+    orderBy?: TeamOrderByWithRelationInput | TeamOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Teams.
+     */
+    cursor?: TeamWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Teams from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Teams.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Teams.
+     */
+    distinct?: TeamScalarFieldEnum | TeamScalarFieldEnum[]
+  }
+
+  /**
+   * Team findFirstOrThrow
+   */
+  export type TeamFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Team to fetch.
+     */
+    where?: TeamWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Teams to fetch.
+     */
+    orderBy?: TeamOrderByWithRelationInput | TeamOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Teams.
+     */
+    cursor?: TeamWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Teams from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Teams.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Teams.
+     */
+    distinct?: TeamScalarFieldEnum | TeamScalarFieldEnum[]
+  }
+
+  /**
+   * Team findMany
+   */
+  export type TeamFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter, which Teams to fetch.
+     */
+    where?: TeamWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Teams to fetch.
+     */
+    orderBy?: TeamOrderByWithRelationInput | TeamOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Teams.
+     */
+    cursor?: TeamWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Teams from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Teams.
+     */
+    skip?: number
+    distinct?: TeamScalarFieldEnum | TeamScalarFieldEnum[]
+  }
+
+  /**
+   * Team create
+   */
+  export type TeamCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Team.
+     */
+    data: XOR<TeamCreateInput, TeamUncheckedCreateInput>
+  }
+
+  /**
+   * Team createMany
+   */
+  export type TeamCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Teams.
+     */
+    data: TeamCreateManyInput | TeamCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Team createManyAndReturn
+   */
+  export type TeamCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * The data used to create many Teams.
+     */
+    data: TeamCreateManyInput | TeamCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Team update
+   */
+  export type TeamUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Team.
+     */
+    data: XOR<TeamUpdateInput, TeamUncheckedUpdateInput>
+    /**
+     * Choose, which Team to update.
+     */
+    where: TeamWhereUniqueInput
+  }
+
+  /**
+   * Team updateMany
+   */
+  export type TeamUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Teams.
+     */
+    data: XOR<TeamUpdateManyMutationInput, TeamUncheckedUpdateManyInput>
+    /**
+     * Filter which Teams to update
+     */
+    where?: TeamWhereInput
+    /**
+     * Limit how many Teams to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Team updateManyAndReturn
+   */
+  export type TeamUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * The data used to update Teams.
+     */
+    data: XOR<TeamUpdateManyMutationInput, TeamUncheckedUpdateManyInput>
+    /**
+     * Filter which Teams to update
+     */
+    where?: TeamWhereInput
+    /**
+     * Limit how many Teams to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Team upsert
+   */
+  export type TeamUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Team to update in case it exists.
+     */
+    where: TeamWhereUniqueInput
+    /**
+     * In case the Team found by the `where` argument doesn't exist, create a new Team with this data.
+     */
+    create: XOR<TeamCreateInput, TeamUncheckedCreateInput>
+    /**
+     * In case the Team was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TeamUpdateInput, TeamUncheckedUpdateInput>
+  }
+
+  /**
+   * Team delete
+   */
+  export type TeamDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+    /**
+     * Filter which Team to delete.
+     */
+    where: TeamWhereUniqueInput
+  }
+
+  /**
+   * Team deleteMany
+   */
+  export type TeamDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Teams to delete
+     */
+    where?: TeamWhereInput
+    /**
+     * Limit how many Teams to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Team.owner
+   */
+  export type Team$ownerArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the User
+     */
+    select?: UserSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the User
+     */
+    omit?: UserOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    where?: UserWhereInput
+  }
+
+  /**
+   * Team without action
+   */
+  export type TeamDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Team
+     */
+    select?: TeamSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Team
+     */
+    omit?: TeamOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -5714,6 +24960,188 @@ export namespace Prisma {
   export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
+  export const RegionScalarFieldEnum: {
+    id: 'id',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type RegionScalarFieldEnum = (typeof RegionScalarFieldEnum)[keyof typeof RegionScalarFieldEnum]
+
+
+  export const RegionI18nScalarFieldEnum: {
+    id: 'id',
+    regionId: 'regionId',
+    language: 'language',
+    name: 'name',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type RegionI18nScalarFieldEnum = (typeof RegionI18nScalarFieldEnum)[keyof typeof RegionI18nScalarFieldEnum]
+
+
+  export const LocationScalarFieldEnum: {
+    id: 'id',
+    type: 'type',
+    regionId: 'regionId',
+    latitude: 'latitude',
+    longitude: 'longitude',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type LocationScalarFieldEnum = (typeof LocationScalarFieldEnum)[keyof typeof LocationScalarFieldEnum]
+
+
+  export const LocationI18nScalarFieldEnum: {
+    id: 'id',
+    locationId: 'locationId',
+    language: 'language',
+    name: 'name',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type LocationI18nScalarFieldEnum = (typeof LocationI18nScalarFieldEnum)[keyof typeof LocationI18nScalarFieldEnum]
+
+
+  export const TownInformationScalarFieldEnum: {
+    id: 'id',
+    locationId: 'locationId',
+    population: 'population',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type TownInformationScalarFieldEnum = (typeof TownInformationScalarFieldEnum)[keyof typeof TownInformationScalarFieldEnum]
+
+
+  export const RouteScalarFieldEnum: {
+    id: 'id',
+    type: 'type',
+    fromId: 'fromId',
+    toId: 'toId',
+    distance: 'distance',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type RouteScalarFieldEnum = (typeof RouteScalarFieldEnum)[keyof typeof RouteScalarFieldEnum]
+
+
+  export const BuildingTypeScalarFieldEnum: {
+    id: 'id',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type BuildingTypeScalarFieldEnum = (typeof BuildingTypeScalarFieldEnum)[keyof typeof BuildingTypeScalarFieldEnum]
+
+
+  export const BuildingTypeI18nScalarFieldEnum: {
+    id: 'id',
+    buildingTypeId: 'buildingTypeId',
+    language: 'language',
+    name: 'name',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type BuildingTypeI18nScalarFieldEnum = (typeof BuildingTypeI18nScalarFieldEnum)[keyof typeof BuildingTypeI18nScalarFieldEnum]
+
+
+  export const BuildingScalarFieldEnum: {
+    id: 'id',
+    buildingTypeId: 'buildingTypeId',
+    locationId: 'locationId',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type BuildingScalarFieldEnum = (typeof BuildingScalarFieldEnum)[keyof typeof BuildingScalarFieldEnum]
+
+
+  export const BuildingI18nScalarFieldEnum: {
+    id: 'id',
+    buildingId: 'buildingId',
+    language: 'language',
+    name: 'name',
+    description: 'description',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type BuildingI18nScalarFieldEnum = (typeof BuildingI18nScalarFieldEnum)[keyof typeof BuildingI18nScalarFieldEnum]
+
+
+  export const StadiumInfoScalarFieldEnum: {
+    id: 'id',
+    buildingId: 'buildingId',
+    capacity: 'capacity',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type StadiumInfoScalarFieldEnum = (typeof StadiumInfoScalarFieldEnum)[keyof typeof StadiumInfoScalarFieldEnum]
+
+
+  export const RaceScalarFieldEnum: {
+    id: 'id',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type RaceScalarFieldEnum = (typeof RaceScalarFieldEnum)[keyof typeof RaceScalarFieldEnum]
+
+
+  export const RaceI18nScalarFieldEnum: {
+    id: 'id',
+    raceId: 'raceId',
+    language: 'language',
+    name: 'name',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type RaceI18nScalarFieldEnum = (typeof RaceI18nScalarFieldEnum)[keyof typeof RaceI18nScalarFieldEnum]
+
+
+  export const PersonScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    shortName: 'shortName',
+    raceId: 'raceId',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type PersonScalarFieldEnum = (typeof PersonScalarFieldEnum)[keyof typeof PersonScalarFieldEnum]
+
+
+  export const PlayerCharacteristicsScalarFieldEnum: {
+    id: 'id',
+    playerId: 'playerId',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type PlayerCharacteristicsScalarFieldEnum = (typeof PlayerCharacteristicsScalarFieldEnum)[keyof typeof PlayerCharacteristicsScalarFieldEnum]
+
+
+  export const TeamScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    shortName: 'shortName',
+    isActive: 'isActive',
+    ownerId: 'ownerId',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type TeamScalarFieldEnum = (typeof TeamScalarFieldEnum)[keyof typeof TeamScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
@@ -5779,6 +25207,34 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'LocationType'
+   */
+  export type EnumLocationTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LocationType'>
+    
+
+
+  /**
+   * Reference to a field of type 'LocationType[]'
+   */
+  export type ListEnumLocationTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'LocationType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float'
+   */
+  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+    
+
+
+  /**
+   * Reference to a field of type 'Float[]'
+   */
+  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -5789,6 +25245,20 @@ export namespace Prisma {
    * Reference to a field of type 'Int[]'
    */
   export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'RouteType'
+   */
+  export type EnumRouteTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'RouteType'>
+    
+
+
+  /**
+   * Reference to a field of type 'RouteType[]'
+   */
+  export type ListEnumRouteTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'RouteType[]'>
     
   /**
    * Deep Input Types
@@ -5812,6 +25282,7 @@ export namespace Prisma {
     banExpires?: DateTimeNullableFilter<"User"> | Date | string | null
     sessions?: SessionListRelationFilter
     accounts?: AccountListRelationFilter
+    teams?: TeamListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -5828,6 +25299,7 @@ export namespace Prisma {
     banExpires?: SortOrderInput | SortOrder
     sessions?: SessionOrderByRelationAggregateInput
     accounts?: AccountOrderByRelationAggregateInput
+    teams?: TeamOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -5847,6 +25319,7 @@ export namespace Prisma {
     banExpires?: DateTimeNullableFilter<"User"> | Date | string | null
     sessions?: SessionListRelationFilter
     accounts?: AccountListRelationFilter
+    teams?: TeamListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -6110,6 +25583,968 @@ export namespace Prisma {
     updatedAt?: DateTimeNullableWithAggregatesFilter<"Verification"> | Date | string | null
   }
 
+  export type RegionWhereInput = {
+    AND?: RegionWhereInput | RegionWhereInput[]
+    OR?: RegionWhereInput[]
+    NOT?: RegionWhereInput | RegionWhereInput[]
+    id?: StringFilter<"Region"> | string
+    updatedAt?: DateTimeFilter<"Region"> | Date | string
+    createdAt?: DateTimeFilter<"Region"> | Date | string
+    i18n?: RegionI18nListRelationFilter
+    locations?: LocationListRelationFilter
+  }
+
+  export type RegionOrderByWithRelationInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    i18n?: RegionI18nOrderByRelationAggregateInput
+    locations?: LocationOrderByRelationAggregateInput
+  }
+
+  export type RegionWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: RegionWhereInput | RegionWhereInput[]
+    OR?: RegionWhereInput[]
+    NOT?: RegionWhereInput | RegionWhereInput[]
+    updatedAt?: DateTimeFilter<"Region"> | Date | string
+    createdAt?: DateTimeFilter<"Region"> | Date | string
+    i18n?: RegionI18nListRelationFilter
+    locations?: LocationListRelationFilter
+  }, "id" | "id">
+
+  export type RegionOrderByWithAggregationInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: RegionCountOrderByAggregateInput
+    _max?: RegionMaxOrderByAggregateInput
+    _min?: RegionMinOrderByAggregateInput
+  }
+
+  export type RegionScalarWhereWithAggregatesInput = {
+    AND?: RegionScalarWhereWithAggregatesInput | RegionScalarWhereWithAggregatesInput[]
+    OR?: RegionScalarWhereWithAggregatesInput[]
+    NOT?: RegionScalarWhereWithAggregatesInput | RegionScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Region"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Region"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Region"> | Date | string
+  }
+
+  export type RegionI18nWhereInput = {
+    AND?: RegionI18nWhereInput | RegionI18nWhereInput[]
+    OR?: RegionI18nWhereInput[]
+    NOT?: RegionI18nWhereInput | RegionI18nWhereInput[]
+    id?: StringFilter<"RegionI18n"> | string
+    regionId?: StringFilter<"RegionI18n"> | string
+    language?: StringFilter<"RegionI18n"> | string
+    name?: StringFilter<"RegionI18n"> | string
+    updatedAt?: DateTimeFilter<"RegionI18n"> | Date | string
+    createdAt?: DateTimeFilter<"RegionI18n"> | Date | string
+    region?: XOR<RegionScalarRelationFilter, RegionWhereInput>
+  }
+
+  export type RegionI18nOrderByWithRelationInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    region?: RegionOrderByWithRelationInput
+  }
+
+  export type RegionI18nWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    regionId_language?: RegionI18nRegionIdLanguageCompoundUniqueInput
+    AND?: RegionI18nWhereInput | RegionI18nWhereInput[]
+    OR?: RegionI18nWhereInput[]
+    NOT?: RegionI18nWhereInput | RegionI18nWhereInput[]
+    regionId?: StringFilter<"RegionI18n"> | string
+    language?: StringFilter<"RegionI18n"> | string
+    name?: StringFilter<"RegionI18n"> | string
+    updatedAt?: DateTimeFilter<"RegionI18n"> | Date | string
+    createdAt?: DateTimeFilter<"RegionI18n"> | Date | string
+    region?: XOR<RegionScalarRelationFilter, RegionWhereInput>
+  }, "id" | "regionId_language">
+
+  export type RegionI18nOrderByWithAggregationInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: RegionI18nCountOrderByAggregateInput
+    _max?: RegionI18nMaxOrderByAggregateInput
+    _min?: RegionI18nMinOrderByAggregateInput
+  }
+
+  export type RegionI18nScalarWhereWithAggregatesInput = {
+    AND?: RegionI18nScalarWhereWithAggregatesInput | RegionI18nScalarWhereWithAggregatesInput[]
+    OR?: RegionI18nScalarWhereWithAggregatesInput[]
+    NOT?: RegionI18nScalarWhereWithAggregatesInput | RegionI18nScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"RegionI18n"> | string
+    regionId?: StringWithAggregatesFilter<"RegionI18n"> | string
+    language?: StringWithAggregatesFilter<"RegionI18n"> | string
+    name?: StringWithAggregatesFilter<"RegionI18n"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"RegionI18n"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"RegionI18n"> | Date | string
+  }
+
+  export type LocationWhereInput = {
+    AND?: LocationWhereInput | LocationWhereInput[]
+    OR?: LocationWhereInput[]
+    NOT?: LocationWhereInput | LocationWhereInput[]
+    id?: StringFilter<"Location"> | string
+    type?: EnumLocationTypeFilter<"Location"> | $Enums.LocationType
+    regionId?: StringFilter<"Location"> | string
+    latitude?: FloatFilter<"Location"> | number
+    longitude?: FloatFilter<"Location"> | number
+    updatedAt?: DateTimeFilter<"Location"> | Date | string
+    createdAt?: DateTimeFilter<"Location"> | Date | string
+    i18n?: LocationI18nListRelationFilter
+    region?: XOR<RegionScalarRelationFilter, RegionWhereInput>
+    routesFrom?: RouteListRelationFilter
+    routesTo?: RouteListRelationFilter
+    buildings?: BuildingListRelationFilter
+    townInfo?: XOR<TownInformationNullableScalarRelationFilter, TownInformationWhereInput> | null
+  }
+
+  export type LocationOrderByWithRelationInput = {
+    id?: SortOrder
+    type?: SortOrder
+    regionId?: SortOrder
+    latitude?: SortOrder
+    longitude?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    i18n?: LocationI18nOrderByRelationAggregateInput
+    region?: RegionOrderByWithRelationInput
+    routesFrom?: RouteOrderByRelationAggregateInput
+    routesTo?: RouteOrderByRelationAggregateInput
+    buildings?: BuildingOrderByRelationAggregateInput
+    townInfo?: TownInformationOrderByWithRelationInput
+  }
+
+  export type LocationWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: LocationWhereInput | LocationWhereInput[]
+    OR?: LocationWhereInput[]
+    NOT?: LocationWhereInput | LocationWhereInput[]
+    type?: EnumLocationTypeFilter<"Location"> | $Enums.LocationType
+    regionId?: StringFilter<"Location"> | string
+    latitude?: FloatFilter<"Location"> | number
+    longitude?: FloatFilter<"Location"> | number
+    updatedAt?: DateTimeFilter<"Location"> | Date | string
+    createdAt?: DateTimeFilter<"Location"> | Date | string
+    i18n?: LocationI18nListRelationFilter
+    region?: XOR<RegionScalarRelationFilter, RegionWhereInput>
+    routesFrom?: RouteListRelationFilter
+    routesTo?: RouteListRelationFilter
+    buildings?: BuildingListRelationFilter
+    townInfo?: XOR<TownInformationNullableScalarRelationFilter, TownInformationWhereInput> | null
+  }, "id" | "id">
+
+  export type LocationOrderByWithAggregationInput = {
+    id?: SortOrder
+    type?: SortOrder
+    regionId?: SortOrder
+    latitude?: SortOrder
+    longitude?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: LocationCountOrderByAggregateInput
+    _avg?: LocationAvgOrderByAggregateInput
+    _max?: LocationMaxOrderByAggregateInput
+    _min?: LocationMinOrderByAggregateInput
+    _sum?: LocationSumOrderByAggregateInput
+  }
+
+  export type LocationScalarWhereWithAggregatesInput = {
+    AND?: LocationScalarWhereWithAggregatesInput | LocationScalarWhereWithAggregatesInput[]
+    OR?: LocationScalarWhereWithAggregatesInput[]
+    NOT?: LocationScalarWhereWithAggregatesInput | LocationScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Location"> | string
+    type?: EnumLocationTypeWithAggregatesFilter<"Location"> | $Enums.LocationType
+    regionId?: StringWithAggregatesFilter<"Location"> | string
+    latitude?: FloatWithAggregatesFilter<"Location"> | number
+    longitude?: FloatWithAggregatesFilter<"Location"> | number
+    updatedAt?: DateTimeWithAggregatesFilter<"Location"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Location"> | Date | string
+  }
+
+  export type LocationI18nWhereInput = {
+    AND?: LocationI18nWhereInput | LocationI18nWhereInput[]
+    OR?: LocationI18nWhereInput[]
+    NOT?: LocationI18nWhereInput | LocationI18nWhereInput[]
+    id?: StringFilter<"LocationI18n"> | string
+    locationId?: StringFilter<"LocationI18n"> | string
+    language?: StringFilter<"LocationI18n"> | string
+    name?: StringFilter<"LocationI18n"> | string
+    updatedAt?: DateTimeFilter<"LocationI18n"> | Date | string
+    createdAt?: DateTimeFilter<"LocationI18n"> | Date | string
+    location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+  }
+
+  export type LocationI18nOrderByWithRelationInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    location?: LocationOrderByWithRelationInput
+  }
+
+  export type LocationI18nWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    locationId_language?: LocationI18nLocationIdLanguageCompoundUniqueInput
+    AND?: LocationI18nWhereInput | LocationI18nWhereInput[]
+    OR?: LocationI18nWhereInput[]
+    NOT?: LocationI18nWhereInput | LocationI18nWhereInput[]
+    locationId?: StringFilter<"LocationI18n"> | string
+    language?: StringFilter<"LocationI18n"> | string
+    name?: StringFilter<"LocationI18n"> | string
+    updatedAt?: DateTimeFilter<"LocationI18n"> | Date | string
+    createdAt?: DateTimeFilter<"LocationI18n"> | Date | string
+    location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+  }, "id" | "locationId_language">
+
+  export type LocationI18nOrderByWithAggregationInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: LocationI18nCountOrderByAggregateInput
+    _max?: LocationI18nMaxOrderByAggregateInput
+    _min?: LocationI18nMinOrderByAggregateInput
+  }
+
+  export type LocationI18nScalarWhereWithAggregatesInput = {
+    AND?: LocationI18nScalarWhereWithAggregatesInput | LocationI18nScalarWhereWithAggregatesInput[]
+    OR?: LocationI18nScalarWhereWithAggregatesInput[]
+    NOT?: LocationI18nScalarWhereWithAggregatesInput | LocationI18nScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"LocationI18n"> | string
+    locationId?: StringWithAggregatesFilter<"LocationI18n"> | string
+    language?: StringWithAggregatesFilter<"LocationI18n"> | string
+    name?: StringWithAggregatesFilter<"LocationI18n"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"LocationI18n"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"LocationI18n"> | Date | string
+  }
+
+  export type TownInformationWhereInput = {
+    AND?: TownInformationWhereInput | TownInformationWhereInput[]
+    OR?: TownInformationWhereInput[]
+    NOT?: TownInformationWhereInput | TownInformationWhereInput[]
+    id?: StringFilter<"TownInformation"> | string
+    locationId?: StringFilter<"TownInformation"> | string
+    population?: IntFilter<"TownInformation"> | number
+    updatedAt?: DateTimeFilter<"TownInformation"> | Date | string
+    createdAt?: DateTimeFilter<"TownInformation"> | Date | string
+    location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+  }
+
+  export type TownInformationOrderByWithRelationInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    population?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    location?: LocationOrderByWithRelationInput
+  }
+
+  export type TownInformationWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    locationId?: string
+    AND?: TownInformationWhereInput | TownInformationWhereInput[]
+    OR?: TownInformationWhereInput[]
+    NOT?: TownInformationWhereInput | TownInformationWhereInput[]
+    population?: IntFilter<"TownInformation"> | number
+    updatedAt?: DateTimeFilter<"TownInformation"> | Date | string
+    createdAt?: DateTimeFilter<"TownInformation"> | Date | string
+    location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+  }, "id" | "locationId">
+
+  export type TownInformationOrderByWithAggregationInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    population?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: TownInformationCountOrderByAggregateInput
+    _avg?: TownInformationAvgOrderByAggregateInput
+    _max?: TownInformationMaxOrderByAggregateInput
+    _min?: TownInformationMinOrderByAggregateInput
+    _sum?: TownInformationSumOrderByAggregateInput
+  }
+
+  export type TownInformationScalarWhereWithAggregatesInput = {
+    AND?: TownInformationScalarWhereWithAggregatesInput | TownInformationScalarWhereWithAggregatesInput[]
+    OR?: TownInformationScalarWhereWithAggregatesInput[]
+    NOT?: TownInformationScalarWhereWithAggregatesInput | TownInformationScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"TownInformation"> | string
+    locationId?: StringWithAggregatesFilter<"TownInformation"> | string
+    population?: IntWithAggregatesFilter<"TownInformation"> | number
+    updatedAt?: DateTimeWithAggregatesFilter<"TownInformation"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"TownInformation"> | Date | string
+  }
+
+  export type RouteWhereInput = {
+    AND?: RouteWhereInput | RouteWhereInput[]
+    OR?: RouteWhereInput[]
+    NOT?: RouteWhereInput | RouteWhereInput[]
+    id?: StringFilter<"Route"> | string
+    type?: EnumRouteTypeFilter<"Route"> | $Enums.RouteType
+    fromId?: StringFilter<"Route"> | string
+    toId?: StringFilter<"Route"> | string
+    distance?: FloatFilter<"Route"> | number
+    updatedAt?: DateTimeFilter<"Route"> | Date | string
+    createdAt?: DateTimeFilter<"Route"> | Date | string
+    locationFrom?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+    locationTo?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+  }
+
+  export type RouteOrderByWithRelationInput = {
+    id?: SortOrder
+    type?: SortOrder
+    fromId?: SortOrder
+    toId?: SortOrder
+    distance?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    locationFrom?: LocationOrderByWithRelationInput
+    locationTo?: LocationOrderByWithRelationInput
+  }
+
+  export type RouteWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: RouteWhereInput | RouteWhereInput[]
+    OR?: RouteWhereInput[]
+    NOT?: RouteWhereInput | RouteWhereInput[]
+    type?: EnumRouteTypeFilter<"Route"> | $Enums.RouteType
+    fromId?: StringFilter<"Route"> | string
+    toId?: StringFilter<"Route"> | string
+    distance?: FloatFilter<"Route"> | number
+    updatedAt?: DateTimeFilter<"Route"> | Date | string
+    createdAt?: DateTimeFilter<"Route"> | Date | string
+    locationFrom?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+    locationTo?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+  }, "id">
+
+  export type RouteOrderByWithAggregationInput = {
+    id?: SortOrder
+    type?: SortOrder
+    fromId?: SortOrder
+    toId?: SortOrder
+    distance?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: RouteCountOrderByAggregateInput
+    _avg?: RouteAvgOrderByAggregateInput
+    _max?: RouteMaxOrderByAggregateInput
+    _min?: RouteMinOrderByAggregateInput
+    _sum?: RouteSumOrderByAggregateInput
+  }
+
+  export type RouteScalarWhereWithAggregatesInput = {
+    AND?: RouteScalarWhereWithAggregatesInput | RouteScalarWhereWithAggregatesInput[]
+    OR?: RouteScalarWhereWithAggregatesInput[]
+    NOT?: RouteScalarWhereWithAggregatesInput | RouteScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Route"> | string
+    type?: EnumRouteTypeWithAggregatesFilter<"Route"> | $Enums.RouteType
+    fromId?: StringWithAggregatesFilter<"Route"> | string
+    toId?: StringWithAggregatesFilter<"Route"> | string
+    distance?: FloatWithAggregatesFilter<"Route"> | number
+    updatedAt?: DateTimeWithAggregatesFilter<"Route"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Route"> | Date | string
+  }
+
+  export type BuildingTypeWhereInput = {
+    AND?: BuildingTypeWhereInput | BuildingTypeWhereInput[]
+    OR?: BuildingTypeWhereInput[]
+    NOT?: BuildingTypeWhereInput | BuildingTypeWhereInput[]
+    id?: StringFilter<"BuildingType"> | string
+    updatedAt?: DateTimeFilter<"BuildingType"> | Date | string
+    createdAt?: DateTimeFilter<"BuildingType"> | Date | string
+    i18n?: BuildingTypeI18nListRelationFilter
+    buildings?: BuildingListRelationFilter
+  }
+
+  export type BuildingTypeOrderByWithRelationInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    i18n?: BuildingTypeI18nOrderByRelationAggregateInput
+    buildings?: BuildingOrderByRelationAggregateInput
+  }
+
+  export type BuildingTypeWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: BuildingTypeWhereInput | BuildingTypeWhereInput[]
+    OR?: BuildingTypeWhereInput[]
+    NOT?: BuildingTypeWhereInput | BuildingTypeWhereInput[]
+    updatedAt?: DateTimeFilter<"BuildingType"> | Date | string
+    createdAt?: DateTimeFilter<"BuildingType"> | Date | string
+    i18n?: BuildingTypeI18nListRelationFilter
+    buildings?: BuildingListRelationFilter
+  }, "id" | "id">
+
+  export type BuildingTypeOrderByWithAggregationInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: BuildingTypeCountOrderByAggregateInput
+    _max?: BuildingTypeMaxOrderByAggregateInput
+    _min?: BuildingTypeMinOrderByAggregateInput
+  }
+
+  export type BuildingTypeScalarWhereWithAggregatesInput = {
+    AND?: BuildingTypeScalarWhereWithAggregatesInput | BuildingTypeScalarWhereWithAggregatesInput[]
+    OR?: BuildingTypeScalarWhereWithAggregatesInput[]
+    NOT?: BuildingTypeScalarWhereWithAggregatesInput | BuildingTypeScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"BuildingType"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"BuildingType"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"BuildingType"> | Date | string
+  }
+
+  export type BuildingTypeI18nWhereInput = {
+    AND?: BuildingTypeI18nWhereInput | BuildingTypeI18nWhereInput[]
+    OR?: BuildingTypeI18nWhereInput[]
+    NOT?: BuildingTypeI18nWhereInput | BuildingTypeI18nWhereInput[]
+    id?: StringFilter<"BuildingTypeI18n"> | string
+    buildingTypeId?: StringFilter<"BuildingTypeI18n"> | string
+    language?: StringFilter<"BuildingTypeI18n"> | string
+    name?: StringFilter<"BuildingTypeI18n"> | string
+    updatedAt?: DateTimeFilter<"BuildingTypeI18n"> | Date | string
+    createdAt?: DateTimeFilter<"BuildingTypeI18n"> | Date | string
+    buildingType?: XOR<BuildingTypeScalarRelationFilter, BuildingTypeWhereInput>
+  }
+
+  export type BuildingTypeI18nOrderByWithRelationInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    buildingType?: BuildingTypeOrderByWithRelationInput
+  }
+
+  export type BuildingTypeI18nWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    buildingTypeId_language?: BuildingTypeI18nBuildingTypeIdLanguageCompoundUniqueInput
+    AND?: BuildingTypeI18nWhereInput | BuildingTypeI18nWhereInput[]
+    OR?: BuildingTypeI18nWhereInput[]
+    NOT?: BuildingTypeI18nWhereInput | BuildingTypeI18nWhereInput[]
+    buildingTypeId?: StringFilter<"BuildingTypeI18n"> | string
+    language?: StringFilter<"BuildingTypeI18n"> | string
+    name?: StringFilter<"BuildingTypeI18n"> | string
+    updatedAt?: DateTimeFilter<"BuildingTypeI18n"> | Date | string
+    createdAt?: DateTimeFilter<"BuildingTypeI18n"> | Date | string
+    buildingType?: XOR<BuildingTypeScalarRelationFilter, BuildingTypeWhereInput>
+  }, "id" | "buildingTypeId_language">
+
+  export type BuildingTypeI18nOrderByWithAggregationInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: BuildingTypeI18nCountOrderByAggregateInput
+    _max?: BuildingTypeI18nMaxOrderByAggregateInput
+    _min?: BuildingTypeI18nMinOrderByAggregateInput
+  }
+
+  export type BuildingTypeI18nScalarWhereWithAggregatesInput = {
+    AND?: BuildingTypeI18nScalarWhereWithAggregatesInput | BuildingTypeI18nScalarWhereWithAggregatesInput[]
+    OR?: BuildingTypeI18nScalarWhereWithAggregatesInput[]
+    NOT?: BuildingTypeI18nScalarWhereWithAggregatesInput | BuildingTypeI18nScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"BuildingTypeI18n"> | string
+    buildingTypeId?: StringWithAggregatesFilter<"BuildingTypeI18n"> | string
+    language?: StringWithAggregatesFilter<"BuildingTypeI18n"> | string
+    name?: StringWithAggregatesFilter<"BuildingTypeI18n"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"BuildingTypeI18n"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"BuildingTypeI18n"> | Date | string
+  }
+
+  export type BuildingWhereInput = {
+    AND?: BuildingWhereInput | BuildingWhereInput[]
+    OR?: BuildingWhereInput[]
+    NOT?: BuildingWhereInput | BuildingWhereInput[]
+    id?: StringFilter<"Building"> | string
+    buildingTypeId?: StringFilter<"Building"> | string
+    locationId?: StringFilter<"Building"> | string
+    updatedAt?: DateTimeFilter<"Building"> | Date | string
+    createdAt?: DateTimeFilter<"Building"> | Date | string
+    buildingType?: XOR<BuildingTypeScalarRelationFilter, BuildingTypeWhereInput>
+    location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+    i18n?: BuildingI18nListRelationFilter
+    stadiumInfo?: XOR<StadiumInfoNullableScalarRelationFilter, StadiumInfoWhereInput> | null
+  }
+
+  export type BuildingOrderByWithRelationInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    buildingType?: BuildingTypeOrderByWithRelationInput
+    location?: LocationOrderByWithRelationInput
+    i18n?: BuildingI18nOrderByRelationAggregateInput
+    stadiumInfo?: StadiumInfoOrderByWithRelationInput
+  }
+
+  export type BuildingWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: BuildingWhereInput | BuildingWhereInput[]
+    OR?: BuildingWhereInput[]
+    NOT?: BuildingWhereInput | BuildingWhereInput[]
+    buildingTypeId?: StringFilter<"Building"> | string
+    locationId?: StringFilter<"Building"> | string
+    updatedAt?: DateTimeFilter<"Building"> | Date | string
+    createdAt?: DateTimeFilter<"Building"> | Date | string
+    buildingType?: XOR<BuildingTypeScalarRelationFilter, BuildingTypeWhereInput>
+    location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+    i18n?: BuildingI18nListRelationFilter
+    stadiumInfo?: XOR<StadiumInfoNullableScalarRelationFilter, StadiumInfoWhereInput> | null
+  }, "id">
+
+  export type BuildingOrderByWithAggregationInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: BuildingCountOrderByAggregateInput
+    _max?: BuildingMaxOrderByAggregateInput
+    _min?: BuildingMinOrderByAggregateInput
+  }
+
+  export type BuildingScalarWhereWithAggregatesInput = {
+    AND?: BuildingScalarWhereWithAggregatesInput | BuildingScalarWhereWithAggregatesInput[]
+    OR?: BuildingScalarWhereWithAggregatesInput[]
+    NOT?: BuildingScalarWhereWithAggregatesInput | BuildingScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Building"> | string
+    buildingTypeId?: StringWithAggregatesFilter<"Building"> | string
+    locationId?: StringWithAggregatesFilter<"Building"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Building"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Building"> | Date | string
+  }
+
+  export type BuildingI18nWhereInput = {
+    AND?: BuildingI18nWhereInput | BuildingI18nWhereInput[]
+    OR?: BuildingI18nWhereInput[]
+    NOT?: BuildingI18nWhereInput | BuildingI18nWhereInput[]
+    id?: StringFilter<"BuildingI18n"> | string
+    buildingId?: StringFilter<"BuildingI18n"> | string
+    language?: StringFilter<"BuildingI18n"> | string
+    name?: StringFilter<"BuildingI18n"> | string
+    description?: StringNullableFilter<"BuildingI18n"> | string | null
+    updatedAt?: DateTimeFilter<"BuildingI18n"> | Date | string
+    createdAt?: DateTimeFilter<"BuildingI18n"> | Date | string
+    building?: XOR<BuildingScalarRelationFilter, BuildingWhereInput>
+  }
+
+  export type BuildingI18nOrderByWithRelationInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    description?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    building?: BuildingOrderByWithRelationInput
+  }
+
+  export type BuildingI18nWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    buildingId_language?: BuildingI18nBuildingIdLanguageCompoundUniqueInput
+    AND?: BuildingI18nWhereInput | BuildingI18nWhereInput[]
+    OR?: BuildingI18nWhereInput[]
+    NOT?: BuildingI18nWhereInput | BuildingI18nWhereInput[]
+    buildingId?: StringFilter<"BuildingI18n"> | string
+    language?: StringFilter<"BuildingI18n"> | string
+    name?: StringFilter<"BuildingI18n"> | string
+    description?: StringNullableFilter<"BuildingI18n"> | string | null
+    updatedAt?: DateTimeFilter<"BuildingI18n"> | Date | string
+    createdAt?: DateTimeFilter<"BuildingI18n"> | Date | string
+    building?: XOR<BuildingScalarRelationFilter, BuildingWhereInput>
+  }, "id" | "buildingId_language">
+
+  export type BuildingI18nOrderByWithAggregationInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    description?: SortOrderInput | SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: BuildingI18nCountOrderByAggregateInput
+    _max?: BuildingI18nMaxOrderByAggregateInput
+    _min?: BuildingI18nMinOrderByAggregateInput
+  }
+
+  export type BuildingI18nScalarWhereWithAggregatesInput = {
+    AND?: BuildingI18nScalarWhereWithAggregatesInput | BuildingI18nScalarWhereWithAggregatesInput[]
+    OR?: BuildingI18nScalarWhereWithAggregatesInput[]
+    NOT?: BuildingI18nScalarWhereWithAggregatesInput | BuildingI18nScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"BuildingI18n"> | string
+    buildingId?: StringWithAggregatesFilter<"BuildingI18n"> | string
+    language?: StringWithAggregatesFilter<"BuildingI18n"> | string
+    name?: StringWithAggregatesFilter<"BuildingI18n"> | string
+    description?: StringNullableWithAggregatesFilter<"BuildingI18n"> | string | null
+    updatedAt?: DateTimeWithAggregatesFilter<"BuildingI18n"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"BuildingI18n"> | Date | string
+  }
+
+  export type StadiumInfoWhereInput = {
+    AND?: StadiumInfoWhereInput | StadiumInfoWhereInput[]
+    OR?: StadiumInfoWhereInput[]
+    NOT?: StadiumInfoWhereInput | StadiumInfoWhereInput[]
+    id?: StringFilter<"StadiumInfo"> | string
+    buildingId?: StringFilter<"StadiumInfo"> | string
+    capacity?: IntFilter<"StadiumInfo"> | number
+    updatedAt?: DateTimeFilter<"StadiumInfo"> | Date | string
+    createdAt?: DateTimeFilter<"StadiumInfo"> | Date | string
+    building?: XOR<BuildingScalarRelationFilter, BuildingWhereInput>
+  }
+
+  export type StadiumInfoOrderByWithRelationInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    capacity?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    building?: BuildingOrderByWithRelationInput
+  }
+
+  export type StadiumInfoWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    buildingId?: string
+    AND?: StadiumInfoWhereInput | StadiumInfoWhereInput[]
+    OR?: StadiumInfoWhereInput[]
+    NOT?: StadiumInfoWhereInput | StadiumInfoWhereInput[]
+    capacity?: IntFilter<"StadiumInfo"> | number
+    updatedAt?: DateTimeFilter<"StadiumInfo"> | Date | string
+    createdAt?: DateTimeFilter<"StadiumInfo"> | Date | string
+    building?: XOR<BuildingScalarRelationFilter, BuildingWhereInput>
+  }, "id" | "buildingId">
+
+  export type StadiumInfoOrderByWithAggregationInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    capacity?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: StadiumInfoCountOrderByAggregateInput
+    _avg?: StadiumInfoAvgOrderByAggregateInput
+    _max?: StadiumInfoMaxOrderByAggregateInput
+    _min?: StadiumInfoMinOrderByAggregateInput
+    _sum?: StadiumInfoSumOrderByAggregateInput
+  }
+
+  export type StadiumInfoScalarWhereWithAggregatesInput = {
+    AND?: StadiumInfoScalarWhereWithAggregatesInput | StadiumInfoScalarWhereWithAggregatesInput[]
+    OR?: StadiumInfoScalarWhereWithAggregatesInput[]
+    NOT?: StadiumInfoScalarWhereWithAggregatesInput | StadiumInfoScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"StadiumInfo"> | string
+    buildingId?: StringWithAggregatesFilter<"StadiumInfo"> | string
+    capacity?: IntWithAggregatesFilter<"StadiumInfo"> | number
+    updatedAt?: DateTimeWithAggregatesFilter<"StadiumInfo"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"StadiumInfo"> | Date | string
+  }
+
+  export type RaceWhereInput = {
+    AND?: RaceWhereInput | RaceWhereInput[]
+    OR?: RaceWhereInput[]
+    NOT?: RaceWhereInput | RaceWhereInput[]
+    id?: StringFilter<"Race"> | string
+    updatedAt?: DateTimeFilter<"Race"> | Date | string
+    createdAt?: DateTimeFilter<"Race"> | Date | string
+    i18n?: RaceI18nListRelationFilter
+    persons?: PersonListRelationFilter
+  }
+
+  export type RaceOrderByWithRelationInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    i18n?: RaceI18nOrderByRelationAggregateInput
+    persons?: PersonOrderByRelationAggregateInput
+  }
+
+  export type RaceWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: RaceWhereInput | RaceWhereInput[]
+    OR?: RaceWhereInput[]
+    NOT?: RaceWhereInput | RaceWhereInput[]
+    updatedAt?: DateTimeFilter<"Race"> | Date | string
+    createdAt?: DateTimeFilter<"Race"> | Date | string
+    i18n?: RaceI18nListRelationFilter
+    persons?: PersonListRelationFilter
+  }, "id" | "id">
+
+  export type RaceOrderByWithAggregationInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: RaceCountOrderByAggregateInput
+    _max?: RaceMaxOrderByAggregateInput
+    _min?: RaceMinOrderByAggregateInput
+  }
+
+  export type RaceScalarWhereWithAggregatesInput = {
+    AND?: RaceScalarWhereWithAggregatesInput | RaceScalarWhereWithAggregatesInput[]
+    OR?: RaceScalarWhereWithAggregatesInput[]
+    NOT?: RaceScalarWhereWithAggregatesInput | RaceScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Race"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Race"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Race"> | Date | string
+  }
+
+  export type RaceI18nWhereInput = {
+    AND?: RaceI18nWhereInput | RaceI18nWhereInput[]
+    OR?: RaceI18nWhereInput[]
+    NOT?: RaceI18nWhereInput | RaceI18nWhereInput[]
+    id?: StringFilter<"RaceI18n"> | string
+    raceId?: StringFilter<"RaceI18n"> | string
+    language?: StringFilter<"RaceI18n"> | string
+    name?: StringFilter<"RaceI18n"> | string
+    updatedAt?: DateTimeFilter<"RaceI18n"> | Date | string
+    createdAt?: DateTimeFilter<"RaceI18n"> | Date | string
+    race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
+  }
+
+  export type RaceI18nOrderByWithRelationInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    race?: RaceOrderByWithRelationInput
+  }
+
+  export type RaceI18nWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    raceId_language?: RaceI18nRaceIdLanguageCompoundUniqueInput
+    AND?: RaceI18nWhereInput | RaceI18nWhereInput[]
+    OR?: RaceI18nWhereInput[]
+    NOT?: RaceI18nWhereInput | RaceI18nWhereInput[]
+    raceId?: StringFilter<"RaceI18n"> | string
+    language?: StringFilter<"RaceI18n"> | string
+    name?: StringFilter<"RaceI18n"> | string
+    updatedAt?: DateTimeFilter<"RaceI18n"> | Date | string
+    createdAt?: DateTimeFilter<"RaceI18n"> | Date | string
+    race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
+  }, "id" | "raceId_language">
+
+  export type RaceI18nOrderByWithAggregationInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: RaceI18nCountOrderByAggregateInput
+    _max?: RaceI18nMaxOrderByAggregateInput
+    _min?: RaceI18nMinOrderByAggregateInput
+  }
+
+  export type RaceI18nScalarWhereWithAggregatesInput = {
+    AND?: RaceI18nScalarWhereWithAggregatesInput | RaceI18nScalarWhereWithAggregatesInput[]
+    OR?: RaceI18nScalarWhereWithAggregatesInput[]
+    NOT?: RaceI18nScalarWhereWithAggregatesInput | RaceI18nScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"RaceI18n"> | string
+    raceId?: StringWithAggregatesFilter<"RaceI18n"> | string
+    language?: StringWithAggregatesFilter<"RaceI18n"> | string
+    name?: StringWithAggregatesFilter<"RaceI18n"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"RaceI18n"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"RaceI18n"> | Date | string
+  }
+
+  export type PersonWhereInput = {
+    AND?: PersonWhereInput | PersonWhereInput[]
+    OR?: PersonWhereInput[]
+    NOT?: PersonWhereInput | PersonWhereInput[]
+    id?: StringFilter<"Person"> | string
+    name?: StringFilter<"Person"> | string
+    shortName?: StringFilter<"Person"> | string
+    raceId?: StringFilter<"Person"> | string
+    updatedAt?: DateTimeFilter<"Person"> | Date | string
+    createdAt?: DateTimeFilter<"Person"> | Date | string
+    race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
+    playercharacteristics?: XOR<PlayerCharacteristicsNullableScalarRelationFilter, PlayerCharacteristicsWhereInput> | null
+  }
+
+  export type PersonOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    race?: RaceOrderByWithRelationInput
+    playercharacteristics?: PlayerCharacteristicsOrderByWithRelationInput
+  }
+
+  export type PersonWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: PersonWhereInput | PersonWhereInput[]
+    OR?: PersonWhereInput[]
+    NOT?: PersonWhereInput | PersonWhereInput[]
+    name?: StringFilter<"Person"> | string
+    shortName?: StringFilter<"Person"> | string
+    raceId?: StringFilter<"Person"> | string
+    updatedAt?: DateTimeFilter<"Person"> | Date | string
+    createdAt?: DateTimeFilter<"Person"> | Date | string
+    race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
+    playercharacteristics?: XOR<PlayerCharacteristicsNullableScalarRelationFilter, PlayerCharacteristicsWhereInput> | null
+  }, "id">
+
+  export type PersonOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: PersonCountOrderByAggregateInput
+    _max?: PersonMaxOrderByAggregateInput
+    _min?: PersonMinOrderByAggregateInput
+  }
+
+  export type PersonScalarWhereWithAggregatesInput = {
+    AND?: PersonScalarWhereWithAggregatesInput | PersonScalarWhereWithAggregatesInput[]
+    OR?: PersonScalarWhereWithAggregatesInput[]
+    NOT?: PersonScalarWhereWithAggregatesInput | PersonScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Person"> | string
+    name?: StringWithAggregatesFilter<"Person"> | string
+    shortName?: StringWithAggregatesFilter<"Person"> | string
+    raceId?: StringWithAggregatesFilter<"Person"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Person"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Person"> | Date | string
+  }
+
+  export type PlayerCharacteristicsWhereInput = {
+    AND?: PlayerCharacteristicsWhereInput | PlayerCharacteristicsWhereInput[]
+    OR?: PlayerCharacteristicsWhereInput[]
+    NOT?: PlayerCharacteristicsWhereInput | PlayerCharacteristicsWhereInput[]
+    id?: StringFilter<"PlayerCharacteristics"> | string
+    playerId?: StringFilter<"PlayerCharacteristics"> | string
+    updatedAt?: DateTimeFilter<"PlayerCharacteristics"> | Date | string
+    createdAt?: DateTimeFilter<"PlayerCharacteristics"> | Date | string
+    player?: XOR<PersonScalarRelationFilter, PersonWhereInput>
+  }
+
+  export type PlayerCharacteristicsOrderByWithRelationInput = {
+    id?: SortOrder
+    playerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    player?: PersonOrderByWithRelationInput
+  }
+
+  export type PlayerCharacteristicsWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    playerId?: string
+    AND?: PlayerCharacteristicsWhereInput | PlayerCharacteristicsWhereInput[]
+    OR?: PlayerCharacteristicsWhereInput[]
+    NOT?: PlayerCharacteristicsWhereInput | PlayerCharacteristicsWhereInput[]
+    updatedAt?: DateTimeFilter<"PlayerCharacteristics"> | Date | string
+    createdAt?: DateTimeFilter<"PlayerCharacteristics"> | Date | string
+    player?: XOR<PersonScalarRelationFilter, PersonWhereInput>
+  }, "id" | "playerId">
+
+  export type PlayerCharacteristicsOrderByWithAggregationInput = {
+    id?: SortOrder
+    playerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: PlayerCharacteristicsCountOrderByAggregateInput
+    _max?: PlayerCharacteristicsMaxOrderByAggregateInput
+    _min?: PlayerCharacteristicsMinOrderByAggregateInput
+  }
+
+  export type PlayerCharacteristicsScalarWhereWithAggregatesInput = {
+    AND?: PlayerCharacteristicsScalarWhereWithAggregatesInput | PlayerCharacteristicsScalarWhereWithAggregatesInput[]
+    OR?: PlayerCharacteristicsScalarWhereWithAggregatesInput[]
+    NOT?: PlayerCharacteristicsScalarWhereWithAggregatesInput | PlayerCharacteristicsScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"PlayerCharacteristics"> | string
+    playerId?: StringWithAggregatesFilter<"PlayerCharacteristics"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"PlayerCharacteristics"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"PlayerCharacteristics"> | Date | string
+  }
+
+  export type TeamWhereInput = {
+    AND?: TeamWhereInput | TeamWhereInput[]
+    OR?: TeamWhereInput[]
+    NOT?: TeamWhereInput | TeamWhereInput[]
+    id?: StringFilter<"Team"> | string
+    name?: StringFilter<"Team"> | string
+    shortName?: StringFilter<"Team"> | string
+    isActive?: BoolFilter<"Team"> | boolean
+    ownerId?: StringFilter<"Team"> | string
+    updatedAt?: DateTimeFilter<"Team"> | Date | string
+    createdAt?: DateTimeFilter<"Team"> | Date | string
+    owner?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
+  }
+
+  export type TeamOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    isActive?: SortOrder
+    ownerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    owner?: UserOrderByWithRelationInput
+  }
+
+  export type TeamWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: TeamWhereInput | TeamWhereInput[]
+    OR?: TeamWhereInput[]
+    NOT?: TeamWhereInput | TeamWhereInput[]
+    name?: StringFilter<"Team"> | string
+    shortName?: StringFilter<"Team"> | string
+    isActive?: BoolFilter<"Team"> | boolean
+    ownerId?: StringFilter<"Team"> | string
+    updatedAt?: DateTimeFilter<"Team"> | Date | string
+    createdAt?: DateTimeFilter<"Team"> | Date | string
+    owner?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
+  }, "id">
+
+  export type TeamOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    isActive?: SortOrder
+    ownerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: TeamCountOrderByAggregateInput
+    _max?: TeamMaxOrderByAggregateInput
+    _min?: TeamMinOrderByAggregateInput
+  }
+
+  export type TeamScalarWhereWithAggregatesInput = {
+    AND?: TeamScalarWhereWithAggregatesInput | TeamScalarWhereWithAggregatesInput[]
+    OR?: TeamScalarWhereWithAggregatesInput[]
+    NOT?: TeamScalarWhereWithAggregatesInput | TeamScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Team"> | string
+    name?: StringWithAggregatesFilter<"Team"> | string
+    shortName?: StringWithAggregatesFilter<"Team"> | string
+    isActive?: BoolWithAggregatesFilter<"Team"> | boolean
+    ownerId?: StringWithAggregatesFilter<"Team"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Team"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Team"> | Date | string
+  }
+
   export type UserCreateInput = {
     id: string
     name: string
@@ -6124,6 +26559,7 @@ export namespace Prisma {
     banExpires?: Date | string | null
     sessions?: SessionCreateNestedManyWithoutUserInput
     accounts?: AccountCreateNestedManyWithoutUserInput
+    teams?: TeamCreateNestedManyWithoutOwnerInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -6140,6 +26576,7 @@ export namespace Prisma {
     banExpires?: Date | string | null
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    teams?: TeamUncheckedCreateNestedManyWithoutOwnerInput
   }
 
   export type UserUpdateInput = {
@@ -6156,6 +26593,7 @@ export namespace Prisma {
     banExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     sessions?: SessionUpdateManyWithoutUserNestedInput
     accounts?: AccountUpdateManyWithoutUserNestedInput
+    teams?: TeamUpdateManyWithoutOwnerNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -6172,6 +26610,7 @@ export namespace Prisma {
     banExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    teams?: TeamUncheckedUpdateManyWithoutOwnerNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -6473,6 +26912,985 @@ export namespace Prisma {
     updatedAt?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
+  export type RegionCreateInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RegionI18nCreateNestedManyWithoutRegionInput
+    locations?: LocationCreateNestedManyWithoutRegionInput
+  }
+
+  export type RegionUncheckedCreateInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RegionI18nUncheckedCreateNestedManyWithoutRegionInput
+    locations?: LocationUncheckedCreateNestedManyWithoutRegionInput
+  }
+
+  export type RegionUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RegionI18nUpdateManyWithoutRegionNestedInput
+    locations?: LocationUpdateManyWithoutRegionNestedInput
+  }
+
+  export type RegionUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RegionI18nUncheckedUpdateManyWithoutRegionNestedInput
+    locations?: LocationUncheckedUpdateManyWithoutRegionNestedInput
+  }
+
+  export type RegionCreateManyInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionI18nCreateInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    region: RegionCreateNestedOneWithoutI18nInput
+  }
+
+  export type RegionI18nUncheckedCreateInput = {
+    id?: string
+    regionId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionI18nUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    region?: RegionUpdateOneRequiredWithoutI18nNestedInput
+  }
+
+  export type RegionI18nUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    regionId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionI18nCreateManyInput = {
+    id?: string
+    regionId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionI18nUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionI18nUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    regionId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationCreateInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    region: RegionCreateNestedOneWithoutLocationsInput
+    routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationUncheckedCreateInput = {
+    id: string
+    type: $Enums.LocationType
+    regionId: string
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
+    routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    regionId?: StringFieldUpdateOperationsInput | string
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationCreateManyInput = {
+    id: string
+    type: $Enums.LocationType
+    regionId: string
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type LocationUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    regionId?: StringFieldUpdateOperationsInput | string
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationI18nCreateInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    location: LocationCreateNestedOneWithoutI18nInput
+  }
+
+  export type LocationI18nUncheckedCreateInput = {
+    id?: string
+    locationId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type LocationI18nUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    location?: LocationUpdateOneRequiredWithoutI18nNestedInput
+  }
+
+  export type LocationI18nUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationI18nCreateManyInput = {
+    id?: string
+    locationId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type LocationI18nUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationI18nUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TownInformationCreateInput = {
+    id?: string
+    population: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    location: LocationCreateNestedOneWithoutTownInfoInput
+  }
+
+  export type TownInformationUncheckedCreateInput = {
+    id?: string
+    locationId: string
+    population: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TownInformationUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    population?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    location?: LocationUpdateOneRequiredWithoutTownInfoNestedInput
+  }
+
+  export type TownInformationUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    population?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TownInformationCreateManyInput = {
+    id?: string
+    locationId: string
+    population: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TownInformationUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    population?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TownInformationUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    population?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteCreateInput = {
+    id?: string
+    type: $Enums.RouteType
+    distance: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    locationFrom: LocationCreateNestedOneWithoutRoutesFromInput
+    locationTo: LocationCreateNestedOneWithoutRoutesToInput
+  }
+
+  export type RouteUncheckedCreateInput = {
+    id?: string
+    type: $Enums.RouteType
+    fromId: string
+    toId: string
+    distance: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RouteUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    locationFrom?: LocationUpdateOneRequiredWithoutRoutesFromNestedInput
+    locationTo?: LocationUpdateOneRequiredWithoutRoutesToNestedInput
+  }
+
+  export type RouteUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    fromId?: StringFieldUpdateOperationsInput | string
+    toId?: StringFieldUpdateOperationsInput | string
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteCreateManyInput = {
+    id?: string
+    type: $Enums.RouteType
+    fromId: string
+    toId: string
+    distance: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RouteUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    fromId?: StringFieldUpdateOperationsInput | string
+    toId?: StringFieldUpdateOperationsInput | string
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingTypeCreateInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: BuildingTypeI18nCreateNestedManyWithoutBuildingTypeInput
+    buildings?: BuildingCreateNestedManyWithoutBuildingTypeInput
+  }
+
+  export type BuildingTypeUncheckedCreateInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: BuildingTypeI18nUncheckedCreateNestedManyWithoutBuildingTypeInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutBuildingTypeInput
+  }
+
+  export type BuildingTypeUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: BuildingTypeI18nUpdateManyWithoutBuildingTypeNestedInput
+    buildings?: BuildingUpdateManyWithoutBuildingTypeNestedInput
+  }
+
+  export type BuildingTypeUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: BuildingTypeI18nUncheckedUpdateManyWithoutBuildingTypeNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutBuildingTypeNestedInput
+  }
+
+  export type BuildingTypeCreateManyInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingTypeUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingTypeUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingTypeI18nCreateInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    buildingType: BuildingTypeCreateNestedOneWithoutI18nInput
+  }
+
+  export type BuildingTypeI18nUncheckedCreateInput = {
+    id?: string
+    buildingTypeId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingTypeI18nUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildingType?: BuildingTypeUpdateOneRequiredWithoutI18nNestedInput
+  }
+
+  export type BuildingTypeI18nUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingTypeI18nCreateManyInput = {
+    id?: string
+    buildingTypeId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingTypeI18nUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingTypeI18nUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingCreateInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    buildingType: BuildingTypeCreateNestedOneWithoutBuildingsInput
+    location: LocationCreateNestedOneWithoutBuildingsInput
+    i18n?: BuildingI18nCreateNestedManyWithoutBuildingInput
+    stadiumInfo?: StadiumInfoCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingUncheckedCreateInput = {
+    id?: string
+    buildingTypeId: string
+    locationId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: BuildingI18nUncheckedCreateNestedManyWithoutBuildingInput
+    stadiumInfo?: StadiumInfoUncheckedCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildingType?: BuildingTypeUpdateOneRequiredWithoutBuildingsNestedInput
+    location?: LocationUpdateOneRequiredWithoutBuildingsNestedInput
+    i18n?: BuildingI18nUpdateManyWithoutBuildingNestedInput
+    stadiumInfo?: StadiumInfoUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: BuildingI18nUncheckedUpdateManyWithoutBuildingNestedInput
+    stadiumInfo?: StadiumInfoUncheckedUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingCreateManyInput = {
+    id?: string
+    buildingTypeId: string
+    locationId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingI18nCreateInput = {
+    id?: string
+    language: string
+    name: string
+    description?: string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    building: BuildingCreateNestedOneWithoutI18nInput
+  }
+
+  export type BuildingI18nUncheckedCreateInput = {
+    id?: string
+    buildingId: string
+    language: string
+    name: string
+    description?: string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingI18nUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    building?: BuildingUpdateOneRequiredWithoutI18nNestedInput
+  }
+
+  export type BuildingI18nUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingI18nCreateManyInput = {
+    id?: string
+    buildingId: string
+    language: string
+    name: string
+    description?: string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingI18nUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingI18nUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type StadiumInfoCreateInput = {
+    id?: string
+    capacity: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    building: BuildingCreateNestedOneWithoutStadiumInfoInput
+  }
+
+  export type StadiumInfoUncheckedCreateInput = {
+    id?: string
+    buildingId: string
+    capacity: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type StadiumInfoUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    capacity?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    building?: BuildingUpdateOneRequiredWithoutStadiumInfoNestedInput
+  }
+
+  export type StadiumInfoUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingId?: StringFieldUpdateOperationsInput | string
+    capacity?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type StadiumInfoCreateManyInput = {
+    id?: string
+    buildingId: string
+    capacity: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type StadiumInfoUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    capacity?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type StadiumInfoUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingId?: StringFieldUpdateOperationsInput | string
+    capacity?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RaceCreateInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RaceI18nCreateNestedManyWithoutRaceInput
+    persons?: PersonCreateNestedManyWithoutRaceInput
+  }
+
+  export type RaceUncheckedCreateInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RaceI18nUncheckedCreateNestedManyWithoutRaceInput
+    persons?: PersonUncheckedCreateNestedManyWithoutRaceInput
+  }
+
+  export type RaceUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RaceI18nUpdateManyWithoutRaceNestedInput
+    persons?: PersonUpdateManyWithoutRaceNestedInput
+  }
+
+  export type RaceUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RaceI18nUncheckedUpdateManyWithoutRaceNestedInput
+    persons?: PersonUncheckedUpdateManyWithoutRaceNestedInput
+  }
+
+  export type RaceCreateManyInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RaceUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RaceUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RaceI18nCreateInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    race: RaceCreateNestedOneWithoutI18nInput
+  }
+
+  export type RaceI18nUncheckedCreateInput = {
+    id?: string
+    raceId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RaceI18nUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    race?: RaceUpdateOneRequiredWithoutI18nNestedInput
+  }
+
+  export type RaceI18nUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RaceI18nCreateManyInput = {
+    id?: string
+    raceId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RaceI18nUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RaceI18nUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonCreateInput = {
+    id?: string
+    name: string
+    shortName: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    race: RaceCreateNestedOneWithoutPersonsInput
+    playercharacteristics?: PlayerCharacteristicsCreateNestedOneWithoutPlayerInput
+  }
+
+  export type PersonUncheckedCreateInput = {
+    id?: string
+    name: string
+    shortName: string
+    raceId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    playercharacteristics?: PlayerCharacteristicsUncheckedCreateNestedOneWithoutPlayerInput
+  }
+
+  export type PersonUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    race?: RaceUpdateOneRequiredWithoutPersonsNestedInput
+    playercharacteristics?: PlayerCharacteristicsUpdateOneWithoutPlayerNestedInput
+  }
+
+  export type PersonUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    playercharacteristics?: PlayerCharacteristicsUncheckedUpdateOneWithoutPlayerNestedInput
+  }
+
+  export type PersonCreateManyInput = {
+    id?: string
+    name: string
+    shortName: string
+    raceId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PersonUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PlayerCharacteristicsCreateInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    player: PersonCreateNestedOneWithoutPlayercharacteristicsInput
+  }
+
+  export type PlayerCharacteristicsUncheckedCreateInput = {
+    id?: string
+    playerId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PlayerCharacteristicsUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    player?: PersonUpdateOneRequiredWithoutPlayercharacteristicsNestedInput
+  }
+
+  export type PlayerCharacteristicsUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    playerId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PlayerCharacteristicsCreateManyInput = {
+    id?: string
+    playerId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PlayerCharacteristicsUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PlayerCharacteristicsUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    playerId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TeamCreateInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    owner?: UserCreateNestedOneWithoutTeamsInput
+  }
+
+  export type TeamUncheckedCreateInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    ownerId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TeamUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    owner?: UserUpdateOneWithoutTeamsNestedInput
+  }
+
+  export type TeamUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    ownerId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TeamCreateManyInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    ownerId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TeamUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TeamUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    ownerId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -6547,6 +27965,12 @@ export namespace Prisma {
     none?: AccountWhereInput
   }
 
+  export type TeamListRelationFilter = {
+    every?: TeamWhereInput
+    some?: TeamWhereInput
+    none?: TeamWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -6557,6 +27981,10 @@ export namespace Prisma {
   }
 
   export type AccountOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type TeamOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -6798,6 +28226,695 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
+  export type RegionI18nListRelationFilter = {
+    every?: RegionI18nWhereInput
+    some?: RegionI18nWhereInput
+    none?: RegionI18nWhereInput
+  }
+
+  export type LocationListRelationFilter = {
+    every?: LocationWhereInput
+    some?: LocationWhereInput
+    none?: LocationWhereInput
+  }
+
+  export type RegionI18nOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type LocationOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type RegionCountOrderByAggregateInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RegionMaxOrderByAggregateInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RegionMinOrderByAggregateInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RegionScalarRelationFilter = {
+    is?: RegionWhereInput
+    isNot?: RegionWhereInput
+  }
+
+  export type RegionI18nRegionIdLanguageCompoundUniqueInput = {
+    regionId: string
+    language: string
+  }
+
+  export type RegionI18nCountOrderByAggregateInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RegionI18nMaxOrderByAggregateInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RegionI18nMinOrderByAggregateInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EnumLocationTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.LocationType | EnumLocationTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.LocationType[] | ListEnumLocationTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.LocationType[] | ListEnumLocationTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumLocationTypeFilter<$PrismaModel> | $Enums.LocationType
+  }
+
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type LocationI18nListRelationFilter = {
+    every?: LocationI18nWhereInput
+    some?: LocationI18nWhereInput
+    none?: LocationI18nWhereInput
+  }
+
+  export type RouteListRelationFilter = {
+    every?: RouteWhereInput
+    some?: RouteWhereInput
+    none?: RouteWhereInput
+  }
+
+  export type BuildingListRelationFilter = {
+    every?: BuildingWhereInput
+    some?: BuildingWhereInput
+    none?: BuildingWhereInput
+  }
+
+  export type TownInformationNullableScalarRelationFilter = {
+    is?: TownInformationWhereInput | null
+    isNot?: TownInformationWhereInput | null
+  }
+
+  export type LocationI18nOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type RouteOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type BuildingOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type LocationCountOrderByAggregateInput = {
+    id?: SortOrder
+    type?: SortOrder
+    regionId?: SortOrder
+    latitude?: SortOrder
+    longitude?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type LocationAvgOrderByAggregateInput = {
+    latitude?: SortOrder
+    longitude?: SortOrder
+  }
+
+  export type LocationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    type?: SortOrder
+    regionId?: SortOrder
+    latitude?: SortOrder
+    longitude?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type LocationMinOrderByAggregateInput = {
+    id?: SortOrder
+    type?: SortOrder
+    regionId?: SortOrder
+    latitude?: SortOrder
+    longitude?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type LocationSumOrderByAggregateInput = {
+    latitude?: SortOrder
+    longitude?: SortOrder
+  }
+
+  export type EnumLocationTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.LocationType | EnumLocationTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.LocationType[] | ListEnumLocationTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.LocationType[] | ListEnumLocationTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumLocationTypeWithAggregatesFilter<$PrismaModel> | $Enums.LocationType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumLocationTypeFilter<$PrismaModel>
+    _max?: NestedEnumLocationTypeFilter<$PrismaModel>
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type LocationScalarRelationFilter = {
+    is?: LocationWhereInput
+    isNot?: LocationWhereInput
+  }
+
+  export type LocationI18nLocationIdLanguageCompoundUniqueInput = {
+    locationId: string
+    language: string
+  }
+
+  export type LocationI18nCountOrderByAggregateInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type LocationI18nMaxOrderByAggregateInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type LocationI18nMinOrderByAggregateInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type TownInformationCountOrderByAggregateInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    population?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TownInformationAvgOrderByAggregateInput = {
+    population?: SortOrder
+  }
+
+  export type TownInformationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    population?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TownInformationMinOrderByAggregateInput = {
+    id?: SortOrder
+    locationId?: SortOrder
+    population?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TownInformationSumOrderByAggregateInput = {
+    population?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type EnumRouteTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.RouteType | EnumRouteTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.RouteType[] | ListEnumRouteTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.RouteType[] | ListEnumRouteTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumRouteTypeFilter<$PrismaModel> | $Enums.RouteType
+  }
+
+  export type RouteCountOrderByAggregateInput = {
+    id?: SortOrder
+    type?: SortOrder
+    fromId?: SortOrder
+    toId?: SortOrder
+    distance?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RouteAvgOrderByAggregateInput = {
+    distance?: SortOrder
+  }
+
+  export type RouteMaxOrderByAggregateInput = {
+    id?: SortOrder
+    type?: SortOrder
+    fromId?: SortOrder
+    toId?: SortOrder
+    distance?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RouteMinOrderByAggregateInput = {
+    id?: SortOrder
+    type?: SortOrder
+    fromId?: SortOrder
+    toId?: SortOrder
+    distance?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RouteSumOrderByAggregateInput = {
+    distance?: SortOrder
+  }
+
+  export type EnumRouteTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.RouteType | EnumRouteTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.RouteType[] | ListEnumRouteTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.RouteType[] | ListEnumRouteTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumRouteTypeWithAggregatesFilter<$PrismaModel> | $Enums.RouteType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumRouteTypeFilter<$PrismaModel>
+    _max?: NestedEnumRouteTypeFilter<$PrismaModel>
+  }
+
+  export type BuildingTypeI18nListRelationFilter = {
+    every?: BuildingTypeI18nWhereInput
+    some?: BuildingTypeI18nWhereInput
+    none?: BuildingTypeI18nWhereInput
+  }
+
+  export type BuildingTypeI18nOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type BuildingTypeCountOrderByAggregateInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingTypeMaxOrderByAggregateInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingTypeMinOrderByAggregateInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingTypeScalarRelationFilter = {
+    is?: BuildingTypeWhereInput
+    isNot?: BuildingTypeWhereInput
+  }
+
+  export type BuildingTypeI18nBuildingTypeIdLanguageCompoundUniqueInput = {
+    buildingTypeId: string
+    language: string
+  }
+
+  export type BuildingTypeI18nCountOrderByAggregateInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingTypeI18nMaxOrderByAggregateInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingTypeI18nMinOrderByAggregateInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingI18nListRelationFilter = {
+    every?: BuildingI18nWhereInput
+    some?: BuildingI18nWhereInput
+    none?: BuildingI18nWhereInput
+  }
+
+  export type StadiumInfoNullableScalarRelationFilter = {
+    is?: StadiumInfoWhereInput | null
+    isNot?: StadiumInfoWhereInput | null
+  }
+
+  export type BuildingI18nOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type BuildingCountOrderByAggregateInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingMaxOrderByAggregateInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingMinOrderByAggregateInput = {
+    id?: SortOrder
+    buildingTypeId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingScalarRelationFilter = {
+    is?: BuildingWhereInput
+    isNot?: BuildingWhereInput
+  }
+
+  export type BuildingI18nBuildingIdLanguageCompoundUniqueInput = {
+    buildingId: string
+    language: string
+  }
+
+  export type BuildingI18nCountOrderByAggregateInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingI18nMaxOrderByAggregateInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type BuildingI18nMinOrderByAggregateInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    description?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type StadiumInfoCountOrderByAggregateInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    capacity?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type StadiumInfoAvgOrderByAggregateInput = {
+    capacity?: SortOrder
+  }
+
+  export type StadiumInfoMaxOrderByAggregateInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    capacity?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type StadiumInfoMinOrderByAggregateInput = {
+    id?: SortOrder
+    buildingId?: SortOrder
+    capacity?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type StadiumInfoSumOrderByAggregateInput = {
+    capacity?: SortOrder
+  }
+
+  export type RaceI18nListRelationFilter = {
+    every?: RaceI18nWhereInput
+    some?: RaceI18nWhereInput
+    none?: RaceI18nWhereInput
+  }
+
+  export type PersonListRelationFilter = {
+    every?: PersonWhereInput
+    some?: PersonWhereInput
+    none?: PersonWhereInput
+  }
+
+  export type RaceI18nOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type PersonOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type RaceCountOrderByAggregateInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RaceMaxOrderByAggregateInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RaceMinOrderByAggregateInput = {
+    id?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RaceScalarRelationFilter = {
+    is?: RaceWhereInput
+    isNot?: RaceWhereInput
+  }
+
+  export type RaceI18nRaceIdLanguageCompoundUniqueInput = {
+    raceId: string
+    language: string
+  }
+
+  export type RaceI18nCountOrderByAggregateInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RaceI18nMaxOrderByAggregateInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RaceI18nMinOrderByAggregateInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PlayerCharacteristicsNullableScalarRelationFilter = {
+    is?: PlayerCharacteristicsWhereInput | null
+    isNot?: PlayerCharacteristicsWhereInput | null
+  }
+
+  export type PersonCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PersonMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PersonMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PersonScalarRelationFilter = {
+    is?: PersonWhereInput
+    isNot?: PersonWhereInput
+  }
+
+  export type PlayerCharacteristicsCountOrderByAggregateInput = {
+    id?: SortOrder
+    playerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PlayerCharacteristicsMaxOrderByAggregateInput = {
+    id?: SortOrder
+    playerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PlayerCharacteristicsMinOrderByAggregateInput = {
+    id?: SortOrder
+    playerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type UserNullableScalarRelationFilter = {
+    is?: UserWhereInput | null
+    isNot?: UserWhereInput | null
+  }
+
+  export type TeamCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    isActive?: SortOrder
+    ownerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TeamMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    isActive?: SortOrder
+    ownerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TeamMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    shortName?: SortOrder
+    isActive?: SortOrder
+    ownerId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
   export type SessionCreateNestedManyWithoutUserInput = {
     create?: XOR<SessionCreateWithoutUserInput, SessionUncheckedCreateWithoutUserInput> | SessionCreateWithoutUserInput[] | SessionUncheckedCreateWithoutUserInput[]
     connectOrCreate?: SessionCreateOrConnectWithoutUserInput | SessionCreateOrConnectWithoutUserInput[]
@@ -6812,6 +28929,13 @@ export namespace Prisma {
     connect?: AccountWhereUniqueInput | AccountWhereUniqueInput[]
   }
 
+  export type TeamCreateNestedManyWithoutOwnerInput = {
+    create?: XOR<TeamCreateWithoutOwnerInput, TeamUncheckedCreateWithoutOwnerInput> | TeamCreateWithoutOwnerInput[] | TeamUncheckedCreateWithoutOwnerInput[]
+    connectOrCreate?: TeamCreateOrConnectWithoutOwnerInput | TeamCreateOrConnectWithoutOwnerInput[]
+    createMany?: TeamCreateManyOwnerInputEnvelope
+    connect?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
+  }
+
   export type SessionUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<SessionCreateWithoutUserInput, SessionUncheckedCreateWithoutUserInput> | SessionCreateWithoutUserInput[] | SessionUncheckedCreateWithoutUserInput[]
     connectOrCreate?: SessionCreateOrConnectWithoutUserInput | SessionCreateOrConnectWithoutUserInput[]
@@ -6824,6 +28948,13 @@ export namespace Prisma {
     connectOrCreate?: AccountCreateOrConnectWithoutUserInput | AccountCreateOrConnectWithoutUserInput[]
     createMany?: AccountCreateManyUserInputEnvelope
     connect?: AccountWhereUniqueInput | AccountWhereUniqueInput[]
+  }
+
+  export type TeamUncheckedCreateNestedManyWithoutOwnerInput = {
+    create?: XOR<TeamCreateWithoutOwnerInput, TeamUncheckedCreateWithoutOwnerInput> | TeamCreateWithoutOwnerInput[] | TeamUncheckedCreateWithoutOwnerInput[]
+    connectOrCreate?: TeamCreateOrConnectWithoutOwnerInput | TeamCreateOrConnectWithoutOwnerInput[]
+    createMany?: TeamCreateManyOwnerInputEnvelope
+    connect?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -6878,6 +29009,20 @@ export namespace Prisma {
     deleteMany?: AccountScalarWhereInput | AccountScalarWhereInput[]
   }
 
+  export type TeamUpdateManyWithoutOwnerNestedInput = {
+    create?: XOR<TeamCreateWithoutOwnerInput, TeamUncheckedCreateWithoutOwnerInput> | TeamCreateWithoutOwnerInput[] | TeamUncheckedCreateWithoutOwnerInput[]
+    connectOrCreate?: TeamCreateOrConnectWithoutOwnerInput | TeamCreateOrConnectWithoutOwnerInput[]
+    upsert?: TeamUpsertWithWhereUniqueWithoutOwnerInput | TeamUpsertWithWhereUniqueWithoutOwnerInput[]
+    createMany?: TeamCreateManyOwnerInputEnvelope
+    set?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
+    disconnect?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
+    delete?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
+    connect?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
+    update?: TeamUpdateWithWhereUniqueWithoutOwnerInput | TeamUpdateWithWhereUniqueWithoutOwnerInput[]
+    updateMany?: TeamUpdateManyWithWhereWithoutOwnerInput | TeamUpdateManyWithWhereWithoutOwnerInput[]
+    deleteMany?: TeamScalarWhereInput | TeamScalarWhereInput[]
+  }
+
   export type SessionUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<SessionCreateWithoutUserInput, SessionUncheckedCreateWithoutUserInput> | SessionCreateWithoutUserInput[] | SessionUncheckedCreateWithoutUserInput[]
     connectOrCreate?: SessionCreateOrConnectWithoutUserInput | SessionCreateOrConnectWithoutUserInput[]
@@ -6906,6 +29051,20 @@ export namespace Prisma {
     deleteMany?: AccountScalarWhereInput | AccountScalarWhereInput[]
   }
 
+  export type TeamUncheckedUpdateManyWithoutOwnerNestedInput = {
+    create?: XOR<TeamCreateWithoutOwnerInput, TeamUncheckedCreateWithoutOwnerInput> | TeamCreateWithoutOwnerInput[] | TeamUncheckedCreateWithoutOwnerInput[]
+    connectOrCreate?: TeamCreateOrConnectWithoutOwnerInput | TeamCreateOrConnectWithoutOwnerInput[]
+    upsert?: TeamUpsertWithWhereUniqueWithoutOwnerInput | TeamUpsertWithWhereUniqueWithoutOwnerInput[]
+    createMany?: TeamCreateManyOwnerInputEnvelope
+    set?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
+    disconnect?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
+    delete?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
+    connect?: TeamWhereUniqueInput | TeamWhereUniqueInput[]
+    update?: TeamUpdateWithWhereUniqueWithoutOwnerInput | TeamUpdateWithWhereUniqueWithoutOwnerInput[]
+    updateMany?: TeamUpdateManyWithWhereWithoutOwnerInput | TeamUpdateManyWithWhereWithoutOwnerInput[]
+    deleteMany?: TeamScalarWhereInput | TeamScalarWhereInput[]
+  }
+
   export type UserCreateNestedOneWithoutSessionsInput = {
     create?: XOR<UserCreateWithoutSessionsInput, UserUncheckedCreateWithoutSessionsInput>
     connectOrCreate?: UserCreateOrConnectWithoutSessionsInput
@@ -6932,6 +29091,800 @@ export namespace Prisma {
     upsert?: UserUpsertWithoutAccountsInput
     connect?: UserWhereUniqueInput
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutAccountsInput, UserUpdateWithoutAccountsInput>, UserUncheckedUpdateWithoutAccountsInput>
+  }
+
+  export type RegionI18nCreateNestedManyWithoutRegionInput = {
+    create?: XOR<RegionI18nCreateWithoutRegionInput, RegionI18nUncheckedCreateWithoutRegionInput> | RegionI18nCreateWithoutRegionInput[] | RegionI18nUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: RegionI18nCreateOrConnectWithoutRegionInput | RegionI18nCreateOrConnectWithoutRegionInput[]
+    createMany?: RegionI18nCreateManyRegionInputEnvelope
+    connect?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+  }
+
+  export type LocationCreateNestedManyWithoutRegionInput = {
+    create?: XOR<LocationCreateWithoutRegionInput, LocationUncheckedCreateWithoutRegionInput> | LocationCreateWithoutRegionInput[] | LocationUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: LocationCreateOrConnectWithoutRegionInput | LocationCreateOrConnectWithoutRegionInput[]
+    createMany?: LocationCreateManyRegionInputEnvelope
+    connect?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+  }
+
+  export type RegionI18nUncheckedCreateNestedManyWithoutRegionInput = {
+    create?: XOR<RegionI18nCreateWithoutRegionInput, RegionI18nUncheckedCreateWithoutRegionInput> | RegionI18nCreateWithoutRegionInput[] | RegionI18nUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: RegionI18nCreateOrConnectWithoutRegionInput | RegionI18nCreateOrConnectWithoutRegionInput[]
+    createMany?: RegionI18nCreateManyRegionInputEnvelope
+    connect?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+  }
+
+  export type LocationUncheckedCreateNestedManyWithoutRegionInput = {
+    create?: XOR<LocationCreateWithoutRegionInput, LocationUncheckedCreateWithoutRegionInput> | LocationCreateWithoutRegionInput[] | LocationUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: LocationCreateOrConnectWithoutRegionInput | LocationCreateOrConnectWithoutRegionInput[]
+    createMany?: LocationCreateManyRegionInputEnvelope
+    connect?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+  }
+
+  export type RegionI18nUpdateManyWithoutRegionNestedInput = {
+    create?: XOR<RegionI18nCreateWithoutRegionInput, RegionI18nUncheckedCreateWithoutRegionInput> | RegionI18nCreateWithoutRegionInput[] | RegionI18nUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: RegionI18nCreateOrConnectWithoutRegionInput | RegionI18nCreateOrConnectWithoutRegionInput[]
+    upsert?: RegionI18nUpsertWithWhereUniqueWithoutRegionInput | RegionI18nUpsertWithWhereUniqueWithoutRegionInput[]
+    createMany?: RegionI18nCreateManyRegionInputEnvelope
+    set?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+    disconnect?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+    delete?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+    connect?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+    update?: RegionI18nUpdateWithWhereUniqueWithoutRegionInput | RegionI18nUpdateWithWhereUniqueWithoutRegionInput[]
+    updateMany?: RegionI18nUpdateManyWithWhereWithoutRegionInput | RegionI18nUpdateManyWithWhereWithoutRegionInput[]
+    deleteMany?: RegionI18nScalarWhereInput | RegionI18nScalarWhereInput[]
+  }
+
+  export type LocationUpdateManyWithoutRegionNestedInput = {
+    create?: XOR<LocationCreateWithoutRegionInput, LocationUncheckedCreateWithoutRegionInput> | LocationCreateWithoutRegionInput[] | LocationUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: LocationCreateOrConnectWithoutRegionInput | LocationCreateOrConnectWithoutRegionInput[]
+    upsert?: LocationUpsertWithWhereUniqueWithoutRegionInput | LocationUpsertWithWhereUniqueWithoutRegionInput[]
+    createMany?: LocationCreateManyRegionInputEnvelope
+    set?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+    disconnect?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+    delete?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+    connect?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+    update?: LocationUpdateWithWhereUniqueWithoutRegionInput | LocationUpdateWithWhereUniqueWithoutRegionInput[]
+    updateMany?: LocationUpdateManyWithWhereWithoutRegionInput | LocationUpdateManyWithWhereWithoutRegionInput[]
+    deleteMany?: LocationScalarWhereInput | LocationScalarWhereInput[]
+  }
+
+  export type RegionI18nUncheckedUpdateManyWithoutRegionNestedInput = {
+    create?: XOR<RegionI18nCreateWithoutRegionInput, RegionI18nUncheckedCreateWithoutRegionInput> | RegionI18nCreateWithoutRegionInput[] | RegionI18nUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: RegionI18nCreateOrConnectWithoutRegionInput | RegionI18nCreateOrConnectWithoutRegionInput[]
+    upsert?: RegionI18nUpsertWithWhereUniqueWithoutRegionInput | RegionI18nUpsertWithWhereUniqueWithoutRegionInput[]
+    createMany?: RegionI18nCreateManyRegionInputEnvelope
+    set?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+    disconnect?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+    delete?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+    connect?: RegionI18nWhereUniqueInput | RegionI18nWhereUniqueInput[]
+    update?: RegionI18nUpdateWithWhereUniqueWithoutRegionInput | RegionI18nUpdateWithWhereUniqueWithoutRegionInput[]
+    updateMany?: RegionI18nUpdateManyWithWhereWithoutRegionInput | RegionI18nUpdateManyWithWhereWithoutRegionInput[]
+    deleteMany?: RegionI18nScalarWhereInput | RegionI18nScalarWhereInput[]
+  }
+
+  export type LocationUncheckedUpdateManyWithoutRegionNestedInput = {
+    create?: XOR<LocationCreateWithoutRegionInput, LocationUncheckedCreateWithoutRegionInput> | LocationCreateWithoutRegionInput[] | LocationUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: LocationCreateOrConnectWithoutRegionInput | LocationCreateOrConnectWithoutRegionInput[]
+    upsert?: LocationUpsertWithWhereUniqueWithoutRegionInput | LocationUpsertWithWhereUniqueWithoutRegionInput[]
+    createMany?: LocationCreateManyRegionInputEnvelope
+    set?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+    disconnect?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+    delete?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+    connect?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+    update?: LocationUpdateWithWhereUniqueWithoutRegionInput | LocationUpdateWithWhereUniqueWithoutRegionInput[]
+    updateMany?: LocationUpdateManyWithWhereWithoutRegionInput | LocationUpdateManyWithWhereWithoutRegionInput[]
+    deleteMany?: LocationScalarWhereInput | LocationScalarWhereInput[]
+  }
+
+  export type RegionCreateNestedOneWithoutI18nInput = {
+    create?: XOR<RegionCreateWithoutI18nInput, RegionUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: RegionCreateOrConnectWithoutI18nInput
+    connect?: RegionWhereUniqueInput
+  }
+
+  export type RegionUpdateOneRequiredWithoutI18nNestedInput = {
+    create?: XOR<RegionCreateWithoutI18nInput, RegionUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: RegionCreateOrConnectWithoutI18nInput
+    upsert?: RegionUpsertWithoutI18nInput
+    connect?: RegionWhereUniqueInput
+    update?: XOR<XOR<RegionUpdateToOneWithWhereWithoutI18nInput, RegionUpdateWithoutI18nInput>, RegionUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type LocationI18nCreateNestedManyWithoutLocationInput = {
+    create?: XOR<LocationI18nCreateWithoutLocationInput, LocationI18nUncheckedCreateWithoutLocationInput> | LocationI18nCreateWithoutLocationInput[] | LocationI18nUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: LocationI18nCreateOrConnectWithoutLocationInput | LocationI18nCreateOrConnectWithoutLocationInput[]
+    createMany?: LocationI18nCreateManyLocationInputEnvelope
+    connect?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+  }
+
+  export type RegionCreateNestedOneWithoutLocationsInput = {
+    create?: XOR<RegionCreateWithoutLocationsInput, RegionUncheckedCreateWithoutLocationsInput>
+    connectOrCreate?: RegionCreateOrConnectWithoutLocationsInput
+    connect?: RegionWhereUniqueInput
+  }
+
+  export type RouteCreateNestedManyWithoutLocationFromInput = {
+    create?: XOR<RouteCreateWithoutLocationFromInput, RouteUncheckedCreateWithoutLocationFromInput> | RouteCreateWithoutLocationFromInput[] | RouteUncheckedCreateWithoutLocationFromInput[]
+    connectOrCreate?: RouteCreateOrConnectWithoutLocationFromInput | RouteCreateOrConnectWithoutLocationFromInput[]
+    createMany?: RouteCreateManyLocationFromInputEnvelope
+    connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+  }
+
+  export type RouteCreateNestedManyWithoutLocationToInput = {
+    create?: XOR<RouteCreateWithoutLocationToInput, RouteUncheckedCreateWithoutLocationToInput> | RouteCreateWithoutLocationToInput[] | RouteUncheckedCreateWithoutLocationToInput[]
+    connectOrCreate?: RouteCreateOrConnectWithoutLocationToInput | RouteCreateOrConnectWithoutLocationToInput[]
+    createMany?: RouteCreateManyLocationToInputEnvelope
+    connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+  }
+
+  export type BuildingCreateNestedManyWithoutLocationInput = {
+    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
+    createMany?: BuildingCreateManyLocationInputEnvelope
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+  }
+
+  export type TownInformationCreateNestedOneWithoutLocationInput = {
+    create?: XOR<TownInformationCreateWithoutLocationInput, TownInformationUncheckedCreateWithoutLocationInput>
+    connectOrCreate?: TownInformationCreateOrConnectWithoutLocationInput
+    connect?: TownInformationWhereUniqueInput
+  }
+
+  export type LocationI18nUncheckedCreateNestedManyWithoutLocationInput = {
+    create?: XOR<LocationI18nCreateWithoutLocationInput, LocationI18nUncheckedCreateWithoutLocationInput> | LocationI18nCreateWithoutLocationInput[] | LocationI18nUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: LocationI18nCreateOrConnectWithoutLocationInput | LocationI18nCreateOrConnectWithoutLocationInput[]
+    createMany?: LocationI18nCreateManyLocationInputEnvelope
+    connect?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+  }
+
+  export type RouteUncheckedCreateNestedManyWithoutLocationFromInput = {
+    create?: XOR<RouteCreateWithoutLocationFromInput, RouteUncheckedCreateWithoutLocationFromInput> | RouteCreateWithoutLocationFromInput[] | RouteUncheckedCreateWithoutLocationFromInput[]
+    connectOrCreate?: RouteCreateOrConnectWithoutLocationFromInput | RouteCreateOrConnectWithoutLocationFromInput[]
+    createMany?: RouteCreateManyLocationFromInputEnvelope
+    connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+  }
+
+  export type RouteUncheckedCreateNestedManyWithoutLocationToInput = {
+    create?: XOR<RouteCreateWithoutLocationToInput, RouteUncheckedCreateWithoutLocationToInput> | RouteCreateWithoutLocationToInput[] | RouteUncheckedCreateWithoutLocationToInput[]
+    connectOrCreate?: RouteCreateOrConnectWithoutLocationToInput | RouteCreateOrConnectWithoutLocationToInput[]
+    createMany?: RouteCreateManyLocationToInputEnvelope
+    connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+  }
+
+  export type BuildingUncheckedCreateNestedManyWithoutLocationInput = {
+    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
+    createMany?: BuildingCreateManyLocationInputEnvelope
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+  }
+
+  export type TownInformationUncheckedCreateNestedOneWithoutLocationInput = {
+    create?: XOR<TownInformationCreateWithoutLocationInput, TownInformationUncheckedCreateWithoutLocationInput>
+    connectOrCreate?: TownInformationCreateOrConnectWithoutLocationInput
+    connect?: TownInformationWhereUniqueInput
+  }
+
+  export type EnumLocationTypeFieldUpdateOperationsInput = {
+    set?: $Enums.LocationType
+  }
+
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type LocationI18nUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<LocationI18nCreateWithoutLocationInput, LocationI18nUncheckedCreateWithoutLocationInput> | LocationI18nCreateWithoutLocationInput[] | LocationI18nUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: LocationI18nCreateOrConnectWithoutLocationInput | LocationI18nCreateOrConnectWithoutLocationInput[]
+    upsert?: LocationI18nUpsertWithWhereUniqueWithoutLocationInput | LocationI18nUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: LocationI18nCreateManyLocationInputEnvelope
+    set?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+    disconnect?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+    delete?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+    connect?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+    update?: LocationI18nUpdateWithWhereUniqueWithoutLocationInput | LocationI18nUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: LocationI18nUpdateManyWithWhereWithoutLocationInput | LocationI18nUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: LocationI18nScalarWhereInput | LocationI18nScalarWhereInput[]
+  }
+
+  export type RegionUpdateOneRequiredWithoutLocationsNestedInput = {
+    create?: XOR<RegionCreateWithoutLocationsInput, RegionUncheckedCreateWithoutLocationsInput>
+    connectOrCreate?: RegionCreateOrConnectWithoutLocationsInput
+    upsert?: RegionUpsertWithoutLocationsInput
+    connect?: RegionWhereUniqueInput
+    update?: XOR<XOR<RegionUpdateToOneWithWhereWithoutLocationsInput, RegionUpdateWithoutLocationsInput>, RegionUncheckedUpdateWithoutLocationsInput>
+  }
+
+  export type RouteUpdateManyWithoutLocationFromNestedInput = {
+    create?: XOR<RouteCreateWithoutLocationFromInput, RouteUncheckedCreateWithoutLocationFromInput> | RouteCreateWithoutLocationFromInput[] | RouteUncheckedCreateWithoutLocationFromInput[]
+    connectOrCreate?: RouteCreateOrConnectWithoutLocationFromInput | RouteCreateOrConnectWithoutLocationFromInput[]
+    upsert?: RouteUpsertWithWhereUniqueWithoutLocationFromInput | RouteUpsertWithWhereUniqueWithoutLocationFromInput[]
+    createMany?: RouteCreateManyLocationFromInputEnvelope
+    set?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    disconnect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    delete?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    update?: RouteUpdateWithWhereUniqueWithoutLocationFromInput | RouteUpdateWithWhereUniqueWithoutLocationFromInput[]
+    updateMany?: RouteUpdateManyWithWhereWithoutLocationFromInput | RouteUpdateManyWithWhereWithoutLocationFromInput[]
+    deleteMany?: RouteScalarWhereInput | RouteScalarWhereInput[]
+  }
+
+  export type RouteUpdateManyWithoutLocationToNestedInput = {
+    create?: XOR<RouteCreateWithoutLocationToInput, RouteUncheckedCreateWithoutLocationToInput> | RouteCreateWithoutLocationToInput[] | RouteUncheckedCreateWithoutLocationToInput[]
+    connectOrCreate?: RouteCreateOrConnectWithoutLocationToInput | RouteCreateOrConnectWithoutLocationToInput[]
+    upsert?: RouteUpsertWithWhereUniqueWithoutLocationToInput | RouteUpsertWithWhereUniqueWithoutLocationToInput[]
+    createMany?: RouteCreateManyLocationToInputEnvelope
+    set?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    disconnect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    delete?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    update?: RouteUpdateWithWhereUniqueWithoutLocationToInput | RouteUpdateWithWhereUniqueWithoutLocationToInput[]
+    updateMany?: RouteUpdateManyWithWhereWithoutLocationToInput | RouteUpdateManyWithWhereWithoutLocationToInput[]
+    deleteMany?: RouteScalarWhereInput | RouteScalarWhereInput[]
+  }
+
+  export type BuildingUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
+    upsert?: BuildingUpsertWithWhereUniqueWithoutLocationInput | BuildingUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: BuildingCreateManyLocationInputEnvelope
+    set?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    disconnect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    delete?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    update?: BuildingUpdateWithWhereUniqueWithoutLocationInput | BuildingUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: BuildingUpdateManyWithWhereWithoutLocationInput | BuildingUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+  }
+
+  export type TownInformationUpdateOneWithoutLocationNestedInput = {
+    create?: XOR<TownInformationCreateWithoutLocationInput, TownInformationUncheckedCreateWithoutLocationInput>
+    connectOrCreate?: TownInformationCreateOrConnectWithoutLocationInput
+    upsert?: TownInformationUpsertWithoutLocationInput
+    disconnect?: TownInformationWhereInput | boolean
+    delete?: TownInformationWhereInput | boolean
+    connect?: TownInformationWhereUniqueInput
+    update?: XOR<XOR<TownInformationUpdateToOneWithWhereWithoutLocationInput, TownInformationUpdateWithoutLocationInput>, TownInformationUncheckedUpdateWithoutLocationInput>
+  }
+
+  export type LocationI18nUncheckedUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<LocationI18nCreateWithoutLocationInput, LocationI18nUncheckedCreateWithoutLocationInput> | LocationI18nCreateWithoutLocationInput[] | LocationI18nUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: LocationI18nCreateOrConnectWithoutLocationInput | LocationI18nCreateOrConnectWithoutLocationInput[]
+    upsert?: LocationI18nUpsertWithWhereUniqueWithoutLocationInput | LocationI18nUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: LocationI18nCreateManyLocationInputEnvelope
+    set?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+    disconnect?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+    delete?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+    connect?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+    update?: LocationI18nUpdateWithWhereUniqueWithoutLocationInput | LocationI18nUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: LocationI18nUpdateManyWithWhereWithoutLocationInput | LocationI18nUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: LocationI18nScalarWhereInput | LocationI18nScalarWhereInput[]
+  }
+
+  export type RouteUncheckedUpdateManyWithoutLocationFromNestedInput = {
+    create?: XOR<RouteCreateWithoutLocationFromInput, RouteUncheckedCreateWithoutLocationFromInput> | RouteCreateWithoutLocationFromInput[] | RouteUncheckedCreateWithoutLocationFromInput[]
+    connectOrCreate?: RouteCreateOrConnectWithoutLocationFromInput | RouteCreateOrConnectWithoutLocationFromInput[]
+    upsert?: RouteUpsertWithWhereUniqueWithoutLocationFromInput | RouteUpsertWithWhereUniqueWithoutLocationFromInput[]
+    createMany?: RouteCreateManyLocationFromInputEnvelope
+    set?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    disconnect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    delete?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    update?: RouteUpdateWithWhereUniqueWithoutLocationFromInput | RouteUpdateWithWhereUniqueWithoutLocationFromInput[]
+    updateMany?: RouteUpdateManyWithWhereWithoutLocationFromInput | RouteUpdateManyWithWhereWithoutLocationFromInput[]
+    deleteMany?: RouteScalarWhereInput | RouteScalarWhereInput[]
+  }
+
+  export type RouteUncheckedUpdateManyWithoutLocationToNestedInput = {
+    create?: XOR<RouteCreateWithoutLocationToInput, RouteUncheckedCreateWithoutLocationToInput> | RouteCreateWithoutLocationToInput[] | RouteUncheckedCreateWithoutLocationToInput[]
+    connectOrCreate?: RouteCreateOrConnectWithoutLocationToInput | RouteCreateOrConnectWithoutLocationToInput[]
+    upsert?: RouteUpsertWithWhereUniqueWithoutLocationToInput | RouteUpsertWithWhereUniqueWithoutLocationToInput[]
+    createMany?: RouteCreateManyLocationToInputEnvelope
+    set?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    disconnect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    delete?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
+    update?: RouteUpdateWithWhereUniqueWithoutLocationToInput | RouteUpdateWithWhereUniqueWithoutLocationToInput[]
+    updateMany?: RouteUpdateManyWithWhereWithoutLocationToInput | RouteUpdateManyWithWhereWithoutLocationToInput[]
+    deleteMany?: RouteScalarWhereInput | RouteScalarWhereInput[]
+  }
+
+  export type BuildingUncheckedUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
+    upsert?: BuildingUpsertWithWhereUniqueWithoutLocationInput | BuildingUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: BuildingCreateManyLocationInputEnvelope
+    set?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    disconnect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    delete?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    update?: BuildingUpdateWithWhereUniqueWithoutLocationInput | BuildingUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: BuildingUpdateManyWithWhereWithoutLocationInput | BuildingUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+  }
+
+  export type TownInformationUncheckedUpdateOneWithoutLocationNestedInput = {
+    create?: XOR<TownInformationCreateWithoutLocationInput, TownInformationUncheckedCreateWithoutLocationInput>
+    connectOrCreate?: TownInformationCreateOrConnectWithoutLocationInput
+    upsert?: TownInformationUpsertWithoutLocationInput
+    disconnect?: TownInformationWhereInput | boolean
+    delete?: TownInformationWhereInput | boolean
+    connect?: TownInformationWhereUniqueInput
+    update?: XOR<XOR<TownInformationUpdateToOneWithWhereWithoutLocationInput, TownInformationUpdateWithoutLocationInput>, TownInformationUncheckedUpdateWithoutLocationInput>
+  }
+
+  export type LocationCreateNestedOneWithoutI18nInput = {
+    create?: XOR<LocationCreateWithoutI18nInput, LocationUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutI18nInput
+    connect?: LocationWhereUniqueInput
+  }
+
+  export type LocationUpdateOneRequiredWithoutI18nNestedInput = {
+    create?: XOR<LocationCreateWithoutI18nInput, LocationUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutI18nInput
+    upsert?: LocationUpsertWithoutI18nInput
+    connect?: LocationWhereUniqueInput
+    update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutI18nInput, LocationUpdateWithoutI18nInput>, LocationUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type LocationCreateNestedOneWithoutTownInfoInput = {
+    create?: XOR<LocationCreateWithoutTownInfoInput, LocationUncheckedCreateWithoutTownInfoInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutTownInfoInput
+    connect?: LocationWhereUniqueInput
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type LocationUpdateOneRequiredWithoutTownInfoNestedInput = {
+    create?: XOR<LocationCreateWithoutTownInfoInput, LocationUncheckedCreateWithoutTownInfoInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutTownInfoInput
+    upsert?: LocationUpsertWithoutTownInfoInput
+    connect?: LocationWhereUniqueInput
+    update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutTownInfoInput, LocationUpdateWithoutTownInfoInput>, LocationUncheckedUpdateWithoutTownInfoInput>
+  }
+
+  export type LocationCreateNestedOneWithoutRoutesFromInput = {
+    create?: XOR<LocationCreateWithoutRoutesFromInput, LocationUncheckedCreateWithoutRoutesFromInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutRoutesFromInput
+    connect?: LocationWhereUniqueInput
+  }
+
+  export type LocationCreateNestedOneWithoutRoutesToInput = {
+    create?: XOR<LocationCreateWithoutRoutesToInput, LocationUncheckedCreateWithoutRoutesToInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutRoutesToInput
+    connect?: LocationWhereUniqueInput
+  }
+
+  export type EnumRouteTypeFieldUpdateOperationsInput = {
+    set?: $Enums.RouteType
+  }
+
+  export type LocationUpdateOneRequiredWithoutRoutesFromNestedInput = {
+    create?: XOR<LocationCreateWithoutRoutesFromInput, LocationUncheckedCreateWithoutRoutesFromInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutRoutesFromInput
+    upsert?: LocationUpsertWithoutRoutesFromInput
+    connect?: LocationWhereUniqueInput
+    update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutRoutesFromInput, LocationUpdateWithoutRoutesFromInput>, LocationUncheckedUpdateWithoutRoutesFromInput>
+  }
+
+  export type LocationUpdateOneRequiredWithoutRoutesToNestedInput = {
+    create?: XOR<LocationCreateWithoutRoutesToInput, LocationUncheckedCreateWithoutRoutesToInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutRoutesToInput
+    upsert?: LocationUpsertWithoutRoutesToInput
+    connect?: LocationWhereUniqueInput
+    update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutRoutesToInput, LocationUpdateWithoutRoutesToInput>, LocationUncheckedUpdateWithoutRoutesToInput>
+  }
+
+  export type BuildingTypeI18nCreateNestedManyWithoutBuildingTypeInput = {
+    create?: XOR<BuildingTypeI18nCreateWithoutBuildingTypeInput, BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput> | BuildingTypeI18nCreateWithoutBuildingTypeInput[] | BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput[]
+    connectOrCreate?: BuildingTypeI18nCreateOrConnectWithoutBuildingTypeInput | BuildingTypeI18nCreateOrConnectWithoutBuildingTypeInput[]
+    createMany?: BuildingTypeI18nCreateManyBuildingTypeInputEnvelope
+    connect?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+  }
+
+  export type BuildingCreateNestedManyWithoutBuildingTypeInput = {
+    create?: XOR<BuildingCreateWithoutBuildingTypeInput, BuildingUncheckedCreateWithoutBuildingTypeInput> | BuildingCreateWithoutBuildingTypeInput[] | BuildingUncheckedCreateWithoutBuildingTypeInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutBuildingTypeInput | BuildingCreateOrConnectWithoutBuildingTypeInput[]
+    createMany?: BuildingCreateManyBuildingTypeInputEnvelope
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+  }
+
+  export type BuildingTypeI18nUncheckedCreateNestedManyWithoutBuildingTypeInput = {
+    create?: XOR<BuildingTypeI18nCreateWithoutBuildingTypeInput, BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput> | BuildingTypeI18nCreateWithoutBuildingTypeInput[] | BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput[]
+    connectOrCreate?: BuildingTypeI18nCreateOrConnectWithoutBuildingTypeInput | BuildingTypeI18nCreateOrConnectWithoutBuildingTypeInput[]
+    createMany?: BuildingTypeI18nCreateManyBuildingTypeInputEnvelope
+    connect?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+  }
+
+  export type BuildingUncheckedCreateNestedManyWithoutBuildingTypeInput = {
+    create?: XOR<BuildingCreateWithoutBuildingTypeInput, BuildingUncheckedCreateWithoutBuildingTypeInput> | BuildingCreateWithoutBuildingTypeInput[] | BuildingUncheckedCreateWithoutBuildingTypeInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutBuildingTypeInput | BuildingCreateOrConnectWithoutBuildingTypeInput[]
+    createMany?: BuildingCreateManyBuildingTypeInputEnvelope
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+  }
+
+  export type BuildingTypeI18nUpdateManyWithoutBuildingTypeNestedInput = {
+    create?: XOR<BuildingTypeI18nCreateWithoutBuildingTypeInput, BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput> | BuildingTypeI18nCreateWithoutBuildingTypeInput[] | BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput[]
+    connectOrCreate?: BuildingTypeI18nCreateOrConnectWithoutBuildingTypeInput | BuildingTypeI18nCreateOrConnectWithoutBuildingTypeInput[]
+    upsert?: BuildingTypeI18nUpsertWithWhereUniqueWithoutBuildingTypeInput | BuildingTypeI18nUpsertWithWhereUniqueWithoutBuildingTypeInput[]
+    createMany?: BuildingTypeI18nCreateManyBuildingTypeInputEnvelope
+    set?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+    disconnect?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+    delete?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+    connect?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+    update?: BuildingTypeI18nUpdateWithWhereUniqueWithoutBuildingTypeInput | BuildingTypeI18nUpdateWithWhereUniqueWithoutBuildingTypeInput[]
+    updateMany?: BuildingTypeI18nUpdateManyWithWhereWithoutBuildingTypeInput | BuildingTypeI18nUpdateManyWithWhereWithoutBuildingTypeInput[]
+    deleteMany?: BuildingTypeI18nScalarWhereInput | BuildingTypeI18nScalarWhereInput[]
+  }
+
+  export type BuildingUpdateManyWithoutBuildingTypeNestedInput = {
+    create?: XOR<BuildingCreateWithoutBuildingTypeInput, BuildingUncheckedCreateWithoutBuildingTypeInput> | BuildingCreateWithoutBuildingTypeInput[] | BuildingUncheckedCreateWithoutBuildingTypeInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutBuildingTypeInput | BuildingCreateOrConnectWithoutBuildingTypeInput[]
+    upsert?: BuildingUpsertWithWhereUniqueWithoutBuildingTypeInput | BuildingUpsertWithWhereUniqueWithoutBuildingTypeInput[]
+    createMany?: BuildingCreateManyBuildingTypeInputEnvelope
+    set?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    disconnect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    delete?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    update?: BuildingUpdateWithWhereUniqueWithoutBuildingTypeInput | BuildingUpdateWithWhereUniqueWithoutBuildingTypeInput[]
+    updateMany?: BuildingUpdateManyWithWhereWithoutBuildingTypeInput | BuildingUpdateManyWithWhereWithoutBuildingTypeInput[]
+    deleteMany?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+  }
+
+  export type BuildingTypeI18nUncheckedUpdateManyWithoutBuildingTypeNestedInput = {
+    create?: XOR<BuildingTypeI18nCreateWithoutBuildingTypeInput, BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput> | BuildingTypeI18nCreateWithoutBuildingTypeInput[] | BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput[]
+    connectOrCreate?: BuildingTypeI18nCreateOrConnectWithoutBuildingTypeInput | BuildingTypeI18nCreateOrConnectWithoutBuildingTypeInput[]
+    upsert?: BuildingTypeI18nUpsertWithWhereUniqueWithoutBuildingTypeInput | BuildingTypeI18nUpsertWithWhereUniqueWithoutBuildingTypeInput[]
+    createMany?: BuildingTypeI18nCreateManyBuildingTypeInputEnvelope
+    set?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+    disconnect?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+    delete?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+    connect?: BuildingTypeI18nWhereUniqueInput | BuildingTypeI18nWhereUniqueInput[]
+    update?: BuildingTypeI18nUpdateWithWhereUniqueWithoutBuildingTypeInput | BuildingTypeI18nUpdateWithWhereUniqueWithoutBuildingTypeInput[]
+    updateMany?: BuildingTypeI18nUpdateManyWithWhereWithoutBuildingTypeInput | BuildingTypeI18nUpdateManyWithWhereWithoutBuildingTypeInput[]
+    deleteMany?: BuildingTypeI18nScalarWhereInput | BuildingTypeI18nScalarWhereInput[]
+  }
+
+  export type BuildingUncheckedUpdateManyWithoutBuildingTypeNestedInput = {
+    create?: XOR<BuildingCreateWithoutBuildingTypeInput, BuildingUncheckedCreateWithoutBuildingTypeInput> | BuildingCreateWithoutBuildingTypeInput[] | BuildingUncheckedCreateWithoutBuildingTypeInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutBuildingTypeInput | BuildingCreateOrConnectWithoutBuildingTypeInput[]
+    upsert?: BuildingUpsertWithWhereUniqueWithoutBuildingTypeInput | BuildingUpsertWithWhereUniqueWithoutBuildingTypeInput[]
+    createMany?: BuildingCreateManyBuildingTypeInputEnvelope
+    set?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    disconnect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    delete?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    update?: BuildingUpdateWithWhereUniqueWithoutBuildingTypeInput | BuildingUpdateWithWhereUniqueWithoutBuildingTypeInput[]
+    updateMany?: BuildingUpdateManyWithWhereWithoutBuildingTypeInput | BuildingUpdateManyWithWhereWithoutBuildingTypeInput[]
+    deleteMany?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+  }
+
+  export type BuildingTypeCreateNestedOneWithoutI18nInput = {
+    create?: XOR<BuildingTypeCreateWithoutI18nInput, BuildingTypeUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: BuildingTypeCreateOrConnectWithoutI18nInput
+    connect?: BuildingTypeWhereUniqueInput
+  }
+
+  export type BuildingTypeUpdateOneRequiredWithoutI18nNestedInput = {
+    create?: XOR<BuildingTypeCreateWithoutI18nInput, BuildingTypeUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: BuildingTypeCreateOrConnectWithoutI18nInput
+    upsert?: BuildingTypeUpsertWithoutI18nInput
+    connect?: BuildingTypeWhereUniqueInput
+    update?: XOR<XOR<BuildingTypeUpdateToOneWithWhereWithoutI18nInput, BuildingTypeUpdateWithoutI18nInput>, BuildingTypeUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type BuildingTypeCreateNestedOneWithoutBuildingsInput = {
+    create?: XOR<BuildingTypeCreateWithoutBuildingsInput, BuildingTypeUncheckedCreateWithoutBuildingsInput>
+    connectOrCreate?: BuildingTypeCreateOrConnectWithoutBuildingsInput
+    connect?: BuildingTypeWhereUniqueInput
+  }
+
+  export type LocationCreateNestedOneWithoutBuildingsInput = {
+    create?: XOR<LocationCreateWithoutBuildingsInput, LocationUncheckedCreateWithoutBuildingsInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutBuildingsInput
+    connect?: LocationWhereUniqueInput
+  }
+
+  export type BuildingI18nCreateNestedManyWithoutBuildingInput = {
+    create?: XOR<BuildingI18nCreateWithoutBuildingInput, BuildingI18nUncheckedCreateWithoutBuildingInput> | BuildingI18nCreateWithoutBuildingInput[] | BuildingI18nUncheckedCreateWithoutBuildingInput[]
+    connectOrCreate?: BuildingI18nCreateOrConnectWithoutBuildingInput | BuildingI18nCreateOrConnectWithoutBuildingInput[]
+    createMany?: BuildingI18nCreateManyBuildingInputEnvelope
+    connect?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+  }
+
+  export type StadiumInfoCreateNestedOneWithoutBuildingInput = {
+    create?: XOR<StadiumInfoCreateWithoutBuildingInput, StadiumInfoUncheckedCreateWithoutBuildingInput>
+    connectOrCreate?: StadiumInfoCreateOrConnectWithoutBuildingInput
+    connect?: StadiumInfoWhereUniqueInput
+  }
+
+  export type BuildingI18nUncheckedCreateNestedManyWithoutBuildingInput = {
+    create?: XOR<BuildingI18nCreateWithoutBuildingInput, BuildingI18nUncheckedCreateWithoutBuildingInput> | BuildingI18nCreateWithoutBuildingInput[] | BuildingI18nUncheckedCreateWithoutBuildingInput[]
+    connectOrCreate?: BuildingI18nCreateOrConnectWithoutBuildingInput | BuildingI18nCreateOrConnectWithoutBuildingInput[]
+    createMany?: BuildingI18nCreateManyBuildingInputEnvelope
+    connect?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+  }
+
+  export type StadiumInfoUncheckedCreateNestedOneWithoutBuildingInput = {
+    create?: XOR<StadiumInfoCreateWithoutBuildingInput, StadiumInfoUncheckedCreateWithoutBuildingInput>
+    connectOrCreate?: StadiumInfoCreateOrConnectWithoutBuildingInput
+    connect?: StadiumInfoWhereUniqueInput
+  }
+
+  export type BuildingTypeUpdateOneRequiredWithoutBuildingsNestedInput = {
+    create?: XOR<BuildingTypeCreateWithoutBuildingsInput, BuildingTypeUncheckedCreateWithoutBuildingsInput>
+    connectOrCreate?: BuildingTypeCreateOrConnectWithoutBuildingsInput
+    upsert?: BuildingTypeUpsertWithoutBuildingsInput
+    connect?: BuildingTypeWhereUniqueInput
+    update?: XOR<XOR<BuildingTypeUpdateToOneWithWhereWithoutBuildingsInput, BuildingTypeUpdateWithoutBuildingsInput>, BuildingTypeUncheckedUpdateWithoutBuildingsInput>
+  }
+
+  export type LocationUpdateOneRequiredWithoutBuildingsNestedInput = {
+    create?: XOR<LocationCreateWithoutBuildingsInput, LocationUncheckedCreateWithoutBuildingsInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutBuildingsInput
+    upsert?: LocationUpsertWithoutBuildingsInput
+    connect?: LocationWhereUniqueInput
+    update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutBuildingsInput, LocationUpdateWithoutBuildingsInput>, LocationUncheckedUpdateWithoutBuildingsInput>
+  }
+
+  export type BuildingI18nUpdateManyWithoutBuildingNestedInput = {
+    create?: XOR<BuildingI18nCreateWithoutBuildingInput, BuildingI18nUncheckedCreateWithoutBuildingInput> | BuildingI18nCreateWithoutBuildingInput[] | BuildingI18nUncheckedCreateWithoutBuildingInput[]
+    connectOrCreate?: BuildingI18nCreateOrConnectWithoutBuildingInput | BuildingI18nCreateOrConnectWithoutBuildingInput[]
+    upsert?: BuildingI18nUpsertWithWhereUniqueWithoutBuildingInput | BuildingI18nUpsertWithWhereUniqueWithoutBuildingInput[]
+    createMany?: BuildingI18nCreateManyBuildingInputEnvelope
+    set?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+    disconnect?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+    delete?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+    connect?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+    update?: BuildingI18nUpdateWithWhereUniqueWithoutBuildingInput | BuildingI18nUpdateWithWhereUniqueWithoutBuildingInput[]
+    updateMany?: BuildingI18nUpdateManyWithWhereWithoutBuildingInput | BuildingI18nUpdateManyWithWhereWithoutBuildingInput[]
+    deleteMany?: BuildingI18nScalarWhereInput | BuildingI18nScalarWhereInput[]
+  }
+
+  export type StadiumInfoUpdateOneWithoutBuildingNestedInput = {
+    create?: XOR<StadiumInfoCreateWithoutBuildingInput, StadiumInfoUncheckedCreateWithoutBuildingInput>
+    connectOrCreate?: StadiumInfoCreateOrConnectWithoutBuildingInput
+    upsert?: StadiumInfoUpsertWithoutBuildingInput
+    disconnect?: StadiumInfoWhereInput | boolean
+    delete?: StadiumInfoWhereInput | boolean
+    connect?: StadiumInfoWhereUniqueInput
+    update?: XOR<XOR<StadiumInfoUpdateToOneWithWhereWithoutBuildingInput, StadiumInfoUpdateWithoutBuildingInput>, StadiumInfoUncheckedUpdateWithoutBuildingInput>
+  }
+
+  export type BuildingI18nUncheckedUpdateManyWithoutBuildingNestedInput = {
+    create?: XOR<BuildingI18nCreateWithoutBuildingInput, BuildingI18nUncheckedCreateWithoutBuildingInput> | BuildingI18nCreateWithoutBuildingInput[] | BuildingI18nUncheckedCreateWithoutBuildingInput[]
+    connectOrCreate?: BuildingI18nCreateOrConnectWithoutBuildingInput | BuildingI18nCreateOrConnectWithoutBuildingInput[]
+    upsert?: BuildingI18nUpsertWithWhereUniqueWithoutBuildingInput | BuildingI18nUpsertWithWhereUniqueWithoutBuildingInput[]
+    createMany?: BuildingI18nCreateManyBuildingInputEnvelope
+    set?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+    disconnect?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+    delete?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+    connect?: BuildingI18nWhereUniqueInput | BuildingI18nWhereUniqueInput[]
+    update?: BuildingI18nUpdateWithWhereUniqueWithoutBuildingInput | BuildingI18nUpdateWithWhereUniqueWithoutBuildingInput[]
+    updateMany?: BuildingI18nUpdateManyWithWhereWithoutBuildingInput | BuildingI18nUpdateManyWithWhereWithoutBuildingInput[]
+    deleteMany?: BuildingI18nScalarWhereInput | BuildingI18nScalarWhereInput[]
+  }
+
+  export type StadiumInfoUncheckedUpdateOneWithoutBuildingNestedInput = {
+    create?: XOR<StadiumInfoCreateWithoutBuildingInput, StadiumInfoUncheckedCreateWithoutBuildingInput>
+    connectOrCreate?: StadiumInfoCreateOrConnectWithoutBuildingInput
+    upsert?: StadiumInfoUpsertWithoutBuildingInput
+    disconnect?: StadiumInfoWhereInput | boolean
+    delete?: StadiumInfoWhereInput | boolean
+    connect?: StadiumInfoWhereUniqueInput
+    update?: XOR<XOR<StadiumInfoUpdateToOneWithWhereWithoutBuildingInput, StadiumInfoUpdateWithoutBuildingInput>, StadiumInfoUncheckedUpdateWithoutBuildingInput>
+  }
+
+  export type BuildingCreateNestedOneWithoutI18nInput = {
+    create?: XOR<BuildingCreateWithoutI18nInput, BuildingUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: BuildingCreateOrConnectWithoutI18nInput
+    connect?: BuildingWhereUniqueInput
+  }
+
+  export type BuildingUpdateOneRequiredWithoutI18nNestedInput = {
+    create?: XOR<BuildingCreateWithoutI18nInput, BuildingUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: BuildingCreateOrConnectWithoutI18nInput
+    upsert?: BuildingUpsertWithoutI18nInput
+    connect?: BuildingWhereUniqueInput
+    update?: XOR<XOR<BuildingUpdateToOneWithWhereWithoutI18nInput, BuildingUpdateWithoutI18nInput>, BuildingUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type BuildingCreateNestedOneWithoutStadiumInfoInput = {
+    create?: XOR<BuildingCreateWithoutStadiumInfoInput, BuildingUncheckedCreateWithoutStadiumInfoInput>
+    connectOrCreate?: BuildingCreateOrConnectWithoutStadiumInfoInput
+    connect?: BuildingWhereUniqueInput
+  }
+
+  export type BuildingUpdateOneRequiredWithoutStadiumInfoNestedInput = {
+    create?: XOR<BuildingCreateWithoutStadiumInfoInput, BuildingUncheckedCreateWithoutStadiumInfoInput>
+    connectOrCreate?: BuildingCreateOrConnectWithoutStadiumInfoInput
+    upsert?: BuildingUpsertWithoutStadiumInfoInput
+    connect?: BuildingWhereUniqueInput
+    update?: XOR<XOR<BuildingUpdateToOneWithWhereWithoutStadiumInfoInput, BuildingUpdateWithoutStadiumInfoInput>, BuildingUncheckedUpdateWithoutStadiumInfoInput>
+  }
+
+  export type RaceI18nCreateNestedManyWithoutRaceInput = {
+    create?: XOR<RaceI18nCreateWithoutRaceInput, RaceI18nUncheckedCreateWithoutRaceInput> | RaceI18nCreateWithoutRaceInput[] | RaceI18nUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: RaceI18nCreateOrConnectWithoutRaceInput | RaceI18nCreateOrConnectWithoutRaceInput[]
+    createMany?: RaceI18nCreateManyRaceInputEnvelope
+    connect?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+  }
+
+  export type PersonCreateNestedManyWithoutRaceInput = {
+    create?: XOR<PersonCreateWithoutRaceInput, PersonUncheckedCreateWithoutRaceInput> | PersonCreateWithoutRaceInput[] | PersonUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: PersonCreateOrConnectWithoutRaceInput | PersonCreateOrConnectWithoutRaceInput[]
+    createMany?: PersonCreateManyRaceInputEnvelope
+    connect?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+  }
+
+  export type RaceI18nUncheckedCreateNestedManyWithoutRaceInput = {
+    create?: XOR<RaceI18nCreateWithoutRaceInput, RaceI18nUncheckedCreateWithoutRaceInput> | RaceI18nCreateWithoutRaceInput[] | RaceI18nUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: RaceI18nCreateOrConnectWithoutRaceInput | RaceI18nCreateOrConnectWithoutRaceInput[]
+    createMany?: RaceI18nCreateManyRaceInputEnvelope
+    connect?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+  }
+
+  export type PersonUncheckedCreateNestedManyWithoutRaceInput = {
+    create?: XOR<PersonCreateWithoutRaceInput, PersonUncheckedCreateWithoutRaceInput> | PersonCreateWithoutRaceInput[] | PersonUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: PersonCreateOrConnectWithoutRaceInput | PersonCreateOrConnectWithoutRaceInput[]
+    createMany?: PersonCreateManyRaceInputEnvelope
+    connect?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+  }
+
+  export type RaceI18nUpdateManyWithoutRaceNestedInput = {
+    create?: XOR<RaceI18nCreateWithoutRaceInput, RaceI18nUncheckedCreateWithoutRaceInput> | RaceI18nCreateWithoutRaceInput[] | RaceI18nUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: RaceI18nCreateOrConnectWithoutRaceInput | RaceI18nCreateOrConnectWithoutRaceInput[]
+    upsert?: RaceI18nUpsertWithWhereUniqueWithoutRaceInput | RaceI18nUpsertWithWhereUniqueWithoutRaceInput[]
+    createMany?: RaceI18nCreateManyRaceInputEnvelope
+    set?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+    disconnect?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+    delete?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+    connect?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+    update?: RaceI18nUpdateWithWhereUniqueWithoutRaceInput | RaceI18nUpdateWithWhereUniqueWithoutRaceInput[]
+    updateMany?: RaceI18nUpdateManyWithWhereWithoutRaceInput | RaceI18nUpdateManyWithWhereWithoutRaceInput[]
+    deleteMany?: RaceI18nScalarWhereInput | RaceI18nScalarWhereInput[]
+  }
+
+  export type PersonUpdateManyWithoutRaceNestedInput = {
+    create?: XOR<PersonCreateWithoutRaceInput, PersonUncheckedCreateWithoutRaceInput> | PersonCreateWithoutRaceInput[] | PersonUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: PersonCreateOrConnectWithoutRaceInput | PersonCreateOrConnectWithoutRaceInput[]
+    upsert?: PersonUpsertWithWhereUniqueWithoutRaceInput | PersonUpsertWithWhereUniqueWithoutRaceInput[]
+    createMany?: PersonCreateManyRaceInputEnvelope
+    set?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+    disconnect?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+    delete?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+    connect?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+    update?: PersonUpdateWithWhereUniqueWithoutRaceInput | PersonUpdateWithWhereUniqueWithoutRaceInput[]
+    updateMany?: PersonUpdateManyWithWhereWithoutRaceInput | PersonUpdateManyWithWhereWithoutRaceInput[]
+    deleteMany?: PersonScalarWhereInput | PersonScalarWhereInput[]
+  }
+
+  export type RaceI18nUncheckedUpdateManyWithoutRaceNestedInput = {
+    create?: XOR<RaceI18nCreateWithoutRaceInput, RaceI18nUncheckedCreateWithoutRaceInput> | RaceI18nCreateWithoutRaceInput[] | RaceI18nUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: RaceI18nCreateOrConnectWithoutRaceInput | RaceI18nCreateOrConnectWithoutRaceInput[]
+    upsert?: RaceI18nUpsertWithWhereUniqueWithoutRaceInput | RaceI18nUpsertWithWhereUniqueWithoutRaceInput[]
+    createMany?: RaceI18nCreateManyRaceInputEnvelope
+    set?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+    disconnect?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+    delete?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+    connect?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+    update?: RaceI18nUpdateWithWhereUniqueWithoutRaceInput | RaceI18nUpdateWithWhereUniqueWithoutRaceInput[]
+    updateMany?: RaceI18nUpdateManyWithWhereWithoutRaceInput | RaceI18nUpdateManyWithWhereWithoutRaceInput[]
+    deleteMany?: RaceI18nScalarWhereInput | RaceI18nScalarWhereInput[]
+  }
+
+  export type PersonUncheckedUpdateManyWithoutRaceNestedInput = {
+    create?: XOR<PersonCreateWithoutRaceInput, PersonUncheckedCreateWithoutRaceInput> | PersonCreateWithoutRaceInput[] | PersonUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: PersonCreateOrConnectWithoutRaceInput | PersonCreateOrConnectWithoutRaceInput[]
+    upsert?: PersonUpsertWithWhereUniqueWithoutRaceInput | PersonUpsertWithWhereUniqueWithoutRaceInput[]
+    createMany?: PersonCreateManyRaceInputEnvelope
+    set?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+    disconnect?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+    delete?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+    connect?: PersonWhereUniqueInput | PersonWhereUniqueInput[]
+    update?: PersonUpdateWithWhereUniqueWithoutRaceInput | PersonUpdateWithWhereUniqueWithoutRaceInput[]
+    updateMany?: PersonUpdateManyWithWhereWithoutRaceInput | PersonUpdateManyWithWhereWithoutRaceInput[]
+    deleteMany?: PersonScalarWhereInput | PersonScalarWhereInput[]
+  }
+
+  export type RaceCreateNestedOneWithoutI18nInput = {
+    create?: XOR<RaceCreateWithoutI18nInput, RaceUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: RaceCreateOrConnectWithoutI18nInput
+    connect?: RaceWhereUniqueInput
+  }
+
+  export type RaceUpdateOneRequiredWithoutI18nNestedInput = {
+    create?: XOR<RaceCreateWithoutI18nInput, RaceUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: RaceCreateOrConnectWithoutI18nInput
+    upsert?: RaceUpsertWithoutI18nInput
+    connect?: RaceWhereUniqueInput
+    update?: XOR<XOR<RaceUpdateToOneWithWhereWithoutI18nInput, RaceUpdateWithoutI18nInput>, RaceUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type RaceCreateNestedOneWithoutPersonsInput = {
+    create?: XOR<RaceCreateWithoutPersonsInput, RaceUncheckedCreateWithoutPersonsInput>
+    connectOrCreate?: RaceCreateOrConnectWithoutPersonsInput
+    connect?: RaceWhereUniqueInput
+  }
+
+  export type PlayerCharacteristicsCreateNestedOneWithoutPlayerInput = {
+    create?: XOR<PlayerCharacteristicsCreateWithoutPlayerInput, PlayerCharacteristicsUncheckedCreateWithoutPlayerInput>
+    connectOrCreate?: PlayerCharacteristicsCreateOrConnectWithoutPlayerInput
+    connect?: PlayerCharacteristicsWhereUniqueInput
+  }
+
+  export type PlayerCharacteristicsUncheckedCreateNestedOneWithoutPlayerInput = {
+    create?: XOR<PlayerCharacteristicsCreateWithoutPlayerInput, PlayerCharacteristicsUncheckedCreateWithoutPlayerInput>
+    connectOrCreate?: PlayerCharacteristicsCreateOrConnectWithoutPlayerInput
+    connect?: PlayerCharacteristicsWhereUniqueInput
+  }
+
+  export type RaceUpdateOneRequiredWithoutPersonsNestedInput = {
+    create?: XOR<RaceCreateWithoutPersonsInput, RaceUncheckedCreateWithoutPersonsInput>
+    connectOrCreate?: RaceCreateOrConnectWithoutPersonsInput
+    upsert?: RaceUpsertWithoutPersonsInput
+    connect?: RaceWhereUniqueInput
+    update?: XOR<XOR<RaceUpdateToOneWithWhereWithoutPersonsInput, RaceUpdateWithoutPersonsInput>, RaceUncheckedUpdateWithoutPersonsInput>
+  }
+
+  export type PlayerCharacteristicsUpdateOneWithoutPlayerNestedInput = {
+    create?: XOR<PlayerCharacteristicsCreateWithoutPlayerInput, PlayerCharacteristicsUncheckedCreateWithoutPlayerInput>
+    connectOrCreate?: PlayerCharacteristicsCreateOrConnectWithoutPlayerInput
+    upsert?: PlayerCharacteristicsUpsertWithoutPlayerInput
+    disconnect?: PlayerCharacteristicsWhereInput | boolean
+    delete?: PlayerCharacteristicsWhereInput | boolean
+    connect?: PlayerCharacteristicsWhereUniqueInput
+    update?: XOR<XOR<PlayerCharacteristicsUpdateToOneWithWhereWithoutPlayerInput, PlayerCharacteristicsUpdateWithoutPlayerInput>, PlayerCharacteristicsUncheckedUpdateWithoutPlayerInput>
+  }
+
+  export type PlayerCharacteristicsUncheckedUpdateOneWithoutPlayerNestedInput = {
+    create?: XOR<PlayerCharacteristicsCreateWithoutPlayerInput, PlayerCharacteristicsUncheckedCreateWithoutPlayerInput>
+    connectOrCreate?: PlayerCharacteristicsCreateOrConnectWithoutPlayerInput
+    upsert?: PlayerCharacteristicsUpsertWithoutPlayerInput
+    disconnect?: PlayerCharacteristicsWhereInput | boolean
+    delete?: PlayerCharacteristicsWhereInput | boolean
+    connect?: PlayerCharacteristicsWhereUniqueInput
+    update?: XOR<XOR<PlayerCharacteristicsUpdateToOneWithWhereWithoutPlayerInput, PlayerCharacteristicsUpdateWithoutPlayerInput>, PlayerCharacteristicsUncheckedUpdateWithoutPlayerInput>
+  }
+
+  export type PersonCreateNestedOneWithoutPlayercharacteristicsInput = {
+    create?: XOR<PersonCreateWithoutPlayercharacteristicsInput, PersonUncheckedCreateWithoutPlayercharacteristicsInput>
+    connectOrCreate?: PersonCreateOrConnectWithoutPlayercharacteristicsInput
+    connect?: PersonWhereUniqueInput
+  }
+
+  export type PersonUpdateOneRequiredWithoutPlayercharacteristicsNestedInput = {
+    create?: XOR<PersonCreateWithoutPlayercharacteristicsInput, PersonUncheckedCreateWithoutPlayercharacteristicsInput>
+    connectOrCreate?: PersonCreateOrConnectWithoutPlayercharacteristicsInput
+    upsert?: PersonUpsertWithoutPlayercharacteristicsInput
+    connect?: PersonWhereUniqueInput
+    update?: XOR<XOR<PersonUpdateToOneWithWhereWithoutPlayercharacteristicsInput, PersonUpdateWithoutPlayercharacteristicsInput>, PersonUncheckedUpdateWithoutPlayercharacteristicsInput>
+  }
+
+  export type UserCreateNestedOneWithoutTeamsInput = {
+    create?: XOR<UserCreateWithoutTeamsInput, UserUncheckedCreateWithoutTeamsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTeamsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type UserUpdateOneWithoutTeamsNestedInput = {
+    create?: XOR<UserCreateWithoutTeamsInput, UserUncheckedCreateWithoutTeamsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTeamsInput
+    upsert?: UserUpsertWithoutTeamsInput
+    disconnect?: UserWhereInput | boolean
+    delete?: UserWhereInput | boolean
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutTeamsInput, UserUpdateWithoutTeamsInput>, UserUncheckedUpdateWithoutTeamsInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -7094,6 +30047,83 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
+  export type NestedEnumLocationTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.LocationType | EnumLocationTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.LocationType[] | ListEnumLocationTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.LocationType[] | ListEnumLocationTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumLocationTypeFilter<$PrismaModel> | $Enums.LocationType
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedEnumLocationTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.LocationType | EnumLocationTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.LocationType[] | ListEnumLocationTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.LocationType[] | ListEnumLocationTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumLocationTypeWithAggregatesFilter<$PrismaModel> | $Enums.LocationType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumLocationTypeFilter<$PrismaModel>
+    _max?: NestedEnumLocationTypeFilter<$PrismaModel>
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedEnumRouteTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.RouteType | EnumRouteTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.RouteType[] | ListEnumRouteTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.RouteType[] | ListEnumRouteTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumRouteTypeFilter<$PrismaModel> | $Enums.RouteType
+  }
+
+  export type NestedEnumRouteTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.RouteType | EnumRouteTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.RouteType[] | ListEnumRouteTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.RouteType[] | ListEnumRouteTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumRouteTypeWithAggregatesFilter<$PrismaModel> | $Enums.RouteType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumRouteTypeFilter<$PrismaModel>
+    _max?: NestedEnumRouteTypeFilter<$PrismaModel>
+  }
+
   export type SessionCreateWithoutUserInput = {
     id: string
     expiresAt: Date | string
@@ -7166,6 +30196,34 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type TeamCreateWithoutOwnerInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TeamUncheckedCreateWithoutOwnerInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TeamCreateOrConnectWithoutOwnerInput = {
+    where: TeamWhereUniqueInput
+    create: XOR<TeamCreateWithoutOwnerInput, TeamUncheckedCreateWithoutOwnerInput>
+  }
+
+  export type TeamCreateManyOwnerInputEnvelope = {
+    data: TeamCreateManyOwnerInput | TeamCreateManyOwnerInput[]
+    skipDuplicates?: boolean
+  }
+
   export type SessionUpsertWithWhereUniqueWithoutUserInput = {
     where: SessionWhereUniqueInput
     update: XOR<SessionUpdateWithoutUserInput, SessionUncheckedUpdateWithoutUserInput>
@@ -7232,6 +30290,35 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Account"> | Date | string
   }
 
+  export type TeamUpsertWithWhereUniqueWithoutOwnerInput = {
+    where: TeamWhereUniqueInput
+    update: XOR<TeamUpdateWithoutOwnerInput, TeamUncheckedUpdateWithoutOwnerInput>
+    create: XOR<TeamCreateWithoutOwnerInput, TeamUncheckedCreateWithoutOwnerInput>
+  }
+
+  export type TeamUpdateWithWhereUniqueWithoutOwnerInput = {
+    where: TeamWhereUniqueInput
+    data: XOR<TeamUpdateWithoutOwnerInput, TeamUncheckedUpdateWithoutOwnerInput>
+  }
+
+  export type TeamUpdateManyWithWhereWithoutOwnerInput = {
+    where: TeamScalarWhereInput
+    data: XOR<TeamUpdateManyMutationInput, TeamUncheckedUpdateManyWithoutOwnerInput>
+  }
+
+  export type TeamScalarWhereInput = {
+    AND?: TeamScalarWhereInput | TeamScalarWhereInput[]
+    OR?: TeamScalarWhereInput[]
+    NOT?: TeamScalarWhereInput | TeamScalarWhereInput[]
+    id?: StringFilter<"Team"> | string
+    name?: StringFilter<"Team"> | string
+    shortName?: StringFilter<"Team"> | string
+    isActive?: BoolFilter<"Team"> | boolean
+    ownerId?: StringFilter<"Team"> | string
+    updatedAt?: DateTimeFilter<"Team"> | Date | string
+    createdAt?: DateTimeFilter<"Team"> | Date | string
+  }
+
   export type UserCreateWithoutSessionsInput = {
     id: string
     name: string
@@ -7245,6 +30332,7 @@ export namespace Prisma {
     banReason?: string | null
     banExpires?: Date | string | null
     accounts?: AccountCreateNestedManyWithoutUserInput
+    teams?: TeamCreateNestedManyWithoutOwnerInput
   }
 
   export type UserUncheckedCreateWithoutSessionsInput = {
@@ -7260,6 +30348,7 @@ export namespace Prisma {
     banReason?: string | null
     banExpires?: Date | string | null
     accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+    teams?: TeamUncheckedCreateNestedManyWithoutOwnerInput
   }
 
   export type UserCreateOrConnectWithoutSessionsInput = {
@@ -7291,6 +30380,7 @@ export namespace Prisma {
     banReason?: NullableStringFieldUpdateOperationsInput | string | null
     banExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     accounts?: AccountUpdateManyWithoutUserNestedInput
+    teams?: TeamUpdateManyWithoutOwnerNestedInput
   }
 
   export type UserUncheckedUpdateWithoutSessionsInput = {
@@ -7306,6 +30396,7 @@ export namespace Prisma {
     banReason?: NullableStringFieldUpdateOperationsInput | string | null
     banExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+    teams?: TeamUncheckedUpdateManyWithoutOwnerNestedInput
   }
 
   export type UserCreateWithoutAccountsInput = {
@@ -7321,6 +30412,7 @@ export namespace Prisma {
     banReason?: string | null
     banExpires?: Date | string | null
     sessions?: SessionCreateNestedManyWithoutUserInput
+    teams?: TeamCreateNestedManyWithoutOwnerInput
   }
 
   export type UserUncheckedCreateWithoutAccountsInput = {
@@ -7336,6 +30428,7 @@ export namespace Prisma {
     banReason?: string | null
     banExpires?: Date | string | null
     sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    teams?: TeamUncheckedCreateNestedManyWithoutOwnerInput
   }
 
   export type UserCreateOrConnectWithoutAccountsInput = {
@@ -7367,6 +30460,7 @@ export namespace Prisma {
     banReason?: NullableStringFieldUpdateOperationsInput | string | null
     banExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     sessions?: SessionUpdateManyWithoutUserNestedInput
+    teams?: TeamUpdateManyWithoutOwnerNestedInput
   }
 
   export type UserUncheckedUpdateWithoutAccountsInput = {
@@ -7382,6 +30476,1591 @@ export namespace Prisma {
     banReason?: NullableStringFieldUpdateOperationsInput | string | null
     banExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    teams?: TeamUncheckedUpdateManyWithoutOwnerNestedInput
+  }
+
+  export type RegionI18nCreateWithoutRegionInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionI18nUncheckedCreateWithoutRegionInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionI18nCreateOrConnectWithoutRegionInput = {
+    where: RegionI18nWhereUniqueInput
+    create: XOR<RegionI18nCreateWithoutRegionInput, RegionI18nUncheckedCreateWithoutRegionInput>
+  }
+
+  export type RegionI18nCreateManyRegionInputEnvelope = {
+    data: RegionI18nCreateManyRegionInput | RegionI18nCreateManyRegionInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type LocationCreateWithoutRegionInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationUncheckedCreateWithoutRegionInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationCreateOrConnectWithoutRegionInput = {
+    where: LocationWhereUniqueInput
+    create: XOR<LocationCreateWithoutRegionInput, LocationUncheckedCreateWithoutRegionInput>
+  }
+
+  export type LocationCreateManyRegionInputEnvelope = {
+    data: LocationCreateManyRegionInput | LocationCreateManyRegionInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RegionI18nUpsertWithWhereUniqueWithoutRegionInput = {
+    where: RegionI18nWhereUniqueInput
+    update: XOR<RegionI18nUpdateWithoutRegionInput, RegionI18nUncheckedUpdateWithoutRegionInput>
+    create: XOR<RegionI18nCreateWithoutRegionInput, RegionI18nUncheckedCreateWithoutRegionInput>
+  }
+
+  export type RegionI18nUpdateWithWhereUniqueWithoutRegionInput = {
+    where: RegionI18nWhereUniqueInput
+    data: XOR<RegionI18nUpdateWithoutRegionInput, RegionI18nUncheckedUpdateWithoutRegionInput>
+  }
+
+  export type RegionI18nUpdateManyWithWhereWithoutRegionInput = {
+    where: RegionI18nScalarWhereInput
+    data: XOR<RegionI18nUpdateManyMutationInput, RegionI18nUncheckedUpdateManyWithoutRegionInput>
+  }
+
+  export type RegionI18nScalarWhereInput = {
+    AND?: RegionI18nScalarWhereInput | RegionI18nScalarWhereInput[]
+    OR?: RegionI18nScalarWhereInput[]
+    NOT?: RegionI18nScalarWhereInput | RegionI18nScalarWhereInput[]
+    id?: StringFilter<"RegionI18n"> | string
+    regionId?: StringFilter<"RegionI18n"> | string
+    language?: StringFilter<"RegionI18n"> | string
+    name?: StringFilter<"RegionI18n"> | string
+    updatedAt?: DateTimeFilter<"RegionI18n"> | Date | string
+    createdAt?: DateTimeFilter<"RegionI18n"> | Date | string
+  }
+
+  export type LocationUpsertWithWhereUniqueWithoutRegionInput = {
+    where: LocationWhereUniqueInput
+    update: XOR<LocationUpdateWithoutRegionInput, LocationUncheckedUpdateWithoutRegionInput>
+    create: XOR<LocationCreateWithoutRegionInput, LocationUncheckedCreateWithoutRegionInput>
+  }
+
+  export type LocationUpdateWithWhereUniqueWithoutRegionInput = {
+    where: LocationWhereUniqueInput
+    data: XOR<LocationUpdateWithoutRegionInput, LocationUncheckedUpdateWithoutRegionInput>
+  }
+
+  export type LocationUpdateManyWithWhereWithoutRegionInput = {
+    where: LocationScalarWhereInput
+    data: XOR<LocationUpdateManyMutationInput, LocationUncheckedUpdateManyWithoutRegionInput>
+  }
+
+  export type LocationScalarWhereInput = {
+    AND?: LocationScalarWhereInput | LocationScalarWhereInput[]
+    OR?: LocationScalarWhereInput[]
+    NOT?: LocationScalarWhereInput | LocationScalarWhereInput[]
+    id?: StringFilter<"Location"> | string
+    type?: EnumLocationTypeFilter<"Location"> | $Enums.LocationType
+    regionId?: StringFilter<"Location"> | string
+    latitude?: FloatFilter<"Location"> | number
+    longitude?: FloatFilter<"Location"> | number
+    updatedAt?: DateTimeFilter<"Location"> | Date | string
+    createdAt?: DateTimeFilter<"Location"> | Date | string
+  }
+
+  export type RegionCreateWithoutI18nInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    locations?: LocationCreateNestedManyWithoutRegionInput
+  }
+
+  export type RegionUncheckedCreateWithoutI18nInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    locations?: LocationUncheckedCreateNestedManyWithoutRegionInput
+  }
+
+  export type RegionCreateOrConnectWithoutI18nInput = {
+    where: RegionWhereUniqueInput
+    create: XOR<RegionCreateWithoutI18nInput, RegionUncheckedCreateWithoutI18nInput>
+  }
+
+  export type RegionUpsertWithoutI18nInput = {
+    update: XOR<RegionUpdateWithoutI18nInput, RegionUncheckedUpdateWithoutI18nInput>
+    create: XOR<RegionCreateWithoutI18nInput, RegionUncheckedCreateWithoutI18nInput>
+    where?: RegionWhereInput
+  }
+
+  export type RegionUpdateToOneWithWhereWithoutI18nInput = {
+    where?: RegionWhereInput
+    data: XOR<RegionUpdateWithoutI18nInput, RegionUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type RegionUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    locations?: LocationUpdateManyWithoutRegionNestedInput
+  }
+
+  export type RegionUncheckedUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    locations?: LocationUncheckedUpdateManyWithoutRegionNestedInput
+  }
+
+  export type LocationI18nCreateWithoutLocationInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type LocationI18nUncheckedCreateWithoutLocationInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type LocationI18nCreateOrConnectWithoutLocationInput = {
+    where: LocationI18nWhereUniqueInput
+    create: XOR<LocationI18nCreateWithoutLocationInput, LocationI18nUncheckedCreateWithoutLocationInput>
+  }
+
+  export type LocationI18nCreateManyLocationInputEnvelope = {
+    data: LocationI18nCreateManyLocationInput | LocationI18nCreateManyLocationInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RegionCreateWithoutLocationsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RegionI18nCreateNestedManyWithoutRegionInput
+  }
+
+  export type RegionUncheckedCreateWithoutLocationsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RegionI18nUncheckedCreateNestedManyWithoutRegionInput
+  }
+
+  export type RegionCreateOrConnectWithoutLocationsInput = {
+    where: RegionWhereUniqueInput
+    create: XOR<RegionCreateWithoutLocationsInput, RegionUncheckedCreateWithoutLocationsInput>
+  }
+
+  export type RouteCreateWithoutLocationFromInput = {
+    id?: string
+    type: $Enums.RouteType
+    distance: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    locationTo: LocationCreateNestedOneWithoutRoutesToInput
+  }
+
+  export type RouteUncheckedCreateWithoutLocationFromInput = {
+    id?: string
+    type: $Enums.RouteType
+    toId: string
+    distance: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RouteCreateOrConnectWithoutLocationFromInput = {
+    where: RouteWhereUniqueInput
+    create: XOR<RouteCreateWithoutLocationFromInput, RouteUncheckedCreateWithoutLocationFromInput>
+  }
+
+  export type RouteCreateManyLocationFromInputEnvelope = {
+    data: RouteCreateManyLocationFromInput | RouteCreateManyLocationFromInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RouteCreateWithoutLocationToInput = {
+    id?: string
+    type: $Enums.RouteType
+    distance: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    locationFrom: LocationCreateNestedOneWithoutRoutesFromInput
+  }
+
+  export type RouteUncheckedCreateWithoutLocationToInput = {
+    id?: string
+    type: $Enums.RouteType
+    fromId: string
+    distance: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RouteCreateOrConnectWithoutLocationToInput = {
+    where: RouteWhereUniqueInput
+    create: XOR<RouteCreateWithoutLocationToInput, RouteUncheckedCreateWithoutLocationToInput>
+  }
+
+  export type RouteCreateManyLocationToInputEnvelope = {
+    data: RouteCreateManyLocationToInput | RouteCreateManyLocationToInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type BuildingCreateWithoutLocationInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    buildingType: BuildingTypeCreateNestedOneWithoutBuildingsInput
+    i18n?: BuildingI18nCreateNestedManyWithoutBuildingInput
+    stadiumInfo?: StadiumInfoCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingUncheckedCreateWithoutLocationInput = {
+    id?: string
+    buildingTypeId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: BuildingI18nUncheckedCreateNestedManyWithoutBuildingInput
+    stadiumInfo?: StadiumInfoUncheckedCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingCreateOrConnectWithoutLocationInput = {
+    where: BuildingWhereUniqueInput
+    create: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput>
+  }
+
+  export type BuildingCreateManyLocationInputEnvelope = {
+    data: BuildingCreateManyLocationInput | BuildingCreateManyLocationInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type TownInformationCreateWithoutLocationInput = {
+    id?: string
+    population: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TownInformationUncheckedCreateWithoutLocationInput = {
+    id?: string
+    population: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TownInformationCreateOrConnectWithoutLocationInput = {
+    where: TownInformationWhereUniqueInput
+    create: XOR<TownInformationCreateWithoutLocationInput, TownInformationUncheckedCreateWithoutLocationInput>
+  }
+
+  export type LocationI18nUpsertWithWhereUniqueWithoutLocationInput = {
+    where: LocationI18nWhereUniqueInput
+    update: XOR<LocationI18nUpdateWithoutLocationInput, LocationI18nUncheckedUpdateWithoutLocationInput>
+    create: XOR<LocationI18nCreateWithoutLocationInput, LocationI18nUncheckedCreateWithoutLocationInput>
+  }
+
+  export type LocationI18nUpdateWithWhereUniqueWithoutLocationInput = {
+    where: LocationI18nWhereUniqueInput
+    data: XOR<LocationI18nUpdateWithoutLocationInput, LocationI18nUncheckedUpdateWithoutLocationInput>
+  }
+
+  export type LocationI18nUpdateManyWithWhereWithoutLocationInput = {
+    where: LocationI18nScalarWhereInput
+    data: XOR<LocationI18nUpdateManyMutationInput, LocationI18nUncheckedUpdateManyWithoutLocationInput>
+  }
+
+  export type LocationI18nScalarWhereInput = {
+    AND?: LocationI18nScalarWhereInput | LocationI18nScalarWhereInput[]
+    OR?: LocationI18nScalarWhereInput[]
+    NOT?: LocationI18nScalarWhereInput | LocationI18nScalarWhereInput[]
+    id?: StringFilter<"LocationI18n"> | string
+    locationId?: StringFilter<"LocationI18n"> | string
+    language?: StringFilter<"LocationI18n"> | string
+    name?: StringFilter<"LocationI18n"> | string
+    updatedAt?: DateTimeFilter<"LocationI18n"> | Date | string
+    createdAt?: DateTimeFilter<"LocationI18n"> | Date | string
+  }
+
+  export type RegionUpsertWithoutLocationsInput = {
+    update: XOR<RegionUpdateWithoutLocationsInput, RegionUncheckedUpdateWithoutLocationsInput>
+    create: XOR<RegionCreateWithoutLocationsInput, RegionUncheckedCreateWithoutLocationsInput>
+    where?: RegionWhereInput
+  }
+
+  export type RegionUpdateToOneWithWhereWithoutLocationsInput = {
+    where?: RegionWhereInput
+    data: XOR<RegionUpdateWithoutLocationsInput, RegionUncheckedUpdateWithoutLocationsInput>
+  }
+
+  export type RegionUpdateWithoutLocationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RegionI18nUpdateManyWithoutRegionNestedInput
+  }
+
+  export type RegionUncheckedUpdateWithoutLocationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RegionI18nUncheckedUpdateManyWithoutRegionNestedInput
+  }
+
+  export type RouteUpsertWithWhereUniqueWithoutLocationFromInput = {
+    where: RouteWhereUniqueInput
+    update: XOR<RouteUpdateWithoutLocationFromInput, RouteUncheckedUpdateWithoutLocationFromInput>
+    create: XOR<RouteCreateWithoutLocationFromInput, RouteUncheckedCreateWithoutLocationFromInput>
+  }
+
+  export type RouteUpdateWithWhereUniqueWithoutLocationFromInput = {
+    where: RouteWhereUniqueInput
+    data: XOR<RouteUpdateWithoutLocationFromInput, RouteUncheckedUpdateWithoutLocationFromInput>
+  }
+
+  export type RouteUpdateManyWithWhereWithoutLocationFromInput = {
+    where: RouteScalarWhereInput
+    data: XOR<RouteUpdateManyMutationInput, RouteUncheckedUpdateManyWithoutLocationFromInput>
+  }
+
+  export type RouteScalarWhereInput = {
+    AND?: RouteScalarWhereInput | RouteScalarWhereInput[]
+    OR?: RouteScalarWhereInput[]
+    NOT?: RouteScalarWhereInput | RouteScalarWhereInput[]
+    id?: StringFilter<"Route"> | string
+    type?: EnumRouteTypeFilter<"Route"> | $Enums.RouteType
+    fromId?: StringFilter<"Route"> | string
+    toId?: StringFilter<"Route"> | string
+    distance?: FloatFilter<"Route"> | number
+    updatedAt?: DateTimeFilter<"Route"> | Date | string
+    createdAt?: DateTimeFilter<"Route"> | Date | string
+  }
+
+  export type RouteUpsertWithWhereUniqueWithoutLocationToInput = {
+    where: RouteWhereUniqueInput
+    update: XOR<RouteUpdateWithoutLocationToInput, RouteUncheckedUpdateWithoutLocationToInput>
+    create: XOR<RouteCreateWithoutLocationToInput, RouteUncheckedCreateWithoutLocationToInput>
+  }
+
+  export type RouteUpdateWithWhereUniqueWithoutLocationToInput = {
+    where: RouteWhereUniqueInput
+    data: XOR<RouteUpdateWithoutLocationToInput, RouteUncheckedUpdateWithoutLocationToInput>
+  }
+
+  export type RouteUpdateManyWithWhereWithoutLocationToInput = {
+    where: RouteScalarWhereInput
+    data: XOR<RouteUpdateManyMutationInput, RouteUncheckedUpdateManyWithoutLocationToInput>
+  }
+
+  export type BuildingUpsertWithWhereUniqueWithoutLocationInput = {
+    where: BuildingWhereUniqueInput
+    update: XOR<BuildingUpdateWithoutLocationInput, BuildingUncheckedUpdateWithoutLocationInput>
+    create: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput>
+  }
+
+  export type BuildingUpdateWithWhereUniqueWithoutLocationInput = {
+    where: BuildingWhereUniqueInput
+    data: XOR<BuildingUpdateWithoutLocationInput, BuildingUncheckedUpdateWithoutLocationInput>
+  }
+
+  export type BuildingUpdateManyWithWhereWithoutLocationInput = {
+    where: BuildingScalarWhereInput
+    data: XOR<BuildingUpdateManyMutationInput, BuildingUncheckedUpdateManyWithoutLocationInput>
+  }
+
+  export type BuildingScalarWhereInput = {
+    AND?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+    OR?: BuildingScalarWhereInput[]
+    NOT?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+    id?: StringFilter<"Building"> | string
+    buildingTypeId?: StringFilter<"Building"> | string
+    locationId?: StringFilter<"Building"> | string
+    updatedAt?: DateTimeFilter<"Building"> | Date | string
+    createdAt?: DateTimeFilter<"Building"> | Date | string
+  }
+
+  export type TownInformationUpsertWithoutLocationInput = {
+    update: XOR<TownInformationUpdateWithoutLocationInput, TownInformationUncheckedUpdateWithoutLocationInput>
+    create: XOR<TownInformationCreateWithoutLocationInput, TownInformationUncheckedCreateWithoutLocationInput>
+    where?: TownInformationWhereInput
+  }
+
+  export type TownInformationUpdateToOneWithWhereWithoutLocationInput = {
+    where?: TownInformationWhereInput
+    data: XOR<TownInformationUpdateWithoutLocationInput, TownInformationUncheckedUpdateWithoutLocationInput>
+  }
+
+  export type TownInformationUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    population?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TownInformationUncheckedUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    population?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationCreateWithoutI18nInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    region: RegionCreateNestedOneWithoutLocationsInput
+    routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationUncheckedCreateWithoutI18nInput = {
+    id: string
+    type: $Enums.LocationType
+    regionId: string
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationCreateOrConnectWithoutI18nInput = {
+    where: LocationWhereUniqueInput
+    create: XOR<LocationCreateWithoutI18nInput, LocationUncheckedCreateWithoutI18nInput>
+  }
+
+  export type LocationUpsertWithoutI18nInput = {
+    update: XOR<LocationUpdateWithoutI18nInput, LocationUncheckedUpdateWithoutI18nInput>
+    create: XOR<LocationCreateWithoutI18nInput, LocationUncheckedCreateWithoutI18nInput>
+    where?: LocationWhereInput
+  }
+
+  export type LocationUpdateToOneWithWhereWithoutI18nInput = {
+    where?: LocationWhereInput
+    data: XOR<LocationUpdateWithoutI18nInput, LocationUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type LocationUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
+    routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    regionId?: StringFieldUpdateOperationsInput | string
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationCreateWithoutTownInfoInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    region: RegionCreateNestedOneWithoutLocationsInput
+    routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
+  }
+
+  export type LocationUncheckedCreateWithoutTownInfoInput = {
+    id: string
+    type: $Enums.LocationType
+    regionId: string
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+  }
+
+  export type LocationCreateOrConnectWithoutTownInfoInput = {
+    where: LocationWhereUniqueInput
+    create: XOR<LocationCreateWithoutTownInfoInput, LocationUncheckedCreateWithoutTownInfoInput>
+  }
+
+  export type LocationUpsertWithoutTownInfoInput = {
+    update: XOR<LocationUpdateWithoutTownInfoInput, LocationUncheckedUpdateWithoutTownInfoInput>
+    create: XOR<LocationCreateWithoutTownInfoInput, LocationUncheckedCreateWithoutTownInfoInput>
+    where?: LocationWhereInput
+  }
+
+  export type LocationUpdateToOneWithWhereWithoutTownInfoInput = {
+    where?: LocationWhereInput
+    data: XOR<LocationUpdateWithoutTownInfoInput, LocationUncheckedUpdateWithoutTownInfoInput>
+  }
+
+  export type LocationUpdateWithoutTownInfoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
+    routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateWithoutTownInfoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    regionId?: StringFieldUpdateOperationsInput | string
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+  }
+
+  export type LocationCreateWithoutRoutesFromInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    region: RegionCreateNestedOneWithoutLocationsInput
+    routesTo?: RouteCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationUncheckedCreateWithoutRoutesFromInput = {
+    id: string
+    type: $Enums.LocationType
+    regionId: string
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationCreateOrConnectWithoutRoutesFromInput = {
+    where: LocationWhereUniqueInput
+    create: XOR<LocationCreateWithoutRoutesFromInput, LocationUncheckedCreateWithoutRoutesFromInput>
+  }
+
+  export type LocationCreateWithoutRoutesToInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    region: RegionCreateNestedOneWithoutLocationsInput
+    routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationUncheckedCreateWithoutRoutesToInput = {
+    id: string
+    type: $Enums.LocationType
+    regionId: string
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationCreateOrConnectWithoutRoutesToInput = {
+    where: LocationWhereUniqueInput
+    create: XOR<LocationCreateWithoutRoutesToInput, LocationUncheckedCreateWithoutRoutesToInput>
+  }
+
+  export type LocationUpsertWithoutRoutesFromInput = {
+    update: XOR<LocationUpdateWithoutRoutesFromInput, LocationUncheckedUpdateWithoutRoutesFromInput>
+    create: XOR<LocationCreateWithoutRoutesFromInput, LocationUncheckedCreateWithoutRoutesFromInput>
+    where?: LocationWhereInput
+  }
+
+  export type LocationUpdateToOneWithWhereWithoutRoutesFromInput = {
+    where?: LocationWhereInput
+    data: XOR<LocationUpdateWithoutRoutesFromInput, LocationUncheckedUpdateWithoutRoutesFromInput>
+  }
+
+  export type LocationUpdateWithoutRoutesFromInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
+    routesTo?: RouteUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateWithoutRoutesFromInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    regionId?: StringFieldUpdateOperationsInput | string
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationUpsertWithoutRoutesToInput = {
+    update: XOR<LocationUpdateWithoutRoutesToInput, LocationUncheckedUpdateWithoutRoutesToInput>
+    create: XOR<LocationCreateWithoutRoutesToInput, LocationUncheckedCreateWithoutRoutesToInput>
+    where?: LocationWhereInput
+  }
+
+  export type LocationUpdateToOneWithWhereWithoutRoutesToInput = {
+    where?: LocationWhereInput
+    data: XOR<LocationUpdateWithoutRoutesToInput, LocationUncheckedUpdateWithoutRoutesToInput>
+  }
+
+  export type LocationUpdateWithoutRoutesToInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
+    routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateWithoutRoutesToInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    regionId?: StringFieldUpdateOperationsInput | string
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
+  }
+
+  export type BuildingTypeI18nCreateWithoutBuildingTypeInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingTypeI18nCreateOrConnectWithoutBuildingTypeInput = {
+    where: BuildingTypeI18nWhereUniqueInput
+    create: XOR<BuildingTypeI18nCreateWithoutBuildingTypeInput, BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput>
+  }
+
+  export type BuildingTypeI18nCreateManyBuildingTypeInputEnvelope = {
+    data: BuildingTypeI18nCreateManyBuildingTypeInput | BuildingTypeI18nCreateManyBuildingTypeInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type BuildingCreateWithoutBuildingTypeInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    location: LocationCreateNestedOneWithoutBuildingsInput
+    i18n?: BuildingI18nCreateNestedManyWithoutBuildingInput
+    stadiumInfo?: StadiumInfoCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingUncheckedCreateWithoutBuildingTypeInput = {
+    id?: string
+    locationId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: BuildingI18nUncheckedCreateNestedManyWithoutBuildingInput
+    stadiumInfo?: StadiumInfoUncheckedCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingCreateOrConnectWithoutBuildingTypeInput = {
+    where: BuildingWhereUniqueInput
+    create: XOR<BuildingCreateWithoutBuildingTypeInput, BuildingUncheckedCreateWithoutBuildingTypeInput>
+  }
+
+  export type BuildingCreateManyBuildingTypeInputEnvelope = {
+    data: BuildingCreateManyBuildingTypeInput | BuildingCreateManyBuildingTypeInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type BuildingTypeI18nUpsertWithWhereUniqueWithoutBuildingTypeInput = {
+    where: BuildingTypeI18nWhereUniqueInput
+    update: XOR<BuildingTypeI18nUpdateWithoutBuildingTypeInput, BuildingTypeI18nUncheckedUpdateWithoutBuildingTypeInput>
+    create: XOR<BuildingTypeI18nCreateWithoutBuildingTypeInput, BuildingTypeI18nUncheckedCreateWithoutBuildingTypeInput>
+  }
+
+  export type BuildingTypeI18nUpdateWithWhereUniqueWithoutBuildingTypeInput = {
+    where: BuildingTypeI18nWhereUniqueInput
+    data: XOR<BuildingTypeI18nUpdateWithoutBuildingTypeInput, BuildingTypeI18nUncheckedUpdateWithoutBuildingTypeInput>
+  }
+
+  export type BuildingTypeI18nUpdateManyWithWhereWithoutBuildingTypeInput = {
+    where: BuildingTypeI18nScalarWhereInput
+    data: XOR<BuildingTypeI18nUpdateManyMutationInput, BuildingTypeI18nUncheckedUpdateManyWithoutBuildingTypeInput>
+  }
+
+  export type BuildingTypeI18nScalarWhereInput = {
+    AND?: BuildingTypeI18nScalarWhereInput | BuildingTypeI18nScalarWhereInput[]
+    OR?: BuildingTypeI18nScalarWhereInput[]
+    NOT?: BuildingTypeI18nScalarWhereInput | BuildingTypeI18nScalarWhereInput[]
+    id?: StringFilter<"BuildingTypeI18n"> | string
+    buildingTypeId?: StringFilter<"BuildingTypeI18n"> | string
+    language?: StringFilter<"BuildingTypeI18n"> | string
+    name?: StringFilter<"BuildingTypeI18n"> | string
+    updatedAt?: DateTimeFilter<"BuildingTypeI18n"> | Date | string
+    createdAt?: DateTimeFilter<"BuildingTypeI18n"> | Date | string
+  }
+
+  export type BuildingUpsertWithWhereUniqueWithoutBuildingTypeInput = {
+    where: BuildingWhereUniqueInput
+    update: XOR<BuildingUpdateWithoutBuildingTypeInput, BuildingUncheckedUpdateWithoutBuildingTypeInput>
+    create: XOR<BuildingCreateWithoutBuildingTypeInput, BuildingUncheckedCreateWithoutBuildingTypeInput>
+  }
+
+  export type BuildingUpdateWithWhereUniqueWithoutBuildingTypeInput = {
+    where: BuildingWhereUniqueInput
+    data: XOR<BuildingUpdateWithoutBuildingTypeInput, BuildingUncheckedUpdateWithoutBuildingTypeInput>
+  }
+
+  export type BuildingUpdateManyWithWhereWithoutBuildingTypeInput = {
+    where: BuildingScalarWhereInput
+    data: XOR<BuildingUpdateManyMutationInput, BuildingUncheckedUpdateManyWithoutBuildingTypeInput>
+  }
+
+  export type BuildingTypeCreateWithoutI18nInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    buildings?: BuildingCreateNestedManyWithoutBuildingTypeInput
+  }
+
+  export type BuildingTypeUncheckedCreateWithoutI18nInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    buildings?: BuildingUncheckedCreateNestedManyWithoutBuildingTypeInput
+  }
+
+  export type BuildingTypeCreateOrConnectWithoutI18nInput = {
+    where: BuildingTypeWhereUniqueInput
+    create: XOR<BuildingTypeCreateWithoutI18nInput, BuildingTypeUncheckedCreateWithoutI18nInput>
+  }
+
+  export type BuildingTypeUpsertWithoutI18nInput = {
+    update: XOR<BuildingTypeUpdateWithoutI18nInput, BuildingTypeUncheckedUpdateWithoutI18nInput>
+    create: XOR<BuildingTypeCreateWithoutI18nInput, BuildingTypeUncheckedCreateWithoutI18nInput>
+    where?: BuildingTypeWhereInput
+  }
+
+  export type BuildingTypeUpdateToOneWithWhereWithoutI18nInput = {
+    where?: BuildingTypeWhereInput
+    data: XOR<BuildingTypeUpdateWithoutI18nInput, BuildingTypeUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type BuildingTypeUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildings?: BuildingUpdateManyWithoutBuildingTypeNestedInput
+  }
+
+  export type BuildingTypeUncheckedUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildings?: BuildingUncheckedUpdateManyWithoutBuildingTypeNestedInput
+  }
+
+  export type BuildingTypeCreateWithoutBuildingsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: BuildingTypeI18nCreateNestedManyWithoutBuildingTypeInput
+  }
+
+  export type BuildingTypeUncheckedCreateWithoutBuildingsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: BuildingTypeI18nUncheckedCreateNestedManyWithoutBuildingTypeInput
+  }
+
+  export type BuildingTypeCreateOrConnectWithoutBuildingsInput = {
+    where: BuildingTypeWhereUniqueInput
+    create: XOR<BuildingTypeCreateWithoutBuildingsInput, BuildingTypeUncheckedCreateWithoutBuildingsInput>
+  }
+
+  export type LocationCreateWithoutBuildingsInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    region: RegionCreateNestedOneWithoutLocationsInput
+    routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteCreateNestedManyWithoutLocationToInput
+    townInfo?: TownInformationCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationUncheckedCreateWithoutBuildingsInput = {
+    id: string
+    type: $Enums.LocationType
+    regionId: string
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
+    townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationCreateOrConnectWithoutBuildingsInput = {
+    where: LocationWhereUniqueInput
+    create: XOR<LocationCreateWithoutBuildingsInput, LocationUncheckedCreateWithoutBuildingsInput>
+  }
+
+  export type BuildingI18nCreateWithoutBuildingInput = {
+    id?: string
+    language: string
+    name: string
+    description?: string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingI18nUncheckedCreateWithoutBuildingInput = {
+    id?: string
+    language: string
+    name: string
+    description?: string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingI18nCreateOrConnectWithoutBuildingInput = {
+    where: BuildingI18nWhereUniqueInput
+    create: XOR<BuildingI18nCreateWithoutBuildingInput, BuildingI18nUncheckedCreateWithoutBuildingInput>
+  }
+
+  export type BuildingI18nCreateManyBuildingInputEnvelope = {
+    data: BuildingI18nCreateManyBuildingInput | BuildingI18nCreateManyBuildingInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type StadiumInfoCreateWithoutBuildingInput = {
+    id?: string
+    capacity: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type StadiumInfoUncheckedCreateWithoutBuildingInput = {
+    id?: string
+    capacity: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type StadiumInfoCreateOrConnectWithoutBuildingInput = {
+    where: StadiumInfoWhereUniqueInput
+    create: XOR<StadiumInfoCreateWithoutBuildingInput, StadiumInfoUncheckedCreateWithoutBuildingInput>
+  }
+
+  export type BuildingTypeUpsertWithoutBuildingsInput = {
+    update: XOR<BuildingTypeUpdateWithoutBuildingsInput, BuildingTypeUncheckedUpdateWithoutBuildingsInput>
+    create: XOR<BuildingTypeCreateWithoutBuildingsInput, BuildingTypeUncheckedCreateWithoutBuildingsInput>
+    where?: BuildingTypeWhereInput
+  }
+
+  export type BuildingTypeUpdateToOneWithWhereWithoutBuildingsInput = {
+    where?: BuildingTypeWhereInput
+    data: XOR<BuildingTypeUpdateWithoutBuildingsInput, BuildingTypeUncheckedUpdateWithoutBuildingsInput>
+  }
+
+  export type BuildingTypeUpdateWithoutBuildingsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: BuildingTypeI18nUpdateManyWithoutBuildingTypeNestedInput
+  }
+
+  export type BuildingTypeUncheckedUpdateWithoutBuildingsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: BuildingTypeI18nUncheckedUpdateManyWithoutBuildingTypeNestedInput
+  }
+
+  export type LocationUpsertWithoutBuildingsInput = {
+    update: XOR<LocationUpdateWithoutBuildingsInput, LocationUncheckedUpdateWithoutBuildingsInput>
+    create: XOR<LocationCreateWithoutBuildingsInput, LocationUncheckedCreateWithoutBuildingsInput>
+    where?: LocationWhereInput
+  }
+
+  export type LocationUpdateToOneWithWhereWithoutBuildingsInput = {
+    where?: LocationWhereInput
+    data: XOR<LocationUpdateWithoutBuildingsInput, LocationUncheckedUpdateWithoutBuildingsInput>
+  }
+
+  export type LocationUpdateWithoutBuildingsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
+    routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUpdateManyWithoutLocationToNestedInput
+    townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateWithoutBuildingsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    regionId?: StringFieldUpdateOperationsInput | string
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
+    townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
+  }
+
+  export type BuildingI18nUpsertWithWhereUniqueWithoutBuildingInput = {
+    where: BuildingI18nWhereUniqueInput
+    update: XOR<BuildingI18nUpdateWithoutBuildingInput, BuildingI18nUncheckedUpdateWithoutBuildingInput>
+    create: XOR<BuildingI18nCreateWithoutBuildingInput, BuildingI18nUncheckedCreateWithoutBuildingInput>
+  }
+
+  export type BuildingI18nUpdateWithWhereUniqueWithoutBuildingInput = {
+    where: BuildingI18nWhereUniqueInput
+    data: XOR<BuildingI18nUpdateWithoutBuildingInput, BuildingI18nUncheckedUpdateWithoutBuildingInput>
+  }
+
+  export type BuildingI18nUpdateManyWithWhereWithoutBuildingInput = {
+    where: BuildingI18nScalarWhereInput
+    data: XOR<BuildingI18nUpdateManyMutationInput, BuildingI18nUncheckedUpdateManyWithoutBuildingInput>
+  }
+
+  export type BuildingI18nScalarWhereInput = {
+    AND?: BuildingI18nScalarWhereInput | BuildingI18nScalarWhereInput[]
+    OR?: BuildingI18nScalarWhereInput[]
+    NOT?: BuildingI18nScalarWhereInput | BuildingI18nScalarWhereInput[]
+    id?: StringFilter<"BuildingI18n"> | string
+    buildingId?: StringFilter<"BuildingI18n"> | string
+    language?: StringFilter<"BuildingI18n"> | string
+    name?: StringFilter<"BuildingI18n"> | string
+    description?: StringNullableFilter<"BuildingI18n"> | string | null
+    updatedAt?: DateTimeFilter<"BuildingI18n"> | Date | string
+    createdAt?: DateTimeFilter<"BuildingI18n"> | Date | string
+  }
+
+  export type StadiumInfoUpsertWithoutBuildingInput = {
+    update: XOR<StadiumInfoUpdateWithoutBuildingInput, StadiumInfoUncheckedUpdateWithoutBuildingInput>
+    create: XOR<StadiumInfoCreateWithoutBuildingInput, StadiumInfoUncheckedCreateWithoutBuildingInput>
+    where?: StadiumInfoWhereInput
+  }
+
+  export type StadiumInfoUpdateToOneWithWhereWithoutBuildingInput = {
+    where?: StadiumInfoWhereInput
+    data: XOR<StadiumInfoUpdateWithoutBuildingInput, StadiumInfoUncheckedUpdateWithoutBuildingInput>
+  }
+
+  export type StadiumInfoUpdateWithoutBuildingInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    capacity?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type StadiumInfoUncheckedUpdateWithoutBuildingInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    capacity?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingCreateWithoutI18nInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    buildingType: BuildingTypeCreateNestedOneWithoutBuildingsInput
+    location: LocationCreateNestedOneWithoutBuildingsInput
+    stadiumInfo?: StadiumInfoCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingUncheckedCreateWithoutI18nInput = {
+    id?: string
+    buildingTypeId: string
+    locationId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    stadiumInfo?: StadiumInfoUncheckedCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingCreateOrConnectWithoutI18nInput = {
+    where: BuildingWhereUniqueInput
+    create: XOR<BuildingCreateWithoutI18nInput, BuildingUncheckedCreateWithoutI18nInput>
+  }
+
+  export type BuildingUpsertWithoutI18nInput = {
+    update: XOR<BuildingUpdateWithoutI18nInput, BuildingUncheckedUpdateWithoutI18nInput>
+    create: XOR<BuildingCreateWithoutI18nInput, BuildingUncheckedCreateWithoutI18nInput>
+    where?: BuildingWhereInput
+  }
+
+  export type BuildingUpdateToOneWithWhereWithoutI18nInput = {
+    where?: BuildingWhereInput
+    data: XOR<BuildingUpdateWithoutI18nInput, BuildingUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type BuildingUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildingType?: BuildingTypeUpdateOneRequiredWithoutBuildingsNestedInput
+    location?: LocationUpdateOneRequiredWithoutBuildingsNestedInput
+    stadiumInfo?: StadiumInfoUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingUncheckedUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    stadiumInfo?: StadiumInfoUncheckedUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingCreateWithoutStadiumInfoInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    buildingType: BuildingTypeCreateNestedOneWithoutBuildingsInput
+    location: LocationCreateNestedOneWithoutBuildingsInput
+    i18n?: BuildingI18nCreateNestedManyWithoutBuildingInput
+  }
+
+  export type BuildingUncheckedCreateWithoutStadiumInfoInput = {
+    id?: string
+    buildingTypeId: string
+    locationId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: BuildingI18nUncheckedCreateNestedManyWithoutBuildingInput
+  }
+
+  export type BuildingCreateOrConnectWithoutStadiumInfoInput = {
+    where: BuildingWhereUniqueInput
+    create: XOR<BuildingCreateWithoutStadiumInfoInput, BuildingUncheckedCreateWithoutStadiumInfoInput>
+  }
+
+  export type BuildingUpsertWithoutStadiumInfoInput = {
+    update: XOR<BuildingUpdateWithoutStadiumInfoInput, BuildingUncheckedUpdateWithoutStadiumInfoInput>
+    create: XOR<BuildingCreateWithoutStadiumInfoInput, BuildingUncheckedCreateWithoutStadiumInfoInput>
+    where?: BuildingWhereInput
+  }
+
+  export type BuildingUpdateToOneWithWhereWithoutStadiumInfoInput = {
+    where?: BuildingWhereInput
+    data: XOR<BuildingUpdateWithoutStadiumInfoInput, BuildingUncheckedUpdateWithoutStadiumInfoInput>
+  }
+
+  export type BuildingUpdateWithoutStadiumInfoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildingType?: BuildingTypeUpdateOneRequiredWithoutBuildingsNestedInput
+    location?: LocationUpdateOneRequiredWithoutBuildingsNestedInput
+    i18n?: BuildingI18nUpdateManyWithoutBuildingNestedInput
+  }
+
+  export type BuildingUncheckedUpdateWithoutStadiumInfoInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: BuildingI18nUncheckedUpdateManyWithoutBuildingNestedInput
+  }
+
+  export type RaceI18nCreateWithoutRaceInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RaceI18nUncheckedCreateWithoutRaceInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RaceI18nCreateOrConnectWithoutRaceInput = {
+    where: RaceI18nWhereUniqueInput
+    create: XOR<RaceI18nCreateWithoutRaceInput, RaceI18nUncheckedCreateWithoutRaceInput>
+  }
+
+  export type RaceI18nCreateManyRaceInputEnvelope = {
+    data: RaceI18nCreateManyRaceInput | RaceI18nCreateManyRaceInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type PersonCreateWithoutRaceInput = {
+    id?: string
+    name: string
+    shortName: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    playercharacteristics?: PlayerCharacteristicsCreateNestedOneWithoutPlayerInput
+  }
+
+  export type PersonUncheckedCreateWithoutRaceInput = {
+    id?: string
+    name: string
+    shortName: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    playercharacteristics?: PlayerCharacteristicsUncheckedCreateNestedOneWithoutPlayerInput
+  }
+
+  export type PersonCreateOrConnectWithoutRaceInput = {
+    where: PersonWhereUniqueInput
+    create: XOR<PersonCreateWithoutRaceInput, PersonUncheckedCreateWithoutRaceInput>
+  }
+
+  export type PersonCreateManyRaceInputEnvelope = {
+    data: PersonCreateManyRaceInput | PersonCreateManyRaceInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RaceI18nUpsertWithWhereUniqueWithoutRaceInput = {
+    where: RaceI18nWhereUniqueInput
+    update: XOR<RaceI18nUpdateWithoutRaceInput, RaceI18nUncheckedUpdateWithoutRaceInput>
+    create: XOR<RaceI18nCreateWithoutRaceInput, RaceI18nUncheckedCreateWithoutRaceInput>
+  }
+
+  export type RaceI18nUpdateWithWhereUniqueWithoutRaceInput = {
+    where: RaceI18nWhereUniqueInput
+    data: XOR<RaceI18nUpdateWithoutRaceInput, RaceI18nUncheckedUpdateWithoutRaceInput>
+  }
+
+  export type RaceI18nUpdateManyWithWhereWithoutRaceInput = {
+    where: RaceI18nScalarWhereInput
+    data: XOR<RaceI18nUpdateManyMutationInput, RaceI18nUncheckedUpdateManyWithoutRaceInput>
+  }
+
+  export type RaceI18nScalarWhereInput = {
+    AND?: RaceI18nScalarWhereInput | RaceI18nScalarWhereInput[]
+    OR?: RaceI18nScalarWhereInput[]
+    NOT?: RaceI18nScalarWhereInput | RaceI18nScalarWhereInput[]
+    id?: StringFilter<"RaceI18n"> | string
+    raceId?: StringFilter<"RaceI18n"> | string
+    language?: StringFilter<"RaceI18n"> | string
+    name?: StringFilter<"RaceI18n"> | string
+    updatedAt?: DateTimeFilter<"RaceI18n"> | Date | string
+    createdAt?: DateTimeFilter<"RaceI18n"> | Date | string
+  }
+
+  export type PersonUpsertWithWhereUniqueWithoutRaceInput = {
+    where: PersonWhereUniqueInput
+    update: XOR<PersonUpdateWithoutRaceInput, PersonUncheckedUpdateWithoutRaceInput>
+    create: XOR<PersonCreateWithoutRaceInput, PersonUncheckedCreateWithoutRaceInput>
+  }
+
+  export type PersonUpdateWithWhereUniqueWithoutRaceInput = {
+    where: PersonWhereUniqueInput
+    data: XOR<PersonUpdateWithoutRaceInput, PersonUncheckedUpdateWithoutRaceInput>
+  }
+
+  export type PersonUpdateManyWithWhereWithoutRaceInput = {
+    where: PersonScalarWhereInput
+    data: XOR<PersonUpdateManyMutationInput, PersonUncheckedUpdateManyWithoutRaceInput>
+  }
+
+  export type PersonScalarWhereInput = {
+    AND?: PersonScalarWhereInput | PersonScalarWhereInput[]
+    OR?: PersonScalarWhereInput[]
+    NOT?: PersonScalarWhereInput | PersonScalarWhereInput[]
+    id?: StringFilter<"Person"> | string
+    name?: StringFilter<"Person"> | string
+    shortName?: StringFilter<"Person"> | string
+    raceId?: StringFilter<"Person"> | string
+    updatedAt?: DateTimeFilter<"Person"> | Date | string
+    createdAt?: DateTimeFilter<"Person"> | Date | string
+  }
+
+  export type RaceCreateWithoutI18nInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    persons?: PersonCreateNestedManyWithoutRaceInput
+  }
+
+  export type RaceUncheckedCreateWithoutI18nInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    persons?: PersonUncheckedCreateNestedManyWithoutRaceInput
+  }
+
+  export type RaceCreateOrConnectWithoutI18nInput = {
+    where: RaceWhereUniqueInput
+    create: XOR<RaceCreateWithoutI18nInput, RaceUncheckedCreateWithoutI18nInput>
+  }
+
+  export type RaceUpsertWithoutI18nInput = {
+    update: XOR<RaceUpdateWithoutI18nInput, RaceUncheckedUpdateWithoutI18nInput>
+    create: XOR<RaceCreateWithoutI18nInput, RaceUncheckedCreateWithoutI18nInput>
+    where?: RaceWhereInput
+  }
+
+  export type RaceUpdateToOneWithWhereWithoutI18nInput = {
+    where?: RaceWhereInput
+    data: XOR<RaceUpdateWithoutI18nInput, RaceUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type RaceUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    persons?: PersonUpdateManyWithoutRaceNestedInput
+  }
+
+  export type RaceUncheckedUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    persons?: PersonUncheckedUpdateManyWithoutRaceNestedInput
+  }
+
+  export type RaceCreateWithoutPersonsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RaceI18nCreateNestedManyWithoutRaceInput
+  }
+
+  export type RaceUncheckedCreateWithoutPersonsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RaceI18nUncheckedCreateNestedManyWithoutRaceInput
+  }
+
+  export type RaceCreateOrConnectWithoutPersonsInput = {
+    where: RaceWhereUniqueInput
+    create: XOR<RaceCreateWithoutPersonsInput, RaceUncheckedCreateWithoutPersonsInput>
+  }
+
+  export type PlayerCharacteristicsCreateWithoutPlayerInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PlayerCharacteristicsUncheckedCreateWithoutPlayerInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PlayerCharacteristicsCreateOrConnectWithoutPlayerInput = {
+    where: PlayerCharacteristicsWhereUniqueInput
+    create: XOR<PlayerCharacteristicsCreateWithoutPlayerInput, PlayerCharacteristicsUncheckedCreateWithoutPlayerInput>
+  }
+
+  export type RaceUpsertWithoutPersonsInput = {
+    update: XOR<RaceUpdateWithoutPersonsInput, RaceUncheckedUpdateWithoutPersonsInput>
+    create: XOR<RaceCreateWithoutPersonsInput, RaceUncheckedCreateWithoutPersonsInput>
+    where?: RaceWhereInput
+  }
+
+  export type RaceUpdateToOneWithWhereWithoutPersonsInput = {
+    where?: RaceWhereInput
+    data: XOR<RaceUpdateWithoutPersonsInput, RaceUncheckedUpdateWithoutPersonsInput>
+  }
+
+  export type RaceUpdateWithoutPersonsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RaceI18nUpdateManyWithoutRaceNestedInput
+  }
+
+  export type RaceUncheckedUpdateWithoutPersonsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RaceI18nUncheckedUpdateManyWithoutRaceNestedInput
+  }
+
+  export type PlayerCharacteristicsUpsertWithoutPlayerInput = {
+    update: XOR<PlayerCharacteristicsUpdateWithoutPlayerInput, PlayerCharacteristicsUncheckedUpdateWithoutPlayerInput>
+    create: XOR<PlayerCharacteristicsCreateWithoutPlayerInput, PlayerCharacteristicsUncheckedCreateWithoutPlayerInput>
+    where?: PlayerCharacteristicsWhereInput
+  }
+
+  export type PlayerCharacteristicsUpdateToOneWithWhereWithoutPlayerInput = {
+    where?: PlayerCharacteristicsWhereInput
+    data: XOR<PlayerCharacteristicsUpdateWithoutPlayerInput, PlayerCharacteristicsUncheckedUpdateWithoutPlayerInput>
+  }
+
+  export type PlayerCharacteristicsUpdateWithoutPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PlayerCharacteristicsUncheckedUpdateWithoutPlayerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonCreateWithoutPlayercharacteristicsInput = {
+    id?: string
+    name: string
+    shortName: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    race: RaceCreateNestedOneWithoutPersonsInput
+  }
+
+  export type PersonUncheckedCreateWithoutPlayercharacteristicsInput = {
+    id?: string
+    name: string
+    shortName: string
+    raceId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PersonCreateOrConnectWithoutPlayercharacteristicsInput = {
+    where: PersonWhereUniqueInput
+    create: XOR<PersonCreateWithoutPlayercharacteristicsInput, PersonUncheckedCreateWithoutPlayercharacteristicsInput>
+  }
+
+  export type PersonUpsertWithoutPlayercharacteristicsInput = {
+    update: XOR<PersonUpdateWithoutPlayercharacteristicsInput, PersonUncheckedUpdateWithoutPlayercharacteristicsInput>
+    create: XOR<PersonCreateWithoutPlayercharacteristicsInput, PersonUncheckedCreateWithoutPlayercharacteristicsInput>
+    where?: PersonWhereInput
+  }
+
+  export type PersonUpdateToOneWithWhereWithoutPlayercharacteristicsInput = {
+    where?: PersonWhereInput
+    data: XOR<PersonUpdateWithoutPlayercharacteristicsInput, PersonUncheckedUpdateWithoutPlayercharacteristicsInput>
+  }
+
+  export type PersonUpdateWithoutPlayercharacteristicsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    race?: RaceUpdateOneRequiredWithoutPersonsNestedInput
+  }
+
+  export type PersonUncheckedUpdateWithoutPlayercharacteristicsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type UserCreateWithoutTeamsInput = {
+    id: string
+    name: string
+    email: string
+    emailVerified: boolean
+    image?: string | null
+    createdAt: Date | string
+    updatedAt: Date | string
+    role?: string
+    banned?: boolean | null
+    banReason?: string | null
+    banExpires?: Date | string | null
+    sessions?: SessionCreateNestedManyWithoutUserInput
+    accounts?: AccountCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutTeamsInput = {
+    id: string
+    name: string
+    email: string
+    emailVerified: boolean
+    image?: string | null
+    createdAt: Date | string
+    updatedAt: Date | string
+    role?: string
+    banned?: boolean | null
+    banReason?: string | null
+    banExpires?: Date | string | null
+    sessions?: SessionUncheckedCreateNestedManyWithoutUserInput
+    accounts?: AccountUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutTeamsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutTeamsInput, UserUncheckedCreateWithoutTeamsInput>
+  }
+
+  export type UserUpsertWithoutTeamsInput = {
+    update: XOR<UserUpdateWithoutTeamsInput, UserUncheckedUpdateWithoutTeamsInput>
+    create: XOR<UserCreateWithoutTeamsInput, UserUncheckedCreateWithoutTeamsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutTeamsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutTeamsInput, UserUncheckedUpdateWithoutTeamsInput>
+  }
+
+  export type UserUpdateWithoutTeamsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: BoolFieldUpdateOperationsInput | boolean
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    role?: StringFieldUpdateOperationsInput | string
+    banned?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    banReason?: NullableStringFieldUpdateOperationsInput | string | null
+    banExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sessions?: SessionUpdateManyWithoutUserNestedInput
+    accounts?: AccountUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutTeamsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    emailVerified?: BoolFieldUpdateOperationsInput | boolean
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    role?: StringFieldUpdateOperationsInput | string
+    banned?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    banReason?: NullableStringFieldUpdateOperationsInput | string | null
+    banExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
+    accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type SessionCreateManyUserInput = {
@@ -7408,6 +32087,15 @@ export namespace Prisma {
     password?: string | null
     createdAt: Date | string
     updatedAt: Date | string
+  }
+
+  export type TeamCreateManyOwnerInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    updatedAt?: Date | string
+    createdAt?: Date | string
   }
 
   export type SessionUpdateWithoutUserInput = {
@@ -7486,6 +32174,413 @@ export namespace Prisma {
     password?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TeamUpdateWithoutOwnerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TeamUncheckedUpdateWithoutOwnerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TeamUncheckedUpdateManyWithoutOwnerInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionI18nCreateManyRegionInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type LocationCreateManyRegionInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionI18nUpdateWithoutRegionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionI18nUncheckedUpdateWithoutRegionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionI18nUncheckedUpdateManyWithoutRegionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationUpdateWithoutRegionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateWithoutRegionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateManyWithoutRegionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationI18nCreateManyLocationInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RouteCreateManyLocationFromInput = {
+    id?: string
+    type: $Enums.RouteType
+    toId: string
+    distance: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RouteCreateManyLocationToInput = {
+    id?: string
+    type: $Enums.RouteType
+    fromId: string
+    distance: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingCreateManyLocationInput = {
+    id?: string
+    buildingTypeId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type LocationI18nUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationI18nUncheckedUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type LocationI18nUncheckedUpdateManyWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteUpdateWithoutLocationFromInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    locationTo?: LocationUpdateOneRequiredWithoutRoutesToNestedInput
+  }
+
+  export type RouteUncheckedUpdateWithoutLocationFromInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    toId?: StringFieldUpdateOperationsInput | string
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteUncheckedUpdateManyWithoutLocationFromInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    toId?: StringFieldUpdateOperationsInput | string
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteUpdateWithoutLocationToInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    locationFrom?: LocationUpdateOneRequiredWithoutRoutesFromNestedInput
+  }
+
+  export type RouteUncheckedUpdateWithoutLocationToInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    fromId?: StringFieldUpdateOperationsInput | string
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RouteUncheckedUpdateManyWithoutLocationToInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumRouteTypeFieldUpdateOperationsInput | $Enums.RouteType
+    fromId?: StringFieldUpdateOperationsInput | string
+    distance?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildingType?: BuildingTypeUpdateOneRequiredWithoutBuildingsNestedInput
+    i18n?: BuildingI18nUpdateManyWithoutBuildingNestedInput
+    stadiumInfo?: StadiumInfoUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingUncheckedUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: BuildingI18nUncheckedUpdateManyWithoutBuildingNestedInput
+    stadiumInfo?: StadiumInfoUncheckedUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingUncheckedUpdateManyWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingTypeI18nCreateManyBuildingTypeInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingCreateManyBuildingTypeInput = {
+    id?: string
+    locationId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingTypeI18nUpdateWithoutBuildingTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingTypeI18nUncheckedUpdateWithoutBuildingTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingTypeI18nUncheckedUpdateManyWithoutBuildingTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingUpdateWithoutBuildingTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    location?: LocationUpdateOneRequiredWithoutBuildingsNestedInput
+    i18n?: BuildingI18nUpdateManyWithoutBuildingNestedInput
+    stadiumInfo?: StadiumInfoUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingUncheckedUpdateWithoutBuildingTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: BuildingI18nUncheckedUpdateManyWithoutBuildingNestedInput
+    stadiumInfo?: StadiumInfoUncheckedUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingUncheckedUpdateManyWithoutBuildingTypeInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingI18nCreateManyBuildingInput = {
+    id?: string
+    language: string
+    name: string
+    description?: string | null
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingI18nUpdateWithoutBuildingInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingI18nUncheckedUpdateWithoutBuildingInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingI18nUncheckedUpdateManyWithoutBuildingInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RaceI18nCreateManyRaceInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PersonCreateManyRaceInput = {
+    id?: string
+    name: string
+    shortName: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RaceI18nUpdateWithoutRaceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RaceI18nUncheckedUpdateWithoutRaceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RaceI18nUncheckedUpdateManyWithoutRaceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonUpdateWithoutRaceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    playercharacteristics?: PlayerCharacteristicsUpdateOneWithoutPlayerNestedInput
+  }
+
+  export type PersonUncheckedUpdateWithoutRaceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    playercharacteristics?: PlayerCharacteristicsUncheckedUpdateOneWithoutPlayerNestedInput
+  }
+
+  export type PersonUncheckedUpdateManyWithoutRaceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

@@ -7,7 +7,7 @@ interface CredentialIconProps {
 }
 
 export default function CredentialIcon({
-  color = "#171515",
+  color = "#FFFFFF",
   size,
   className = "",
 }: CredentialIconProps) {

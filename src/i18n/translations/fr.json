@@ -175,6 +175,14 @@
     "copyright": "© 2025 Cédric Lefebvre. Tous droits réservés."
   },
 
+  "Menu": {
+    "items": {
+      "calendar": "Calendrier",
+      "home": "Accueil",
+      "team": "Équipe"
+    }
+  },
+
   "LocaleSwitcher": {
     "locale_en": "Anglais",
     "locale_fr": "Français"
@@ -183,6 +191,40 @@
   "Metadata": {
     "title": "Boilerplate",
     "description": "Cedric's Boilerplate."
+  },
+
+  "Private": {
+    "field": {
+      "team_name": "Nom complet de l'équipe",
+      "team_short_name": "Nom court de l'équipe"
+    },
+    "placeholder": {
+      "team_name": "Entrez le nom complet de votre équipe",
+      "team_short_name": "Entrez le nom court de votre équipe"
+    },
+    "text": {
+      "welcome": "Bienvenue ! Prêt à jouer ? Créez votre équipe pour commencer."
+    },
+    "title": {
+      "create_team_step1": "Créer votre équipe - Étape 1",
+      "welcome": "Welcome!"
+    },
+    "toasts": {
+      "errors": {
+        "team_creation_failed": "Échec de la création de l'équipe."
+      },
+      "success": {
+        "team_creation_successfull": "Équipe créée avec succès."
+      }
+    },
+    "zod": {
+      "errors": {
+        "invalid": {
+          "team_name_too_short": "Ce nom est trop court.",
+          "team_name_too_long": "Ce nom est trop long."
+        }
+      }
+    }
   },
 
   "Table": {

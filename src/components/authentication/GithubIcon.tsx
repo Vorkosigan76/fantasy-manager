@@ -7,7 +7,7 @@ interface GithubIconProps {
 }
 
 export default function GithubIcon({
-  color = "#171515",
+  color = "#FFFFFF",
   size,
   className = "",
 }: GithubIconProps) {

@@ -27,6 +27,7 @@ model User {
   updatedAt     DateTime
   sessions      Session[]
   accounts      Account[]
+  teams         Team[]
 
   role       String    @default("user")
   banned     Boolean?
@@ -82,4 +83,322 @@ model Verification {
   updatedAt  DateTime?
 
   @@map("verification")
+}
+
+//////////////////////////////////////////////////////////////////
+// GEOGRAPHY
+
+model Region {
+  id        String       @id @unique
+  updatedAt DateTime     @updatedAt
+  createdAt DateTime     @default(now())
+  i18n      RegionI18n[]
+  locations Location[]
+  NameModel NameModel[]
+
+  @@map("region")
+}
+
+model RegionI18n {
+  id        String   @id @default(cuid())
+  regionId  String
+  language  String
+  name      String
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  region    Region   @relation(fields: [regionId], references: [id], onDelete: Cascade)
+
+  @@unique([regionId, language])
+  @@map("region_i18n")
+}
+
+enum LocationType {
+  town
+}
+
+model Location {
+  id        String         @id @unique
+  type      LocationType
+  regionId  String
+  latitude  Float
+  longitude Float
+  updatedAt DateTime       @updatedAt
+  createdAt DateTime       @default(now())
+  i18n      LocationI18n[]
+
+  buildings  Building[]
+  region     Region         @relation(fields: [regionId], references: [id], onDelete: Cascade)
+  routesFrom Route[]        @relation("RouteFrom")
+  routesTo   Route[]        @relation("RouteTo")
+  teams      TeamLocation[]
+
+  townInfo TownInformation?
+
+  @@map("location")
+}
+
+model LocationI18n {
+  id         String   @id @default(cuid())
+  locationId String
+  language   String
+  name       String
+  updatedAt  DateTime @updatedAt
+  createdAt  DateTime @default(now())
+
+  location Location @relation(fields: [locationId], references: [id], onDelete: Cascade)
+
+  @@unique([locationId, language])
+  @@map("location_i18n")
+}
+
+model TownInformation {
+  id         String   @id @default(cuid())
+  locationId String   @unique
+  population Int
+  updatedAt  DateTime @updatedAt
+  createdAt  DateTime @default(now())
+
+  location Location @relation(fields: [locationId], references: [id], onDelete: Cascade)
+
+  @@map("town_information")
+}
+
+enum RouteType {
+  road_paved
+  road_unpaved
+  river_upstream
+  river_downstream
+}
+
+model Route {
+  id        String    @id @default(cuid())
+  type      RouteType
+  fromId    String
+  toId      String
+  distance  Float
+  updatedAt DateTime  @updatedAt
+  createdAt DateTime  @default(now())
+
+  locationFrom Location @relation("RouteFrom", fields: [fromId], references: [id], onDelete: Cascade)
+  locationTo   Location @relation("RouteTo", fields: [toId], references: [id], onDelete: Cascade)
+
+  @@map("route")
+}
+
+//////////////////////////////////////////////////////////////////
+// BUILDINGS
+
+model BuildingType {
+  id        String             @id @unique
+  updatedAt DateTime           @updatedAt
+  createdAt DateTime           @default(now())
+  i18n      BuildingTypeI18n[]
+
+  buildings Building[]
+
+  @@map("building_type")
+}
+
+model BuildingTypeI18n {
+  id             String   @id @default(cuid())
+  buildingTypeId String
+  language       String
+  name           String
+  updatedAt      DateTime @updatedAt
+  createdAt      DateTime @default(now())
+
+  buildingType BuildingType @relation(fields: [buildingTypeId], references: [id], onDelete: Cascade)
+
+  @@unique([buildingTypeId, language])
+  @@map("building_type_i18n")
+}
+
+model Building {
+  id             String   @id @default(cuid())
+  buildingTypeId String
+  locationId     String
+  updatedAt      DateTime @updatedAt
+  createdAt      DateTime @default(now())
+
+  buildingType BuildingType   @relation(fields: [buildingTypeId], references: [id], onDelete: Cascade)
+  location     Location       @relation(fields: [locationId], references: [id], onDelete: Cascade)
+  i18n         BuildingI18n[]
+  stadiumInfo  StadiumInfo?
+
+  @@map("building")
+}
+
+model BuildingI18n {
+  id          String   @id @default(cuid())
+  buildingId  String
+  language    String
+  name        String
+  description String?
+  updatedAt   DateTime @updatedAt
+  createdAt   DateTime @default(now())
+
+  building Building @relation(fields: [buildingId], references: [id], onDelete: Cascade)
+
+  @@unique([buildingId, language])
+  @@map("building_i18n")
+}
+
+model StadiumInfo {
+  id         String   @id @default(cuid())
+  buildingId String   @unique
+  capacity   Int
+  updatedAt  DateTime @updatedAt
+  createdAt  DateTime @default(now())
+
+  building Building @relation(fields: [buildingId], references: [id], onDelete: Cascade)
+
+  @@map("stadium_info")
+}
+
+//////////////////////////////////////////////////////////////////
+// RACES
+
+model Race {
+  id String @id @unique
+
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  i18n RaceI18n[]
+
+  nameModels NameModel[]
+  persons    Person[]
+}
+
+model RaceI18n {
+  id        String   @id @default(cuid())
+  raceId    String
+  language  String
+  name      String
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  race Race @relation(fields: [raceId], references: [id], onDelete: Cascade)
+
+  @@unique([raceId, language])
+  @@map("raceId_i18n")
+}
+
+//////////////////////////////////////////////////////////////////
+// NAMES
+
+model NameModel {
+  id                String   @id @default(cuid())
+  raceId            String
+  regionId          String
+  sex               SexType
+  firstnameTemplate String
+  lastnameTemplate  String
+  updatedAt         DateTime @updatedAt
+  createdAt         DateTime @default(now())
+
+  race   Race   @relation(fields: [raceId], references: [id], onDelete: Cascade)
+  region Region @relation(fields: [regionId], references: [id], onDelete: Cascade)
+
+  @@unique([raceId, sex, regionId])
+  @@map("name_model")
+}
+
+model NameRadical {
+  id        String   @id @default(cuid())
+  radical   String
+  value     String
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@unique([radical, value])
+  @@map("name_radical")
+}
+
+//////////////////////////////////////////////////////////////////
+// PERSONS
+
+enum SexType {
+  male
+  female
+}
+
+model Person {
+  id        String @id @default(cuid())
+  name      String
+  shortName String
+  raceId    String
+
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  race                  Race                   @relation(fields: [raceId], references: [id], onDelete: Cascade)
+  playercharacteristics PlayerCharacteristics?
+  PersonContract        PersonContract[]
+
+  @@map("person")
+}
+
+model PlayerCharacteristics {
+  id        String   @id @default(cuid())
+  playerId  String   @unique
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  player Person @relation(fields: [playerId], references: [id], onDelete: Cascade)
+
+  @@map("player_characteristics")
+}
+
+//////////////////////////////////////////////////////////////////
+// TEAMS
+
+model Team {
+  id        String  @id @default(cuid())
+  name      String
+  shortName String
+  isActive  Boolean
+  ownerId   String
+
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  owner          User?            @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  teamLocation   TeamLocation?
+  PersonContract PersonContract[]
+
+  @@map("team")
+}
+
+model TeamLocation {
+  id         String @id @default(cuid())
+  teamId     String
+  locationId String
+
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  team     Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  location Location @relation(fields: [locationId], references: [id], onDelete: Cascade)
+
+  @@unique([teamId])
+  @@map("team_location")
+}
+
+enum ContractType {
+  player
+}
+
+model PersonContract {
+  id           String       @id @default(cuid())
+  personId     String
+  teamId       String
+  contractType ContractType
+  updatedAt    DateTime     @updatedAt
+  createdAt    DateTime     @default(now())
+
+  person Person @relation(fields: [personId], references: [id], onDelete: Cascade)
+  team   Team   @relation(fields: [teamId], references: [id], onDelete: Cascade)
+
+  @@map("person_contract")
 }

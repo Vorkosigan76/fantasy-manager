@@ -2,7 +2,7 @@
 
 import UsersDataTable from "@/components/admin/users/UsersDataTable";
 import { RoleGate } from "@/components/authentication/RoleGate";
-import { UserRole } from "@/data/authentication/user-role";
+import { UserRole } from "@/data/data-enums";
 import { getTranslations } from "next-intl/server";
 
 export default async function AdminUsers() {

@@ -22,7 +22,7 @@ import { create } from "zustand";
 import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { Table } from "@tanstack/react-table";
-import { UserRole } from "@/data/authentication/user-role";
+import { UserRole } from "@/data/data-enums";
 import { User } from "@/generated/prisma";
 
 export const getChangeRoleDialogState = create<DialogState<User>>((set) => ({

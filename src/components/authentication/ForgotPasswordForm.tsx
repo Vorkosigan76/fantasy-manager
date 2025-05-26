@@ -42,7 +42,7 @@ export default function ForgotPasswordForm() {
         {
           onSuccess: () => {
             form.reset();
-            toast.success(t("toasts.success.reset_password"), {
+            toast.success(t("toasts.success.reset_password_successfull"), {
               description: t("toasts.success.check_email"),
             });
           },
@@ -51,7 +51,7 @@ export default function ForgotPasswordForm() {
               description: ctx?.error.message,
             });
           },
-        },
+        }
       );
     });
   }
@@ -76,6 +76,7 @@ export default function ForgotPasswordForm() {
                 <Input
                   autoComplete="email"
                   placeholder={t("placeholder.email")}
+                  className="bg-red-100 border-0 text-black"
                   {...field}
                 />
               </FormControl>
@@ -83,7 +84,10 @@ export default function ForgotPasswordForm() {
           )}
         />{" "}
         <div className="flex justify-center">
-          <LoadingButton pending={isPending}>
+          <LoadingButton
+            pending={isPending}
+            className="bg-red-900 hover:bg-red-800"
+          >
             {t("button.reset_password")}
           </LoadingButton>
         </div>

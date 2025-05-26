@@ -13,7 +13,7 @@ export default function ResetPasswordCard() {
   if (error === "invalid_token") {
     return (
       <div className="grow flex items-center justify-center p-4">
-        <Card className="w-full max-w-md">
+        <Card className="w-full max-w-md bg-black text-gray-100 border-0">
           <CardHeader>
             <CardTitle className="text-3xl font-bold text-center text-gray-800">
               Invalid Reset Link
@@ -31,7 +31,7 @@ export default function ResetPasswordCard() {
     );
   } else
     return (
-      <Card className="w-[400px]">
+      <Card className="w-[400px] bg-black text-gray-100 border-0">
         <CardHeader>
           <CardTitle className="text-center">
             {t("title.reset_password")}

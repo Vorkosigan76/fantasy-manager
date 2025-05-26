@@ -39,13 +39,13 @@ export default function GoogleButton() {
   return (
     <LoadingButton
       pending={isPending}
-      className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus-visible:ring-transparent"
+      className="flex w-full items-center justify-center gap-3 rounded-md bg-red-900 hover:bg-red-800 px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset focus-visible:ring-transparent"
       onClick={() => {
         handleSignIn();
       }}
     >
       <GoogleIcon className="h-5 w-5" />
-      <span className="text-sm/6 font-semibold">Google</span>
+      <span className="text-sm/6 font-semibold text-gray-100">Google</span>
     </LoadingButton>
   );
 }

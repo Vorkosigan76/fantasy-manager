@@ -12,7 +12,7 @@ export default function RoleBadge({ role }: RoleBadgeProps) {
     <div className="text-center">
       <Badge
         variant={role === "user" ? "outline" : "secondary"}
-        className="w-[75px]"
+        className="w-[75px] text-red-100"
       >
         {t("fields.role." + role)}
       </Badge>

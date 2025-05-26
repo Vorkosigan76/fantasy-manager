@@ -8,7 +8,7 @@ export default async function SignInCard() {
   const t = await getTranslations("Authentication");
 
   return (
-    <Card className="w-[400px]">
+    <Card className="w-[400px] bg-black text-gray-100 border-0">
       <CardHeader>
         <CardTitle className="text-center">{t("title.signin")}</CardTitle>
       </CardHeader>
@@ -18,7 +18,7 @@ export default async function SignInCard() {
           {t("text.no-account")}{" "}
           <Link
             href="/auth/signup"
-            className="text-sm text-blue-500 italic hover:underline"
+            className="text-sm text-red-800 italic hover:underline"
           >
             {t("link.register")}
           </Link>

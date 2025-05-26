@@ -1,4 +1,4 @@
-"use server";
+"server-only";
 
 import SettingsForm from "@/components/authentication/SettingsForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -21,7 +21,7 @@ export default async function Settings() {
 
   return (
     <div className="w-full flex justify-center">
-      <Card className="w-[400px]">
+      <Card className="w-[400px] bg-black text-gray-100 border-0">
         <CardHeader>
           <CardTitle className="text-center">{t("title.settings")}</CardTitle>
         </CardHeader>

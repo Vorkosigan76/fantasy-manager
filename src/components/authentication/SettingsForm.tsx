@@ -97,7 +97,12 @@ export default function SettingsForm({
                 </FormMessage>
               </div>
               <FormControl>
-                <Input placeholder={t("placeholder.name")} {...field} />
+                <Input
+                  placeholder={t("placeholder.name")}
+                  className="bg-red-100 border-0 text-black"
+                  autoComplete="off"
+                  {...field}
+                />
               </FormControl>
             </FormItem>
           )}
@@ -116,9 +121,9 @@ export default function SettingsForm({
           <Label>{t("field.role")}</Label>
           <RoleBadge role={user.role} />
         </div>
-        <div className="flex justify-between -mt-4">
+        <div className="flex justify-between -mt-4 ">
           <Label>{t("field.accounts")}</Label>
-          <div>
+          <div className="flex items-center space-x-2">
             {accounts.map((account) => {
               return (
                 <div key={account.id} className="flex items-center space-x-2">
@@ -127,7 +132,7 @@ export default function SettingsForm({
                   )}
                   {account.providerId === "github" && <GithubIcon size={24} />}
                   {account.providerId === "google" && (
-                    <GoogleIcon className="h-5 w-5" />
+                    <GoogleIcon className="h-5 w-5 " />
                   )}
                 </div>
               );
@@ -135,7 +140,12 @@ export default function SettingsForm({
           </div>
         </div>
         <div className="flex justify-end -mt-4">
-          <LoadingButton pending={isPending}>{t("button.save")}</LoadingButton>
+          <LoadingButton
+            pending={isPending}
+            className="bg-red-900 hover:bg-red-800"
+          >
+            {t("button.save")}
+          </LoadingButton>
         </div>
       </form>
     </Form>

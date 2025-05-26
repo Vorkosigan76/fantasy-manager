@@ -3,20 +3,13 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { languages } from "@/i18n/settings";
 import { getMessages, getTranslations } from "next-intl/server";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cardo } from "next/font/google";
 import "@/styles/globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import Navbar from "@/components/common/Navbar";
-import Footer from "@/components/common/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const font = Cardo({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400"],
 });
 
 // To generate static pages for all locales
@@ -54,19 +47,14 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="h-full bg-white">
       <body
-        className={`h-full ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`h-full ${font.className} antialiased bg-black text-gray-100 `}
       >
         <NextIntlClientProvider messages={messages}>
-          <div className="flex h-dvh">
+          <div className="relative flex h-dvh bg-[url('/images/illustrations/orkteam.jpg')] bg-cover">
             <div className="flex flex-col h-full w-full">
-              <Navbar />
-              <div className="flex items-center flex-grow bg-gray-100">
-                {children}
-              </div>
-              <Footer />
+              <div className="flex flex-grow">{children}</div>
             </div>
           </div>
-
           <Toaster richColors />
         </NextIntlClientProvider>
       </body>

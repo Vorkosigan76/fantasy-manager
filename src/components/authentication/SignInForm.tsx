@@ -97,6 +97,7 @@ export default function SignInForm() {
                 <Input
                   autoComplete="email"
                   placeholder={t("placeholder.email")}
+                  className="bg-red-100 border-0 text-black"
                   {...field}
                 />
               </FormControl>
@@ -120,13 +121,14 @@ export default function SignInForm() {
                 <Input
                   type="password"
                   placeholder={t("placeholder.password")}
+                  className="bg-red-100 border-0 text-black"
                   {...field}
                 />
               </FormControl>
               <div className="flex justify-end">
                 <Link
                   href="/auth/forgot-password"
-                  className="text-sm text-blue-500 italic hover:underline"
+                  className="text-sm text-red-800 italic hover:underline"
                 >
                   {t("link.forgot")}
                 </Link>
@@ -135,7 +137,10 @@ export default function SignInForm() {
           )}
         />{" "}
         <div className="flex justify-center">
-          <LoadingButton pending={isPending}>
+          <LoadingButton
+            pending={isPending}
+            className="bg-red-900 hover:bg-red-800"
+          >
             {t("button.signin")}
           </LoadingButton>
         </div>

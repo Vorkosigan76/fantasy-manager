@@ -1,6 +1,6 @@
-"use server";
+"server-only";
 
-import { UserRole } from "@/data/authentication/user-role";
+import { UserRole } from "@/data/data-enums";
 import Unauthorized from "../errors/Unauthorized";
 import { getCurrentRole } from "@/lib/auth";
 

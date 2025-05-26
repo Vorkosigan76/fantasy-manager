@@ -97,7 +97,11 @@ export default function RegisterForm({ handleSubmit }: RegisterFormProps) {
                 </FormMessage>
               </div>
               <FormControl>
-                <Input placeholder={t("placeholder.name")} {...field} />
+                <Input
+                  placeholder={t("placeholder.name")}
+                  className="bg-red-100 border-0 text-black"
+                  {...field}
+                />
               </FormControl>
             </FormItem>
           )}
@@ -119,6 +123,7 @@ export default function RegisterForm({ handleSubmit }: RegisterFormProps) {
                 <Input
                   autoComplete="email"
                   placeholder={t("placeholder.email")}
+                  className="bg-red-100 border-0 text-black"
                   {...field}
                 />
               </FormControl>
@@ -142,6 +147,7 @@ export default function RegisterForm({ handleSubmit }: RegisterFormProps) {
                 <Input
                   type="password"
                   placeholder={t("placeholder.password")}
+                  className="bg-red-100 border-0 text-black"
                   {...field}
                 />
               </FormControl>
@@ -165,6 +171,7 @@ export default function RegisterForm({ handleSubmit }: RegisterFormProps) {
                 <Input
                   type="password"
                   placeholder={t("placeholder.confirmation")}
+                  className="bg-red-100 border-0 text-black"
                   {...field}
                 />
               </FormControl>
@@ -172,7 +179,10 @@ export default function RegisterForm({ handleSubmit }: RegisterFormProps) {
           )}
         />{" "}
         <div className="flex justify-end">
-          <LoadingButton pending={isPending}>
+          <LoadingButton
+            pending={isPending}
+            className="bg-red-900 hover:bg-red-800"
+          >
             {t("button.register")}
           </LoadingButton>
         </div>

@@ -45,6 +45,15 @@ export const auth = betterAuth({
 
 export type Session = typeof auth.$Infer.Session;
 
+// Returns the current user
+export const getCurrentUser = async () => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  return session?.user;
+};
+
+
 // Returns the current user role
 export const getCurrentRole = async () => {
   const session = await auth.api.getSession({

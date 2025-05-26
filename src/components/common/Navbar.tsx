@@ -1,12 +1,16 @@
+"server-only";
+
 import { Link } from "@/i18n/routing";
 import { UserButton } from "./UserButton";
-//import AuthButtons from "@/components/auth-buttons";
+import { getTranslations } from "next-intl/server";
 
-export default function Navbar() {
+export default async function Navbar() {
+  const t = await getTranslations("Metadata");
+
   return (
-    <nav className="flex justify-between items-center py-3 px-4 fixed top-0 left-0 right-0 z-50 bg-white">
+    <nav className="flex justify-between items-center py-3 px-4 z-50 bg-red-900 text-gray-100">
       <Link href="/" className="text-xl font-bold">
-        Boilerplate
+        {t("title")}
       </Link>
       <UserButton />
     </nav>

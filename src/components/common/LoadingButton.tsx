@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import clsx from "clsx";
 
 interface LoadingButtonProps {
+  asChild?: boolean;
   pending: boolean;
   onClick?: () => void;
   children?: React.ReactNode;
@@ -17,6 +19,7 @@ interface LoadingButtonProps {
 }
 
 export const LoadingButton = ({
+  asChild,
   pending,
   onClick,
   children,
@@ -26,8 +29,16 @@ export const LoadingButton = ({
 }: LoadingButtonProps) => {
   return (
     <Button
+      asChild={asChild}
       onClick={onClick}
-      className={cn("w-full", className)}
+      className={cn(
+        "w-full",
+        clsx({
+          "cursor-not-allowed": pending,
+          "cursor-pointer": !pending,
+        }),
+        className
+      )}
       type="submit"
       disabled={pending}
       variant={variant}

@@ -50,6 +50,10 @@ export default async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
   }
 
+  if (session && !isPrivateRoute && !isAdminRoute) {
+    return NextResponse.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
+  }
+
   // If the user is not authenticated and trying to access a private route
   if ((isPrivateRoute || isAdminRoute) && !session) {
     let callbackUrl = nextUrl.pathname;

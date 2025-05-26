@@ -5,15 +5,13 @@ export default function Footer() {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="bg-white">
+    <footer className="text-gray-100 bg-red-900">
       <div className="py-1 flex justify-between">
         <div className="ml-1">
           <LocaleSwitcher />
         </div>
         <div className="h-8 flex flex-col justify-center">
-          <p className="text-right text-xs leading-5 text-gray-500 mr-4">
-            {t("copyright")}
-          </p>
+          <p className="text-right text-xs leading-5 mr-4">{t("copyright")}</p>
         </div>
       </div>
     </footer>

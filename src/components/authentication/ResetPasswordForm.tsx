@@ -89,6 +89,7 @@ export default function ResetPasswordForm() {
                 <Input
                   type="password"
                   placeholder={t("placeholder.password")}
+                  className="bg-red-100 border-0 text-black"
                   {...field}
                 />
               </FormControl>
@@ -112,14 +113,18 @@ export default function ResetPasswordForm() {
                 <Input
                   type="password"
                   placeholder={t("placeholder.confirmation")}
+                  className="bg-red-100 border-0 text-black"
                   {...field}
                 />
               </FormControl>
             </FormItem>
           )}
-        />{" "}
+        />
         <div className="flex justify-end">
-          <LoadingButton pending={isPending}>
+          <LoadingButton
+            pending={isPending}
+            className="bg-red-900 hover:bg-red-800"
+          >
             {t("button.reset_password")}
           </LoadingButton>
         </div>

@@ -16,7 +16,7 @@ const getNameSchema = () =>
   z
     .string({ required_error: "zod.errors.required.name" })
     .min(1, "zod.errors.required.name")
-    .max(50, "zod.errors.invalid.name_too_long");
+    .max(20, "zod.errors.invalid.name_too_long");
 
 // Login
 

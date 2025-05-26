@@ -19,7 +19,7 @@ export default function RegisterCard() {
   return (
     <>
       {!isSubmitted && (
-        <Card className="w-[400px]">
+        <Card className="w-[400px] bg-black text-gray-100 border-0">
           <CardHeader>
             <CardTitle className="text-center">{t("title.register")}</CardTitle>
           </CardHeader>
@@ -29,7 +29,7 @@ export default function RegisterCard() {
               {t("text.already-account")}{" "}
               <Link
                 href="/auth/signin"
-                className="text-sm text-blue-500 italic hover:underline"
+                className="text-sm text-red-800 italic hover:underline"
               >
                 {t("link.signin")}
               </Link>

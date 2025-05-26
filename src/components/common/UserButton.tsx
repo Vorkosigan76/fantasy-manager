@@ -28,57 +28,75 @@ export const UserButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="outline-0">
-        <Avatar>
+        <Avatar className="cursor-pointer">
           <AvatarImage src={user?.image || undefined} />
-          <AvatarFallback className="bg-gray-400">
+          <AvatarFallback className="bg-red-900">
             <FaUser className="text-white" />
           </AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-40 -mt-2" align="start">
+      <DropdownMenuContent
+        className="w-40 mt-3 bg-red-900 text-gray-100 border-0"
+        align="start"
+      >
         {user && user.role === "admin" && (
           <>
-            <DropdownMenuItem className="py-0">
-              <Button variant="ghost" asChild className="w-full" size={"xs"}>
-                <Link href="/admin/users" className="justify-start pl-0">
-                  <FaUsers className="w-4 h-4 mr-2 " />
-                  <p className="font-normal text-sm">{t("button.users")}</p>
-                </Link>
-              </Button>
-            </DropdownMenuItem>
+            <ButtonItemSkeleton
+              icon={<FaUsers className="w-4 h-4 mr-2 text-gray-100" />}
+              text={t("button.users")}
+              href="/admin/users"
+            />
             <DropdownMenuSeparator />
           </>
         )}
         {user && (
           <>
-            <DropdownMenuItem className="py-0">
-              <Button variant="ghost" asChild className="w-full" size={"xs"}>
-                <Link href="/private/settings" className="justify-start pl-0">
-                  <FaCog className="w-4 h-4 mr-2 " />
-                  <p className="font-normal text-sm">{t("button.settings")}</p>
-                </Link>
-              </Button>
-            </DropdownMenuItem>
+            <ButtonItemSkeleton
+              icon={<FaCog className="w-4 h-4 mr-2 text-gray-100" />}
+              text={t("button.settings")}
+              href="/private/settings"
+            />
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="py-0">
-              <LogoutButton className="justify-start pl-0">
-                <FaSignOutAlt className="w-4 h-4 mr-2" />
+            <LogoutButton className="justify-start pl-1 bg-red-900 text-gray-100 hover:bg-red-800 focus:text-gray-100">
+              <DropdownMenuItem className="focus:bg-transparent focus:text-gray-100 cursor-pointer">
+                <FaSignOutAlt className="w-4 h-4 mr-2 text-gray-100" />
                 <p className="font-normal text-sm">{t("button.signout")}</p>
-              </LogoutButton>
-            </DropdownMenuItem>
+              </DropdownMenuItem>
+            </LogoutButton>
           </>
         )}
         {!user && (
-          <Button variant="ghost" asChild className="w-full">
-            <Link href="/auth/signin" className="justify-start pl-1">
-              <DropdownMenuItem>
-                <FaSignInAlt className="w-4 h-4 mr-0" />
-                <p className="font-normal text-sm">{t("button.signin")}</p>
-              </DropdownMenuItem>
-            </Link>
-          </Button>
+          <ButtonItemSkeleton
+            icon={<FaSignInAlt className="w-4 h-4 mr-0 text-gray-100" />}
+            text={t("button.signin")}
+            href="/auth/signin"
+          />
         )}
       </DropdownMenuContent>
     </DropdownMenu>
+  );
+};
+
+const ButtonItemSkeleton = ({
+  icon,
+  text,
+  href,
+}: {
+  icon: React.ReactNode;
+  text: string;
+  href: string;
+}) => {
+  return (
+    <Button variant="ghost" asChild className="w-full">
+      <Link
+        href={href}
+        className="justify-start pl-1 bg-red-900 text-gray-100 hover:bg-red-800 focus:text-gray-100"
+      >
+        <DropdownMenuItem className="focus:bg-transparent focus:text-gray-100 cursor-pointer">
+          {icon}
+          <p className="font-normal text-sm">{text}</p>
+        </DropdownMenuItem>
+      </Link>
+    </Button>
   );
 };

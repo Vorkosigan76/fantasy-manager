@@ -19,7 +19,11 @@ export default function LocaleSwitcher() {
     <LocaleSwitcherSelect defaultValue={locale}>
       <SelectGroup>
         {routing.locales.map((cur) => (
-          <SelectItem key={cur} value={cur}>
+          <SelectItem
+            key={cur}
+            value={cur}
+            className="bg-red-900 text-gray-100 focus:bg-red-800 focus:text-gray-100"
+          >
             <div className="inline-flex items-center justify-center w-full space-x-2">
               <div className="h-4 w-4 rounded-full overflow-hidden relative ">
                 <Image

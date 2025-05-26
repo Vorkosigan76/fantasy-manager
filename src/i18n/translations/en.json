@@ -181,8 +181,50 @@
   },
 
   "Metadata": {
-    "title": "Boilerplate",
-    "description": "Cedric's Boilerplate."
+    "title": "Fantasy Football Manager",
+    "description": "Manager a fantasy football team to bring it to victory!"
+  },
+
+  "Menu": {
+    "items": {
+      "calendar": "Calendar",
+      "home": "Home",
+      "team": "Team"
+    }
+  },
+
+  "Private": {
+    "field": {
+      "team_name": "Team Name",
+      "team_short_name": "Team Short Name"
+    },
+    "placeholder": {
+      "team_name": "Enter your team name",
+      "team_short_name": "Enter your team short name"
+    },
+    "text": {
+      "welcome": "Welcome! Ready to play? Create your team to get started."
+    },
+    "title": {
+      "create_team_step1": "Create your team - Step 1",
+      "welcome": "Bienvenue !"
+    },
+    "toasts": {
+      "errors": {
+        "team_creation_failed": "Team creation failed."
+      },
+      "success": {
+        "team_creation_successfull": "Team created successfully."
+      }
+    },
+    "zod": {
+      "errors": {
+        "invalid": {
+          "team_name_too_short": "This name is too short.",
+          "team_name_too_long": "This name is too long."
+        }
+      }
+    }
   },
 
   "Table": {

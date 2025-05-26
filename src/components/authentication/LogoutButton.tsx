@@ -33,7 +33,6 @@ export const LogoutButton = ({ children, className }: LogoutButtonProps) => {
       pending={isPending}
       onClick={handleSignOut}
       variant="ghost"
-      size="xs"
     >
       {children}
     </LoadingButton>

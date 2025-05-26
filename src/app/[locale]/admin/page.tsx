@@ -1,5 +1,5 @@
 import { RoleGate } from "@/components/authentication/RoleGate";
-import { UserRole } from "@/data/authentication/user-role";
+import { UserRole } from "@/data/data-enums";
 
 export default async function Admin() {
   return (
