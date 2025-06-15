@@ -1,0 +1,107 @@
+import { Prisma } from "@/generated/prisma";
+
+export const nameModelData: Prisma.NameModelCreateInput[] = [
+  {
+    id: "human-occitan-male",
+    culture: {
+      connect: { id: "human-occitan" },
+    },
+    sex: "male",
+    firstnameTemplate: "%OccitanFirstnameMale%",
+    lastnameTemplate: "%OccitanLastname%",
+  },
+  {
+    id: "human-occitan-frmale",
+    culture: {
+      connect: { id: "human-occitan" },
+    },
+    sex: "male",
+    firstnameTemplate: "%OccitanFirstnameFemale%",
+    lastnameTemplate: "%OccitanLastname%",
+  },
+];
+
+export const nameComponentKeyData: Prisma.NameComponentKeyCreateInput[] = [
+  {
+    key: "OccitanFirstnameMale",
+    values: {
+      create: [
+        { value: "Aubin" },
+        { value: "Armand" },
+        { value: "Clemens" },
+        { value: "Dorian" },
+        { value: "Enguerrand" },
+        { value: "Florens" },
+        { value: "Gaetan" },
+        { value: "Guiscard" },
+        { value: "Janvier" },
+        { value: "Joan" },
+        { value: "Leon" },
+        { value: "Maixent" },
+        { value: "Martin" },
+        { value: "Paulin" },
+        { value: "Rolland" },
+        { value: "Savin" },
+        { value: "Ugolin" },
+        { value: "Vivian" },
+      ],
+    },
+  },
+  {
+    key: "OccitanFirstnameFemale",
+    values: {
+      create: [
+        { value: "Agata" },
+        { value: "Alienòr" },
+        { value: "Ariana" },
+        { value: "Bruna" },
+        { value: "Colina" },
+        { value: "Diana" },
+        { value: "Elisa" },
+        { value: "Felipina" },
+        { value: "Gaia" },
+        { value: "Iolanda" },
+        { value: "Joana" },
+        { value: "Lisa" },
+        { value: "Manuela" },
+        { value: "Nanon" },
+        { value: "Patricia" },
+        { value: "Reina" },
+        { value: "Serena" },
+      ],
+    },
+  },
+  {
+    key: "OccitanLastname",
+    values: {
+      create: [
+        { value: "Abadie" },
+        { value: "Agut" },
+        { value: "Amiel" },
+        { value: "Auriol" },
+        { value: "Bascou" },
+        { value: "Bordes" },
+        { value: "Boyer" },
+        { value: "Cabrel" },
+        { value: "Castel" },
+        { value: "Combe" },
+        { value: "Cuq" },
+        { value: "Estieu" },
+        { value: "Jamme" },
+        { value: "Lafargue" },
+        { value: "Laferrère" },
+        { value: "Lapeyre" },
+        { value: "Larrieu" },
+        { value: "Laurens" },
+        { value: "Lombard" },
+        { value: "Marty" },
+        { value: "Noguès" },
+        { value: "Pagnol" },
+        { value: "Poux" },
+        { value: "Saigne" },
+        { value: "Teysseire" },
+        { value: "Valat" },
+      ],
+    },
+  },
+];

@@ -99,6 +99,36 @@ export type Race = $Result.DefaultSelection<Prisma.$RacePayload>
  */
 export type RaceI18n = $Result.DefaultSelection<Prisma.$RaceI18nPayload>
 /**
+ * Model Culture
+ * 
+ */
+export type Culture = $Result.DefaultSelection<Prisma.$CulturePayload>
+/**
+ * Model CultureI18n
+ * 
+ */
+export type CultureI18n = $Result.DefaultSelection<Prisma.$CultureI18nPayload>
+/**
+ * Model RegionPopulation
+ * 
+ */
+export type RegionPopulation = $Result.DefaultSelection<Prisma.$RegionPopulationPayload>
+/**
+ * Model NameModel
+ * 
+ */
+export type NameModel = $Result.DefaultSelection<Prisma.$NameModelPayload>
+/**
+ * Model NameComponentKey
+ * 
+ */
+export type NameComponentKey = $Result.DefaultSelection<Prisma.$NameComponentKeyPayload>
+/**
+ * Model NameComponentValue
+ * 
+ */
+export type NameComponentValue = $Result.DefaultSelection<Prisma.$NameComponentValuePayload>
+/**
  * Model Person
  * 
  */
@@ -113,6 +143,16 @@ export type PlayerCharacteristics = $Result.DefaultSelection<Prisma.$PlayerChara
  * 
  */
 export type Team = $Result.DefaultSelection<Prisma.$TeamPayload>
+/**
+ * Model TeamLocation
+ * 
+ */
+export type TeamLocation = $Result.DefaultSelection<Prisma.$TeamLocationPayload>
+/**
+ * Model PersonContract
+ * 
+ */
+export type PersonContract = $Result.DefaultSelection<Prisma.$PersonContractPayload>
 
 /**
  * Enums
@@ -134,6 +174,21 @@ export const RouteType: {
 
 export type RouteType = (typeof RouteType)[keyof typeof RouteType]
 
+
+export const SexType: {
+  male: 'male',
+  female: 'female'
+};
+
+export type SexType = (typeof SexType)[keyof typeof SexType]
+
+
+export const ContractType: {
+  player: 'player'
+};
+
+export type ContractType = (typeof ContractType)[keyof typeof ContractType]
+
 }
 
 export type LocationType = $Enums.LocationType
@@ -143,6 +198,14 @@ export const LocationType: typeof $Enums.LocationType
 export type RouteType = $Enums.RouteType
 
 export const RouteType: typeof $Enums.RouteType
+
+export type SexType = $Enums.SexType
+
+export const SexType: typeof $Enums.SexType
+
+export type ContractType = $Enums.ContractType
+
+export const ContractType: typeof $Enums.ContractType
 
 /**
  * ##  Prisma Client ʲˢ
@@ -440,6 +503,66 @@ export class PrismaClient<
   get raceI18n(): Prisma.RaceI18nDelegate<ExtArgs, ClientOptions>;
 
   /**
+   * `prisma.culture`: Exposes CRUD operations for the **Culture** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Cultures
+    * const cultures = await prisma.culture.findMany()
+    * ```
+    */
+  get culture(): Prisma.CultureDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.cultureI18n`: Exposes CRUD operations for the **CultureI18n** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CultureI18ns
+    * const cultureI18ns = await prisma.cultureI18n.findMany()
+    * ```
+    */
+  get cultureI18n(): Prisma.CultureI18nDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.regionPopulation`: Exposes CRUD operations for the **RegionPopulation** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more RegionPopulations
+    * const regionPopulations = await prisma.regionPopulation.findMany()
+    * ```
+    */
+  get regionPopulation(): Prisma.RegionPopulationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.nameModel`: Exposes CRUD operations for the **NameModel** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more NameModels
+    * const nameModels = await prisma.nameModel.findMany()
+    * ```
+    */
+  get nameModel(): Prisma.NameModelDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.nameComponentKey`: Exposes CRUD operations for the **NameComponentKey** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more NameComponentKeys
+    * const nameComponentKeys = await prisma.nameComponentKey.findMany()
+    * ```
+    */
+  get nameComponentKey(): Prisma.NameComponentKeyDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.nameComponentValue`: Exposes CRUD operations for the **NameComponentValue** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more NameComponentValues
+    * const nameComponentValues = await prisma.nameComponentValue.findMany()
+    * ```
+    */
+  get nameComponentValue(): Prisma.NameComponentValueDelegate<ExtArgs, ClientOptions>;
+
+  /**
    * `prisma.person`: Exposes CRUD operations for the **Person** model.
     * Example usage:
     * ```ts
@@ -468,6 +591,26 @@ export class PrismaClient<
     * ```
     */
   get team(): Prisma.TeamDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.teamLocation`: Exposes CRUD operations for the **TeamLocation** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TeamLocations
+    * const teamLocations = await prisma.teamLocation.findMany()
+    * ```
+    */
+  get teamLocation(): Prisma.TeamLocationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.personContract`: Exposes CRUD operations for the **PersonContract** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more PersonContracts
+    * const personContracts = await prisma.personContract.findMany()
+    * ```
+    */
+  get personContract(): Prisma.PersonContractDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -526,8 +669,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 6.8.2
-   * Query Engine version: 2060c79ba17c6bb9f5823312b6f6b7f4a845738e
+   * Prisma Client JS version: 6.9.0
+   * Query Engine version: 81e4af48011447c3cc503a190e86995b66d2a28e
    */
   export type PrismaVersion = {
     client: string
@@ -925,9 +1068,17 @@ export namespace Prisma {
     StadiumInfo: 'StadiumInfo',
     Race: 'Race',
     RaceI18n: 'RaceI18n',
+    Culture: 'Culture',
+    CultureI18n: 'CultureI18n',
+    RegionPopulation: 'RegionPopulation',
+    NameModel: 'NameModel',
+    NameComponentKey: 'NameComponentKey',
+    NameComponentValue: 'NameComponentValue',
     Person: 'Person',
     PlayerCharacteristics: 'PlayerCharacteristics',
-    Team: 'Team'
+    Team: 'Team',
+    TeamLocation: 'TeamLocation',
+    PersonContract: 'PersonContract'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -946,7 +1097,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "session" | "account" | "verification" | "region" | "regionI18n" | "location" | "locationI18n" | "townInformation" | "route" | "buildingType" | "buildingTypeI18n" | "building" | "buildingI18n" | "stadiumInfo" | "race" | "raceI18n" | "person" | "playerCharacteristics" | "team"
+      modelProps: "user" | "session" | "account" | "verification" | "region" | "regionI18n" | "location" | "locationI18n" | "townInformation" | "route" | "buildingType" | "buildingTypeI18n" | "building" | "buildingI18n" | "stadiumInfo" | "race" | "raceI18n" | "culture" | "cultureI18n" | "regionPopulation" | "nameModel" | "nameComponentKey" | "nameComponentValue" | "person" | "playerCharacteristics" | "team" | "teamLocation" | "personContract"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2208,6 +2359,450 @@ export namespace Prisma {
           }
         }
       }
+      Culture: {
+        payload: Prisma.$CulturePayload<ExtArgs>
+        fields: Prisma.CultureFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CultureFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CultureFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload>
+          }
+          findFirst: {
+            args: Prisma.CultureFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CultureFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload>
+          }
+          findMany: {
+            args: Prisma.CultureFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload>[]
+          }
+          create: {
+            args: Prisma.CultureCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload>
+          }
+          createMany: {
+            args: Prisma.CultureCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CultureCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload>[]
+          }
+          delete: {
+            args: Prisma.CultureDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload>
+          }
+          update: {
+            args: Prisma.CultureUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload>
+          }
+          deleteMany: {
+            args: Prisma.CultureDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CultureUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CultureUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload>[]
+          }
+          upsert: {
+            args: Prisma.CultureUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CulturePayload>
+          }
+          aggregate: {
+            args: Prisma.CultureAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCulture>
+          }
+          groupBy: {
+            args: Prisma.CultureGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CultureGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CultureCountArgs<ExtArgs>
+            result: $Utils.Optional<CultureCountAggregateOutputType> | number
+          }
+        }
+      }
+      CultureI18n: {
+        payload: Prisma.$CultureI18nPayload<ExtArgs>
+        fields: Prisma.CultureI18nFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CultureI18nFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CultureI18nFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload>
+          }
+          findFirst: {
+            args: Prisma.CultureI18nFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CultureI18nFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload>
+          }
+          findMany: {
+            args: Prisma.CultureI18nFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload>[]
+          }
+          create: {
+            args: Prisma.CultureI18nCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload>
+          }
+          createMany: {
+            args: Prisma.CultureI18nCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CultureI18nCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload>[]
+          }
+          delete: {
+            args: Prisma.CultureI18nDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload>
+          }
+          update: {
+            args: Prisma.CultureI18nUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload>
+          }
+          deleteMany: {
+            args: Prisma.CultureI18nDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CultureI18nUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CultureI18nUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload>[]
+          }
+          upsert: {
+            args: Prisma.CultureI18nUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CultureI18nPayload>
+          }
+          aggregate: {
+            args: Prisma.CultureI18nAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCultureI18n>
+          }
+          groupBy: {
+            args: Prisma.CultureI18nGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CultureI18nGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CultureI18nCountArgs<ExtArgs>
+            result: $Utils.Optional<CultureI18nCountAggregateOutputType> | number
+          }
+        }
+      }
+      RegionPopulation: {
+        payload: Prisma.$RegionPopulationPayload<ExtArgs>
+        fields: Prisma.RegionPopulationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.RegionPopulationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.RegionPopulationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload>
+          }
+          findFirst: {
+            args: Prisma.RegionPopulationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.RegionPopulationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload>
+          }
+          findMany: {
+            args: Prisma.RegionPopulationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload>[]
+          }
+          create: {
+            args: Prisma.RegionPopulationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload>
+          }
+          createMany: {
+            args: Prisma.RegionPopulationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.RegionPopulationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload>[]
+          }
+          delete: {
+            args: Prisma.RegionPopulationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload>
+          }
+          update: {
+            args: Prisma.RegionPopulationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload>
+          }
+          deleteMany: {
+            args: Prisma.RegionPopulationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.RegionPopulationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.RegionPopulationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload>[]
+          }
+          upsert: {
+            args: Prisma.RegionPopulationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$RegionPopulationPayload>
+          }
+          aggregate: {
+            args: Prisma.RegionPopulationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateRegionPopulation>
+          }
+          groupBy: {
+            args: Prisma.RegionPopulationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<RegionPopulationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.RegionPopulationCountArgs<ExtArgs>
+            result: $Utils.Optional<RegionPopulationCountAggregateOutputType> | number
+          }
+        }
+      }
+      NameModel: {
+        payload: Prisma.$NameModelPayload<ExtArgs>
+        fields: Prisma.NameModelFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.NameModelFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.NameModelFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload>
+          }
+          findFirst: {
+            args: Prisma.NameModelFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.NameModelFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload>
+          }
+          findMany: {
+            args: Prisma.NameModelFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload>[]
+          }
+          create: {
+            args: Prisma.NameModelCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload>
+          }
+          createMany: {
+            args: Prisma.NameModelCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.NameModelCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload>[]
+          }
+          delete: {
+            args: Prisma.NameModelDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload>
+          }
+          update: {
+            args: Prisma.NameModelUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload>
+          }
+          deleteMany: {
+            args: Prisma.NameModelDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.NameModelUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.NameModelUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload>[]
+          }
+          upsert: {
+            args: Prisma.NameModelUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameModelPayload>
+          }
+          aggregate: {
+            args: Prisma.NameModelAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateNameModel>
+          }
+          groupBy: {
+            args: Prisma.NameModelGroupByArgs<ExtArgs>
+            result: $Utils.Optional<NameModelGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.NameModelCountArgs<ExtArgs>
+            result: $Utils.Optional<NameModelCountAggregateOutputType> | number
+          }
+        }
+      }
+      NameComponentKey: {
+        payload: Prisma.$NameComponentKeyPayload<ExtArgs>
+        fields: Prisma.NameComponentKeyFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.NameComponentKeyFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.NameComponentKeyFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload>
+          }
+          findFirst: {
+            args: Prisma.NameComponentKeyFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.NameComponentKeyFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload>
+          }
+          findMany: {
+            args: Prisma.NameComponentKeyFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload>[]
+          }
+          create: {
+            args: Prisma.NameComponentKeyCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload>
+          }
+          createMany: {
+            args: Prisma.NameComponentKeyCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.NameComponentKeyCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload>[]
+          }
+          delete: {
+            args: Prisma.NameComponentKeyDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload>
+          }
+          update: {
+            args: Prisma.NameComponentKeyUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload>
+          }
+          deleteMany: {
+            args: Prisma.NameComponentKeyDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.NameComponentKeyUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.NameComponentKeyUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload>[]
+          }
+          upsert: {
+            args: Prisma.NameComponentKeyUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentKeyPayload>
+          }
+          aggregate: {
+            args: Prisma.NameComponentKeyAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateNameComponentKey>
+          }
+          groupBy: {
+            args: Prisma.NameComponentKeyGroupByArgs<ExtArgs>
+            result: $Utils.Optional<NameComponentKeyGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.NameComponentKeyCountArgs<ExtArgs>
+            result: $Utils.Optional<NameComponentKeyCountAggregateOutputType> | number
+          }
+        }
+      }
+      NameComponentValue: {
+        payload: Prisma.$NameComponentValuePayload<ExtArgs>
+        fields: Prisma.NameComponentValueFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.NameComponentValueFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.NameComponentValueFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload>
+          }
+          findFirst: {
+            args: Prisma.NameComponentValueFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.NameComponentValueFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload>
+          }
+          findMany: {
+            args: Prisma.NameComponentValueFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload>[]
+          }
+          create: {
+            args: Prisma.NameComponentValueCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload>
+          }
+          createMany: {
+            args: Prisma.NameComponentValueCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.NameComponentValueCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload>[]
+          }
+          delete: {
+            args: Prisma.NameComponentValueDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload>
+          }
+          update: {
+            args: Prisma.NameComponentValueUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload>
+          }
+          deleteMany: {
+            args: Prisma.NameComponentValueDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.NameComponentValueUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.NameComponentValueUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload>[]
+          }
+          upsert: {
+            args: Prisma.NameComponentValueUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$NameComponentValuePayload>
+          }
+          aggregate: {
+            args: Prisma.NameComponentValueAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateNameComponentValue>
+          }
+          groupBy: {
+            args: Prisma.NameComponentValueGroupByArgs<ExtArgs>
+            result: $Utils.Optional<NameComponentValueGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.NameComponentValueCountArgs<ExtArgs>
+            result: $Utils.Optional<NameComponentValueCountAggregateOutputType> | number
+          }
+        }
+      }
       Person: {
         payload: Prisma.$PersonPayload<ExtArgs>
         fields: Prisma.PersonFieldRefs
@@ -2430,6 +3025,154 @@ export namespace Prisma {
           }
         }
       }
+      TeamLocation: {
+        payload: Prisma.$TeamLocationPayload<ExtArgs>
+        fields: Prisma.TeamLocationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TeamLocationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TeamLocationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload>
+          }
+          findFirst: {
+            args: Prisma.TeamLocationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TeamLocationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload>
+          }
+          findMany: {
+            args: Prisma.TeamLocationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload>[]
+          }
+          create: {
+            args: Prisma.TeamLocationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload>
+          }
+          createMany: {
+            args: Prisma.TeamLocationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TeamLocationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload>[]
+          }
+          delete: {
+            args: Prisma.TeamLocationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload>
+          }
+          update: {
+            args: Prisma.TeamLocationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload>
+          }
+          deleteMany: {
+            args: Prisma.TeamLocationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TeamLocationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TeamLocationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload>[]
+          }
+          upsert: {
+            args: Prisma.TeamLocationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TeamLocationPayload>
+          }
+          aggregate: {
+            args: Prisma.TeamLocationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTeamLocation>
+          }
+          groupBy: {
+            args: Prisma.TeamLocationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TeamLocationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TeamLocationCountArgs<ExtArgs>
+            result: $Utils.Optional<TeamLocationCountAggregateOutputType> | number
+          }
+        }
+      }
+      PersonContract: {
+        payload: Prisma.$PersonContractPayload<ExtArgs>
+        fields: Prisma.PersonContractFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.PersonContractFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.PersonContractFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload>
+          }
+          findFirst: {
+            args: Prisma.PersonContractFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.PersonContractFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload>
+          }
+          findMany: {
+            args: Prisma.PersonContractFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload>[]
+          }
+          create: {
+            args: Prisma.PersonContractCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload>
+          }
+          createMany: {
+            args: Prisma.PersonContractCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.PersonContractCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload>[]
+          }
+          delete: {
+            args: Prisma.PersonContractDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload>
+          }
+          update: {
+            args: Prisma.PersonContractUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload>
+          }
+          deleteMany: {
+            args: Prisma.PersonContractDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.PersonContractUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.PersonContractUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload>[]
+          }
+          upsert: {
+            args: Prisma.PersonContractUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$PersonContractPayload>
+          }
+          aggregate: {
+            args: Prisma.PersonContractAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregatePersonContract>
+          }
+          groupBy: {
+            args: Prisma.PersonContractGroupByArgs<ExtArgs>
+            result: $Utils.Optional<PersonContractGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.PersonContractCountArgs<ExtArgs>
+            result: $Utils.Optional<PersonContractCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -2531,9 +3274,17 @@ export namespace Prisma {
     stadiumInfo?: StadiumInfoOmit
     race?: RaceOmit
     raceI18n?: RaceI18nOmit
+    culture?: CultureOmit
+    cultureI18n?: CultureI18nOmit
+    regionPopulation?: RegionPopulationOmit
+    nameModel?: NameModelOmit
+    nameComponentKey?: NameComponentKeyOmit
+    nameComponentValue?: NameComponentValueOmit
     person?: PersonOmit
     playerCharacteristics?: PlayerCharacteristicsOmit
     team?: TeamOmit
+    teamLocation?: TeamLocationOmit
+    personContract?: PersonContractOmit
   }
 
   /* Types for Logging */
@@ -2679,11 +3430,13 @@ export namespace Prisma {
   export type RegionCountOutputType = {
     i18n: number
     locations: number
+    regionPopulations: number
   }
 
   export type RegionCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     i18n?: boolean | RegionCountOutputTypeCountI18nArgs
     locations?: boolean | RegionCountOutputTypeCountLocationsArgs
+    regionPopulations?: boolean | RegionCountOutputTypeCountRegionPopulationsArgs
   }
 
   // Custom InputTypes
@@ -2711,6 +3464,13 @@ export namespace Prisma {
     where?: LocationWhereInput
   }
 
+  /**
+   * RegionCountOutputType without action
+   */
+  export type RegionCountOutputTypeCountRegionPopulationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RegionPopulationWhereInput
+  }
+
 
   /**
    * Count Type LocationCountOutputType
@@ -2718,16 +3478,18 @@ export namespace Prisma {
 
   export type LocationCountOutputType = {
     i18n: number
+    buildings: number
     routesFrom: number
     routesTo: number
-    buildings: number
+    teams: number
   }
 
   export type LocationCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     i18n?: boolean | LocationCountOutputTypeCountI18nArgs
+    buildings?: boolean | LocationCountOutputTypeCountBuildingsArgs
     routesFrom?: boolean | LocationCountOutputTypeCountRoutesFromArgs
     routesTo?: boolean | LocationCountOutputTypeCountRoutesToArgs
-    buildings?: boolean | LocationCountOutputTypeCountBuildingsArgs
+    teams?: boolean | LocationCountOutputTypeCountTeamsArgs
   }
 
   // Custom InputTypes
@@ -2751,6 +3513,13 @@ export namespace Prisma {
   /**
    * LocationCountOutputType without action
    */
+  export type LocationCountOutputTypeCountBuildingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: BuildingWhereInput
+  }
+
+  /**
+   * LocationCountOutputType without action
+   */
   export type LocationCountOutputTypeCountRoutesFromArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: RouteWhereInput
   }
@@ -2765,8 +3534,8 @@ export namespace Prisma {
   /**
    * LocationCountOutputType without action
    */
-  export type LocationCountOutputTypeCountBuildingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: BuildingWhereInput
+  export type LocationCountOutputTypeCountTeamsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TeamLocationWhereInput
   }
 
 
@@ -2847,11 +3616,13 @@ export namespace Prisma {
 
   export type RaceCountOutputType = {
     i18n: number
+    cultures: number
     persons: number
   }
 
   export type RaceCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     i18n?: boolean | RaceCountOutputTypeCountI18nArgs
+    cultures?: boolean | RaceCountOutputTypeCountCulturesArgs
     persons?: boolean | RaceCountOutputTypeCountPersonsArgs
   }
 
@@ -2876,8 +3647,157 @@ export namespace Prisma {
   /**
    * RaceCountOutputType without action
    */
+  export type RaceCountOutputTypeCountCulturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CultureWhereInput
+  }
+
+  /**
+   * RaceCountOutputType without action
+   */
   export type RaceCountOutputTypeCountPersonsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: PersonWhereInput
+  }
+
+
+  /**
+   * Count Type CultureCountOutputType
+   */
+
+  export type CultureCountOutputType = {
+    i18n: number
+    nameModels: number
+    regionPopulations: number
+  }
+
+  export type CultureCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    i18n?: boolean | CultureCountOutputTypeCountI18nArgs
+    nameModels?: boolean | CultureCountOutputTypeCountNameModelsArgs
+    regionPopulations?: boolean | CultureCountOutputTypeCountRegionPopulationsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CultureCountOutputType without action
+   */
+  export type CultureCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureCountOutputType
+     */
+    select?: CultureCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CultureCountOutputType without action
+   */
+  export type CultureCountOutputTypeCountI18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CultureI18nWhereInput
+  }
+
+  /**
+   * CultureCountOutputType without action
+   */
+  export type CultureCountOutputTypeCountNameModelsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: NameModelWhereInput
+  }
+
+  /**
+   * CultureCountOutputType without action
+   */
+  export type CultureCountOutputTypeCountRegionPopulationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RegionPopulationWhereInput
+  }
+
+
+  /**
+   * Count Type NameComponentKeyCountOutputType
+   */
+
+  export type NameComponentKeyCountOutputType = {
+    values: number
+  }
+
+  export type NameComponentKeyCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    values?: boolean | NameComponentKeyCountOutputTypeCountValuesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * NameComponentKeyCountOutputType without action
+   */
+  export type NameComponentKeyCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKeyCountOutputType
+     */
+    select?: NameComponentKeyCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * NameComponentKeyCountOutputType without action
+   */
+  export type NameComponentKeyCountOutputTypeCountValuesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: NameComponentValueWhereInput
+  }
+
+
+  /**
+   * Count Type PersonCountOutputType
+   */
+
+  export type PersonCountOutputType = {
+    PersonContract: number
+  }
+
+  export type PersonCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    PersonContract?: boolean | PersonCountOutputTypeCountPersonContractArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * PersonCountOutputType without action
+   */
+  export type PersonCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonCountOutputType
+     */
+    select?: PersonCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * PersonCountOutputType without action
+   */
+  export type PersonCountOutputTypeCountPersonContractArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PersonContractWhereInput
+  }
+
+
+  /**
+   * Count Type TeamCountOutputType
+   */
+
+  export type TeamCountOutputType = {
+    PersonContract: number
+  }
+
+  export type TeamCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    PersonContract?: boolean | TeamCountOutputTypeCountPersonContractArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * TeamCountOutputType without action
+   */
+  export type TeamCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamCountOutputType
+     */
+    select?: TeamCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * TeamCountOutputType without action
+   */
+  export type TeamCountOutputTypeCountPersonContractArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PersonContractWhereInput
   }
 
 
@@ -7519,6 +8439,7 @@ export namespace Prisma {
     createdAt?: boolean
     i18n?: boolean | Region$i18nArgs<ExtArgs>
     locations?: boolean | Region$locationsArgs<ExtArgs>
+    regionPopulations?: boolean | Region$regionPopulationsArgs<ExtArgs>
     _count?: boolean | RegionCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["region"]>
 
@@ -7544,6 +8465,7 @@ export namespace Prisma {
   export type RegionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     i18n?: boolean | Region$i18nArgs<ExtArgs>
     locations?: boolean | Region$locationsArgs<ExtArgs>
+    regionPopulations?: boolean | Region$regionPopulationsArgs<ExtArgs>
     _count?: boolean | RegionCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type RegionIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -7554,6 +8476,7 @@ export namespace Prisma {
     objects: {
       i18n: Prisma.$RegionI18nPayload<ExtArgs>[]
       locations: Prisma.$LocationPayload<ExtArgs>[]
+      regionPopulations: Prisma.$RegionPopulationPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -7955,6 +8878,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     i18n<T extends Region$i18nArgs<ExtArgs> = {}>(args?: Subset<T, Region$i18nArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     locations<T extends Region$locationsArgs<ExtArgs> = {}>(args?: Subset<T, Region$locationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    regionPopulations<T extends Region$regionPopulationsArgs<ExtArgs> = {}>(args?: Subset<T, Region$regionPopulationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -8420,6 +9344,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: LocationScalarFieldEnum | LocationScalarFieldEnum[]
+  }
+
+  /**
+   * Region.regionPopulations
+   */
+  export type Region$regionPopulationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    where?: RegionPopulationWhereInput
+    orderBy?: RegionPopulationOrderByWithRelationInput | RegionPopulationOrderByWithRelationInput[]
+    cursor?: RegionPopulationWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RegionPopulationScalarFieldEnum | RegionPopulationScalarFieldEnum[]
   }
 
   /**
@@ -9731,10 +10679,11 @@ export namespace Prisma {
     updatedAt?: boolean
     createdAt?: boolean
     i18n?: boolean | Location$i18nArgs<ExtArgs>
+    buildings?: boolean | Location$buildingsArgs<ExtArgs>
     region?: boolean | RegionDefaultArgs<ExtArgs>
     routesFrom?: boolean | Location$routesFromArgs<ExtArgs>
     routesTo?: boolean | Location$routesToArgs<ExtArgs>
-    buildings?: boolean | Location$buildingsArgs<ExtArgs>
+    teams?: boolean | Location$teamsArgs<ExtArgs>
     townInfo?: boolean | Location$townInfoArgs<ExtArgs>
     _count?: boolean | LocationCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["location"]>
@@ -9774,10 +10723,11 @@ export namespace Prisma {
   export type LocationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "type" | "regionId" | "latitude" | "longitude" | "updatedAt" | "createdAt", ExtArgs["result"]["location"]>
   export type LocationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     i18n?: boolean | Location$i18nArgs<ExtArgs>
+    buildings?: boolean | Location$buildingsArgs<ExtArgs>
     region?: boolean | RegionDefaultArgs<ExtArgs>
     routesFrom?: boolean | Location$routesFromArgs<ExtArgs>
     routesTo?: boolean | Location$routesToArgs<ExtArgs>
-    buildings?: boolean | Location$buildingsArgs<ExtArgs>
+    teams?: boolean | Location$teamsArgs<ExtArgs>
     townInfo?: boolean | Location$townInfoArgs<ExtArgs>
     _count?: boolean | LocationCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -9792,10 +10742,11 @@ export namespace Prisma {
     name: "Location"
     objects: {
       i18n: Prisma.$LocationI18nPayload<ExtArgs>[]
+      buildings: Prisma.$BuildingPayload<ExtArgs>[]
       region: Prisma.$RegionPayload<ExtArgs>
       routesFrom: Prisma.$RoutePayload<ExtArgs>[]
       routesTo: Prisma.$RoutePayload<ExtArgs>[]
-      buildings: Prisma.$BuildingPayload<ExtArgs>[]
+      teams: Prisma.$TeamLocationPayload<ExtArgs>[]
       townInfo: Prisma.$TownInformationPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -10201,10 +11152,11 @@ export namespace Prisma {
   export interface Prisma__LocationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     i18n<T extends Location$i18nArgs<ExtArgs> = {}>(args?: Subset<T, Location$i18nArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LocationI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    buildings<T extends Location$buildingsArgs<ExtArgs> = {}>(args?: Subset<T, Location$buildingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     region<T extends RegionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RegionDefaultArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     routesFrom<T extends Location$routesFromArgs<ExtArgs> = {}>(args?: Subset<T, Location$routesFromArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     routesTo<T extends Location$routesToArgs<ExtArgs> = {}>(args?: Subset<T, Location$routesToArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RoutePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    buildings<T extends Location$buildingsArgs<ExtArgs> = {}>(args?: Subset<T, Location$buildingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$BuildingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    teams<T extends Location$teamsArgs<ExtArgs> = {}>(args?: Subset<T, Location$teamsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     townInfo<T extends Location$townInfoArgs<ExtArgs> = {}>(args?: Subset<T, Location$townInfoArgs<ExtArgs>>): Prisma__TownInformationClient<$Result.GetResult<Prisma.$TownInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -10662,6 +11614,30 @@ export namespace Prisma {
   }
 
   /**
+   * Location.buildings
+   */
+  export type Location$buildingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Building
+     */
+    select?: BuildingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Building
+     */
+    omit?: BuildingOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: BuildingInclude<ExtArgs> | null
+    where?: BuildingWhereInput
+    orderBy?: BuildingOrderByWithRelationInput | BuildingOrderByWithRelationInput[]
+    cursor?: BuildingWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: BuildingScalarFieldEnum | BuildingScalarFieldEnum[]
+  }
+
+  /**
    * Location.routesFrom
    */
   export type Location$routesFromArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10710,27 +11686,27 @@ export namespace Prisma {
   }
 
   /**
-   * Location.buildings
+   * Location.teams
    */
-  export type Location$buildingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Location$teamsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Building
+     * Select specific fields to fetch from the TeamLocation
      */
-    select?: BuildingSelect<ExtArgs> | null
+    select?: TeamLocationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Building
+     * Omit specific fields from the TeamLocation
      */
-    omit?: BuildingOmit<ExtArgs> | null
+    omit?: TeamLocationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: BuildingInclude<ExtArgs> | null
-    where?: BuildingWhereInput
-    orderBy?: BuildingOrderByWithRelationInput | BuildingOrderByWithRelationInput[]
-    cursor?: BuildingWhereUniqueInput
+    include?: TeamLocationInclude<ExtArgs> | null
+    where?: TeamLocationWhereInput
+    orderBy?: TeamLocationOrderByWithRelationInput | TeamLocationOrderByWithRelationInput[]
+    cursor?: TeamLocationWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: BuildingScalarFieldEnum | BuildingScalarFieldEnum[]
+    distinct?: TeamLocationScalarFieldEnum | TeamLocationScalarFieldEnum[]
   }
 
   /**
@@ -19647,6 +20623,7 @@ export namespace Prisma {
     updatedAt?: boolean
     createdAt?: boolean
     i18n?: boolean | Race$i18nArgs<ExtArgs>
+    cultures?: boolean | Race$culturesArgs<ExtArgs>
     persons?: boolean | Race$personsArgs<ExtArgs>
     _count?: boolean | RaceCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["race"]>
@@ -19672,6 +20649,7 @@ export namespace Prisma {
   export type RaceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "updatedAt" | "createdAt", ExtArgs["result"]["race"]>
   export type RaceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     i18n?: boolean | Race$i18nArgs<ExtArgs>
+    cultures?: boolean | Race$culturesArgs<ExtArgs>
     persons?: boolean | Race$personsArgs<ExtArgs>
     _count?: boolean | RaceCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -19682,6 +20660,7 @@ export namespace Prisma {
     name: "Race"
     objects: {
       i18n: Prisma.$RaceI18nPayload<ExtArgs>[]
+      cultures: Prisma.$CulturePayload<ExtArgs>[]
       persons: Prisma.$PersonPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -20083,6 +21062,7 @@ export namespace Prisma {
   export interface Prisma__RaceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     i18n<T extends Race$i18nArgs<ExtArgs> = {}>(args?: Subset<T, Race$i18nArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RaceI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    cultures<T extends Race$culturesArgs<ExtArgs> = {}>(args?: Subset<T, Race$culturesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     persons<T extends Race$personsArgs<ExtArgs> = {}>(args?: Subset<T, Race$personsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -20525,6 +21505,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: RaceI18nScalarFieldEnum | RaceI18nScalarFieldEnum[]
+  }
+
+  /**
+   * Race.cultures
+   */
+  export type Race$culturesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    where?: CultureWhereInput
+    orderBy?: CultureOrderByWithRelationInput | CultureOrderByWithRelationInput[]
+    cursor?: CultureWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CultureScalarFieldEnum | CultureScalarFieldEnum[]
   }
 
   /**
@@ -21642,6 +22646,6520 @@ export namespace Prisma {
 
 
   /**
+   * Model Culture
+   */
+
+  export type AggregateCulture = {
+    _count: CultureCountAggregateOutputType | null
+    _min: CultureMinAggregateOutputType | null
+    _max: CultureMaxAggregateOutputType | null
+  }
+
+  export type CultureMinAggregateOutputType = {
+    id: string | null
+    raceId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type CultureMaxAggregateOutputType = {
+    id: string | null
+    raceId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type CultureCountAggregateOutputType = {
+    id: number
+    raceId: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type CultureMinAggregateInputType = {
+    id?: true
+    raceId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type CultureMaxAggregateInputType = {
+    id?: true
+    raceId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type CultureCountAggregateInputType = {
+    id?: true
+    raceId?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type CultureAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Culture to aggregate.
+     */
+    where?: CultureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Cultures to fetch.
+     */
+    orderBy?: CultureOrderByWithRelationInput | CultureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CultureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Cultures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Cultures.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Cultures
+    **/
+    _count?: true | CultureCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CultureMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CultureMaxAggregateInputType
+  }
+
+  export type GetCultureAggregateType<T extends CultureAggregateArgs> = {
+        [P in keyof T & keyof AggregateCulture]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCulture[P]>
+      : GetScalarType<T[P], AggregateCulture[P]>
+  }
+
+
+
+
+  export type CultureGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CultureWhereInput
+    orderBy?: CultureOrderByWithAggregationInput | CultureOrderByWithAggregationInput[]
+    by: CultureScalarFieldEnum[] | CultureScalarFieldEnum
+    having?: CultureScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CultureCountAggregateInputType | true
+    _min?: CultureMinAggregateInputType
+    _max?: CultureMaxAggregateInputType
+  }
+
+  export type CultureGroupByOutputType = {
+    id: string
+    raceId: string
+    updatedAt: Date
+    createdAt: Date
+    _count: CultureCountAggregateOutputType | null
+    _min: CultureMinAggregateOutputType | null
+    _max: CultureMaxAggregateOutputType | null
+  }
+
+  type GetCultureGroupByPayload<T extends CultureGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CultureGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CultureGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CultureGroupByOutputType[P]>
+            : GetScalarType<T[P], CultureGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CultureSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    raceId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+    i18n?: boolean | Culture$i18nArgs<ExtArgs>
+    nameModels?: boolean | Culture$nameModelsArgs<ExtArgs>
+    regionPopulations?: boolean | Culture$regionPopulationsArgs<ExtArgs>
+    _count?: boolean | CultureCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["culture"]>
+
+  export type CultureSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    raceId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["culture"]>
+
+  export type CultureSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    raceId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["culture"]>
+
+  export type CultureSelectScalar = {
+    id?: boolean
+    raceId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type CultureOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "raceId" | "updatedAt" | "createdAt", ExtArgs["result"]["culture"]>
+  export type CultureInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+    i18n?: boolean | Culture$i18nArgs<ExtArgs>
+    nameModels?: boolean | Culture$nameModelsArgs<ExtArgs>
+    regionPopulations?: boolean | Culture$regionPopulationsArgs<ExtArgs>
+    _count?: boolean | CultureCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CultureIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }
+  export type CultureIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    race?: boolean | RaceDefaultArgs<ExtArgs>
+  }
+
+  export type $CulturePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Culture"
+    objects: {
+      race: Prisma.$RacePayload<ExtArgs>
+      i18n: Prisma.$CultureI18nPayload<ExtArgs>[]
+      nameModels: Prisma.$NameModelPayload<ExtArgs>[]
+      regionPopulations: Prisma.$RegionPopulationPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      raceId: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["culture"]>
+    composites: {}
+  }
+
+  type CultureGetPayload<S extends boolean | null | undefined | CultureDefaultArgs> = $Result.GetResult<Prisma.$CulturePayload, S>
+
+  type CultureCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CultureFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CultureCountAggregateInputType | true
+    }
+
+  export interface CultureDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Culture'], meta: { name: 'Culture' } }
+    /**
+     * Find zero or one Culture that matches the filter.
+     * @param {CultureFindUniqueArgs} args - Arguments to find a Culture
+     * @example
+     * // Get one Culture
+     * const culture = await prisma.culture.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CultureFindUniqueArgs>(args: SelectSubset<T, CultureFindUniqueArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Culture that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CultureFindUniqueOrThrowArgs} args - Arguments to find a Culture
+     * @example
+     * // Get one Culture
+     * const culture = await prisma.culture.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CultureFindUniqueOrThrowArgs>(args: SelectSubset<T, CultureFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Culture that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureFindFirstArgs} args - Arguments to find a Culture
+     * @example
+     * // Get one Culture
+     * const culture = await prisma.culture.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CultureFindFirstArgs>(args?: SelectSubset<T, CultureFindFirstArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Culture that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureFindFirstOrThrowArgs} args - Arguments to find a Culture
+     * @example
+     * // Get one Culture
+     * const culture = await prisma.culture.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CultureFindFirstOrThrowArgs>(args?: SelectSubset<T, CultureFindFirstOrThrowArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Cultures that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Cultures
+     * const cultures = await prisma.culture.findMany()
+     * 
+     * // Get first 10 Cultures
+     * const cultures = await prisma.culture.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const cultureWithIdOnly = await prisma.culture.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CultureFindManyArgs>(args?: SelectSubset<T, CultureFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Culture.
+     * @param {CultureCreateArgs} args - Arguments to create a Culture.
+     * @example
+     * // Create one Culture
+     * const Culture = await prisma.culture.create({
+     *   data: {
+     *     // ... data to create a Culture
+     *   }
+     * })
+     * 
+     */
+    create<T extends CultureCreateArgs>(args: SelectSubset<T, CultureCreateArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Cultures.
+     * @param {CultureCreateManyArgs} args - Arguments to create many Cultures.
+     * @example
+     * // Create many Cultures
+     * const culture = await prisma.culture.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CultureCreateManyArgs>(args?: SelectSubset<T, CultureCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Cultures and returns the data saved in the database.
+     * @param {CultureCreateManyAndReturnArgs} args - Arguments to create many Cultures.
+     * @example
+     * // Create many Cultures
+     * const culture = await prisma.culture.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Cultures and only return the `id`
+     * const cultureWithIdOnly = await prisma.culture.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CultureCreateManyAndReturnArgs>(args?: SelectSubset<T, CultureCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Culture.
+     * @param {CultureDeleteArgs} args - Arguments to delete one Culture.
+     * @example
+     * // Delete one Culture
+     * const Culture = await prisma.culture.delete({
+     *   where: {
+     *     // ... filter to delete one Culture
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CultureDeleteArgs>(args: SelectSubset<T, CultureDeleteArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Culture.
+     * @param {CultureUpdateArgs} args - Arguments to update one Culture.
+     * @example
+     * // Update one Culture
+     * const culture = await prisma.culture.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CultureUpdateArgs>(args: SelectSubset<T, CultureUpdateArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Cultures.
+     * @param {CultureDeleteManyArgs} args - Arguments to filter Cultures to delete.
+     * @example
+     * // Delete a few Cultures
+     * const { count } = await prisma.culture.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CultureDeleteManyArgs>(args?: SelectSubset<T, CultureDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Cultures.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Cultures
+     * const culture = await prisma.culture.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CultureUpdateManyArgs>(args: SelectSubset<T, CultureUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Cultures and returns the data updated in the database.
+     * @param {CultureUpdateManyAndReturnArgs} args - Arguments to update many Cultures.
+     * @example
+     * // Update many Cultures
+     * const culture = await prisma.culture.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Cultures and only return the `id`
+     * const cultureWithIdOnly = await prisma.culture.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CultureUpdateManyAndReturnArgs>(args: SelectSubset<T, CultureUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Culture.
+     * @param {CultureUpsertArgs} args - Arguments to update or create a Culture.
+     * @example
+     * // Update or create a Culture
+     * const culture = await prisma.culture.upsert({
+     *   create: {
+     *     // ... data to create a Culture
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Culture we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CultureUpsertArgs>(args: SelectSubset<T, CultureUpsertArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Cultures.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureCountArgs} args - Arguments to filter Cultures to count.
+     * @example
+     * // Count the number of Cultures
+     * const count = await prisma.culture.count({
+     *   where: {
+     *     // ... the filter for the Cultures we want to count
+     *   }
+     * })
+    **/
+    count<T extends CultureCountArgs>(
+      args?: Subset<T, CultureCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CultureCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Culture.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CultureAggregateArgs>(args: Subset<T, CultureAggregateArgs>): Prisma.PrismaPromise<GetCultureAggregateType<T>>
+
+    /**
+     * Group by Culture.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CultureGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CultureGroupByArgs['orderBy'] }
+        : { orderBy?: CultureGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CultureGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCultureGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Culture model
+   */
+  readonly fields: CultureFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Culture.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CultureClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    race<T extends RaceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RaceDefaultArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    i18n<T extends Culture$i18nArgs<ExtArgs> = {}>(args?: Subset<T, Culture$i18nArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    nameModels<T extends Culture$nameModelsArgs<ExtArgs> = {}>(args?: Subset<T, Culture$nameModelsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    regionPopulations<T extends Culture$regionPopulationsArgs<ExtArgs> = {}>(args?: Subset<T, Culture$regionPopulationsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Culture model
+   */
+  interface CultureFieldRefs {
+    readonly id: FieldRef<"Culture", 'String'>
+    readonly raceId: FieldRef<"Culture", 'String'>
+    readonly updatedAt: FieldRef<"Culture", 'DateTime'>
+    readonly createdAt: FieldRef<"Culture", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Culture findUnique
+   */
+  export type CultureFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    /**
+     * Filter, which Culture to fetch.
+     */
+    where: CultureWhereUniqueInput
+  }
+
+  /**
+   * Culture findUniqueOrThrow
+   */
+  export type CultureFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    /**
+     * Filter, which Culture to fetch.
+     */
+    where: CultureWhereUniqueInput
+  }
+
+  /**
+   * Culture findFirst
+   */
+  export type CultureFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    /**
+     * Filter, which Culture to fetch.
+     */
+    where?: CultureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Cultures to fetch.
+     */
+    orderBy?: CultureOrderByWithRelationInput | CultureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Cultures.
+     */
+    cursor?: CultureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Cultures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Cultures.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Cultures.
+     */
+    distinct?: CultureScalarFieldEnum | CultureScalarFieldEnum[]
+  }
+
+  /**
+   * Culture findFirstOrThrow
+   */
+  export type CultureFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    /**
+     * Filter, which Culture to fetch.
+     */
+    where?: CultureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Cultures to fetch.
+     */
+    orderBy?: CultureOrderByWithRelationInput | CultureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Cultures.
+     */
+    cursor?: CultureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Cultures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Cultures.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Cultures.
+     */
+    distinct?: CultureScalarFieldEnum | CultureScalarFieldEnum[]
+  }
+
+  /**
+   * Culture findMany
+   */
+  export type CultureFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    /**
+     * Filter, which Cultures to fetch.
+     */
+    where?: CultureWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Cultures to fetch.
+     */
+    orderBy?: CultureOrderByWithRelationInput | CultureOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Cultures.
+     */
+    cursor?: CultureWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Cultures from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Cultures.
+     */
+    skip?: number
+    distinct?: CultureScalarFieldEnum | CultureScalarFieldEnum[]
+  }
+
+  /**
+   * Culture create
+   */
+  export type CultureCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Culture.
+     */
+    data: XOR<CultureCreateInput, CultureUncheckedCreateInput>
+  }
+
+  /**
+   * Culture createMany
+   */
+  export type CultureCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Cultures.
+     */
+    data: CultureCreateManyInput | CultureCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Culture createManyAndReturn
+   */
+  export type CultureCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * The data used to create many Cultures.
+     */
+    data: CultureCreateManyInput | CultureCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Culture update
+   */
+  export type CultureUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Culture.
+     */
+    data: XOR<CultureUpdateInput, CultureUncheckedUpdateInput>
+    /**
+     * Choose, which Culture to update.
+     */
+    where: CultureWhereUniqueInput
+  }
+
+  /**
+   * Culture updateMany
+   */
+  export type CultureUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Cultures.
+     */
+    data: XOR<CultureUpdateManyMutationInput, CultureUncheckedUpdateManyInput>
+    /**
+     * Filter which Cultures to update
+     */
+    where?: CultureWhereInput
+    /**
+     * Limit how many Cultures to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Culture updateManyAndReturn
+   */
+  export type CultureUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * The data used to update Cultures.
+     */
+    data: XOR<CultureUpdateManyMutationInput, CultureUncheckedUpdateManyInput>
+    /**
+     * Filter which Cultures to update
+     */
+    where?: CultureWhereInput
+    /**
+     * Limit how many Cultures to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Culture upsert
+   */
+  export type CultureUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Culture to update in case it exists.
+     */
+    where: CultureWhereUniqueInput
+    /**
+     * In case the Culture found by the `where` argument doesn't exist, create a new Culture with this data.
+     */
+    create: XOR<CultureCreateInput, CultureUncheckedCreateInput>
+    /**
+     * In case the Culture was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CultureUpdateInput, CultureUncheckedUpdateInput>
+  }
+
+  /**
+   * Culture delete
+   */
+  export type CultureDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+    /**
+     * Filter which Culture to delete.
+     */
+    where: CultureWhereUniqueInput
+  }
+
+  /**
+   * Culture deleteMany
+   */
+  export type CultureDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Cultures to delete
+     */
+    where?: CultureWhereInput
+    /**
+     * Limit how many Cultures to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Culture.i18n
+   */
+  export type Culture$i18nArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    where?: CultureI18nWhereInput
+    orderBy?: CultureI18nOrderByWithRelationInput | CultureI18nOrderByWithRelationInput[]
+    cursor?: CultureI18nWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CultureI18nScalarFieldEnum | CultureI18nScalarFieldEnum[]
+  }
+
+  /**
+   * Culture.nameModels
+   */
+  export type Culture$nameModelsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    where?: NameModelWhereInput
+    orderBy?: NameModelOrderByWithRelationInput | NameModelOrderByWithRelationInput[]
+    cursor?: NameModelWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: NameModelScalarFieldEnum | NameModelScalarFieldEnum[]
+  }
+
+  /**
+   * Culture.regionPopulations
+   */
+  export type Culture$regionPopulationsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    where?: RegionPopulationWhereInput
+    orderBy?: RegionPopulationOrderByWithRelationInput | RegionPopulationOrderByWithRelationInput[]
+    cursor?: RegionPopulationWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: RegionPopulationScalarFieldEnum | RegionPopulationScalarFieldEnum[]
+  }
+
+  /**
+   * Culture without action
+   */
+  export type CultureDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Culture
+     */
+    select?: CultureSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Culture
+     */
+    omit?: CultureOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model CultureI18n
+   */
+
+  export type AggregateCultureI18n = {
+    _count: CultureI18nCountAggregateOutputType | null
+    _min: CultureI18nMinAggregateOutputType | null
+    _max: CultureI18nMaxAggregateOutputType | null
+  }
+
+  export type CultureI18nMinAggregateOutputType = {
+    id: string | null
+    cultureId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type CultureI18nMaxAggregateOutputType = {
+    id: string | null
+    cultureId: string | null
+    language: string | null
+    name: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type CultureI18nCountAggregateOutputType = {
+    id: number
+    cultureId: number
+    language: number
+    name: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type CultureI18nMinAggregateInputType = {
+    id?: true
+    cultureId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type CultureI18nMaxAggregateInputType = {
+    id?: true
+    cultureId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type CultureI18nCountAggregateInputType = {
+    id?: true
+    cultureId?: true
+    language?: true
+    name?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type CultureI18nAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CultureI18n to aggregate.
+     */
+    where?: CultureI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CultureI18ns to fetch.
+     */
+    orderBy?: CultureI18nOrderByWithRelationInput | CultureI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CultureI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CultureI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CultureI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned CultureI18ns
+    **/
+    _count?: true | CultureI18nCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CultureI18nMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CultureI18nMaxAggregateInputType
+  }
+
+  export type GetCultureI18nAggregateType<T extends CultureI18nAggregateArgs> = {
+        [P in keyof T & keyof AggregateCultureI18n]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCultureI18n[P]>
+      : GetScalarType<T[P], AggregateCultureI18n[P]>
+  }
+
+
+
+
+  export type CultureI18nGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CultureI18nWhereInput
+    orderBy?: CultureI18nOrderByWithAggregationInput | CultureI18nOrderByWithAggregationInput[]
+    by: CultureI18nScalarFieldEnum[] | CultureI18nScalarFieldEnum
+    having?: CultureI18nScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CultureI18nCountAggregateInputType | true
+    _min?: CultureI18nMinAggregateInputType
+    _max?: CultureI18nMaxAggregateInputType
+  }
+
+  export type CultureI18nGroupByOutputType = {
+    id: string
+    cultureId: string
+    language: string
+    name: string
+    updatedAt: Date
+    createdAt: Date
+    _count: CultureI18nCountAggregateOutputType | null
+    _min: CultureI18nMinAggregateOutputType | null
+    _max: CultureI18nMaxAggregateOutputType | null
+  }
+
+  type GetCultureI18nGroupByPayload<T extends CultureI18nGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CultureI18nGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CultureI18nGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CultureI18nGroupByOutputType[P]>
+            : GetScalarType<T[P], CultureI18nGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CultureI18nSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    cultureId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["cultureI18n"]>
+
+  export type CultureI18nSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    cultureId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["cultureI18n"]>
+
+  export type CultureI18nSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    cultureId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["cultureI18n"]>
+
+  export type CultureI18nSelectScalar = {
+    id?: boolean
+    cultureId?: boolean
+    language?: boolean
+    name?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type CultureI18nOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "cultureId" | "language" | "name" | "updatedAt" | "createdAt", ExtArgs["result"]["cultureI18n"]>
+  export type CultureI18nInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }
+  export type CultureI18nIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }
+  export type CultureI18nIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }
+
+  export type $CultureI18nPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "CultureI18n"
+    objects: {
+      culture: Prisma.$CulturePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      cultureId: string
+      language: string
+      name: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["cultureI18n"]>
+    composites: {}
+  }
+
+  type CultureI18nGetPayload<S extends boolean | null | undefined | CultureI18nDefaultArgs> = $Result.GetResult<Prisma.$CultureI18nPayload, S>
+
+  type CultureI18nCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CultureI18nFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CultureI18nCountAggregateInputType | true
+    }
+
+  export interface CultureI18nDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['CultureI18n'], meta: { name: 'CultureI18n' } }
+    /**
+     * Find zero or one CultureI18n that matches the filter.
+     * @param {CultureI18nFindUniqueArgs} args - Arguments to find a CultureI18n
+     * @example
+     * // Get one CultureI18n
+     * const cultureI18n = await prisma.cultureI18n.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CultureI18nFindUniqueArgs>(args: SelectSubset<T, CultureI18nFindUniqueArgs<ExtArgs>>): Prisma__CultureI18nClient<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one CultureI18n that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CultureI18nFindUniqueOrThrowArgs} args - Arguments to find a CultureI18n
+     * @example
+     * // Get one CultureI18n
+     * const cultureI18n = await prisma.cultureI18n.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CultureI18nFindUniqueOrThrowArgs>(args: SelectSubset<T, CultureI18nFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CultureI18nClient<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CultureI18n that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureI18nFindFirstArgs} args - Arguments to find a CultureI18n
+     * @example
+     * // Get one CultureI18n
+     * const cultureI18n = await prisma.cultureI18n.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CultureI18nFindFirstArgs>(args?: SelectSubset<T, CultureI18nFindFirstArgs<ExtArgs>>): Prisma__CultureI18nClient<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CultureI18n that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureI18nFindFirstOrThrowArgs} args - Arguments to find a CultureI18n
+     * @example
+     * // Get one CultureI18n
+     * const cultureI18n = await prisma.cultureI18n.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CultureI18nFindFirstOrThrowArgs>(args?: SelectSubset<T, CultureI18nFindFirstOrThrowArgs<ExtArgs>>): Prisma__CultureI18nClient<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more CultureI18ns that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureI18nFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all CultureI18ns
+     * const cultureI18ns = await prisma.cultureI18n.findMany()
+     * 
+     * // Get first 10 CultureI18ns
+     * const cultureI18ns = await prisma.cultureI18n.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const cultureI18nWithIdOnly = await prisma.cultureI18n.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CultureI18nFindManyArgs>(args?: SelectSubset<T, CultureI18nFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a CultureI18n.
+     * @param {CultureI18nCreateArgs} args - Arguments to create a CultureI18n.
+     * @example
+     * // Create one CultureI18n
+     * const CultureI18n = await prisma.cultureI18n.create({
+     *   data: {
+     *     // ... data to create a CultureI18n
+     *   }
+     * })
+     * 
+     */
+    create<T extends CultureI18nCreateArgs>(args: SelectSubset<T, CultureI18nCreateArgs<ExtArgs>>): Prisma__CultureI18nClient<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many CultureI18ns.
+     * @param {CultureI18nCreateManyArgs} args - Arguments to create many CultureI18ns.
+     * @example
+     * // Create many CultureI18ns
+     * const cultureI18n = await prisma.cultureI18n.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CultureI18nCreateManyArgs>(args?: SelectSubset<T, CultureI18nCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many CultureI18ns and returns the data saved in the database.
+     * @param {CultureI18nCreateManyAndReturnArgs} args - Arguments to create many CultureI18ns.
+     * @example
+     * // Create many CultureI18ns
+     * const cultureI18n = await prisma.cultureI18n.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many CultureI18ns and only return the `id`
+     * const cultureI18nWithIdOnly = await prisma.cultureI18n.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CultureI18nCreateManyAndReturnArgs>(args?: SelectSubset<T, CultureI18nCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a CultureI18n.
+     * @param {CultureI18nDeleteArgs} args - Arguments to delete one CultureI18n.
+     * @example
+     * // Delete one CultureI18n
+     * const CultureI18n = await prisma.cultureI18n.delete({
+     *   where: {
+     *     // ... filter to delete one CultureI18n
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CultureI18nDeleteArgs>(args: SelectSubset<T, CultureI18nDeleteArgs<ExtArgs>>): Prisma__CultureI18nClient<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one CultureI18n.
+     * @param {CultureI18nUpdateArgs} args - Arguments to update one CultureI18n.
+     * @example
+     * // Update one CultureI18n
+     * const cultureI18n = await prisma.cultureI18n.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CultureI18nUpdateArgs>(args: SelectSubset<T, CultureI18nUpdateArgs<ExtArgs>>): Prisma__CultureI18nClient<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more CultureI18ns.
+     * @param {CultureI18nDeleteManyArgs} args - Arguments to filter CultureI18ns to delete.
+     * @example
+     * // Delete a few CultureI18ns
+     * const { count } = await prisma.cultureI18n.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CultureI18nDeleteManyArgs>(args?: SelectSubset<T, CultureI18nDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CultureI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureI18nUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many CultureI18ns
+     * const cultureI18n = await prisma.cultureI18n.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CultureI18nUpdateManyArgs>(args: SelectSubset<T, CultureI18nUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CultureI18ns and returns the data updated in the database.
+     * @param {CultureI18nUpdateManyAndReturnArgs} args - Arguments to update many CultureI18ns.
+     * @example
+     * // Update many CultureI18ns
+     * const cultureI18n = await prisma.cultureI18n.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more CultureI18ns and only return the `id`
+     * const cultureI18nWithIdOnly = await prisma.cultureI18n.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CultureI18nUpdateManyAndReturnArgs>(args: SelectSubset<T, CultureI18nUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one CultureI18n.
+     * @param {CultureI18nUpsertArgs} args - Arguments to update or create a CultureI18n.
+     * @example
+     * // Update or create a CultureI18n
+     * const cultureI18n = await prisma.cultureI18n.upsert({
+     *   create: {
+     *     // ... data to create a CultureI18n
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the CultureI18n we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CultureI18nUpsertArgs>(args: SelectSubset<T, CultureI18nUpsertArgs<ExtArgs>>): Prisma__CultureI18nClient<$Result.GetResult<Prisma.$CultureI18nPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of CultureI18ns.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureI18nCountArgs} args - Arguments to filter CultureI18ns to count.
+     * @example
+     * // Count the number of CultureI18ns
+     * const count = await prisma.cultureI18n.count({
+     *   where: {
+     *     // ... the filter for the CultureI18ns we want to count
+     *   }
+     * })
+    **/
+    count<T extends CultureI18nCountArgs>(
+      args?: Subset<T, CultureI18nCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CultureI18nCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a CultureI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureI18nAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CultureI18nAggregateArgs>(args: Subset<T, CultureI18nAggregateArgs>): Prisma.PrismaPromise<GetCultureI18nAggregateType<T>>
+
+    /**
+     * Group by CultureI18n.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CultureI18nGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CultureI18nGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CultureI18nGroupByArgs['orderBy'] }
+        : { orderBy?: CultureI18nGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CultureI18nGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCultureI18nGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the CultureI18n model
+   */
+  readonly fields: CultureI18nFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for CultureI18n.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CultureI18nClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    culture<T extends CultureDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CultureDefaultArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the CultureI18n model
+   */
+  interface CultureI18nFieldRefs {
+    readonly id: FieldRef<"CultureI18n", 'String'>
+    readonly cultureId: FieldRef<"CultureI18n", 'String'>
+    readonly language: FieldRef<"CultureI18n", 'String'>
+    readonly name: FieldRef<"CultureI18n", 'String'>
+    readonly updatedAt: FieldRef<"CultureI18n", 'DateTime'>
+    readonly createdAt: FieldRef<"CultureI18n", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * CultureI18n findUnique
+   */
+  export type CultureI18nFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which CultureI18n to fetch.
+     */
+    where: CultureI18nWhereUniqueInput
+  }
+
+  /**
+   * CultureI18n findUniqueOrThrow
+   */
+  export type CultureI18nFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which CultureI18n to fetch.
+     */
+    where: CultureI18nWhereUniqueInput
+  }
+
+  /**
+   * CultureI18n findFirst
+   */
+  export type CultureI18nFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which CultureI18n to fetch.
+     */
+    where?: CultureI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CultureI18ns to fetch.
+     */
+    orderBy?: CultureI18nOrderByWithRelationInput | CultureI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CultureI18ns.
+     */
+    cursor?: CultureI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CultureI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CultureI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CultureI18ns.
+     */
+    distinct?: CultureI18nScalarFieldEnum | CultureI18nScalarFieldEnum[]
+  }
+
+  /**
+   * CultureI18n findFirstOrThrow
+   */
+  export type CultureI18nFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which CultureI18n to fetch.
+     */
+    where?: CultureI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CultureI18ns to fetch.
+     */
+    orderBy?: CultureI18nOrderByWithRelationInput | CultureI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CultureI18ns.
+     */
+    cursor?: CultureI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CultureI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CultureI18ns.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CultureI18ns.
+     */
+    distinct?: CultureI18nScalarFieldEnum | CultureI18nScalarFieldEnum[]
+  }
+
+  /**
+   * CultureI18n findMany
+   */
+  export type CultureI18nFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    /**
+     * Filter, which CultureI18ns to fetch.
+     */
+    where?: CultureI18nWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CultureI18ns to fetch.
+     */
+    orderBy?: CultureI18nOrderByWithRelationInput | CultureI18nOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing CultureI18ns.
+     */
+    cursor?: CultureI18nWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CultureI18ns from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CultureI18ns.
+     */
+    skip?: number
+    distinct?: CultureI18nScalarFieldEnum | CultureI18nScalarFieldEnum[]
+  }
+
+  /**
+   * CultureI18n create
+   */
+  export type CultureI18nCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to create a CultureI18n.
+     */
+    data: XOR<CultureI18nCreateInput, CultureI18nUncheckedCreateInput>
+  }
+
+  /**
+   * CultureI18n createMany
+   */
+  export type CultureI18nCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many CultureI18ns.
+     */
+    data: CultureI18nCreateManyInput | CultureI18nCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * CultureI18n createManyAndReturn
+   */
+  export type CultureI18nCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * The data used to create many CultureI18ns.
+     */
+    data: CultureI18nCreateManyInput | CultureI18nCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * CultureI18n update
+   */
+  export type CultureI18nUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    /**
+     * The data needed to update a CultureI18n.
+     */
+    data: XOR<CultureI18nUpdateInput, CultureI18nUncheckedUpdateInput>
+    /**
+     * Choose, which CultureI18n to update.
+     */
+    where: CultureI18nWhereUniqueInput
+  }
+
+  /**
+   * CultureI18n updateMany
+   */
+  export type CultureI18nUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update CultureI18ns.
+     */
+    data: XOR<CultureI18nUpdateManyMutationInput, CultureI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which CultureI18ns to update
+     */
+    where?: CultureI18nWhereInput
+    /**
+     * Limit how many CultureI18ns to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * CultureI18n updateManyAndReturn
+   */
+  export type CultureI18nUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * The data used to update CultureI18ns.
+     */
+    data: XOR<CultureI18nUpdateManyMutationInput, CultureI18nUncheckedUpdateManyInput>
+    /**
+     * Filter which CultureI18ns to update
+     */
+    where?: CultureI18nWhereInput
+    /**
+     * Limit how many CultureI18ns to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * CultureI18n upsert
+   */
+  export type CultureI18nUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    /**
+     * The filter to search for the CultureI18n to update in case it exists.
+     */
+    where: CultureI18nWhereUniqueInput
+    /**
+     * In case the CultureI18n found by the `where` argument doesn't exist, create a new CultureI18n with this data.
+     */
+    create: XOR<CultureI18nCreateInput, CultureI18nUncheckedCreateInput>
+    /**
+     * In case the CultureI18n was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CultureI18nUpdateInput, CultureI18nUncheckedUpdateInput>
+  }
+
+  /**
+   * CultureI18n delete
+   */
+  export type CultureI18nDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+    /**
+     * Filter which CultureI18n to delete.
+     */
+    where: CultureI18nWhereUniqueInput
+  }
+
+  /**
+   * CultureI18n deleteMany
+   */
+  export type CultureI18nDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CultureI18ns to delete
+     */
+    where?: CultureI18nWhereInput
+    /**
+     * Limit how many CultureI18ns to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * CultureI18n without action
+   */
+  export type CultureI18nDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CultureI18n
+     */
+    select?: CultureI18nSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CultureI18n
+     */
+    omit?: CultureI18nOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CultureI18nInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model RegionPopulation
+   */
+
+  export type AggregateRegionPopulation = {
+    _count: RegionPopulationCountAggregateOutputType | null
+    _avg: RegionPopulationAvgAggregateOutputType | null
+    _sum: RegionPopulationSumAggregateOutputType | null
+    _min: RegionPopulationMinAggregateOutputType | null
+    _max: RegionPopulationMaxAggregateOutputType | null
+  }
+
+  export type RegionPopulationAvgAggregateOutputType = {
+    percentage: number | null
+  }
+
+  export type RegionPopulationSumAggregateOutputType = {
+    percentage: number | null
+  }
+
+  export type RegionPopulationMinAggregateOutputType = {
+    id: string | null
+    regionId: string | null
+    cultureId: string | null
+    percentage: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RegionPopulationMaxAggregateOutputType = {
+    id: string | null
+    regionId: string | null
+    cultureId: string | null
+    percentage: number | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type RegionPopulationCountAggregateOutputType = {
+    id: number
+    regionId: number
+    cultureId: number
+    percentage: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type RegionPopulationAvgAggregateInputType = {
+    percentage?: true
+  }
+
+  export type RegionPopulationSumAggregateInputType = {
+    percentage?: true
+  }
+
+  export type RegionPopulationMinAggregateInputType = {
+    id?: true
+    regionId?: true
+    cultureId?: true
+    percentage?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RegionPopulationMaxAggregateInputType = {
+    id?: true
+    regionId?: true
+    cultureId?: true
+    percentage?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type RegionPopulationCountAggregateInputType = {
+    id?: true
+    regionId?: true
+    cultureId?: true
+    percentage?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type RegionPopulationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RegionPopulation to aggregate.
+     */
+    where?: RegionPopulationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RegionPopulations to fetch.
+     */
+    orderBy?: RegionPopulationOrderByWithRelationInput | RegionPopulationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: RegionPopulationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RegionPopulations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RegionPopulations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned RegionPopulations
+    **/
+    _count?: true | RegionPopulationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: RegionPopulationAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: RegionPopulationSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: RegionPopulationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: RegionPopulationMaxAggregateInputType
+  }
+
+  export type GetRegionPopulationAggregateType<T extends RegionPopulationAggregateArgs> = {
+        [P in keyof T & keyof AggregateRegionPopulation]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateRegionPopulation[P]>
+      : GetScalarType<T[P], AggregateRegionPopulation[P]>
+  }
+
+
+
+
+  export type RegionPopulationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: RegionPopulationWhereInput
+    orderBy?: RegionPopulationOrderByWithAggregationInput | RegionPopulationOrderByWithAggregationInput[]
+    by: RegionPopulationScalarFieldEnum[] | RegionPopulationScalarFieldEnum
+    having?: RegionPopulationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: RegionPopulationCountAggregateInputType | true
+    _avg?: RegionPopulationAvgAggregateInputType
+    _sum?: RegionPopulationSumAggregateInputType
+    _min?: RegionPopulationMinAggregateInputType
+    _max?: RegionPopulationMaxAggregateInputType
+  }
+
+  export type RegionPopulationGroupByOutputType = {
+    id: string
+    regionId: string
+    cultureId: string
+    percentage: number
+    updatedAt: Date
+    createdAt: Date
+    _count: RegionPopulationCountAggregateOutputType | null
+    _avg: RegionPopulationAvgAggregateOutputType | null
+    _sum: RegionPopulationSumAggregateOutputType | null
+    _min: RegionPopulationMinAggregateOutputType | null
+    _max: RegionPopulationMaxAggregateOutputType | null
+  }
+
+  type GetRegionPopulationGroupByPayload<T extends RegionPopulationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<RegionPopulationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof RegionPopulationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], RegionPopulationGroupByOutputType[P]>
+            : GetScalarType<T[P], RegionPopulationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type RegionPopulationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    regionId?: boolean
+    cultureId?: boolean
+    percentage?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["regionPopulation"]>
+
+  export type RegionPopulationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    regionId?: boolean
+    cultureId?: boolean
+    percentage?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["regionPopulation"]>
+
+  export type RegionPopulationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    regionId?: boolean
+    cultureId?: boolean
+    percentage?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["regionPopulation"]>
+
+  export type RegionPopulationSelectScalar = {
+    id?: boolean
+    regionId?: boolean
+    cultureId?: boolean
+    percentage?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type RegionPopulationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "regionId" | "cultureId" | "percentage" | "updatedAt" | "createdAt", ExtArgs["result"]["regionPopulation"]>
+  export type RegionPopulationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }
+  export type RegionPopulationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }
+  export type RegionPopulationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    region?: boolean | RegionDefaultArgs<ExtArgs>
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }
+
+  export type $RegionPopulationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "RegionPopulation"
+    objects: {
+      region: Prisma.$RegionPayload<ExtArgs>
+      culture: Prisma.$CulturePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      regionId: string
+      cultureId: string
+      percentage: number
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["regionPopulation"]>
+    composites: {}
+  }
+
+  type RegionPopulationGetPayload<S extends boolean | null | undefined | RegionPopulationDefaultArgs> = $Result.GetResult<Prisma.$RegionPopulationPayload, S>
+
+  type RegionPopulationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<RegionPopulationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: RegionPopulationCountAggregateInputType | true
+    }
+
+  export interface RegionPopulationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['RegionPopulation'], meta: { name: 'RegionPopulation' } }
+    /**
+     * Find zero or one RegionPopulation that matches the filter.
+     * @param {RegionPopulationFindUniqueArgs} args - Arguments to find a RegionPopulation
+     * @example
+     * // Get one RegionPopulation
+     * const regionPopulation = await prisma.regionPopulation.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends RegionPopulationFindUniqueArgs>(args: SelectSubset<T, RegionPopulationFindUniqueArgs<ExtArgs>>): Prisma__RegionPopulationClient<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one RegionPopulation that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {RegionPopulationFindUniqueOrThrowArgs} args - Arguments to find a RegionPopulation
+     * @example
+     * // Get one RegionPopulation
+     * const regionPopulation = await prisma.regionPopulation.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends RegionPopulationFindUniqueOrThrowArgs>(args: SelectSubset<T, RegionPopulationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__RegionPopulationClient<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RegionPopulation that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionPopulationFindFirstArgs} args - Arguments to find a RegionPopulation
+     * @example
+     * // Get one RegionPopulation
+     * const regionPopulation = await prisma.regionPopulation.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends RegionPopulationFindFirstArgs>(args?: SelectSubset<T, RegionPopulationFindFirstArgs<ExtArgs>>): Prisma__RegionPopulationClient<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first RegionPopulation that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionPopulationFindFirstOrThrowArgs} args - Arguments to find a RegionPopulation
+     * @example
+     * // Get one RegionPopulation
+     * const regionPopulation = await prisma.regionPopulation.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends RegionPopulationFindFirstOrThrowArgs>(args?: SelectSubset<T, RegionPopulationFindFirstOrThrowArgs<ExtArgs>>): Prisma__RegionPopulationClient<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more RegionPopulations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionPopulationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all RegionPopulations
+     * const regionPopulations = await prisma.regionPopulation.findMany()
+     * 
+     * // Get first 10 RegionPopulations
+     * const regionPopulations = await prisma.regionPopulation.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const regionPopulationWithIdOnly = await prisma.regionPopulation.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends RegionPopulationFindManyArgs>(args?: SelectSubset<T, RegionPopulationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a RegionPopulation.
+     * @param {RegionPopulationCreateArgs} args - Arguments to create a RegionPopulation.
+     * @example
+     * // Create one RegionPopulation
+     * const RegionPopulation = await prisma.regionPopulation.create({
+     *   data: {
+     *     // ... data to create a RegionPopulation
+     *   }
+     * })
+     * 
+     */
+    create<T extends RegionPopulationCreateArgs>(args: SelectSubset<T, RegionPopulationCreateArgs<ExtArgs>>): Prisma__RegionPopulationClient<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many RegionPopulations.
+     * @param {RegionPopulationCreateManyArgs} args - Arguments to create many RegionPopulations.
+     * @example
+     * // Create many RegionPopulations
+     * const regionPopulation = await prisma.regionPopulation.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends RegionPopulationCreateManyArgs>(args?: SelectSubset<T, RegionPopulationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many RegionPopulations and returns the data saved in the database.
+     * @param {RegionPopulationCreateManyAndReturnArgs} args - Arguments to create many RegionPopulations.
+     * @example
+     * // Create many RegionPopulations
+     * const regionPopulation = await prisma.regionPopulation.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many RegionPopulations and only return the `id`
+     * const regionPopulationWithIdOnly = await prisma.regionPopulation.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends RegionPopulationCreateManyAndReturnArgs>(args?: SelectSubset<T, RegionPopulationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a RegionPopulation.
+     * @param {RegionPopulationDeleteArgs} args - Arguments to delete one RegionPopulation.
+     * @example
+     * // Delete one RegionPopulation
+     * const RegionPopulation = await prisma.regionPopulation.delete({
+     *   where: {
+     *     // ... filter to delete one RegionPopulation
+     *   }
+     * })
+     * 
+     */
+    delete<T extends RegionPopulationDeleteArgs>(args: SelectSubset<T, RegionPopulationDeleteArgs<ExtArgs>>): Prisma__RegionPopulationClient<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one RegionPopulation.
+     * @param {RegionPopulationUpdateArgs} args - Arguments to update one RegionPopulation.
+     * @example
+     * // Update one RegionPopulation
+     * const regionPopulation = await prisma.regionPopulation.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends RegionPopulationUpdateArgs>(args: SelectSubset<T, RegionPopulationUpdateArgs<ExtArgs>>): Prisma__RegionPopulationClient<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more RegionPopulations.
+     * @param {RegionPopulationDeleteManyArgs} args - Arguments to filter RegionPopulations to delete.
+     * @example
+     * // Delete a few RegionPopulations
+     * const { count } = await prisma.regionPopulation.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends RegionPopulationDeleteManyArgs>(args?: SelectSubset<T, RegionPopulationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RegionPopulations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionPopulationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many RegionPopulations
+     * const regionPopulation = await prisma.regionPopulation.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends RegionPopulationUpdateManyArgs>(args: SelectSubset<T, RegionPopulationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more RegionPopulations and returns the data updated in the database.
+     * @param {RegionPopulationUpdateManyAndReturnArgs} args - Arguments to update many RegionPopulations.
+     * @example
+     * // Update many RegionPopulations
+     * const regionPopulation = await prisma.regionPopulation.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more RegionPopulations and only return the `id`
+     * const regionPopulationWithIdOnly = await prisma.regionPopulation.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends RegionPopulationUpdateManyAndReturnArgs>(args: SelectSubset<T, RegionPopulationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one RegionPopulation.
+     * @param {RegionPopulationUpsertArgs} args - Arguments to update or create a RegionPopulation.
+     * @example
+     * // Update or create a RegionPopulation
+     * const regionPopulation = await prisma.regionPopulation.upsert({
+     *   create: {
+     *     // ... data to create a RegionPopulation
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the RegionPopulation we want to update
+     *   }
+     * })
+     */
+    upsert<T extends RegionPopulationUpsertArgs>(args: SelectSubset<T, RegionPopulationUpsertArgs<ExtArgs>>): Prisma__RegionPopulationClient<$Result.GetResult<Prisma.$RegionPopulationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of RegionPopulations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionPopulationCountArgs} args - Arguments to filter RegionPopulations to count.
+     * @example
+     * // Count the number of RegionPopulations
+     * const count = await prisma.regionPopulation.count({
+     *   where: {
+     *     // ... the filter for the RegionPopulations we want to count
+     *   }
+     * })
+    **/
+    count<T extends RegionPopulationCountArgs>(
+      args?: Subset<T, RegionPopulationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], RegionPopulationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a RegionPopulation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionPopulationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends RegionPopulationAggregateArgs>(args: Subset<T, RegionPopulationAggregateArgs>): Prisma.PrismaPromise<GetRegionPopulationAggregateType<T>>
+
+    /**
+     * Group by RegionPopulation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {RegionPopulationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends RegionPopulationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: RegionPopulationGroupByArgs['orderBy'] }
+        : { orderBy?: RegionPopulationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, RegionPopulationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetRegionPopulationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the RegionPopulation model
+   */
+  readonly fields: RegionPopulationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for RegionPopulation.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__RegionPopulationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    region<T extends RegionDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RegionDefaultArgs<ExtArgs>>): Prisma__RegionClient<$Result.GetResult<Prisma.$RegionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    culture<T extends CultureDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CultureDefaultArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the RegionPopulation model
+   */
+  interface RegionPopulationFieldRefs {
+    readonly id: FieldRef<"RegionPopulation", 'String'>
+    readonly regionId: FieldRef<"RegionPopulation", 'String'>
+    readonly cultureId: FieldRef<"RegionPopulation", 'String'>
+    readonly percentage: FieldRef<"RegionPopulation", 'Int'>
+    readonly updatedAt: FieldRef<"RegionPopulation", 'DateTime'>
+    readonly createdAt: FieldRef<"RegionPopulation", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * RegionPopulation findUnique
+   */
+  export type RegionPopulationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionPopulation to fetch.
+     */
+    where: RegionPopulationWhereUniqueInput
+  }
+
+  /**
+   * RegionPopulation findUniqueOrThrow
+   */
+  export type RegionPopulationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionPopulation to fetch.
+     */
+    where: RegionPopulationWhereUniqueInput
+  }
+
+  /**
+   * RegionPopulation findFirst
+   */
+  export type RegionPopulationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionPopulation to fetch.
+     */
+    where?: RegionPopulationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RegionPopulations to fetch.
+     */
+    orderBy?: RegionPopulationOrderByWithRelationInput | RegionPopulationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RegionPopulations.
+     */
+    cursor?: RegionPopulationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RegionPopulations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RegionPopulations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RegionPopulations.
+     */
+    distinct?: RegionPopulationScalarFieldEnum | RegionPopulationScalarFieldEnum[]
+  }
+
+  /**
+   * RegionPopulation findFirstOrThrow
+   */
+  export type RegionPopulationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionPopulation to fetch.
+     */
+    where?: RegionPopulationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RegionPopulations to fetch.
+     */
+    orderBy?: RegionPopulationOrderByWithRelationInput | RegionPopulationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for RegionPopulations.
+     */
+    cursor?: RegionPopulationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RegionPopulations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RegionPopulations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of RegionPopulations.
+     */
+    distinct?: RegionPopulationScalarFieldEnum | RegionPopulationScalarFieldEnum[]
+  }
+
+  /**
+   * RegionPopulation findMany
+   */
+  export type RegionPopulationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    /**
+     * Filter, which RegionPopulations to fetch.
+     */
+    where?: RegionPopulationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of RegionPopulations to fetch.
+     */
+    orderBy?: RegionPopulationOrderByWithRelationInput | RegionPopulationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing RegionPopulations.
+     */
+    cursor?: RegionPopulationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` RegionPopulations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` RegionPopulations.
+     */
+    skip?: number
+    distinct?: RegionPopulationScalarFieldEnum | RegionPopulationScalarFieldEnum[]
+  }
+
+  /**
+   * RegionPopulation create
+   */
+  export type RegionPopulationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    /**
+     * The data needed to create a RegionPopulation.
+     */
+    data: XOR<RegionPopulationCreateInput, RegionPopulationUncheckedCreateInput>
+  }
+
+  /**
+   * RegionPopulation createMany
+   */
+  export type RegionPopulationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many RegionPopulations.
+     */
+    data: RegionPopulationCreateManyInput | RegionPopulationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * RegionPopulation createManyAndReturn
+   */
+  export type RegionPopulationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * The data used to create many RegionPopulations.
+     */
+    data: RegionPopulationCreateManyInput | RegionPopulationCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RegionPopulation update
+   */
+  export type RegionPopulationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    /**
+     * The data needed to update a RegionPopulation.
+     */
+    data: XOR<RegionPopulationUpdateInput, RegionPopulationUncheckedUpdateInput>
+    /**
+     * Choose, which RegionPopulation to update.
+     */
+    where: RegionPopulationWhereUniqueInput
+  }
+
+  /**
+   * RegionPopulation updateMany
+   */
+  export type RegionPopulationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update RegionPopulations.
+     */
+    data: XOR<RegionPopulationUpdateManyMutationInput, RegionPopulationUncheckedUpdateManyInput>
+    /**
+     * Filter which RegionPopulations to update
+     */
+    where?: RegionPopulationWhereInput
+    /**
+     * Limit how many RegionPopulations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * RegionPopulation updateManyAndReturn
+   */
+  export type RegionPopulationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * The data used to update RegionPopulations.
+     */
+    data: XOR<RegionPopulationUpdateManyMutationInput, RegionPopulationUncheckedUpdateManyInput>
+    /**
+     * Filter which RegionPopulations to update
+     */
+    where?: RegionPopulationWhereInput
+    /**
+     * Limit how many RegionPopulations to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * RegionPopulation upsert
+   */
+  export type RegionPopulationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    /**
+     * The filter to search for the RegionPopulation to update in case it exists.
+     */
+    where: RegionPopulationWhereUniqueInput
+    /**
+     * In case the RegionPopulation found by the `where` argument doesn't exist, create a new RegionPopulation with this data.
+     */
+    create: XOR<RegionPopulationCreateInput, RegionPopulationUncheckedCreateInput>
+    /**
+     * In case the RegionPopulation was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<RegionPopulationUpdateInput, RegionPopulationUncheckedUpdateInput>
+  }
+
+  /**
+   * RegionPopulation delete
+   */
+  export type RegionPopulationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+    /**
+     * Filter which RegionPopulation to delete.
+     */
+    where: RegionPopulationWhereUniqueInput
+  }
+
+  /**
+   * RegionPopulation deleteMany
+   */
+  export type RegionPopulationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which RegionPopulations to delete
+     */
+    where?: RegionPopulationWhereInput
+    /**
+     * Limit how many RegionPopulations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * RegionPopulation without action
+   */
+  export type RegionPopulationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the RegionPopulation
+     */
+    select?: RegionPopulationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the RegionPopulation
+     */
+    omit?: RegionPopulationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: RegionPopulationInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model NameModel
+   */
+
+  export type AggregateNameModel = {
+    _count: NameModelCountAggregateOutputType | null
+    _min: NameModelMinAggregateOutputType | null
+    _max: NameModelMaxAggregateOutputType | null
+  }
+
+  export type NameModelMinAggregateOutputType = {
+    id: string | null
+    cultureId: string | null
+    sex: $Enums.SexType | null
+    firstnameTemplate: string | null
+    lastnameTemplate: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type NameModelMaxAggregateOutputType = {
+    id: string | null
+    cultureId: string | null
+    sex: $Enums.SexType | null
+    firstnameTemplate: string | null
+    lastnameTemplate: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type NameModelCountAggregateOutputType = {
+    id: number
+    cultureId: number
+    sex: number
+    firstnameTemplate: number
+    lastnameTemplate: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type NameModelMinAggregateInputType = {
+    id?: true
+    cultureId?: true
+    sex?: true
+    firstnameTemplate?: true
+    lastnameTemplate?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type NameModelMaxAggregateInputType = {
+    id?: true
+    cultureId?: true
+    sex?: true
+    firstnameTemplate?: true
+    lastnameTemplate?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type NameModelCountAggregateInputType = {
+    id?: true
+    cultureId?: true
+    sex?: true
+    firstnameTemplate?: true
+    lastnameTemplate?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type NameModelAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which NameModel to aggregate.
+     */
+    where?: NameModelWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameModels to fetch.
+     */
+    orderBy?: NameModelOrderByWithRelationInput | NameModelOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: NameModelWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameModels from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameModels.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned NameModels
+    **/
+    _count?: true | NameModelCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: NameModelMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: NameModelMaxAggregateInputType
+  }
+
+  export type GetNameModelAggregateType<T extends NameModelAggregateArgs> = {
+        [P in keyof T & keyof AggregateNameModel]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateNameModel[P]>
+      : GetScalarType<T[P], AggregateNameModel[P]>
+  }
+
+
+
+
+  export type NameModelGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: NameModelWhereInput
+    orderBy?: NameModelOrderByWithAggregationInput | NameModelOrderByWithAggregationInput[]
+    by: NameModelScalarFieldEnum[] | NameModelScalarFieldEnum
+    having?: NameModelScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: NameModelCountAggregateInputType | true
+    _min?: NameModelMinAggregateInputType
+    _max?: NameModelMaxAggregateInputType
+  }
+
+  export type NameModelGroupByOutputType = {
+    id: string
+    cultureId: string
+    sex: $Enums.SexType
+    firstnameTemplate: string
+    lastnameTemplate: string
+    updatedAt: Date
+    createdAt: Date
+    _count: NameModelCountAggregateOutputType | null
+    _min: NameModelMinAggregateOutputType | null
+    _max: NameModelMaxAggregateOutputType | null
+  }
+
+  type GetNameModelGroupByPayload<T extends NameModelGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<NameModelGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof NameModelGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], NameModelGroupByOutputType[P]>
+            : GetScalarType<T[P], NameModelGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type NameModelSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    cultureId?: boolean
+    sex?: boolean
+    firstnameTemplate?: boolean
+    lastnameTemplate?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["nameModel"]>
+
+  export type NameModelSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    cultureId?: boolean
+    sex?: boolean
+    firstnameTemplate?: boolean
+    lastnameTemplate?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["nameModel"]>
+
+  export type NameModelSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    cultureId?: boolean
+    sex?: boolean
+    firstnameTemplate?: boolean
+    lastnameTemplate?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["nameModel"]>
+
+  export type NameModelSelectScalar = {
+    id?: boolean
+    cultureId?: boolean
+    sex?: boolean
+    firstnameTemplate?: boolean
+    lastnameTemplate?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type NameModelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "cultureId" | "sex" | "firstnameTemplate" | "lastnameTemplate" | "updatedAt" | "createdAt", ExtArgs["result"]["nameModel"]>
+  export type NameModelInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }
+  export type NameModelIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }
+  export type NameModelIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    culture?: boolean | CultureDefaultArgs<ExtArgs>
+  }
+
+  export type $NameModelPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "NameModel"
+    objects: {
+      culture: Prisma.$CulturePayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      cultureId: string
+      sex: $Enums.SexType
+      firstnameTemplate: string
+      lastnameTemplate: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["nameModel"]>
+    composites: {}
+  }
+
+  type NameModelGetPayload<S extends boolean | null | undefined | NameModelDefaultArgs> = $Result.GetResult<Prisma.$NameModelPayload, S>
+
+  type NameModelCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<NameModelFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: NameModelCountAggregateInputType | true
+    }
+
+  export interface NameModelDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['NameModel'], meta: { name: 'NameModel' } }
+    /**
+     * Find zero or one NameModel that matches the filter.
+     * @param {NameModelFindUniqueArgs} args - Arguments to find a NameModel
+     * @example
+     * // Get one NameModel
+     * const nameModel = await prisma.nameModel.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends NameModelFindUniqueArgs>(args: SelectSubset<T, NameModelFindUniqueArgs<ExtArgs>>): Prisma__NameModelClient<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one NameModel that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {NameModelFindUniqueOrThrowArgs} args - Arguments to find a NameModel
+     * @example
+     * // Get one NameModel
+     * const nameModel = await prisma.nameModel.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends NameModelFindUniqueOrThrowArgs>(args: SelectSubset<T, NameModelFindUniqueOrThrowArgs<ExtArgs>>): Prisma__NameModelClient<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first NameModel that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameModelFindFirstArgs} args - Arguments to find a NameModel
+     * @example
+     * // Get one NameModel
+     * const nameModel = await prisma.nameModel.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends NameModelFindFirstArgs>(args?: SelectSubset<T, NameModelFindFirstArgs<ExtArgs>>): Prisma__NameModelClient<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first NameModel that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameModelFindFirstOrThrowArgs} args - Arguments to find a NameModel
+     * @example
+     * // Get one NameModel
+     * const nameModel = await prisma.nameModel.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends NameModelFindFirstOrThrowArgs>(args?: SelectSubset<T, NameModelFindFirstOrThrowArgs<ExtArgs>>): Prisma__NameModelClient<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more NameModels that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameModelFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all NameModels
+     * const nameModels = await prisma.nameModel.findMany()
+     * 
+     * // Get first 10 NameModels
+     * const nameModels = await prisma.nameModel.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const nameModelWithIdOnly = await prisma.nameModel.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends NameModelFindManyArgs>(args?: SelectSubset<T, NameModelFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a NameModel.
+     * @param {NameModelCreateArgs} args - Arguments to create a NameModel.
+     * @example
+     * // Create one NameModel
+     * const NameModel = await prisma.nameModel.create({
+     *   data: {
+     *     // ... data to create a NameModel
+     *   }
+     * })
+     * 
+     */
+    create<T extends NameModelCreateArgs>(args: SelectSubset<T, NameModelCreateArgs<ExtArgs>>): Prisma__NameModelClient<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many NameModels.
+     * @param {NameModelCreateManyArgs} args - Arguments to create many NameModels.
+     * @example
+     * // Create many NameModels
+     * const nameModel = await prisma.nameModel.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends NameModelCreateManyArgs>(args?: SelectSubset<T, NameModelCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many NameModels and returns the data saved in the database.
+     * @param {NameModelCreateManyAndReturnArgs} args - Arguments to create many NameModels.
+     * @example
+     * // Create many NameModels
+     * const nameModel = await prisma.nameModel.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many NameModels and only return the `id`
+     * const nameModelWithIdOnly = await prisma.nameModel.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends NameModelCreateManyAndReturnArgs>(args?: SelectSubset<T, NameModelCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a NameModel.
+     * @param {NameModelDeleteArgs} args - Arguments to delete one NameModel.
+     * @example
+     * // Delete one NameModel
+     * const NameModel = await prisma.nameModel.delete({
+     *   where: {
+     *     // ... filter to delete one NameModel
+     *   }
+     * })
+     * 
+     */
+    delete<T extends NameModelDeleteArgs>(args: SelectSubset<T, NameModelDeleteArgs<ExtArgs>>): Prisma__NameModelClient<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one NameModel.
+     * @param {NameModelUpdateArgs} args - Arguments to update one NameModel.
+     * @example
+     * // Update one NameModel
+     * const nameModel = await prisma.nameModel.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends NameModelUpdateArgs>(args: SelectSubset<T, NameModelUpdateArgs<ExtArgs>>): Prisma__NameModelClient<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more NameModels.
+     * @param {NameModelDeleteManyArgs} args - Arguments to filter NameModels to delete.
+     * @example
+     * // Delete a few NameModels
+     * const { count } = await prisma.nameModel.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends NameModelDeleteManyArgs>(args?: SelectSubset<T, NameModelDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more NameModels.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameModelUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many NameModels
+     * const nameModel = await prisma.nameModel.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends NameModelUpdateManyArgs>(args: SelectSubset<T, NameModelUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more NameModels and returns the data updated in the database.
+     * @param {NameModelUpdateManyAndReturnArgs} args - Arguments to update many NameModels.
+     * @example
+     * // Update many NameModels
+     * const nameModel = await prisma.nameModel.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more NameModels and only return the `id`
+     * const nameModelWithIdOnly = await prisma.nameModel.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends NameModelUpdateManyAndReturnArgs>(args: SelectSubset<T, NameModelUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one NameModel.
+     * @param {NameModelUpsertArgs} args - Arguments to update or create a NameModel.
+     * @example
+     * // Update or create a NameModel
+     * const nameModel = await prisma.nameModel.upsert({
+     *   create: {
+     *     // ... data to create a NameModel
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the NameModel we want to update
+     *   }
+     * })
+     */
+    upsert<T extends NameModelUpsertArgs>(args: SelectSubset<T, NameModelUpsertArgs<ExtArgs>>): Prisma__NameModelClient<$Result.GetResult<Prisma.$NameModelPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of NameModels.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameModelCountArgs} args - Arguments to filter NameModels to count.
+     * @example
+     * // Count the number of NameModels
+     * const count = await prisma.nameModel.count({
+     *   where: {
+     *     // ... the filter for the NameModels we want to count
+     *   }
+     * })
+    **/
+    count<T extends NameModelCountArgs>(
+      args?: Subset<T, NameModelCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], NameModelCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a NameModel.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameModelAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends NameModelAggregateArgs>(args: Subset<T, NameModelAggregateArgs>): Prisma.PrismaPromise<GetNameModelAggregateType<T>>
+
+    /**
+     * Group by NameModel.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameModelGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends NameModelGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: NameModelGroupByArgs['orderBy'] }
+        : { orderBy?: NameModelGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, NameModelGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetNameModelGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the NameModel model
+   */
+  readonly fields: NameModelFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for NameModel.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__NameModelClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    culture<T extends CultureDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CultureDefaultArgs<ExtArgs>>): Prisma__CultureClient<$Result.GetResult<Prisma.$CulturePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the NameModel model
+   */
+  interface NameModelFieldRefs {
+    readonly id: FieldRef<"NameModel", 'String'>
+    readonly cultureId: FieldRef<"NameModel", 'String'>
+    readonly sex: FieldRef<"NameModel", 'SexType'>
+    readonly firstnameTemplate: FieldRef<"NameModel", 'String'>
+    readonly lastnameTemplate: FieldRef<"NameModel", 'String'>
+    readonly updatedAt: FieldRef<"NameModel", 'DateTime'>
+    readonly createdAt: FieldRef<"NameModel", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * NameModel findUnique
+   */
+  export type NameModelFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    /**
+     * Filter, which NameModel to fetch.
+     */
+    where: NameModelWhereUniqueInput
+  }
+
+  /**
+   * NameModel findUniqueOrThrow
+   */
+  export type NameModelFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    /**
+     * Filter, which NameModel to fetch.
+     */
+    where: NameModelWhereUniqueInput
+  }
+
+  /**
+   * NameModel findFirst
+   */
+  export type NameModelFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    /**
+     * Filter, which NameModel to fetch.
+     */
+    where?: NameModelWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameModels to fetch.
+     */
+    orderBy?: NameModelOrderByWithRelationInput | NameModelOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for NameModels.
+     */
+    cursor?: NameModelWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameModels from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameModels.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of NameModels.
+     */
+    distinct?: NameModelScalarFieldEnum | NameModelScalarFieldEnum[]
+  }
+
+  /**
+   * NameModel findFirstOrThrow
+   */
+  export type NameModelFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    /**
+     * Filter, which NameModel to fetch.
+     */
+    where?: NameModelWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameModels to fetch.
+     */
+    orderBy?: NameModelOrderByWithRelationInput | NameModelOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for NameModels.
+     */
+    cursor?: NameModelWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameModels from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameModels.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of NameModels.
+     */
+    distinct?: NameModelScalarFieldEnum | NameModelScalarFieldEnum[]
+  }
+
+  /**
+   * NameModel findMany
+   */
+  export type NameModelFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    /**
+     * Filter, which NameModels to fetch.
+     */
+    where?: NameModelWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameModels to fetch.
+     */
+    orderBy?: NameModelOrderByWithRelationInput | NameModelOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing NameModels.
+     */
+    cursor?: NameModelWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameModels from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameModels.
+     */
+    skip?: number
+    distinct?: NameModelScalarFieldEnum | NameModelScalarFieldEnum[]
+  }
+
+  /**
+   * NameModel create
+   */
+  export type NameModelCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    /**
+     * The data needed to create a NameModel.
+     */
+    data: XOR<NameModelCreateInput, NameModelUncheckedCreateInput>
+  }
+
+  /**
+   * NameModel createMany
+   */
+  export type NameModelCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many NameModels.
+     */
+    data: NameModelCreateManyInput | NameModelCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * NameModel createManyAndReturn
+   */
+  export type NameModelCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * The data used to create many NameModels.
+     */
+    data: NameModelCreateManyInput | NameModelCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * NameModel update
+   */
+  export type NameModelUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    /**
+     * The data needed to update a NameModel.
+     */
+    data: XOR<NameModelUpdateInput, NameModelUncheckedUpdateInput>
+    /**
+     * Choose, which NameModel to update.
+     */
+    where: NameModelWhereUniqueInput
+  }
+
+  /**
+   * NameModel updateMany
+   */
+  export type NameModelUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update NameModels.
+     */
+    data: XOR<NameModelUpdateManyMutationInput, NameModelUncheckedUpdateManyInput>
+    /**
+     * Filter which NameModels to update
+     */
+    where?: NameModelWhereInput
+    /**
+     * Limit how many NameModels to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * NameModel updateManyAndReturn
+   */
+  export type NameModelUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * The data used to update NameModels.
+     */
+    data: XOR<NameModelUpdateManyMutationInput, NameModelUncheckedUpdateManyInput>
+    /**
+     * Filter which NameModels to update
+     */
+    where?: NameModelWhereInput
+    /**
+     * Limit how many NameModels to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * NameModel upsert
+   */
+  export type NameModelUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    /**
+     * The filter to search for the NameModel to update in case it exists.
+     */
+    where: NameModelWhereUniqueInput
+    /**
+     * In case the NameModel found by the `where` argument doesn't exist, create a new NameModel with this data.
+     */
+    create: XOR<NameModelCreateInput, NameModelUncheckedCreateInput>
+    /**
+     * In case the NameModel was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<NameModelUpdateInput, NameModelUncheckedUpdateInput>
+  }
+
+  /**
+   * NameModel delete
+   */
+  export type NameModelDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+    /**
+     * Filter which NameModel to delete.
+     */
+    where: NameModelWhereUniqueInput
+  }
+
+  /**
+   * NameModel deleteMany
+   */
+  export type NameModelDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which NameModels to delete
+     */
+    where?: NameModelWhereInput
+    /**
+     * Limit how many NameModels to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * NameModel without action
+   */
+  export type NameModelDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameModel
+     */
+    select?: NameModelSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameModel
+     */
+    omit?: NameModelOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameModelInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model NameComponentKey
+   */
+
+  export type AggregateNameComponentKey = {
+    _count: NameComponentKeyCountAggregateOutputType | null
+    _min: NameComponentKeyMinAggregateOutputType | null
+    _max: NameComponentKeyMaxAggregateOutputType | null
+  }
+
+  export type NameComponentKeyMinAggregateOutputType = {
+    id: string | null
+    key: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type NameComponentKeyMaxAggregateOutputType = {
+    id: string | null
+    key: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type NameComponentKeyCountAggregateOutputType = {
+    id: number
+    key: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type NameComponentKeyMinAggregateInputType = {
+    id?: true
+    key?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type NameComponentKeyMaxAggregateInputType = {
+    id?: true
+    key?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type NameComponentKeyCountAggregateInputType = {
+    id?: true
+    key?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type NameComponentKeyAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which NameComponentKey to aggregate.
+     */
+    where?: NameComponentKeyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameComponentKeys to fetch.
+     */
+    orderBy?: NameComponentKeyOrderByWithRelationInput | NameComponentKeyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: NameComponentKeyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameComponentKeys from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameComponentKeys.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned NameComponentKeys
+    **/
+    _count?: true | NameComponentKeyCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: NameComponentKeyMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: NameComponentKeyMaxAggregateInputType
+  }
+
+  export type GetNameComponentKeyAggregateType<T extends NameComponentKeyAggregateArgs> = {
+        [P in keyof T & keyof AggregateNameComponentKey]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateNameComponentKey[P]>
+      : GetScalarType<T[P], AggregateNameComponentKey[P]>
+  }
+
+
+
+
+  export type NameComponentKeyGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: NameComponentKeyWhereInput
+    orderBy?: NameComponentKeyOrderByWithAggregationInput | NameComponentKeyOrderByWithAggregationInput[]
+    by: NameComponentKeyScalarFieldEnum[] | NameComponentKeyScalarFieldEnum
+    having?: NameComponentKeyScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: NameComponentKeyCountAggregateInputType | true
+    _min?: NameComponentKeyMinAggregateInputType
+    _max?: NameComponentKeyMaxAggregateInputType
+  }
+
+  export type NameComponentKeyGroupByOutputType = {
+    id: string
+    key: string
+    updatedAt: Date
+    createdAt: Date
+    _count: NameComponentKeyCountAggregateOutputType | null
+    _min: NameComponentKeyMinAggregateOutputType | null
+    _max: NameComponentKeyMaxAggregateOutputType | null
+  }
+
+  type GetNameComponentKeyGroupByPayload<T extends NameComponentKeyGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<NameComponentKeyGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof NameComponentKeyGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], NameComponentKeyGroupByOutputType[P]>
+            : GetScalarType<T[P], NameComponentKeyGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type NameComponentKeySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    key?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    values?: boolean | NameComponentKey$valuesArgs<ExtArgs>
+    _count?: boolean | NameComponentKeyCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["nameComponentKey"]>
+
+  export type NameComponentKeySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    key?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["nameComponentKey"]>
+
+  export type NameComponentKeySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    key?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }, ExtArgs["result"]["nameComponentKey"]>
+
+  export type NameComponentKeySelectScalar = {
+    id?: boolean
+    key?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type NameComponentKeyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "key" | "updatedAt" | "createdAt", ExtArgs["result"]["nameComponentKey"]>
+  export type NameComponentKeyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    values?: boolean | NameComponentKey$valuesArgs<ExtArgs>
+    _count?: boolean | NameComponentKeyCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type NameComponentKeyIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type NameComponentKeyIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $NameComponentKeyPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "NameComponentKey"
+    objects: {
+      values: Prisma.$NameComponentValuePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      key: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["nameComponentKey"]>
+    composites: {}
+  }
+
+  type NameComponentKeyGetPayload<S extends boolean | null | undefined | NameComponentKeyDefaultArgs> = $Result.GetResult<Prisma.$NameComponentKeyPayload, S>
+
+  type NameComponentKeyCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<NameComponentKeyFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: NameComponentKeyCountAggregateInputType | true
+    }
+
+  export interface NameComponentKeyDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['NameComponentKey'], meta: { name: 'NameComponentKey' } }
+    /**
+     * Find zero or one NameComponentKey that matches the filter.
+     * @param {NameComponentKeyFindUniqueArgs} args - Arguments to find a NameComponentKey
+     * @example
+     * // Get one NameComponentKey
+     * const nameComponentKey = await prisma.nameComponentKey.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends NameComponentKeyFindUniqueArgs>(args: SelectSubset<T, NameComponentKeyFindUniqueArgs<ExtArgs>>): Prisma__NameComponentKeyClient<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one NameComponentKey that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {NameComponentKeyFindUniqueOrThrowArgs} args - Arguments to find a NameComponentKey
+     * @example
+     * // Get one NameComponentKey
+     * const nameComponentKey = await prisma.nameComponentKey.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends NameComponentKeyFindUniqueOrThrowArgs>(args: SelectSubset<T, NameComponentKeyFindUniqueOrThrowArgs<ExtArgs>>): Prisma__NameComponentKeyClient<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first NameComponentKey that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentKeyFindFirstArgs} args - Arguments to find a NameComponentKey
+     * @example
+     * // Get one NameComponentKey
+     * const nameComponentKey = await prisma.nameComponentKey.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends NameComponentKeyFindFirstArgs>(args?: SelectSubset<T, NameComponentKeyFindFirstArgs<ExtArgs>>): Prisma__NameComponentKeyClient<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first NameComponentKey that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentKeyFindFirstOrThrowArgs} args - Arguments to find a NameComponentKey
+     * @example
+     * // Get one NameComponentKey
+     * const nameComponentKey = await prisma.nameComponentKey.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends NameComponentKeyFindFirstOrThrowArgs>(args?: SelectSubset<T, NameComponentKeyFindFirstOrThrowArgs<ExtArgs>>): Prisma__NameComponentKeyClient<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more NameComponentKeys that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentKeyFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all NameComponentKeys
+     * const nameComponentKeys = await prisma.nameComponentKey.findMany()
+     * 
+     * // Get first 10 NameComponentKeys
+     * const nameComponentKeys = await prisma.nameComponentKey.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const nameComponentKeyWithIdOnly = await prisma.nameComponentKey.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends NameComponentKeyFindManyArgs>(args?: SelectSubset<T, NameComponentKeyFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a NameComponentKey.
+     * @param {NameComponentKeyCreateArgs} args - Arguments to create a NameComponentKey.
+     * @example
+     * // Create one NameComponentKey
+     * const NameComponentKey = await prisma.nameComponentKey.create({
+     *   data: {
+     *     // ... data to create a NameComponentKey
+     *   }
+     * })
+     * 
+     */
+    create<T extends NameComponentKeyCreateArgs>(args: SelectSubset<T, NameComponentKeyCreateArgs<ExtArgs>>): Prisma__NameComponentKeyClient<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many NameComponentKeys.
+     * @param {NameComponentKeyCreateManyArgs} args - Arguments to create many NameComponentKeys.
+     * @example
+     * // Create many NameComponentKeys
+     * const nameComponentKey = await prisma.nameComponentKey.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends NameComponentKeyCreateManyArgs>(args?: SelectSubset<T, NameComponentKeyCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many NameComponentKeys and returns the data saved in the database.
+     * @param {NameComponentKeyCreateManyAndReturnArgs} args - Arguments to create many NameComponentKeys.
+     * @example
+     * // Create many NameComponentKeys
+     * const nameComponentKey = await prisma.nameComponentKey.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many NameComponentKeys and only return the `id`
+     * const nameComponentKeyWithIdOnly = await prisma.nameComponentKey.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends NameComponentKeyCreateManyAndReturnArgs>(args?: SelectSubset<T, NameComponentKeyCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a NameComponentKey.
+     * @param {NameComponentKeyDeleteArgs} args - Arguments to delete one NameComponentKey.
+     * @example
+     * // Delete one NameComponentKey
+     * const NameComponentKey = await prisma.nameComponentKey.delete({
+     *   where: {
+     *     // ... filter to delete one NameComponentKey
+     *   }
+     * })
+     * 
+     */
+    delete<T extends NameComponentKeyDeleteArgs>(args: SelectSubset<T, NameComponentKeyDeleteArgs<ExtArgs>>): Prisma__NameComponentKeyClient<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one NameComponentKey.
+     * @param {NameComponentKeyUpdateArgs} args - Arguments to update one NameComponentKey.
+     * @example
+     * // Update one NameComponentKey
+     * const nameComponentKey = await prisma.nameComponentKey.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends NameComponentKeyUpdateArgs>(args: SelectSubset<T, NameComponentKeyUpdateArgs<ExtArgs>>): Prisma__NameComponentKeyClient<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more NameComponentKeys.
+     * @param {NameComponentKeyDeleteManyArgs} args - Arguments to filter NameComponentKeys to delete.
+     * @example
+     * // Delete a few NameComponentKeys
+     * const { count } = await prisma.nameComponentKey.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends NameComponentKeyDeleteManyArgs>(args?: SelectSubset<T, NameComponentKeyDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more NameComponentKeys.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentKeyUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many NameComponentKeys
+     * const nameComponentKey = await prisma.nameComponentKey.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends NameComponentKeyUpdateManyArgs>(args: SelectSubset<T, NameComponentKeyUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more NameComponentKeys and returns the data updated in the database.
+     * @param {NameComponentKeyUpdateManyAndReturnArgs} args - Arguments to update many NameComponentKeys.
+     * @example
+     * // Update many NameComponentKeys
+     * const nameComponentKey = await prisma.nameComponentKey.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more NameComponentKeys and only return the `id`
+     * const nameComponentKeyWithIdOnly = await prisma.nameComponentKey.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends NameComponentKeyUpdateManyAndReturnArgs>(args: SelectSubset<T, NameComponentKeyUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one NameComponentKey.
+     * @param {NameComponentKeyUpsertArgs} args - Arguments to update or create a NameComponentKey.
+     * @example
+     * // Update or create a NameComponentKey
+     * const nameComponentKey = await prisma.nameComponentKey.upsert({
+     *   create: {
+     *     // ... data to create a NameComponentKey
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the NameComponentKey we want to update
+     *   }
+     * })
+     */
+    upsert<T extends NameComponentKeyUpsertArgs>(args: SelectSubset<T, NameComponentKeyUpsertArgs<ExtArgs>>): Prisma__NameComponentKeyClient<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of NameComponentKeys.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentKeyCountArgs} args - Arguments to filter NameComponentKeys to count.
+     * @example
+     * // Count the number of NameComponentKeys
+     * const count = await prisma.nameComponentKey.count({
+     *   where: {
+     *     // ... the filter for the NameComponentKeys we want to count
+     *   }
+     * })
+    **/
+    count<T extends NameComponentKeyCountArgs>(
+      args?: Subset<T, NameComponentKeyCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], NameComponentKeyCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a NameComponentKey.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentKeyAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends NameComponentKeyAggregateArgs>(args: Subset<T, NameComponentKeyAggregateArgs>): Prisma.PrismaPromise<GetNameComponentKeyAggregateType<T>>
+
+    /**
+     * Group by NameComponentKey.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentKeyGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends NameComponentKeyGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: NameComponentKeyGroupByArgs['orderBy'] }
+        : { orderBy?: NameComponentKeyGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, NameComponentKeyGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetNameComponentKeyGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the NameComponentKey model
+   */
+  readonly fields: NameComponentKeyFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for NameComponentKey.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__NameComponentKeyClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    values<T extends NameComponentKey$valuesArgs<ExtArgs> = {}>(args?: Subset<T, NameComponentKey$valuesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the NameComponentKey model
+   */
+  interface NameComponentKeyFieldRefs {
+    readonly id: FieldRef<"NameComponentKey", 'String'>
+    readonly key: FieldRef<"NameComponentKey", 'String'>
+    readonly updatedAt: FieldRef<"NameComponentKey", 'DateTime'>
+    readonly createdAt: FieldRef<"NameComponentKey", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * NameComponentKey findUnique
+   */
+  export type NameComponentKeyFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentKey to fetch.
+     */
+    where: NameComponentKeyWhereUniqueInput
+  }
+
+  /**
+   * NameComponentKey findUniqueOrThrow
+   */
+  export type NameComponentKeyFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentKey to fetch.
+     */
+    where: NameComponentKeyWhereUniqueInput
+  }
+
+  /**
+   * NameComponentKey findFirst
+   */
+  export type NameComponentKeyFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentKey to fetch.
+     */
+    where?: NameComponentKeyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameComponentKeys to fetch.
+     */
+    orderBy?: NameComponentKeyOrderByWithRelationInput | NameComponentKeyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for NameComponentKeys.
+     */
+    cursor?: NameComponentKeyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameComponentKeys from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameComponentKeys.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of NameComponentKeys.
+     */
+    distinct?: NameComponentKeyScalarFieldEnum | NameComponentKeyScalarFieldEnum[]
+  }
+
+  /**
+   * NameComponentKey findFirstOrThrow
+   */
+  export type NameComponentKeyFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentKey to fetch.
+     */
+    where?: NameComponentKeyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameComponentKeys to fetch.
+     */
+    orderBy?: NameComponentKeyOrderByWithRelationInput | NameComponentKeyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for NameComponentKeys.
+     */
+    cursor?: NameComponentKeyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameComponentKeys from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameComponentKeys.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of NameComponentKeys.
+     */
+    distinct?: NameComponentKeyScalarFieldEnum | NameComponentKeyScalarFieldEnum[]
+  }
+
+  /**
+   * NameComponentKey findMany
+   */
+  export type NameComponentKeyFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentKeys to fetch.
+     */
+    where?: NameComponentKeyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameComponentKeys to fetch.
+     */
+    orderBy?: NameComponentKeyOrderByWithRelationInput | NameComponentKeyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing NameComponentKeys.
+     */
+    cursor?: NameComponentKeyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameComponentKeys from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameComponentKeys.
+     */
+    skip?: number
+    distinct?: NameComponentKeyScalarFieldEnum | NameComponentKeyScalarFieldEnum[]
+  }
+
+  /**
+   * NameComponentKey create
+   */
+  export type NameComponentKeyCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+    /**
+     * The data needed to create a NameComponentKey.
+     */
+    data: XOR<NameComponentKeyCreateInput, NameComponentKeyUncheckedCreateInput>
+  }
+
+  /**
+   * NameComponentKey createMany
+   */
+  export type NameComponentKeyCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many NameComponentKeys.
+     */
+    data: NameComponentKeyCreateManyInput | NameComponentKeyCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * NameComponentKey createManyAndReturn
+   */
+  export type NameComponentKeyCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * The data used to create many NameComponentKeys.
+     */
+    data: NameComponentKeyCreateManyInput | NameComponentKeyCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * NameComponentKey update
+   */
+  export type NameComponentKeyUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+    /**
+     * The data needed to update a NameComponentKey.
+     */
+    data: XOR<NameComponentKeyUpdateInput, NameComponentKeyUncheckedUpdateInput>
+    /**
+     * Choose, which NameComponentKey to update.
+     */
+    where: NameComponentKeyWhereUniqueInput
+  }
+
+  /**
+   * NameComponentKey updateMany
+   */
+  export type NameComponentKeyUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update NameComponentKeys.
+     */
+    data: XOR<NameComponentKeyUpdateManyMutationInput, NameComponentKeyUncheckedUpdateManyInput>
+    /**
+     * Filter which NameComponentKeys to update
+     */
+    where?: NameComponentKeyWhereInput
+    /**
+     * Limit how many NameComponentKeys to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * NameComponentKey updateManyAndReturn
+   */
+  export type NameComponentKeyUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * The data used to update NameComponentKeys.
+     */
+    data: XOR<NameComponentKeyUpdateManyMutationInput, NameComponentKeyUncheckedUpdateManyInput>
+    /**
+     * Filter which NameComponentKeys to update
+     */
+    where?: NameComponentKeyWhereInput
+    /**
+     * Limit how many NameComponentKeys to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * NameComponentKey upsert
+   */
+  export type NameComponentKeyUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+    /**
+     * The filter to search for the NameComponentKey to update in case it exists.
+     */
+    where: NameComponentKeyWhereUniqueInput
+    /**
+     * In case the NameComponentKey found by the `where` argument doesn't exist, create a new NameComponentKey with this data.
+     */
+    create: XOR<NameComponentKeyCreateInput, NameComponentKeyUncheckedCreateInput>
+    /**
+     * In case the NameComponentKey was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<NameComponentKeyUpdateInput, NameComponentKeyUncheckedUpdateInput>
+  }
+
+  /**
+   * NameComponentKey delete
+   */
+  export type NameComponentKeyDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+    /**
+     * Filter which NameComponentKey to delete.
+     */
+    where: NameComponentKeyWhereUniqueInput
+  }
+
+  /**
+   * NameComponentKey deleteMany
+   */
+  export type NameComponentKeyDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which NameComponentKeys to delete
+     */
+    where?: NameComponentKeyWhereInput
+    /**
+     * Limit how many NameComponentKeys to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * NameComponentKey.values
+   */
+  export type NameComponentKey$valuesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    where?: NameComponentValueWhereInput
+    orderBy?: NameComponentValueOrderByWithRelationInput | NameComponentValueOrderByWithRelationInput[]
+    cursor?: NameComponentValueWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: NameComponentValueScalarFieldEnum | NameComponentValueScalarFieldEnum[]
+  }
+
+  /**
+   * NameComponentKey without action
+   */
+  export type NameComponentKeyDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentKey
+     */
+    select?: NameComponentKeySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentKey
+     */
+    omit?: NameComponentKeyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentKeyInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model NameComponentValue
+   */
+
+  export type AggregateNameComponentValue = {
+    _count: NameComponentValueCountAggregateOutputType | null
+    _min: NameComponentValueMinAggregateOutputType | null
+    _max: NameComponentValueMaxAggregateOutputType | null
+  }
+
+  export type NameComponentValueMinAggregateOutputType = {
+    id: string | null
+    keyId: string | null
+    value: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type NameComponentValueMaxAggregateOutputType = {
+    id: string | null
+    keyId: string | null
+    value: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type NameComponentValueCountAggregateOutputType = {
+    id: number
+    keyId: number
+    value: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type NameComponentValueMinAggregateInputType = {
+    id?: true
+    keyId?: true
+    value?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type NameComponentValueMaxAggregateInputType = {
+    id?: true
+    keyId?: true
+    value?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type NameComponentValueCountAggregateInputType = {
+    id?: true
+    keyId?: true
+    value?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type NameComponentValueAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which NameComponentValue to aggregate.
+     */
+    where?: NameComponentValueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameComponentValues to fetch.
+     */
+    orderBy?: NameComponentValueOrderByWithRelationInput | NameComponentValueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: NameComponentValueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameComponentValues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameComponentValues.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned NameComponentValues
+    **/
+    _count?: true | NameComponentValueCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: NameComponentValueMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: NameComponentValueMaxAggregateInputType
+  }
+
+  export type GetNameComponentValueAggregateType<T extends NameComponentValueAggregateArgs> = {
+        [P in keyof T & keyof AggregateNameComponentValue]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateNameComponentValue[P]>
+      : GetScalarType<T[P], AggregateNameComponentValue[P]>
+  }
+
+
+
+
+  export type NameComponentValueGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: NameComponentValueWhereInput
+    orderBy?: NameComponentValueOrderByWithAggregationInput | NameComponentValueOrderByWithAggregationInput[]
+    by: NameComponentValueScalarFieldEnum[] | NameComponentValueScalarFieldEnum
+    having?: NameComponentValueScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: NameComponentValueCountAggregateInputType | true
+    _min?: NameComponentValueMinAggregateInputType
+    _max?: NameComponentValueMaxAggregateInputType
+  }
+
+  export type NameComponentValueGroupByOutputType = {
+    id: string
+    keyId: string
+    value: string
+    updatedAt: Date
+    createdAt: Date
+    _count: NameComponentValueCountAggregateOutputType | null
+    _min: NameComponentValueMinAggregateOutputType | null
+    _max: NameComponentValueMaxAggregateOutputType | null
+  }
+
+  type GetNameComponentValueGroupByPayload<T extends NameComponentValueGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<NameComponentValueGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof NameComponentValueGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], NameComponentValueGroupByOutputType[P]>
+            : GetScalarType<T[P], NameComponentValueGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type NameComponentValueSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    keyId?: boolean
+    value?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    key?: boolean | NameComponentKeyDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["nameComponentValue"]>
+
+  export type NameComponentValueSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    keyId?: boolean
+    value?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    key?: boolean | NameComponentKeyDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["nameComponentValue"]>
+
+  export type NameComponentValueSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    keyId?: boolean
+    value?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    key?: boolean | NameComponentKeyDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["nameComponentValue"]>
+
+  export type NameComponentValueSelectScalar = {
+    id?: boolean
+    keyId?: boolean
+    value?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type NameComponentValueOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "keyId" | "value" | "updatedAt" | "createdAt", ExtArgs["result"]["nameComponentValue"]>
+  export type NameComponentValueInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    key?: boolean | NameComponentKeyDefaultArgs<ExtArgs>
+  }
+  export type NameComponentValueIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    key?: boolean | NameComponentKeyDefaultArgs<ExtArgs>
+  }
+  export type NameComponentValueIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    key?: boolean | NameComponentKeyDefaultArgs<ExtArgs>
+  }
+
+  export type $NameComponentValuePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "NameComponentValue"
+    objects: {
+      key: Prisma.$NameComponentKeyPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      keyId: string
+      value: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["nameComponentValue"]>
+    composites: {}
+  }
+
+  type NameComponentValueGetPayload<S extends boolean | null | undefined | NameComponentValueDefaultArgs> = $Result.GetResult<Prisma.$NameComponentValuePayload, S>
+
+  type NameComponentValueCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<NameComponentValueFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: NameComponentValueCountAggregateInputType | true
+    }
+
+  export interface NameComponentValueDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['NameComponentValue'], meta: { name: 'NameComponentValue' } }
+    /**
+     * Find zero or one NameComponentValue that matches the filter.
+     * @param {NameComponentValueFindUniqueArgs} args - Arguments to find a NameComponentValue
+     * @example
+     * // Get one NameComponentValue
+     * const nameComponentValue = await prisma.nameComponentValue.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends NameComponentValueFindUniqueArgs>(args: SelectSubset<T, NameComponentValueFindUniqueArgs<ExtArgs>>): Prisma__NameComponentValueClient<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one NameComponentValue that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {NameComponentValueFindUniqueOrThrowArgs} args - Arguments to find a NameComponentValue
+     * @example
+     * // Get one NameComponentValue
+     * const nameComponentValue = await prisma.nameComponentValue.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends NameComponentValueFindUniqueOrThrowArgs>(args: SelectSubset<T, NameComponentValueFindUniqueOrThrowArgs<ExtArgs>>): Prisma__NameComponentValueClient<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first NameComponentValue that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentValueFindFirstArgs} args - Arguments to find a NameComponentValue
+     * @example
+     * // Get one NameComponentValue
+     * const nameComponentValue = await prisma.nameComponentValue.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends NameComponentValueFindFirstArgs>(args?: SelectSubset<T, NameComponentValueFindFirstArgs<ExtArgs>>): Prisma__NameComponentValueClient<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first NameComponentValue that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentValueFindFirstOrThrowArgs} args - Arguments to find a NameComponentValue
+     * @example
+     * // Get one NameComponentValue
+     * const nameComponentValue = await prisma.nameComponentValue.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends NameComponentValueFindFirstOrThrowArgs>(args?: SelectSubset<T, NameComponentValueFindFirstOrThrowArgs<ExtArgs>>): Prisma__NameComponentValueClient<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more NameComponentValues that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentValueFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all NameComponentValues
+     * const nameComponentValues = await prisma.nameComponentValue.findMany()
+     * 
+     * // Get first 10 NameComponentValues
+     * const nameComponentValues = await prisma.nameComponentValue.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const nameComponentValueWithIdOnly = await prisma.nameComponentValue.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends NameComponentValueFindManyArgs>(args?: SelectSubset<T, NameComponentValueFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a NameComponentValue.
+     * @param {NameComponentValueCreateArgs} args - Arguments to create a NameComponentValue.
+     * @example
+     * // Create one NameComponentValue
+     * const NameComponentValue = await prisma.nameComponentValue.create({
+     *   data: {
+     *     // ... data to create a NameComponentValue
+     *   }
+     * })
+     * 
+     */
+    create<T extends NameComponentValueCreateArgs>(args: SelectSubset<T, NameComponentValueCreateArgs<ExtArgs>>): Prisma__NameComponentValueClient<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many NameComponentValues.
+     * @param {NameComponentValueCreateManyArgs} args - Arguments to create many NameComponentValues.
+     * @example
+     * // Create many NameComponentValues
+     * const nameComponentValue = await prisma.nameComponentValue.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends NameComponentValueCreateManyArgs>(args?: SelectSubset<T, NameComponentValueCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many NameComponentValues and returns the data saved in the database.
+     * @param {NameComponentValueCreateManyAndReturnArgs} args - Arguments to create many NameComponentValues.
+     * @example
+     * // Create many NameComponentValues
+     * const nameComponentValue = await prisma.nameComponentValue.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many NameComponentValues and only return the `id`
+     * const nameComponentValueWithIdOnly = await prisma.nameComponentValue.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends NameComponentValueCreateManyAndReturnArgs>(args?: SelectSubset<T, NameComponentValueCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a NameComponentValue.
+     * @param {NameComponentValueDeleteArgs} args - Arguments to delete one NameComponentValue.
+     * @example
+     * // Delete one NameComponentValue
+     * const NameComponentValue = await prisma.nameComponentValue.delete({
+     *   where: {
+     *     // ... filter to delete one NameComponentValue
+     *   }
+     * })
+     * 
+     */
+    delete<T extends NameComponentValueDeleteArgs>(args: SelectSubset<T, NameComponentValueDeleteArgs<ExtArgs>>): Prisma__NameComponentValueClient<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one NameComponentValue.
+     * @param {NameComponentValueUpdateArgs} args - Arguments to update one NameComponentValue.
+     * @example
+     * // Update one NameComponentValue
+     * const nameComponentValue = await prisma.nameComponentValue.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends NameComponentValueUpdateArgs>(args: SelectSubset<T, NameComponentValueUpdateArgs<ExtArgs>>): Prisma__NameComponentValueClient<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more NameComponentValues.
+     * @param {NameComponentValueDeleteManyArgs} args - Arguments to filter NameComponentValues to delete.
+     * @example
+     * // Delete a few NameComponentValues
+     * const { count } = await prisma.nameComponentValue.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends NameComponentValueDeleteManyArgs>(args?: SelectSubset<T, NameComponentValueDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more NameComponentValues.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentValueUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many NameComponentValues
+     * const nameComponentValue = await prisma.nameComponentValue.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends NameComponentValueUpdateManyArgs>(args: SelectSubset<T, NameComponentValueUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more NameComponentValues and returns the data updated in the database.
+     * @param {NameComponentValueUpdateManyAndReturnArgs} args - Arguments to update many NameComponentValues.
+     * @example
+     * // Update many NameComponentValues
+     * const nameComponentValue = await prisma.nameComponentValue.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more NameComponentValues and only return the `id`
+     * const nameComponentValueWithIdOnly = await prisma.nameComponentValue.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends NameComponentValueUpdateManyAndReturnArgs>(args: SelectSubset<T, NameComponentValueUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one NameComponentValue.
+     * @param {NameComponentValueUpsertArgs} args - Arguments to update or create a NameComponentValue.
+     * @example
+     * // Update or create a NameComponentValue
+     * const nameComponentValue = await prisma.nameComponentValue.upsert({
+     *   create: {
+     *     // ... data to create a NameComponentValue
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the NameComponentValue we want to update
+     *   }
+     * })
+     */
+    upsert<T extends NameComponentValueUpsertArgs>(args: SelectSubset<T, NameComponentValueUpsertArgs<ExtArgs>>): Prisma__NameComponentValueClient<$Result.GetResult<Prisma.$NameComponentValuePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of NameComponentValues.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentValueCountArgs} args - Arguments to filter NameComponentValues to count.
+     * @example
+     * // Count the number of NameComponentValues
+     * const count = await prisma.nameComponentValue.count({
+     *   where: {
+     *     // ... the filter for the NameComponentValues we want to count
+     *   }
+     * })
+    **/
+    count<T extends NameComponentValueCountArgs>(
+      args?: Subset<T, NameComponentValueCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], NameComponentValueCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a NameComponentValue.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentValueAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends NameComponentValueAggregateArgs>(args: Subset<T, NameComponentValueAggregateArgs>): Prisma.PrismaPromise<GetNameComponentValueAggregateType<T>>
+
+    /**
+     * Group by NameComponentValue.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {NameComponentValueGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends NameComponentValueGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: NameComponentValueGroupByArgs['orderBy'] }
+        : { orderBy?: NameComponentValueGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, NameComponentValueGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetNameComponentValueGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the NameComponentValue model
+   */
+  readonly fields: NameComponentValueFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for NameComponentValue.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__NameComponentValueClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    key<T extends NameComponentKeyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, NameComponentKeyDefaultArgs<ExtArgs>>): Prisma__NameComponentKeyClient<$Result.GetResult<Prisma.$NameComponentKeyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the NameComponentValue model
+   */
+  interface NameComponentValueFieldRefs {
+    readonly id: FieldRef<"NameComponentValue", 'String'>
+    readonly keyId: FieldRef<"NameComponentValue", 'String'>
+    readonly value: FieldRef<"NameComponentValue", 'String'>
+    readonly updatedAt: FieldRef<"NameComponentValue", 'DateTime'>
+    readonly createdAt: FieldRef<"NameComponentValue", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * NameComponentValue findUnique
+   */
+  export type NameComponentValueFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentValue to fetch.
+     */
+    where: NameComponentValueWhereUniqueInput
+  }
+
+  /**
+   * NameComponentValue findUniqueOrThrow
+   */
+  export type NameComponentValueFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentValue to fetch.
+     */
+    where: NameComponentValueWhereUniqueInput
+  }
+
+  /**
+   * NameComponentValue findFirst
+   */
+  export type NameComponentValueFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentValue to fetch.
+     */
+    where?: NameComponentValueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameComponentValues to fetch.
+     */
+    orderBy?: NameComponentValueOrderByWithRelationInput | NameComponentValueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for NameComponentValues.
+     */
+    cursor?: NameComponentValueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameComponentValues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameComponentValues.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of NameComponentValues.
+     */
+    distinct?: NameComponentValueScalarFieldEnum | NameComponentValueScalarFieldEnum[]
+  }
+
+  /**
+   * NameComponentValue findFirstOrThrow
+   */
+  export type NameComponentValueFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentValue to fetch.
+     */
+    where?: NameComponentValueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameComponentValues to fetch.
+     */
+    orderBy?: NameComponentValueOrderByWithRelationInput | NameComponentValueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for NameComponentValues.
+     */
+    cursor?: NameComponentValueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameComponentValues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameComponentValues.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of NameComponentValues.
+     */
+    distinct?: NameComponentValueScalarFieldEnum | NameComponentValueScalarFieldEnum[]
+  }
+
+  /**
+   * NameComponentValue findMany
+   */
+  export type NameComponentValueFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    /**
+     * Filter, which NameComponentValues to fetch.
+     */
+    where?: NameComponentValueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of NameComponentValues to fetch.
+     */
+    orderBy?: NameComponentValueOrderByWithRelationInput | NameComponentValueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing NameComponentValues.
+     */
+    cursor?: NameComponentValueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` NameComponentValues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` NameComponentValues.
+     */
+    skip?: number
+    distinct?: NameComponentValueScalarFieldEnum | NameComponentValueScalarFieldEnum[]
+  }
+
+  /**
+   * NameComponentValue create
+   */
+  export type NameComponentValueCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    /**
+     * The data needed to create a NameComponentValue.
+     */
+    data: XOR<NameComponentValueCreateInput, NameComponentValueUncheckedCreateInput>
+  }
+
+  /**
+   * NameComponentValue createMany
+   */
+  export type NameComponentValueCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many NameComponentValues.
+     */
+    data: NameComponentValueCreateManyInput | NameComponentValueCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * NameComponentValue createManyAndReturn
+   */
+  export type NameComponentValueCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * The data used to create many NameComponentValues.
+     */
+    data: NameComponentValueCreateManyInput | NameComponentValueCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * NameComponentValue update
+   */
+  export type NameComponentValueUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    /**
+     * The data needed to update a NameComponentValue.
+     */
+    data: XOR<NameComponentValueUpdateInput, NameComponentValueUncheckedUpdateInput>
+    /**
+     * Choose, which NameComponentValue to update.
+     */
+    where: NameComponentValueWhereUniqueInput
+  }
+
+  /**
+   * NameComponentValue updateMany
+   */
+  export type NameComponentValueUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update NameComponentValues.
+     */
+    data: XOR<NameComponentValueUpdateManyMutationInput, NameComponentValueUncheckedUpdateManyInput>
+    /**
+     * Filter which NameComponentValues to update
+     */
+    where?: NameComponentValueWhereInput
+    /**
+     * Limit how many NameComponentValues to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * NameComponentValue updateManyAndReturn
+   */
+  export type NameComponentValueUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * The data used to update NameComponentValues.
+     */
+    data: XOR<NameComponentValueUpdateManyMutationInput, NameComponentValueUncheckedUpdateManyInput>
+    /**
+     * Filter which NameComponentValues to update
+     */
+    where?: NameComponentValueWhereInput
+    /**
+     * Limit how many NameComponentValues to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * NameComponentValue upsert
+   */
+  export type NameComponentValueUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    /**
+     * The filter to search for the NameComponentValue to update in case it exists.
+     */
+    where: NameComponentValueWhereUniqueInput
+    /**
+     * In case the NameComponentValue found by the `where` argument doesn't exist, create a new NameComponentValue with this data.
+     */
+    create: XOR<NameComponentValueCreateInput, NameComponentValueUncheckedCreateInput>
+    /**
+     * In case the NameComponentValue was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<NameComponentValueUpdateInput, NameComponentValueUncheckedUpdateInput>
+  }
+
+  /**
+   * NameComponentValue delete
+   */
+  export type NameComponentValueDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+    /**
+     * Filter which NameComponentValue to delete.
+     */
+    where: NameComponentValueWhereUniqueInput
+  }
+
+  /**
+   * NameComponentValue deleteMany
+   */
+  export type NameComponentValueDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which NameComponentValues to delete
+     */
+    where?: NameComponentValueWhereInput
+    /**
+     * Limit how many NameComponentValues to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * NameComponentValue without action
+   */
+  export type NameComponentValueDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the NameComponentValue
+     */
+    select?: NameComponentValueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the NameComponentValue
+     */
+    omit?: NameComponentValueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: NameComponentValueInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Model Person
    */
 
@@ -21815,6 +29333,8 @@ export namespace Prisma {
     createdAt?: boolean
     race?: boolean | RaceDefaultArgs<ExtArgs>
     playercharacteristics?: boolean | Person$playercharacteristicsArgs<ExtArgs>
+    PersonContract?: boolean | Person$PersonContractArgs<ExtArgs>
+    _count?: boolean | PersonCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["person"]>
 
   export type PersonSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -21850,6 +29370,8 @@ export namespace Prisma {
   export type PersonInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     race?: boolean | RaceDefaultArgs<ExtArgs>
     playercharacteristics?: boolean | Person$playercharacteristicsArgs<ExtArgs>
+    PersonContract?: boolean | Person$PersonContractArgs<ExtArgs>
+    _count?: boolean | PersonCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type PersonIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     race?: boolean | RaceDefaultArgs<ExtArgs>
@@ -21863,6 +29385,7 @@ export namespace Prisma {
     objects: {
       race: Prisma.$RacePayload<ExtArgs>
       playercharacteristics: Prisma.$PlayerCharacteristicsPayload<ExtArgs> | null
+      PersonContract: Prisma.$PersonContractPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -22267,6 +29790,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     race<T extends RaceDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RaceDefaultArgs<ExtArgs>>): Prisma__RaceClient<$Result.GetResult<Prisma.$RacePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     playercharacteristics<T extends Person$playercharacteristicsArgs<ExtArgs> = {}>(args?: Subset<T, Person$playercharacteristicsArgs<ExtArgs>>): Prisma__PlayerCharacteristicsClient<$Result.GetResult<Prisma.$PlayerCharacteristicsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    PersonContract<T extends Person$PersonContractArgs<ExtArgs> = {}>(args?: Subset<T, Person$PersonContractArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -22714,6 +30238,30 @@ export namespace Prisma {
      */
     include?: PlayerCharacteristicsInclude<ExtArgs> | null
     where?: PlayerCharacteristicsWhereInput
+  }
+
+  /**
+   * Person.PersonContract
+   */
+  export type Person$PersonContractArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    where?: PersonContractWhereInput
+    orderBy?: PersonContractOrderByWithRelationInput | PersonContractOrderByWithRelationInput[]
+    cursor?: PersonContractWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PersonContractScalarFieldEnum | PersonContractScalarFieldEnum[]
   }
 
   /**
@@ -23961,6 +31509,9 @@ export namespace Prisma {
     updatedAt?: boolean
     createdAt?: boolean
     owner?: boolean | Team$ownerArgs<ExtArgs>
+    teamLocation?: boolean | Team$teamLocationArgs<ExtArgs>
+    PersonContract?: boolean | Team$PersonContractArgs<ExtArgs>
+    _count?: boolean | TeamCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["team"]>
 
   export type TeamSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -23998,6 +31549,9 @@ export namespace Prisma {
   export type TeamOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "shortName" | "isActive" | "ownerId" | "updatedAt" | "createdAt", ExtArgs["result"]["team"]>
   export type TeamInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     owner?: boolean | Team$ownerArgs<ExtArgs>
+    teamLocation?: boolean | Team$teamLocationArgs<ExtArgs>
+    PersonContract?: boolean | Team$PersonContractArgs<ExtArgs>
+    _count?: boolean | TeamCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type TeamIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     owner?: boolean | Team$ownerArgs<ExtArgs>
@@ -24010,6 +31564,8 @@ export namespace Prisma {
     name: "Team"
     objects: {
       owner: Prisma.$UserPayload<ExtArgs> | null
+      teamLocation: Prisma.$TeamLocationPayload<ExtArgs> | null
+      PersonContract: Prisma.$PersonContractPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -24414,6 +31970,8 @@ export namespace Prisma {
   export interface Prisma__TeamClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     owner<T extends Team$ownerArgs<ExtArgs> = {}>(args?: Subset<T, Team$ownerArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    teamLocation<T extends Team$teamLocationArgs<ExtArgs> = {}>(args?: Subset<T, Team$teamLocationArgs<ExtArgs>>): Prisma__TeamLocationClient<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    PersonContract<T extends Team$PersonContractArgs<ExtArgs> = {}>(args?: Subset<T, Team$PersonContractArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -24865,6 +32423,49 @@ export namespace Prisma {
   }
 
   /**
+   * Team.teamLocation
+   */
+  export type Team$teamLocationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    where?: TeamLocationWhereInput
+  }
+
+  /**
+   * Team.PersonContract
+   */
+  export type Team$PersonContractArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    where?: PersonContractWhereInput
+    orderBy?: PersonContractOrderByWithRelationInput | PersonContractOrderByWithRelationInput[]
+    cursor?: PersonContractWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: PersonContractScalarFieldEnum | PersonContractScalarFieldEnum[]
+  }
+
+  /**
    * Team without action
    */
   export type TeamDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -24880,6 +32481,2151 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: TeamInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TeamLocation
+   */
+
+  export type AggregateTeamLocation = {
+    _count: TeamLocationCountAggregateOutputType | null
+    _min: TeamLocationMinAggregateOutputType | null
+    _max: TeamLocationMaxAggregateOutputType | null
+  }
+
+  export type TeamLocationMinAggregateOutputType = {
+    id: string | null
+    teamId: string | null
+    locationId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type TeamLocationMaxAggregateOutputType = {
+    id: string | null
+    teamId: string | null
+    locationId: string | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type TeamLocationCountAggregateOutputType = {
+    id: number
+    teamId: number
+    locationId: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type TeamLocationMinAggregateInputType = {
+    id?: true
+    teamId?: true
+    locationId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type TeamLocationMaxAggregateInputType = {
+    id?: true
+    teamId?: true
+    locationId?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type TeamLocationCountAggregateInputType = {
+    id?: true
+    teamId?: true
+    locationId?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type TeamLocationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TeamLocation to aggregate.
+     */
+    where?: TeamLocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamLocations to fetch.
+     */
+    orderBy?: TeamLocationOrderByWithRelationInput | TeamLocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TeamLocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamLocations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamLocations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TeamLocations
+    **/
+    _count?: true | TeamLocationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TeamLocationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TeamLocationMaxAggregateInputType
+  }
+
+  export type GetTeamLocationAggregateType<T extends TeamLocationAggregateArgs> = {
+        [P in keyof T & keyof AggregateTeamLocation]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTeamLocation[P]>
+      : GetScalarType<T[P], AggregateTeamLocation[P]>
+  }
+
+
+
+
+  export type TeamLocationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TeamLocationWhereInput
+    orderBy?: TeamLocationOrderByWithAggregationInput | TeamLocationOrderByWithAggregationInput[]
+    by: TeamLocationScalarFieldEnum[] | TeamLocationScalarFieldEnum
+    having?: TeamLocationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TeamLocationCountAggregateInputType | true
+    _min?: TeamLocationMinAggregateInputType
+    _max?: TeamLocationMaxAggregateInputType
+  }
+
+  export type TeamLocationGroupByOutputType = {
+    id: string
+    teamId: string
+    locationId: string
+    updatedAt: Date
+    createdAt: Date
+    _count: TeamLocationCountAggregateOutputType | null
+    _min: TeamLocationMinAggregateOutputType | null
+    _max: TeamLocationMaxAggregateOutputType | null
+  }
+
+  type GetTeamLocationGroupByPayload<T extends TeamLocationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TeamLocationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TeamLocationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TeamLocationGroupByOutputType[P]>
+            : GetScalarType<T[P], TeamLocationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TeamLocationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    teamId?: boolean
+    locationId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["teamLocation"]>
+
+  export type TeamLocationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    teamId?: boolean
+    locationId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["teamLocation"]>
+
+  export type TeamLocationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    teamId?: boolean
+    locationId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["teamLocation"]>
+
+  export type TeamLocationSelectScalar = {
+    id?: boolean
+    teamId?: boolean
+    locationId?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type TeamLocationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "teamId" | "locationId" | "updatedAt" | "createdAt", ExtArgs["result"]["teamLocation"]>
+  export type TeamLocationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+  export type TeamLocationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+  export type TeamLocationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+    location?: boolean | LocationDefaultArgs<ExtArgs>
+  }
+
+  export type $TeamLocationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TeamLocation"
+    objects: {
+      team: Prisma.$TeamPayload<ExtArgs>
+      location: Prisma.$LocationPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      teamId: string
+      locationId: string
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["teamLocation"]>
+    composites: {}
+  }
+
+  type TeamLocationGetPayload<S extends boolean | null | undefined | TeamLocationDefaultArgs> = $Result.GetResult<Prisma.$TeamLocationPayload, S>
+
+  type TeamLocationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TeamLocationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TeamLocationCountAggregateInputType | true
+    }
+
+  export interface TeamLocationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TeamLocation'], meta: { name: 'TeamLocation' } }
+    /**
+     * Find zero or one TeamLocation that matches the filter.
+     * @param {TeamLocationFindUniqueArgs} args - Arguments to find a TeamLocation
+     * @example
+     * // Get one TeamLocation
+     * const teamLocation = await prisma.teamLocation.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TeamLocationFindUniqueArgs>(args: SelectSubset<T, TeamLocationFindUniqueArgs<ExtArgs>>): Prisma__TeamLocationClient<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one TeamLocation that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TeamLocationFindUniqueOrThrowArgs} args - Arguments to find a TeamLocation
+     * @example
+     * // Get one TeamLocation
+     * const teamLocation = await prisma.teamLocation.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TeamLocationFindUniqueOrThrowArgs>(args: SelectSubset<T, TeamLocationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TeamLocationClient<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TeamLocation that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamLocationFindFirstArgs} args - Arguments to find a TeamLocation
+     * @example
+     * // Get one TeamLocation
+     * const teamLocation = await prisma.teamLocation.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TeamLocationFindFirstArgs>(args?: SelectSubset<T, TeamLocationFindFirstArgs<ExtArgs>>): Prisma__TeamLocationClient<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TeamLocation that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamLocationFindFirstOrThrowArgs} args - Arguments to find a TeamLocation
+     * @example
+     * // Get one TeamLocation
+     * const teamLocation = await prisma.teamLocation.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TeamLocationFindFirstOrThrowArgs>(args?: SelectSubset<T, TeamLocationFindFirstOrThrowArgs<ExtArgs>>): Prisma__TeamLocationClient<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more TeamLocations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamLocationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TeamLocations
+     * const teamLocations = await prisma.teamLocation.findMany()
+     * 
+     * // Get first 10 TeamLocations
+     * const teamLocations = await prisma.teamLocation.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const teamLocationWithIdOnly = await prisma.teamLocation.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends TeamLocationFindManyArgs>(args?: SelectSubset<T, TeamLocationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a TeamLocation.
+     * @param {TeamLocationCreateArgs} args - Arguments to create a TeamLocation.
+     * @example
+     * // Create one TeamLocation
+     * const TeamLocation = await prisma.teamLocation.create({
+     *   data: {
+     *     // ... data to create a TeamLocation
+     *   }
+     * })
+     * 
+     */
+    create<T extends TeamLocationCreateArgs>(args: SelectSubset<T, TeamLocationCreateArgs<ExtArgs>>): Prisma__TeamLocationClient<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many TeamLocations.
+     * @param {TeamLocationCreateManyArgs} args - Arguments to create many TeamLocations.
+     * @example
+     * // Create many TeamLocations
+     * const teamLocation = await prisma.teamLocation.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TeamLocationCreateManyArgs>(args?: SelectSubset<T, TeamLocationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many TeamLocations and returns the data saved in the database.
+     * @param {TeamLocationCreateManyAndReturnArgs} args - Arguments to create many TeamLocations.
+     * @example
+     * // Create many TeamLocations
+     * const teamLocation = await prisma.teamLocation.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many TeamLocations and only return the `id`
+     * const teamLocationWithIdOnly = await prisma.teamLocation.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TeamLocationCreateManyAndReturnArgs>(args?: SelectSubset<T, TeamLocationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a TeamLocation.
+     * @param {TeamLocationDeleteArgs} args - Arguments to delete one TeamLocation.
+     * @example
+     * // Delete one TeamLocation
+     * const TeamLocation = await prisma.teamLocation.delete({
+     *   where: {
+     *     // ... filter to delete one TeamLocation
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TeamLocationDeleteArgs>(args: SelectSubset<T, TeamLocationDeleteArgs<ExtArgs>>): Prisma__TeamLocationClient<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one TeamLocation.
+     * @param {TeamLocationUpdateArgs} args - Arguments to update one TeamLocation.
+     * @example
+     * // Update one TeamLocation
+     * const teamLocation = await prisma.teamLocation.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TeamLocationUpdateArgs>(args: SelectSubset<T, TeamLocationUpdateArgs<ExtArgs>>): Prisma__TeamLocationClient<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more TeamLocations.
+     * @param {TeamLocationDeleteManyArgs} args - Arguments to filter TeamLocations to delete.
+     * @example
+     * // Delete a few TeamLocations
+     * const { count } = await prisma.teamLocation.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TeamLocationDeleteManyArgs>(args?: SelectSubset<T, TeamLocationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TeamLocations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamLocationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TeamLocations
+     * const teamLocation = await prisma.teamLocation.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TeamLocationUpdateManyArgs>(args: SelectSubset<T, TeamLocationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TeamLocations and returns the data updated in the database.
+     * @param {TeamLocationUpdateManyAndReturnArgs} args - Arguments to update many TeamLocations.
+     * @example
+     * // Update many TeamLocations
+     * const teamLocation = await prisma.teamLocation.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more TeamLocations and only return the `id`
+     * const teamLocationWithIdOnly = await prisma.teamLocation.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TeamLocationUpdateManyAndReturnArgs>(args: SelectSubset<T, TeamLocationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one TeamLocation.
+     * @param {TeamLocationUpsertArgs} args - Arguments to update or create a TeamLocation.
+     * @example
+     * // Update or create a TeamLocation
+     * const teamLocation = await prisma.teamLocation.upsert({
+     *   create: {
+     *     // ... data to create a TeamLocation
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TeamLocation we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TeamLocationUpsertArgs>(args: SelectSubset<T, TeamLocationUpsertArgs<ExtArgs>>): Prisma__TeamLocationClient<$Result.GetResult<Prisma.$TeamLocationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of TeamLocations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamLocationCountArgs} args - Arguments to filter TeamLocations to count.
+     * @example
+     * // Count the number of TeamLocations
+     * const count = await prisma.teamLocation.count({
+     *   where: {
+     *     // ... the filter for the TeamLocations we want to count
+     *   }
+     * })
+    **/
+    count<T extends TeamLocationCountArgs>(
+      args?: Subset<T, TeamLocationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TeamLocationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TeamLocation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamLocationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TeamLocationAggregateArgs>(args: Subset<T, TeamLocationAggregateArgs>): Prisma.PrismaPromise<GetTeamLocationAggregateType<T>>
+
+    /**
+     * Group by TeamLocation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TeamLocationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TeamLocationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TeamLocationGroupByArgs['orderBy'] }
+        : { orderBy?: TeamLocationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TeamLocationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTeamLocationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TeamLocation model
+   */
+  readonly fields: TeamLocationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TeamLocation.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TeamLocationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    team<T extends TeamDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TeamDefaultArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    location<T extends LocationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, LocationDefaultArgs<ExtArgs>>): Prisma__LocationClient<$Result.GetResult<Prisma.$LocationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TeamLocation model
+   */
+  interface TeamLocationFieldRefs {
+    readonly id: FieldRef<"TeamLocation", 'String'>
+    readonly teamId: FieldRef<"TeamLocation", 'String'>
+    readonly locationId: FieldRef<"TeamLocation", 'String'>
+    readonly updatedAt: FieldRef<"TeamLocation", 'DateTime'>
+    readonly createdAt: FieldRef<"TeamLocation", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TeamLocation findUnique
+   */
+  export type TeamLocationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamLocation to fetch.
+     */
+    where: TeamLocationWhereUniqueInput
+  }
+
+  /**
+   * TeamLocation findUniqueOrThrow
+   */
+  export type TeamLocationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamLocation to fetch.
+     */
+    where: TeamLocationWhereUniqueInput
+  }
+
+  /**
+   * TeamLocation findFirst
+   */
+  export type TeamLocationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamLocation to fetch.
+     */
+    where?: TeamLocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamLocations to fetch.
+     */
+    orderBy?: TeamLocationOrderByWithRelationInput | TeamLocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TeamLocations.
+     */
+    cursor?: TeamLocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamLocations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamLocations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TeamLocations.
+     */
+    distinct?: TeamLocationScalarFieldEnum | TeamLocationScalarFieldEnum[]
+  }
+
+  /**
+   * TeamLocation findFirstOrThrow
+   */
+  export type TeamLocationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamLocation to fetch.
+     */
+    where?: TeamLocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamLocations to fetch.
+     */
+    orderBy?: TeamLocationOrderByWithRelationInput | TeamLocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TeamLocations.
+     */
+    cursor?: TeamLocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamLocations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamLocations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TeamLocations.
+     */
+    distinct?: TeamLocationScalarFieldEnum | TeamLocationScalarFieldEnum[]
+  }
+
+  /**
+   * TeamLocation findMany
+   */
+  export type TeamLocationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    /**
+     * Filter, which TeamLocations to fetch.
+     */
+    where?: TeamLocationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TeamLocations to fetch.
+     */
+    orderBy?: TeamLocationOrderByWithRelationInput | TeamLocationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TeamLocations.
+     */
+    cursor?: TeamLocationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TeamLocations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TeamLocations.
+     */
+    skip?: number
+    distinct?: TeamLocationScalarFieldEnum | TeamLocationScalarFieldEnum[]
+  }
+
+  /**
+   * TeamLocation create
+   */
+  export type TeamLocationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    /**
+     * The data needed to create a TeamLocation.
+     */
+    data: XOR<TeamLocationCreateInput, TeamLocationUncheckedCreateInput>
+  }
+
+  /**
+   * TeamLocation createMany
+   */
+  export type TeamLocationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TeamLocations.
+     */
+    data: TeamLocationCreateManyInput | TeamLocationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * TeamLocation createManyAndReturn
+   */
+  export type TeamLocationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * The data used to create many TeamLocations.
+     */
+    data: TeamLocationCreateManyInput | TeamLocationCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TeamLocation update
+   */
+  export type TeamLocationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    /**
+     * The data needed to update a TeamLocation.
+     */
+    data: XOR<TeamLocationUpdateInput, TeamLocationUncheckedUpdateInput>
+    /**
+     * Choose, which TeamLocation to update.
+     */
+    where: TeamLocationWhereUniqueInput
+  }
+
+  /**
+   * TeamLocation updateMany
+   */
+  export type TeamLocationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TeamLocations.
+     */
+    data: XOR<TeamLocationUpdateManyMutationInput, TeamLocationUncheckedUpdateManyInput>
+    /**
+     * Filter which TeamLocations to update
+     */
+    where?: TeamLocationWhereInput
+    /**
+     * Limit how many TeamLocations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * TeamLocation updateManyAndReturn
+   */
+  export type TeamLocationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * The data used to update TeamLocations.
+     */
+    data: XOR<TeamLocationUpdateManyMutationInput, TeamLocationUncheckedUpdateManyInput>
+    /**
+     * Filter which TeamLocations to update
+     */
+    where?: TeamLocationWhereInput
+    /**
+     * Limit how many TeamLocations to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TeamLocation upsert
+   */
+  export type TeamLocationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    /**
+     * The filter to search for the TeamLocation to update in case it exists.
+     */
+    where: TeamLocationWhereUniqueInput
+    /**
+     * In case the TeamLocation found by the `where` argument doesn't exist, create a new TeamLocation with this data.
+     */
+    create: XOR<TeamLocationCreateInput, TeamLocationUncheckedCreateInput>
+    /**
+     * In case the TeamLocation was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TeamLocationUpdateInput, TeamLocationUncheckedUpdateInput>
+  }
+
+  /**
+   * TeamLocation delete
+   */
+  export type TeamLocationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+    /**
+     * Filter which TeamLocation to delete.
+     */
+    where: TeamLocationWhereUniqueInput
+  }
+
+  /**
+   * TeamLocation deleteMany
+   */
+  export type TeamLocationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TeamLocations to delete
+     */
+    where?: TeamLocationWhereInput
+    /**
+     * Limit how many TeamLocations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * TeamLocation without action
+   */
+  export type TeamLocationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TeamLocation
+     */
+    select?: TeamLocationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TeamLocation
+     */
+    omit?: TeamLocationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TeamLocationInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model PersonContract
+   */
+
+  export type AggregatePersonContract = {
+    _count: PersonContractCountAggregateOutputType | null
+    _min: PersonContractMinAggregateOutputType | null
+    _max: PersonContractMaxAggregateOutputType | null
+  }
+
+  export type PersonContractMinAggregateOutputType = {
+    id: string | null
+    personId: string | null
+    teamId: string | null
+    contractType: $Enums.ContractType | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type PersonContractMaxAggregateOutputType = {
+    id: string | null
+    personId: string | null
+    teamId: string | null
+    contractType: $Enums.ContractType | null
+    updatedAt: Date | null
+    createdAt: Date | null
+  }
+
+  export type PersonContractCountAggregateOutputType = {
+    id: number
+    personId: number
+    teamId: number
+    contractType: number
+    updatedAt: number
+    createdAt: number
+    _all: number
+  }
+
+
+  export type PersonContractMinAggregateInputType = {
+    id?: true
+    personId?: true
+    teamId?: true
+    contractType?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type PersonContractMaxAggregateInputType = {
+    id?: true
+    personId?: true
+    teamId?: true
+    contractType?: true
+    updatedAt?: true
+    createdAt?: true
+  }
+
+  export type PersonContractCountAggregateInputType = {
+    id?: true
+    personId?: true
+    teamId?: true
+    contractType?: true
+    updatedAt?: true
+    createdAt?: true
+    _all?: true
+  }
+
+  export type PersonContractAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PersonContract to aggregate.
+     */
+    where?: PersonContractWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PersonContracts to fetch.
+     */
+    orderBy?: PersonContractOrderByWithRelationInput | PersonContractOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: PersonContractWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PersonContracts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PersonContracts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned PersonContracts
+    **/
+    _count?: true | PersonContractCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: PersonContractMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: PersonContractMaxAggregateInputType
+  }
+
+  export type GetPersonContractAggregateType<T extends PersonContractAggregateArgs> = {
+        [P in keyof T & keyof AggregatePersonContract]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregatePersonContract[P]>
+      : GetScalarType<T[P], AggregatePersonContract[P]>
+  }
+
+
+
+
+  export type PersonContractGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: PersonContractWhereInput
+    orderBy?: PersonContractOrderByWithAggregationInput | PersonContractOrderByWithAggregationInput[]
+    by: PersonContractScalarFieldEnum[] | PersonContractScalarFieldEnum
+    having?: PersonContractScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: PersonContractCountAggregateInputType | true
+    _min?: PersonContractMinAggregateInputType
+    _max?: PersonContractMaxAggregateInputType
+  }
+
+  export type PersonContractGroupByOutputType = {
+    id: string
+    personId: string
+    teamId: string
+    contractType: $Enums.ContractType
+    updatedAt: Date
+    createdAt: Date
+    _count: PersonContractCountAggregateOutputType | null
+    _min: PersonContractMinAggregateOutputType | null
+    _max: PersonContractMaxAggregateOutputType | null
+  }
+
+  type GetPersonContractGroupByPayload<T extends PersonContractGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<PersonContractGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof PersonContractGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], PersonContractGroupByOutputType[P]>
+            : GetScalarType<T[P], PersonContractGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type PersonContractSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    personId?: boolean
+    teamId?: boolean
+    contractType?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    person?: boolean | PersonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["personContract"]>
+
+  export type PersonContractSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    personId?: boolean
+    teamId?: boolean
+    contractType?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    person?: boolean | PersonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["personContract"]>
+
+  export type PersonContractSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    personId?: boolean
+    teamId?: boolean
+    contractType?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+    person?: boolean | PersonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["personContract"]>
+
+  export type PersonContractSelectScalar = {
+    id?: boolean
+    personId?: boolean
+    teamId?: boolean
+    contractType?: boolean
+    updatedAt?: boolean
+    createdAt?: boolean
+  }
+
+  export type PersonContractOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "personId" | "teamId" | "contractType" | "updatedAt" | "createdAt", ExtArgs["result"]["personContract"]>
+  export type PersonContractInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    person?: boolean | PersonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }
+  export type PersonContractIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    person?: boolean | PersonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }
+  export type PersonContractIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    person?: boolean | PersonDefaultArgs<ExtArgs>
+    team?: boolean | TeamDefaultArgs<ExtArgs>
+  }
+
+  export type $PersonContractPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "PersonContract"
+    objects: {
+      person: Prisma.$PersonPayload<ExtArgs>
+      team: Prisma.$TeamPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      personId: string
+      teamId: string
+      contractType: $Enums.ContractType
+      updatedAt: Date
+      createdAt: Date
+    }, ExtArgs["result"]["personContract"]>
+    composites: {}
+  }
+
+  type PersonContractGetPayload<S extends boolean | null | undefined | PersonContractDefaultArgs> = $Result.GetResult<Prisma.$PersonContractPayload, S>
+
+  type PersonContractCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<PersonContractFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: PersonContractCountAggregateInputType | true
+    }
+
+  export interface PersonContractDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PersonContract'], meta: { name: 'PersonContract' } }
+    /**
+     * Find zero or one PersonContract that matches the filter.
+     * @param {PersonContractFindUniqueArgs} args - Arguments to find a PersonContract
+     * @example
+     * // Get one PersonContract
+     * const personContract = await prisma.personContract.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends PersonContractFindUniqueArgs>(args: SelectSubset<T, PersonContractFindUniqueArgs<ExtArgs>>): Prisma__PersonContractClient<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one PersonContract that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {PersonContractFindUniqueOrThrowArgs} args - Arguments to find a PersonContract
+     * @example
+     * // Get one PersonContract
+     * const personContract = await prisma.personContract.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends PersonContractFindUniqueOrThrowArgs>(args: SelectSubset<T, PersonContractFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PersonContractClient<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PersonContract that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonContractFindFirstArgs} args - Arguments to find a PersonContract
+     * @example
+     * // Get one PersonContract
+     * const personContract = await prisma.personContract.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends PersonContractFindFirstArgs>(args?: SelectSubset<T, PersonContractFindFirstArgs<ExtArgs>>): Prisma__PersonContractClient<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first PersonContract that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonContractFindFirstOrThrowArgs} args - Arguments to find a PersonContract
+     * @example
+     * // Get one PersonContract
+     * const personContract = await prisma.personContract.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends PersonContractFindFirstOrThrowArgs>(args?: SelectSubset<T, PersonContractFindFirstOrThrowArgs<ExtArgs>>): Prisma__PersonContractClient<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more PersonContracts that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonContractFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all PersonContracts
+     * const personContracts = await prisma.personContract.findMany()
+     * 
+     * // Get first 10 PersonContracts
+     * const personContracts = await prisma.personContract.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const personContractWithIdOnly = await prisma.personContract.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends PersonContractFindManyArgs>(args?: SelectSubset<T, PersonContractFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a PersonContract.
+     * @param {PersonContractCreateArgs} args - Arguments to create a PersonContract.
+     * @example
+     * // Create one PersonContract
+     * const PersonContract = await prisma.personContract.create({
+     *   data: {
+     *     // ... data to create a PersonContract
+     *   }
+     * })
+     * 
+     */
+    create<T extends PersonContractCreateArgs>(args: SelectSubset<T, PersonContractCreateArgs<ExtArgs>>): Prisma__PersonContractClient<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many PersonContracts.
+     * @param {PersonContractCreateManyArgs} args - Arguments to create many PersonContracts.
+     * @example
+     * // Create many PersonContracts
+     * const personContract = await prisma.personContract.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends PersonContractCreateManyArgs>(args?: SelectSubset<T, PersonContractCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many PersonContracts and returns the data saved in the database.
+     * @param {PersonContractCreateManyAndReturnArgs} args - Arguments to create many PersonContracts.
+     * @example
+     * // Create many PersonContracts
+     * const personContract = await prisma.personContract.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many PersonContracts and only return the `id`
+     * const personContractWithIdOnly = await prisma.personContract.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends PersonContractCreateManyAndReturnArgs>(args?: SelectSubset<T, PersonContractCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a PersonContract.
+     * @param {PersonContractDeleteArgs} args - Arguments to delete one PersonContract.
+     * @example
+     * // Delete one PersonContract
+     * const PersonContract = await prisma.personContract.delete({
+     *   where: {
+     *     // ... filter to delete one PersonContract
+     *   }
+     * })
+     * 
+     */
+    delete<T extends PersonContractDeleteArgs>(args: SelectSubset<T, PersonContractDeleteArgs<ExtArgs>>): Prisma__PersonContractClient<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one PersonContract.
+     * @param {PersonContractUpdateArgs} args - Arguments to update one PersonContract.
+     * @example
+     * // Update one PersonContract
+     * const personContract = await prisma.personContract.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends PersonContractUpdateArgs>(args: SelectSubset<T, PersonContractUpdateArgs<ExtArgs>>): Prisma__PersonContractClient<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more PersonContracts.
+     * @param {PersonContractDeleteManyArgs} args - Arguments to filter PersonContracts to delete.
+     * @example
+     * // Delete a few PersonContracts
+     * const { count } = await prisma.personContract.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends PersonContractDeleteManyArgs>(args?: SelectSubset<T, PersonContractDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PersonContracts.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonContractUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many PersonContracts
+     * const personContract = await prisma.personContract.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends PersonContractUpdateManyArgs>(args: SelectSubset<T, PersonContractUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more PersonContracts and returns the data updated in the database.
+     * @param {PersonContractUpdateManyAndReturnArgs} args - Arguments to update many PersonContracts.
+     * @example
+     * // Update many PersonContracts
+     * const personContract = await prisma.personContract.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more PersonContracts and only return the `id`
+     * const personContractWithIdOnly = await prisma.personContract.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends PersonContractUpdateManyAndReturnArgs>(args: SelectSubset<T, PersonContractUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one PersonContract.
+     * @param {PersonContractUpsertArgs} args - Arguments to update or create a PersonContract.
+     * @example
+     * // Update or create a PersonContract
+     * const personContract = await prisma.personContract.upsert({
+     *   create: {
+     *     // ... data to create a PersonContract
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the PersonContract we want to update
+     *   }
+     * })
+     */
+    upsert<T extends PersonContractUpsertArgs>(args: SelectSubset<T, PersonContractUpsertArgs<ExtArgs>>): Prisma__PersonContractClient<$Result.GetResult<Prisma.$PersonContractPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of PersonContracts.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonContractCountArgs} args - Arguments to filter PersonContracts to count.
+     * @example
+     * // Count the number of PersonContracts
+     * const count = await prisma.personContract.count({
+     *   where: {
+     *     // ... the filter for the PersonContracts we want to count
+     *   }
+     * })
+    **/
+    count<T extends PersonContractCountArgs>(
+      args?: Subset<T, PersonContractCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], PersonContractCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a PersonContract.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonContractAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends PersonContractAggregateArgs>(args: Subset<T, PersonContractAggregateArgs>): Prisma.PrismaPromise<GetPersonContractAggregateType<T>>
+
+    /**
+     * Group by PersonContract.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {PersonContractGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends PersonContractGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: PersonContractGroupByArgs['orderBy'] }
+        : { orderBy?: PersonContractGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, PersonContractGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPersonContractGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the PersonContract model
+   */
+  readonly fields: PersonContractFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for PersonContract.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__PersonContractClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    person<T extends PersonDefaultArgs<ExtArgs> = {}>(args?: Subset<T, PersonDefaultArgs<ExtArgs>>): Prisma__PersonClient<$Result.GetResult<Prisma.$PersonPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    team<T extends TeamDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TeamDefaultArgs<ExtArgs>>): Prisma__TeamClient<$Result.GetResult<Prisma.$TeamPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the PersonContract model
+   */
+  interface PersonContractFieldRefs {
+    readonly id: FieldRef<"PersonContract", 'String'>
+    readonly personId: FieldRef<"PersonContract", 'String'>
+    readonly teamId: FieldRef<"PersonContract", 'String'>
+    readonly contractType: FieldRef<"PersonContract", 'ContractType'>
+    readonly updatedAt: FieldRef<"PersonContract", 'DateTime'>
+    readonly createdAt: FieldRef<"PersonContract", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * PersonContract findUnique
+   */
+  export type PersonContractFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    /**
+     * Filter, which PersonContract to fetch.
+     */
+    where: PersonContractWhereUniqueInput
+  }
+
+  /**
+   * PersonContract findUniqueOrThrow
+   */
+  export type PersonContractFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    /**
+     * Filter, which PersonContract to fetch.
+     */
+    where: PersonContractWhereUniqueInput
+  }
+
+  /**
+   * PersonContract findFirst
+   */
+  export type PersonContractFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    /**
+     * Filter, which PersonContract to fetch.
+     */
+    where?: PersonContractWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PersonContracts to fetch.
+     */
+    orderBy?: PersonContractOrderByWithRelationInput | PersonContractOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PersonContracts.
+     */
+    cursor?: PersonContractWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PersonContracts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PersonContracts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PersonContracts.
+     */
+    distinct?: PersonContractScalarFieldEnum | PersonContractScalarFieldEnum[]
+  }
+
+  /**
+   * PersonContract findFirstOrThrow
+   */
+  export type PersonContractFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    /**
+     * Filter, which PersonContract to fetch.
+     */
+    where?: PersonContractWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PersonContracts to fetch.
+     */
+    orderBy?: PersonContractOrderByWithRelationInput | PersonContractOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for PersonContracts.
+     */
+    cursor?: PersonContractWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PersonContracts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PersonContracts.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of PersonContracts.
+     */
+    distinct?: PersonContractScalarFieldEnum | PersonContractScalarFieldEnum[]
+  }
+
+  /**
+   * PersonContract findMany
+   */
+  export type PersonContractFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    /**
+     * Filter, which PersonContracts to fetch.
+     */
+    where?: PersonContractWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of PersonContracts to fetch.
+     */
+    orderBy?: PersonContractOrderByWithRelationInput | PersonContractOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing PersonContracts.
+     */
+    cursor?: PersonContractWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` PersonContracts from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` PersonContracts.
+     */
+    skip?: number
+    distinct?: PersonContractScalarFieldEnum | PersonContractScalarFieldEnum[]
+  }
+
+  /**
+   * PersonContract create
+   */
+  export type PersonContractCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    /**
+     * The data needed to create a PersonContract.
+     */
+    data: XOR<PersonContractCreateInput, PersonContractUncheckedCreateInput>
+  }
+
+  /**
+   * PersonContract createMany
+   */
+  export type PersonContractCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many PersonContracts.
+     */
+    data: PersonContractCreateManyInput | PersonContractCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * PersonContract createManyAndReturn
+   */
+  export type PersonContractCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * The data used to create many PersonContracts.
+     */
+    data: PersonContractCreateManyInput | PersonContractCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PersonContract update
+   */
+  export type PersonContractUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    /**
+     * The data needed to update a PersonContract.
+     */
+    data: XOR<PersonContractUpdateInput, PersonContractUncheckedUpdateInput>
+    /**
+     * Choose, which PersonContract to update.
+     */
+    where: PersonContractWhereUniqueInput
+  }
+
+  /**
+   * PersonContract updateMany
+   */
+  export type PersonContractUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update PersonContracts.
+     */
+    data: XOR<PersonContractUpdateManyMutationInput, PersonContractUncheckedUpdateManyInput>
+    /**
+     * Filter which PersonContracts to update
+     */
+    where?: PersonContractWhereInput
+    /**
+     * Limit how many PersonContracts to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * PersonContract updateManyAndReturn
+   */
+  export type PersonContractUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * The data used to update PersonContracts.
+     */
+    data: XOR<PersonContractUpdateManyMutationInput, PersonContractUncheckedUpdateManyInput>
+    /**
+     * Filter which PersonContracts to update
+     */
+    where?: PersonContractWhereInput
+    /**
+     * Limit how many PersonContracts to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * PersonContract upsert
+   */
+  export type PersonContractUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    /**
+     * The filter to search for the PersonContract to update in case it exists.
+     */
+    where: PersonContractWhereUniqueInput
+    /**
+     * In case the PersonContract found by the `where` argument doesn't exist, create a new PersonContract with this data.
+     */
+    create: XOR<PersonContractCreateInput, PersonContractUncheckedCreateInput>
+    /**
+     * In case the PersonContract was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<PersonContractUpdateInput, PersonContractUncheckedUpdateInput>
+  }
+
+  /**
+   * PersonContract delete
+   */
+  export type PersonContractDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
+    /**
+     * Filter which PersonContract to delete.
+     */
+    where: PersonContractWhereUniqueInput
+  }
+
+  /**
+   * PersonContract deleteMany
+   */
+  export type PersonContractDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which PersonContracts to delete
+     */
+    where?: PersonContractWhereInput
+    /**
+     * Limit how many PersonContracts to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * PersonContract without action
+   */
+  export type PersonContractDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the PersonContract
+     */
+    select?: PersonContractSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the PersonContract
+     */
+    omit?: PersonContractOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: PersonContractInclude<ExtArgs> | null
   }
 
 
@@ -25107,6 +34853,74 @@ export namespace Prisma {
   export type RaceI18nScalarFieldEnum = (typeof RaceI18nScalarFieldEnum)[keyof typeof RaceI18nScalarFieldEnum]
 
 
+  export const CultureScalarFieldEnum: {
+    id: 'id',
+    raceId: 'raceId',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type CultureScalarFieldEnum = (typeof CultureScalarFieldEnum)[keyof typeof CultureScalarFieldEnum]
+
+
+  export const CultureI18nScalarFieldEnum: {
+    id: 'id',
+    cultureId: 'cultureId',
+    language: 'language',
+    name: 'name',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type CultureI18nScalarFieldEnum = (typeof CultureI18nScalarFieldEnum)[keyof typeof CultureI18nScalarFieldEnum]
+
+
+  export const RegionPopulationScalarFieldEnum: {
+    id: 'id',
+    regionId: 'regionId',
+    cultureId: 'cultureId',
+    percentage: 'percentage',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type RegionPopulationScalarFieldEnum = (typeof RegionPopulationScalarFieldEnum)[keyof typeof RegionPopulationScalarFieldEnum]
+
+
+  export const NameModelScalarFieldEnum: {
+    id: 'id',
+    cultureId: 'cultureId',
+    sex: 'sex',
+    firstnameTemplate: 'firstnameTemplate',
+    lastnameTemplate: 'lastnameTemplate',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type NameModelScalarFieldEnum = (typeof NameModelScalarFieldEnum)[keyof typeof NameModelScalarFieldEnum]
+
+
+  export const NameComponentKeyScalarFieldEnum: {
+    id: 'id',
+    key: 'key',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type NameComponentKeyScalarFieldEnum = (typeof NameComponentKeyScalarFieldEnum)[keyof typeof NameComponentKeyScalarFieldEnum]
+
+
+  export const NameComponentValueScalarFieldEnum: {
+    id: 'id',
+    keyId: 'keyId',
+    value: 'value',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type NameComponentValueScalarFieldEnum = (typeof NameComponentValueScalarFieldEnum)[keyof typeof NameComponentValueScalarFieldEnum]
+
+
   export const PersonScalarFieldEnum: {
     id: 'id',
     name: 'name',
@@ -25140,6 +34954,29 @@ export namespace Prisma {
   };
 
   export type TeamScalarFieldEnum = (typeof TeamScalarFieldEnum)[keyof typeof TeamScalarFieldEnum]
+
+
+  export const TeamLocationScalarFieldEnum: {
+    id: 'id',
+    teamId: 'teamId',
+    locationId: 'locationId',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type TeamLocationScalarFieldEnum = (typeof TeamLocationScalarFieldEnum)[keyof typeof TeamLocationScalarFieldEnum]
+
+
+  export const PersonContractScalarFieldEnum: {
+    id: 'id',
+    personId: 'personId',
+    teamId: 'teamId',
+    contractType: 'contractType',
+    updatedAt: 'updatedAt',
+    createdAt: 'createdAt'
+  };
+
+  export type PersonContractScalarFieldEnum = (typeof PersonContractScalarFieldEnum)[keyof typeof PersonContractScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -25259,6 +35096,34 @@ export namespace Prisma {
    * Reference to a field of type 'RouteType[]'
    */
   export type ListEnumRouteTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'RouteType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'SexType'
+   */
+  export type EnumSexTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SexType'>
+    
+
+
+  /**
+   * Reference to a field of type 'SexType[]'
+   */
+  export type ListEnumSexTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'SexType[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'ContractType'
+   */
+  export type EnumContractTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ContractType'>
+    
+
+
+  /**
+   * Reference to a field of type 'ContractType[]'
+   */
+  export type ListEnumContractTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ContractType[]'>
     
   /**
    * Deep Input Types
@@ -25592,6 +35457,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Region"> | Date | string
     i18n?: RegionI18nListRelationFilter
     locations?: LocationListRelationFilter
+    regionPopulations?: RegionPopulationListRelationFilter
   }
 
   export type RegionOrderByWithRelationInput = {
@@ -25600,6 +35466,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     i18n?: RegionI18nOrderByRelationAggregateInput
     locations?: LocationOrderByRelationAggregateInput
+    regionPopulations?: RegionPopulationOrderByRelationAggregateInput
   }
 
   export type RegionWhereUniqueInput = Prisma.AtLeast<{
@@ -25611,6 +35478,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Region"> | Date | string
     i18n?: RegionI18nListRelationFilter
     locations?: LocationListRelationFilter
+    regionPopulations?: RegionPopulationListRelationFilter
   }, "id" | "id">
 
   export type RegionOrderByWithAggregationInput = {
@@ -25704,10 +35572,11 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Location"> | Date | string
     createdAt?: DateTimeFilter<"Location"> | Date | string
     i18n?: LocationI18nListRelationFilter
+    buildings?: BuildingListRelationFilter
     region?: XOR<RegionScalarRelationFilter, RegionWhereInput>
     routesFrom?: RouteListRelationFilter
     routesTo?: RouteListRelationFilter
-    buildings?: BuildingListRelationFilter
+    teams?: TeamLocationListRelationFilter
     townInfo?: XOR<TownInformationNullableScalarRelationFilter, TownInformationWhereInput> | null
   }
 
@@ -25720,10 +35589,11 @@ export namespace Prisma {
     updatedAt?: SortOrder
     createdAt?: SortOrder
     i18n?: LocationI18nOrderByRelationAggregateInput
+    buildings?: BuildingOrderByRelationAggregateInput
     region?: RegionOrderByWithRelationInput
     routesFrom?: RouteOrderByRelationAggregateInput
     routesTo?: RouteOrderByRelationAggregateInput
-    buildings?: BuildingOrderByRelationAggregateInput
+    teams?: TeamLocationOrderByRelationAggregateInput
     townInfo?: TownInformationOrderByWithRelationInput
   }
 
@@ -25739,10 +35609,11 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Location"> | Date | string
     createdAt?: DateTimeFilter<"Location"> | Date | string
     i18n?: LocationI18nListRelationFilter
+    buildings?: BuildingListRelationFilter
     region?: XOR<RegionScalarRelationFilter, RegionWhereInput>
     routesFrom?: RouteListRelationFilter
     routesTo?: RouteListRelationFilter
-    buildings?: BuildingListRelationFilter
+    teams?: TeamLocationListRelationFilter
     townInfo?: XOR<TownInformationNullableScalarRelationFilter, TownInformationWhereInput> | null
   }, "id" | "id">
 
@@ -26266,6 +36137,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Race"> | Date | string
     createdAt?: DateTimeFilter<"Race"> | Date | string
     i18n?: RaceI18nListRelationFilter
+    cultures?: CultureListRelationFilter
     persons?: PersonListRelationFilter
   }
 
@@ -26274,6 +36146,7 @@ export namespace Prisma {
     updatedAt?: SortOrder
     createdAt?: SortOrder
     i18n?: RaceI18nOrderByRelationAggregateInput
+    cultures?: CultureOrderByRelationAggregateInput
     persons?: PersonOrderByRelationAggregateInput
   }
 
@@ -26285,6 +36158,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Race"> | Date | string
     createdAt?: DateTimeFilter<"Race"> | Date | string
     i18n?: RaceI18nListRelationFilter
+    cultures?: CultureListRelationFilter
     persons?: PersonListRelationFilter
   }, "id" | "id">
 
@@ -26367,6 +36241,363 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"RaceI18n"> | Date | string
   }
 
+  export type CultureWhereInput = {
+    AND?: CultureWhereInput | CultureWhereInput[]
+    OR?: CultureWhereInput[]
+    NOT?: CultureWhereInput | CultureWhereInput[]
+    id?: StringFilter<"Culture"> | string
+    raceId?: StringFilter<"Culture"> | string
+    updatedAt?: DateTimeFilter<"Culture"> | Date | string
+    createdAt?: DateTimeFilter<"Culture"> | Date | string
+    race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
+    i18n?: CultureI18nListRelationFilter
+    nameModels?: NameModelListRelationFilter
+    regionPopulations?: RegionPopulationListRelationFilter
+  }
+
+  export type CultureOrderByWithRelationInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    race?: RaceOrderByWithRelationInput
+    i18n?: CultureI18nOrderByRelationAggregateInput
+    nameModels?: NameModelOrderByRelationAggregateInput
+    regionPopulations?: RegionPopulationOrderByRelationAggregateInput
+  }
+
+  export type CultureWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: CultureWhereInput | CultureWhereInput[]
+    OR?: CultureWhereInput[]
+    NOT?: CultureWhereInput | CultureWhereInput[]
+    raceId?: StringFilter<"Culture"> | string
+    updatedAt?: DateTimeFilter<"Culture"> | Date | string
+    createdAt?: DateTimeFilter<"Culture"> | Date | string
+    race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
+    i18n?: CultureI18nListRelationFilter
+    nameModels?: NameModelListRelationFilter
+    regionPopulations?: RegionPopulationListRelationFilter
+  }, "id" | "id">
+
+  export type CultureOrderByWithAggregationInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: CultureCountOrderByAggregateInput
+    _max?: CultureMaxOrderByAggregateInput
+    _min?: CultureMinOrderByAggregateInput
+  }
+
+  export type CultureScalarWhereWithAggregatesInput = {
+    AND?: CultureScalarWhereWithAggregatesInput | CultureScalarWhereWithAggregatesInput[]
+    OR?: CultureScalarWhereWithAggregatesInput[]
+    NOT?: CultureScalarWhereWithAggregatesInput | CultureScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Culture"> | string
+    raceId?: StringWithAggregatesFilter<"Culture"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Culture"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Culture"> | Date | string
+  }
+
+  export type CultureI18nWhereInput = {
+    AND?: CultureI18nWhereInput | CultureI18nWhereInput[]
+    OR?: CultureI18nWhereInput[]
+    NOT?: CultureI18nWhereInput | CultureI18nWhereInput[]
+    id?: StringFilter<"CultureI18n"> | string
+    cultureId?: StringFilter<"CultureI18n"> | string
+    language?: StringFilter<"CultureI18n"> | string
+    name?: StringFilter<"CultureI18n"> | string
+    updatedAt?: DateTimeFilter<"CultureI18n"> | Date | string
+    createdAt?: DateTimeFilter<"CultureI18n"> | Date | string
+    culture?: XOR<CultureScalarRelationFilter, CultureWhereInput>
+  }
+
+  export type CultureI18nOrderByWithRelationInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    culture?: CultureOrderByWithRelationInput
+  }
+
+  export type CultureI18nWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    cultureId_language?: CultureI18nCultureIdLanguageCompoundUniqueInput
+    AND?: CultureI18nWhereInput | CultureI18nWhereInput[]
+    OR?: CultureI18nWhereInput[]
+    NOT?: CultureI18nWhereInput | CultureI18nWhereInput[]
+    cultureId?: StringFilter<"CultureI18n"> | string
+    language?: StringFilter<"CultureI18n"> | string
+    name?: StringFilter<"CultureI18n"> | string
+    updatedAt?: DateTimeFilter<"CultureI18n"> | Date | string
+    createdAt?: DateTimeFilter<"CultureI18n"> | Date | string
+    culture?: XOR<CultureScalarRelationFilter, CultureWhereInput>
+  }, "id" | "cultureId_language">
+
+  export type CultureI18nOrderByWithAggregationInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: CultureI18nCountOrderByAggregateInput
+    _max?: CultureI18nMaxOrderByAggregateInput
+    _min?: CultureI18nMinOrderByAggregateInput
+  }
+
+  export type CultureI18nScalarWhereWithAggregatesInput = {
+    AND?: CultureI18nScalarWhereWithAggregatesInput | CultureI18nScalarWhereWithAggregatesInput[]
+    OR?: CultureI18nScalarWhereWithAggregatesInput[]
+    NOT?: CultureI18nScalarWhereWithAggregatesInput | CultureI18nScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"CultureI18n"> | string
+    cultureId?: StringWithAggregatesFilter<"CultureI18n"> | string
+    language?: StringWithAggregatesFilter<"CultureI18n"> | string
+    name?: StringWithAggregatesFilter<"CultureI18n"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"CultureI18n"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"CultureI18n"> | Date | string
+  }
+
+  export type RegionPopulationWhereInput = {
+    AND?: RegionPopulationWhereInput | RegionPopulationWhereInput[]
+    OR?: RegionPopulationWhereInput[]
+    NOT?: RegionPopulationWhereInput | RegionPopulationWhereInput[]
+    id?: StringFilter<"RegionPopulation"> | string
+    regionId?: StringFilter<"RegionPopulation"> | string
+    cultureId?: StringFilter<"RegionPopulation"> | string
+    percentage?: IntFilter<"RegionPopulation"> | number
+    updatedAt?: DateTimeFilter<"RegionPopulation"> | Date | string
+    createdAt?: DateTimeFilter<"RegionPopulation"> | Date | string
+    region?: XOR<RegionScalarRelationFilter, RegionWhereInput>
+    culture?: XOR<CultureScalarRelationFilter, CultureWhereInput>
+  }
+
+  export type RegionPopulationOrderByWithRelationInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    cultureId?: SortOrder
+    percentage?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    region?: RegionOrderByWithRelationInput
+    culture?: CultureOrderByWithRelationInput
+  }
+
+  export type RegionPopulationWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    regionId_cultureId?: RegionPopulationRegionIdCultureIdCompoundUniqueInput
+    AND?: RegionPopulationWhereInput | RegionPopulationWhereInput[]
+    OR?: RegionPopulationWhereInput[]
+    NOT?: RegionPopulationWhereInput | RegionPopulationWhereInput[]
+    regionId?: StringFilter<"RegionPopulation"> | string
+    cultureId?: StringFilter<"RegionPopulation"> | string
+    percentage?: IntFilter<"RegionPopulation"> | number
+    updatedAt?: DateTimeFilter<"RegionPopulation"> | Date | string
+    createdAt?: DateTimeFilter<"RegionPopulation"> | Date | string
+    region?: XOR<RegionScalarRelationFilter, RegionWhereInput>
+    culture?: XOR<CultureScalarRelationFilter, CultureWhereInput>
+  }, "id" | "regionId_cultureId">
+
+  export type RegionPopulationOrderByWithAggregationInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    cultureId?: SortOrder
+    percentage?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: RegionPopulationCountOrderByAggregateInput
+    _avg?: RegionPopulationAvgOrderByAggregateInput
+    _max?: RegionPopulationMaxOrderByAggregateInput
+    _min?: RegionPopulationMinOrderByAggregateInput
+    _sum?: RegionPopulationSumOrderByAggregateInput
+  }
+
+  export type RegionPopulationScalarWhereWithAggregatesInput = {
+    AND?: RegionPopulationScalarWhereWithAggregatesInput | RegionPopulationScalarWhereWithAggregatesInput[]
+    OR?: RegionPopulationScalarWhereWithAggregatesInput[]
+    NOT?: RegionPopulationScalarWhereWithAggregatesInput | RegionPopulationScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"RegionPopulation"> | string
+    regionId?: StringWithAggregatesFilter<"RegionPopulation"> | string
+    cultureId?: StringWithAggregatesFilter<"RegionPopulation"> | string
+    percentage?: IntWithAggregatesFilter<"RegionPopulation"> | number
+    updatedAt?: DateTimeWithAggregatesFilter<"RegionPopulation"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"RegionPopulation"> | Date | string
+  }
+
+  export type NameModelWhereInput = {
+    AND?: NameModelWhereInput | NameModelWhereInput[]
+    OR?: NameModelWhereInput[]
+    NOT?: NameModelWhereInput | NameModelWhereInput[]
+    id?: StringFilter<"NameModel"> | string
+    cultureId?: StringFilter<"NameModel"> | string
+    sex?: EnumSexTypeFilter<"NameModel"> | $Enums.SexType
+    firstnameTemplate?: StringFilter<"NameModel"> | string
+    lastnameTemplate?: StringFilter<"NameModel"> | string
+    updatedAt?: DateTimeFilter<"NameModel"> | Date | string
+    createdAt?: DateTimeFilter<"NameModel"> | Date | string
+    culture?: XOR<CultureScalarRelationFilter, CultureWhereInput>
+  }
+
+  export type NameModelOrderByWithRelationInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    sex?: SortOrder
+    firstnameTemplate?: SortOrder
+    lastnameTemplate?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    culture?: CultureOrderByWithRelationInput
+  }
+
+  export type NameModelWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    cultureId_sex?: NameModelCultureIdSexCompoundUniqueInput
+    AND?: NameModelWhereInput | NameModelWhereInput[]
+    OR?: NameModelWhereInput[]
+    NOT?: NameModelWhereInput | NameModelWhereInput[]
+    cultureId?: StringFilter<"NameModel"> | string
+    sex?: EnumSexTypeFilter<"NameModel"> | $Enums.SexType
+    firstnameTemplate?: StringFilter<"NameModel"> | string
+    lastnameTemplate?: StringFilter<"NameModel"> | string
+    updatedAt?: DateTimeFilter<"NameModel"> | Date | string
+    createdAt?: DateTimeFilter<"NameModel"> | Date | string
+    culture?: XOR<CultureScalarRelationFilter, CultureWhereInput>
+  }, "id" | "cultureId_sex">
+
+  export type NameModelOrderByWithAggregationInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    sex?: SortOrder
+    firstnameTemplate?: SortOrder
+    lastnameTemplate?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: NameModelCountOrderByAggregateInput
+    _max?: NameModelMaxOrderByAggregateInput
+    _min?: NameModelMinOrderByAggregateInput
+  }
+
+  export type NameModelScalarWhereWithAggregatesInput = {
+    AND?: NameModelScalarWhereWithAggregatesInput | NameModelScalarWhereWithAggregatesInput[]
+    OR?: NameModelScalarWhereWithAggregatesInput[]
+    NOT?: NameModelScalarWhereWithAggregatesInput | NameModelScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"NameModel"> | string
+    cultureId?: StringWithAggregatesFilter<"NameModel"> | string
+    sex?: EnumSexTypeWithAggregatesFilter<"NameModel"> | $Enums.SexType
+    firstnameTemplate?: StringWithAggregatesFilter<"NameModel"> | string
+    lastnameTemplate?: StringWithAggregatesFilter<"NameModel"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"NameModel"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"NameModel"> | Date | string
+  }
+
+  export type NameComponentKeyWhereInput = {
+    AND?: NameComponentKeyWhereInput | NameComponentKeyWhereInput[]
+    OR?: NameComponentKeyWhereInput[]
+    NOT?: NameComponentKeyWhereInput | NameComponentKeyWhereInput[]
+    id?: StringFilter<"NameComponentKey"> | string
+    key?: StringFilter<"NameComponentKey"> | string
+    updatedAt?: DateTimeFilter<"NameComponentKey"> | Date | string
+    createdAt?: DateTimeFilter<"NameComponentKey"> | Date | string
+    values?: NameComponentValueListRelationFilter
+  }
+
+  export type NameComponentKeyOrderByWithRelationInput = {
+    id?: SortOrder
+    key?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    values?: NameComponentValueOrderByRelationAggregateInput
+  }
+
+  export type NameComponentKeyWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    key?: string
+    AND?: NameComponentKeyWhereInput | NameComponentKeyWhereInput[]
+    OR?: NameComponentKeyWhereInput[]
+    NOT?: NameComponentKeyWhereInput | NameComponentKeyWhereInput[]
+    updatedAt?: DateTimeFilter<"NameComponentKey"> | Date | string
+    createdAt?: DateTimeFilter<"NameComponentKey"> | Date | string
+    values?: NameComponentValueListRelationFilter
+  }, "id" | "key">
+
+  export type NameComponentKeyOrderByWithAggregationInput = {
+    id?: SortOrder
+    key?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: NameComponentKeyCountOrderByAggregateInput
+    _max?: NameComponentKeyMaxOrderByAggregateInput
+    _min?: NameComponentKeyMinOrderByAggregateInput
+  }
+
+  export type NameComponentKeyScalarWhereWithAggregatesInput = {
+    AND?: NameComponentKeyScalarWhereWithAggregatesInput | NameComponentKeyScalarWhereWithAggregatesInput[]
+    OR?: NameComponentKeyScalarWhereWithAggregatesInput[]
+    NOT?: NameComponentKeyScalarWhereWithAggregatesInput | NameComponentKeyScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"NameComponentKey"> | string
+    key?: StringWithAggregatesFilter<"NameComponentKey"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"NameComponentKey"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"NameComponentKey"> | Date | string
+  }
+
+  export type NameComponentValueWhereInput = {
+    AND?: NameComponentValueWhereInput | NameComponentValueWhereInput[]
+    OR?: NameComponentValueWhereInput[]
+    NOT?: NameComponentValueWhereInput | NameComponentValueWhereInput[]
+    id?: StringFilter<"NameComponentValue"> | string
+    keyId?: StringFilter<"NameComponentValue"> | string
+    value?: StringFilter<"NameComponentValue"> | string
+    updatedAt?: DateTimeFilter<"NameComponentValue"> | Date | string
+    createdAt?: DateTimeFilter<"NameComponentValue"> | Date | string
+    key?: XOR<NameComponentKeyScalarRelationFilter, NameComponentKeyWhereInput>
+  }
+
+  export type NameComponentValueOrderByWithRelationInput = {
+    id?: SortOrder
+    keyId?: SortOrder
+    value?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    key?: NameComponentKeyOrderByWithRelationInput
+  }
+
+  export type NameComponentValueWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: NameComponentValueWhereInput | NameComponentValueWhereInput[]
+    OR?: NameComponentValueWhereInput[]
+    NOT?: NameComponentValueWhereInput | NameComponentValueWhereInput[]
+    keyId?: StringFilter<"NameComponentValue"> | string
+    value?: StringFilter<"NameComponentValue"> | string
+    updatedAt?: DateTimeFilter<"NameComponentValue"> | Date | string
+    createdAt?: DateTimeFilter<"NameComponentValue"> | Date | string
+    key?: XOR<NameComponentKeyScalarRelationFilter, NameComponentKeyWhereInput>
+  }, "id">
+
+  export type NameComponentValueOrderByWithAggregationInput = {
+    id?: SortOrder
+    keyId?: SortOrder
+    value?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: NameComponentValueCountOrderByAggregateInput
+    _max?: NameComponentValueMaxOrderByAggregateInput
+    _min?: NameComponentValueMinOrderByAggregateInput
+  }
+
+  export type NameComponentValueScalarWhereWithAggregatesInput = {
+    AND?: NameComponentValueScalarWhereWithAggregatesInput | NameComponentValueScalarWhereWithAggregatesInput[]
+    OR?: NameComponentValueScalarWhereWithAggregatesInput[]
+    NOT?: NameComponentValueScalarWhereWithAggregatesInput | NameComponentValueScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"NameComponentValue"> | string
+    keyId?: StringWithAggregatesFilter<"NameComponentValue"> | string
+    value?: StringWithAggregatesFilter<"NameComponentValue"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"NameComponentValue"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"NameComponentValue"> | Date | string
+  }
+
   export type PersonWhereInput = {
     AND?: PersonWhereInput | PersonWhereInput[]
     OR?: PersonWhereInput[]
@@ -26379,6 +36610,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Person"> | Date | string
     race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
     playercharacteristics?: XOR<PlayerCharacteristicsNullableScalarRelationFilter, PlayerCharacteristicsWhereInput> | null
+    PersonContract?: PersonContractListRelationFilter
   }
 
   export type PersonOrderByWithRelationInput = {
@@ -26390,6 +36622,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     race?: RaceOrderByWithRelationInput
     playercharacteristics?: PlayerCharacteristicsOrderByWithRelationInput
+    PersonContract?: PersonContractOrderByRelationAggregateInput
   }
 
   export type PersonWhereUniqueInput = Prisma.AtLeast<{
@@ -26404,6 +36637,7 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Person"> | Date | string
     race?: XOR<RaceScalarRelationFilter, RaceWhereInput>
     playercharacteristics?: XOR<PlayerCharacteristicsNullableScalarRelationFilter, PlayerCharacteristicsWhereInput> | null
+    PersonContract?: PersonContractListRelationFilter
   }, "id">
 
   export type PersonOrderByWithAggregationInput = {
@@ -26492,6 +36726,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Team"> | Date | string
     createdAt?: DateTimeFilter<"Team"> | Date | string
     owner?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
+    teamLocation?: XOR<TeamLocationNullableScalarRelationFilter, TeamLocationWhereInput> | null
+    PersonContract?: PersonContractListRelationFilter
   }
 
   export type TeamOrderByWithRelationInput = {
@@ -26503,6 +36739,8 @@ export namespace Prisma {
     updatedAt?: SortOrder
     createdAt?: SortOrder
     owner?: UserOrderByWithRelationInput
+    teamLocation?: TeamLocationOrderByWithRelationInput
+    PersonContract?: PersonContractOrderByRelationAggregateInput
   }
 
   export type TeamWhereUniqueInput = Prisma.AtLeast<{
@@ -26517,6 +36755,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Team"> | Date | string
     createdAt?: DateTimeFilter<"Team"> | Date | string
     owner?: XOR<UserNullableScalarRelationFilter, UserWhereInput> | null
+    teamLocation?: XOR<TeamLocationNullableScalarRelationFilter, TeamLocationWhereInput> | null
+    PersonContract?: PersonContractListRelationFilter
   }, "id">
 
   export type TeamOrderByWithAggregationInput = {
@@ -26543,6 +36783,127 @@ export namespace Prisma {
     ownerId?: StringWithAggregatesFilter<"Team"> | string
     updatedAt?: DateTimeWithAggregatesFilter<"Team"> | Date | string
     createdAt?: DateTimeWithAggregatesFilter<"Team"> | Date | string
+  }
+
+  export type TeamLocationWhereInput = {
+    AND?: TeamLocationWhereInput | TeamLocationWhereInput[]
+    OR?: TeamLocationWhereInput[]
+    NOT?: TeamLocationWhereInput | TeamLocationWhereInput[]
+    id?: StringFilter<"TeamLocation"> | string
+    teamId?: StringFilter<"TeamLocation"> | string
+    locationId?: StringFilter<"TeamLocation"> | string
+    updatedAt?: DateTimeFilter<"TeamLocation"> | Date | string
+    createdAt?: DateTimeFilter<"TeamLocation"> | Date | string
+    team?: XOR<TeamScalarRelationFilter, TeamWhereInput>
+    location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+  }
+
+  export type TeamLocationOrderByWithRelationInput = {
+    id?: SortOrder
+    teamId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    team?: TeamOrderByWithRelationInput
+    location?: LocationOrderByWithRelationInput
+  }
+
+  export type TeamLocationWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    teamId?: string
+    AND?: TeamLocationWhereInput | TeamLocationWhereInput[]
+    OR?: TeamLocationWhereInput[]
+    NOT?: TeamLocationWhereInput | TeamLocationWhereInput[]
+    locationId?: StringFilter<"TeamLocation"> | string
+    updatedAt?: DateTimeFilter<"TeamLocation"> | Date | string
+    createdAt?: DateTimeFilter<"TeamLocation"> | Date | string
+    team?: XOR<TeamScalarRelationFilter, TeamWhereInput>
+    location?: XOR<LocationScalarRelationFilter, LocationWhereInput>
+  }, "id" | "teamId">
+
+  export type TeamLocationOrderByWithAggregationInput = {
+    id?: SortOrder
+    teamId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: TeamLocationCountOrderByAggregateInput
+    _max?: TeamLocationMaxOrderByAggregateInput
+    _min?: TeamLocationMinOrderByAggregateInput
+  }
+
+  export type TeamLocationScalarWhereWithAggregatesInput = {
+    AND?: TeamLocationScalarWhereWithAggregatesInput | TeamLocationScalarWhereWithAggregatesInput[]
+    OR?: TeamLocationScalarWhereWithAggregatesInput[]
+    NOT?: TeamLocationScalarWhereWithAggregatesInput | TeamLocationScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"TeamLocation"> | string
+    teamId?: StringWithAggregatesFilter<"TeamLocation"> | string
+    locationId?: StringWithAggregatesFilter<"TeamLocation"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"TeamLocation"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"TeamLocation"> | Date | string
+  }
+
+  export type PersonContractWhereInput = {
+    AND?: PersonContractWhereInput | PersonContractWhereInput[]
+    OR?: PersonContractWhereInput[]
+    NOT?: PersonContractWhereInput | PersonContractWhereInput[]
+    id?: StringFilter<"PersonContract"> | string
+    personId?: StringFilter<"PersonContract"> | string
+    teamId?: StringFilter<"PersonContract"> | string
+    contractType?: EnumContractTypeFilter<"PersonContract"> | $Enums.ContractType
+    updatedAt?: DateTimeFilter<"PersonContract"> | Date | string
+    createdAt?: DateTimeFilter<"PersonContract"> | Date | string
+    person?: XOR<PersonScalarRelationFilter, PersonWhereInput>
+    team?: XOR<TeamScalarRelationFilter, TeamWhereInput>
+  }
+
+  export type PersonContractOrderByWithRelationInput = {
+    id?: SortOrder
+    personId?: SortOrder
+    teamId?: SortOrder
+    contractType?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    person?: PersonOrderByWithRelationInput
+    team?: TeamOrderByWithRelationInput
+  }
+
+  export type PersonContractWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: PersonContractWhereInput | PersonContractWhereInput[]
+    OR?: PersonContractWhereInput[]
+    NOT?: PersonContractWhereInput | PersonContractWhereInput[]
+    personId?: StringFilter<"PersonContract"> | string
+    teamId?: StringFilter<"PersonContract"> | string
+    contractType?: EnumContractTypeFilter<"PersonContract"> | $Enums.ContractType
+    updatedAt?: DateTimeFilter<"PersonContract"> | Date | string
+    createdAt?: DateTimeFilter<"PersonContract"> | Date | string
+    person?: XOR<PersonScalarRelationFilter, PersonWhereInput>
+    team?: XOR<TeamScalarRelationFilter, TeamWhereInput>
+  }, "id">
+
+  export type PersonContractOrderByWithAggregationInput = {
+    id?: SortOrder
+    personId?: SortOrder
+    teamId?: SortOrder
+    contractType?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+    _count?: PersonContractCountOrderByAggregateInput
+    _max?: PersonContractMaxOrderByAggregateInput
+    _min?: PersonContractMinOrderByAggregateInput
+  }
+
+  export type PersonContractScalarWhereWithAggregatesInput = {
+    AND?: PersonContractScalarWhereWithAggregatesInput | PersonContractScalarWhereWithAggregatesInput[]
+    OR?: PersonContractScalarWhereWithAggregatesInput[]
+    NOT?: PersonContractScalarWhereWithAggregatesInput | PersonContractScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"PersonContract"> | string
+    personId?: StringWithAggregatesFilter<"PersonContract"> | string
+    teamId?: StringWithAggregatesFilter<"PersonContract"> | string
+    contractType?: EnumContractTypeWithAggregatesFilter<"PersonContract"> | $Enums.ContractType
+    updatedAt?: DateTimeWithAggregatesFilter<"PersonContract"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"PersonContract"> | Date | string
   }
 
   export type UserCreateInput = {
@@ -26918,6 +37279,7 @@ export namespace Prisma {
     createdAt?: Date | string
     i18n?: RegionI18nCreateNestedManyWithoutRegionInput
     locations?: LocationCreateNestedManyWithoutRegionInput
+    regionPopulations?: RegionPopulationCreateNestedManyWithoutRegionInput
   }
 
   export type RegionUncheckedCreateInput = {
@@ -26926,6 +37288,7 @@ export namespace Prisma {
     createdAt?: Date | string
     i18n?: RegionI18nUncheckedCreateNestedManyWithoutRegionInput
     locations?: LocationUncheckedCreateNestedManyWithoutRegionInput
+    regionPopulations?: RegionPopulationUncheckedCreateNestedManyWithoutRegionInput
   }
 
   export type RegionUpdateInput = {
@@ -26934,6 +37297,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: RegionI18nUpdateManyWithoutRegionNestedInput
     locations?: LocationUpdateManyWithoutRegionNestedInput
+    regionPopulations?: RegionPopulationUpdateManyWithoutRegionNestedInput
   }
 
   export type RegionUncheckedUpdateInput = {
@@ -26942,6 +37306,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: RegionI18nUncheckedUpdateManyWithoutRegionNestedInput
     locations?: LocationUncheckedUpdateManyWithoutRegionNestedInput
+    regionPopulations?: RegionPopulationUncheckedUpdateManyWithoutRegionNestedInput
   }
 
   export type RegionCreateManyInput = {
@@ -27032,10 +37397,11 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
     region: RegionCreateNestedOneWithoutLocationsInput
     routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteCreateNestedManyWithoutLocationToInput
-    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationCreateNestedOneWithoutLocationInput
   }
 
@@ -27048,9 +37414,10 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
     routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
-    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationUncheckedCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
   }
 
@@ -27062,10 +37429,11 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
     region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
     routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUpdateManyWithoutLocationToNestedInput
-    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
   }
 
@@ -27078,9 +37446,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
     routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
-    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUncheckedUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
   }
 
@@ -27601,6 +37970,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: RaceI18nCreateNestedManyWithoutRaceInput
+    cultures?: CultureCreateNestedManyWithoutRaceInput
     persons?: PersonCreateNestedManyWithoutRaceInput
   }
 
@@ -27609,6 +37979,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: RaceI18nUncheckedCreateNestedManyWithoutRaceInput
+    cultures?: CultureUncheckedCreateNestedManyWithoutRaceInput
     persons?: PersonUncheckedCreateNestedManyWithoutRaceInput
   }
 
@@ -27617,6 +37988,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: RaceI18nUpdateManyWithoutRaceNestedInput
+    cultures?: CultureUpdateManyWithoutRaceNestedInput
     persons?: PersonUpdateManyWithoutRaceNestedInput
   }
 
@@ -27625,6 +37997,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: RaceI18nUncheckedUpdateManyWithoutRaceNestedInput
+    cultures?: CultureUncheckedUpdateManyWithoutRaceNestedInput
     persons?: PersonUncheckedUpdateManyWithoutRaceNestedInput
   }
 
@@ -27708,6 +38081,366 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type CultureCreateInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    race: RaceCreateNestedOneWithoutCulturesInput
+    i18n?: CultureI18nCreateNestedManyWithoutCultureInput
+    nameModels?: NameModelCreateNestedManyWithoutCultureInput
+    regionPopulations?: RegionPopulationCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureUncheckedCreateInput = {
+    id: string
+    raceId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: CultureI18nUncheckedCreateNestedManyWithoutCultureInput
+    nameModels?: NameModelUncheckedCreateNestedManyWithoutCultureInput
+    regionPopulations?: RegionPopulationUncheckedCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    race?: RaceUpdateOneRequiredWithoutCulturesNestedInput
+    i18n?: CultureI18nUpdateManyWithoutCultureNestedInput
+    nameModels?: NameModelUpdateManyWithoutCultureNestedInput
+    regionPopulations?: RegionPopulationUpdateManyWithoutCultureNestedInput
+  }
+
+  export type CultureUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: CultureI18nUncheckedUpdateManyWithoutCultureNestedInput
+    nameModels?: NameModelUncheckedUpdateManyWithoutCultureNestedInput
+    regionPopulations?: RegionPopulationUncheckedUpdateManyWithoutCultureNestedInput
+  }
+
+  export type CultureCreateManyInput = {
+    id: string
+    raceId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type CultureUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CultureUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CultureI18nCreateInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    culture: CultureCreateNestedOneWithoutI18nInput
+  }
+
+  export type CultureI18nUncheckedCreateInput = {
+    id?: string
+    cultureId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type CultureI18nUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    culture?: CultureUpdateOneRequiredWithoutI18nNestedInput
+  }
+
+  export type CultureI18nUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    cultureId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CultureI18nCreateManyInput = {
+    id?: string
+    cultureId: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type CultureI18nUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CultureI18nUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    cultureId?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionPopulationCreateInput = {
+    id?: string
+    percentage: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    region: RegionCreateNestedOneWithoutRegionPopulationsInput
+    culture: CultureCreateNestedOneWithoutRegionPopulationsInput
+  }
+
+  export type RegionPopulationUncheckedCreateInput = {
+    id?: string
+    regionId: string
+    cultureId: string
+    percentage: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionPopulationUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    region?: RegionUpdateOneRequiredWithoutRegionPopulationsNestedInput
+    culture?: CultureUpdateOneRequiredWithoutRegionPopulationsNestedInput
+  }
+
+  export type RegionPopulationUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    regionId?: StringFieldUpdateOperationsInput | string
+    cultureId?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionPopulationCreateManyInput = {
+    id?: string
+    regionId: string
+    cultureId: string
+    percentage: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionPopulationUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionPopulationUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    regionId?: StringFieldUpdateOperationsInput | string
+    cultureId?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameModelCreateInput = {
+    id?: string
+    sex: $Enums.SexType
+    firstnameTemplate: string
+    lastnameTemplate: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    culture: CultureCreateNestedOneWithoutNameModelsInput
+  }
+
+  export type NameModelUncheckedCreateInput = {
+    id?: string
+    cultureId: string
+    sex: $Enums.SexType
+    firstnameTemplate: string
+    lastnameTemplate: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameModelUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    sex?: EnumSexTypeFieldUpdateOperationsInput | $Enums.SexType
+    firstnameTemplate?: StringFieldUpdateOperationsInput | string
+    lastnameTemplate?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    culture?: CultureUpdateOneRequiredWithoutNameModelsNestedInput
+  }
+
+  export type NameModelUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    cultureId?: StringFieldUpdateOperationsInput | string
+    sex?: EnumSexTypeFieldUpdateOperationsInput | $Enums.SexType
+    firstnameTemplate?: StringFieldUpdateOperationsInput | string
+    lastnameTemplate?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameModelCreateManyInput = {
+    id?: string
+    cultureId: string
+    sex: $Enums.SexType
+    firstnameTemplate: string
+    lastnameTemplate: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameModelUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    sex?: EnumSexTypeFieldUpdateOperationsInput | $Enums.SexType
+    firstnameTemplate?: StringFieldUpdateOperationsInput | string
+    lastnameTemplate?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameModelUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    cultureId?: StringFieldUpdateOperationsInput | string
+    sex?: EnumSexTypeFieldUpdateOperationsInput | $Enums.SexType
+    firstnameTemplate?: StringFieldUpdateOperationsInput | string
+    lastnameTemplate?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameComponentKeyCreateInput = {
+    id?: string
+    key: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    values?: NameComponentValueCreateNestedManyWithoutKeyInput
+  }
+
+  export type NameComponentKeyUncheckedCreateInput = {
+    id?: string
+    key: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    values?: NameComponentValueUncheckedCreateNestedManyWithoutKeyInput
+  }
+
+  export type NameComponentKeyUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    values?: NameComponentValueUpdateManyWithoutKeyNestedInput
+  }
+
+  export type NameComponentKeyUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    values?: NameComponentValueUncheckedUpdateManyWithoutKeyNestedInput
+  }
+
+  export type NameComponentKeyCreateManyInput = {
+    id?: string
+    key: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameComponentKeyUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameComponentKeyUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameComponentValueCreateInput = {
+    id?: string
+    value: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    key: NameComponentKeyCreateNestedOneWithoutValuesInput
+  }
+
+  export type NameComponentValueUncheckedCreateInput = {
+    id?: string
+    keyId: string
+    value: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameComponentValueUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    key?: NameComponentKeyUpdateOneRequiredWithoutValuesNestedInput
+  }
+
+  export type NameComponentValueUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    keyId?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameComponentValueCreateManyInput = {
+    id?: string
+    keyId: string
+    value: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameComponentValueUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameComponentValueUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    keyId?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type PersonCreateInput = {
     id?: string
     name: string
@@ -27716,6 +38449,7 @@ export namespace Prisma {
     createdAt?: Date | string
     race: RaceCreateNestedOneWithoutPersonsInput
     playercharacteristics?: PlayerCharacteristicsCreateNestedOneWithoutPlayerInput
+    PersonContract?: PersonContractCreateNestedManyWithoutPersonInput
   }
 
   export type PersonUncheckedCreateInput = {
@@ -27726,6 +38460,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     playercharacteristics?: PlayerCharacteristicsUncheckedCreateNestedOneWithoutPlayerInput
+    PersonContract?: PersonContractUncheckedCreateNestedManyWithoutPersonInput
   }
 
   export type PersonUpdateInput = {
@@ -27736,6 +38471,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     race?: RaceUpdateOneRequiredWithoutPersonsNestedInput
     playercharacteristics?: PlayerCharacteristicsUpdateOneWithoutPlayerNestedInput
+    PersonContract?: PersonContractUpdateManyWithoutPersonNestedInput
   }
 
   export type PersonUncheckedUpdateInput = {
@@ -27746,6 +38482,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     playercharacteristics?: PlayerCharacteristicsUncheckedUpdateOneWithoutPlayerNestedInput
+    PersonContract?: PersonContractUncheckedUpdateManyWithoutPersonNestedInput
   }
 
   export type PersonCreateManyInput = {
@@ -27830,6 +38567,8 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     owner?: UserCreateNestedOneWithoutTeamsInput
+    teamLocation?: TeamLocationCreateNestedOneWithoutTeamInput
+    PersonContract?: PersonContractCreateNestedManyWithoutTeamInput
   }
 
   export type TeamUncheckedCreateInput = {
@@ -27840,6 +38579,8 @@ export namespace Prisma {
     ownerId: string
     updatedAt?: Date | string
     createdAt?: Date | string
+    teamLocation?: TeamLocationUncheckedCreateNestedOneWithoutTeamInput
+    PersonContract?: PersonContractUncheckedCreateNestedManyWithoutTeamInput
   }
 
   export type TeamUpdateInput = {
@@ -27850,6 +38591,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     owner?: UserUpdateOneWithoutTeamsNestedInput
+    teamLocation?: TeamLocationUpdateOneWithoutTeamNestedInput
+    PersonContract?: PersonContractUpdateManyWithoutTeamNestedInput
   }
 
   export type TeamUncheckedUpdateInput = {
@@ -27860,6 +38603,8 @@ export namespace Prisma {
     ownerId?: StringFieldUpdateOperationsInput | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    teamLocation?: TeamLocationUncheckedUpdateOneWithoutTeamNestedInput
+    PersonContract?: PersonContractUncheckedUpdateManyWithoutTeamNestedInput
   }
 
   export type TeamCreateManyInput = {
@@ -27887,6 +38632,121 @@ export namespace Prisma {
     shortName?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     ownerId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TeamLocationCreateInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    team: TeamCreateNestedOneWithoutTeamLocationInput
+    location: LocationCreateNestedOneWithoutTeamsInput
+  }
+
+  export type TeamLocationUncheckedCreateInput = {
+    id?: string
+    teamId: string
+    locationId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TeamLocationUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    team?: TeamUpdateOneRequiredWithoutTeamLocationNestedInput
+    location?: LocationUpdateOneRequiredWithoutTeamsNestedInput
+  }
+
+  export type TeamLocationUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TeamLocationCreateManyInput = {
+    id?: string
+    teamId: string
+    locationId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TeamLocationUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TeamLocationUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonContractCreateInput = {
+    id?: string
+    contractType: $Enums.ContractType
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    person: PersonCreateNestedOneWithoutPersonContractInput
+    team: TeamCreateNestedOneWithoutPersonContractInput
+  }
+
+  export type PersonContractUncheckedCreateInput = {
+    id?: string
+    personId: string
+    teamId: string
+    contractType: $Enums.ContractType
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PersonContractUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    person?: PersonUpdateOneRequiredWithoutPersonContractNestedInput
+    team?: TeamUpdateOneRequiredWithoutPersonContractNestedInput
+  }
+
+  export type PersonContractUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    personId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonContractCreateManyInput = {
+    id?: string
+    personId: string
+    teamId: string
+    contractType: $Enums.ContractType
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PersonContractUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonContractUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    personId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -28238,11 +39098,21 @@ export namespace Prisma {
     none?: LocationWhereInput
   }
 
+  export type RegionPopulationListRelationFilter = {
+    every?: RegionPopulationWhereInput
+    some?: RegionPopulationWhereInput
+    none?: RegionPopulationWhereInput
+  }
+
   export type RegionI18nOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type LocationOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type RegionPopulationOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -28325,16 +39195,22 @@ export namespace Prisma {
     none?: LocationI18nWhereInput
   }
 
+  export type BuildingListRelationFilter = {
+    every?: BuildingWhereInput
+    some?: BuildingWhereInput
+    none?: BuildingWhereInput
+  }
+
   export type RouteListRelationFilter = {
     every?: RouteWhereInput
     some?: RouteWhereInput
     none?: RouteWhereInput
   }
 
-  export type BuildingListRelationFilter = {
-    every?: BuildingWhereInput
-    some?: BuildingWhereInput
-    none?: BuildingWhereInput
+  export type TeamLocationListRelationFilter = {
+    every?: TeamLocationWhereInput
+    some?: TeamLocationWhereInput
+    none?: TeamLocationWhereInput
   }
 
   export type TownInformationNullableScalarRelationFilter = {
@@ -28346,11 +39222,15 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
+  export type BuildingOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
   export type RouteOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type BuildingOrderByRelationAggregateInput = {
+  export type TeamLocationOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -28753,6 +39633,12 @@ export namespace Prisma {
     none?: RaceI18nWhereInput
   }
 
+  export type CultureListRelationFilter = {
+    every?: CultureWhereInput
+    some?: CultureWhereInput
+    none?: CultureWhereInput
+  }
+
   export type PersonListRelationFilter = {
     every?: PersonWhereInput
     some?: PersonWhereInput
@@ -28760,6 +39646,10 @@ export namespace Prisma {
   }
 
   export type RaceI18nOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type CultureOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -28822,9 +39712,249 @@ export namespace Prisma {
     createdAt?: SortOrder
   }
 
+  export type CultureI18nListRelationFilter = {
+    every?: CultureI18nWhereInput
+    some?: CultureI18nWhereInput
+    none?: CultureI18nWhereInput
+  }
+
+  export type NameModelListRelationFilter = {
+    every?: NameModelWhereInput
+    some?: NameModelWhereInput
+    none?: NameModelWhereInput
+  }
+
+  export type CultureI18nOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type NameModelOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type CultureCountOrderByAggregateInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type CultureMaxOrderByAggregateInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type CultureMinOrderByAggregateInput = {
+    id?: SortOrder
+    raceId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type CultureScalarRelationFilter = {
+    is?: CultureWhereInput
+    isNot?: CultureWhereInput
+  }
+
+  export type CultureI18nCultureIdLanguageCompoundUniqueInput = {
+    cultureId: string
+    language: string
+  }
+
+  export type CultureI18nCountOrderByAggregateInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type CultureI18nMaxOrderByAggregateInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type CultureI18nMinOrderByAggregateInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    language?: SortOrder
+    name?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RegionPopulationRegionIdCultureIdCompoundUniqueInput = {
+    regionId: string
+    cultureId: string
+  }
+
+  export type RegionPopulationCountOrderByAggregateInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    cultureId?: SortOrder
+    percentage?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RegionPopulationAvgOrderByAggregateInput = {
+    percentage?: SortOrder
+  }
+
+  export type RegionPopulationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    cultureId?: SortOrder
+    percentage?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RegionPopulationMinOrderByAggregateInput = {
+    id?: SortOrder
+    regionId?: SortOrder
+    cultureId?: SortOrder
+    percentage?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type RegionPopulationSumOrderByAggregateInput = {
+    percentage?: SortOrder
+  }
+
+  export type EnumSexTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.SexType | EnumSexTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.SexType[] | ListEnumSexTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SexType[] | ListEnumSexTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumSexTypeFilter<$PrismaModel> | $Enums.SexType
+  }
+
+  export type NameModelCultureIdSexCompoundUniqueInput = {
+    cultureId: string
+    sex: $Enums.SexType
+  }
+
+  export type NameModelCountOrderByAggregateInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    sex?: SortOrder
+    firstnameTemplate?: SortOrder
+    lastnameTemplate?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type NameModelMaxOrderByAggregateInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    sex?: SortOrder
+    firstnameTemplate?: SortOrder
+    lastnameTemplate?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type NameModelMinOrderByAggregateInput = {
+    id?: SortOrder
+    cultureId?: SortOrder
+    sex?: SortOrder
+    firstnameTemplate?: SortOrder
+    lastnameTemplate?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EnumSexTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SexType | EnumSexTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.SexType[] | ListEnumSexTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SexType[] | ListEnumSexTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumSexTypeWithAggregatesFilter<$PrismaModel> | $Enums.SexType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSexTypeFilter<$PrismaModel>
+    _max?: NestedEnumSexTypeFilter<$PrismaModel>
+  }
+
+  export type NameComponentValueListRelationFilter = {
+    every?: NameComponentValueWhereInput
+    some?: NameComponentValueWhereInput
+    none?: NameComponentValueWhereInput
+  }
+
+  export type NameComponentValueOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type NameComponentKeyCountOrderByAggregateInput = {
+    id?: SortOrder
+    key?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type NameComponentKeyMaxOrderByAggregateInput = {
+    id?: SortOrder
+    key?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type NameComponentKeyMinOrderByAggregateInput = {
+    id?: SortOrder
+    key?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type NameComponentKeyScalarRelationFilter = {
+    is?: NameComponentKeyWhereInput
+    isNot?: NameComponentKeyWhereInput
+  }
+
+  export type NameComponentValueCountOrderByAggregateInput = {
+    id?: SortOrder
+    keyId?: SortOrder
+    value?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type NameComponentValueMaxOrderByAggregateInput = {
+    id?: SortOrder
+    keyId?: SortOrder
+    value?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type NameComponentValueMinOrderByAggregateInput = {
+    id?: SortOrder
+    keyId?: SortOrder
+    value?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
   export type PlayerCharacteristicsNullableScalarRelationFilter = {
     is?: PlayerCharacteristicsWhereInput | null
     isNot?: PlayerCharacteristicsWhereInput | null
+  }
+
+  export type PersonContractListRelationFilter = {
+    every?: PersonContractWhereInput
+    some?: PersonContractWhereInput
+    none?: PersonContractWhereInput
+  }
+
+  export type PersonContractOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type PersonCountOrderByAggregateInput = {
@@ -28885,6 +40015,11 @@ export namespace Prisma {
     isNot?: UserWhereInput | null
   }
 
+  export type TeamLocationNullableScalarRelationFilter = {
+    is?: TeamLocationWhereInput | null
+    isNot?: TeamLocationWhereInput | null
+  }
+
   export type TeamCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
@@ -28913,6 +40048,79 @@ export namespace Prisma {
     ownerId?: SortOrder
     updatedAt?: SortOrder
     createdAt?: SortOrder
+  }
+
+  export type TeamScalarRelationFilter = {
+    is?: TeamWhereInput
+    isNot?: TeamWhereInput
+  }
+
+  export type TeamLocationCountOrderByAggregateInput = {
+    id?: SortOrder
+    teamId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TeamLocationMaxOrderByAggregateInput = {
+    id?: SortOrder
+    teamId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type TeamLocationMinOrderByAggregateInput = {
+    id?: SortOrder
+    teamId?: SortOrder
+    locationId?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EnumContractTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.ContractType | EnumContractTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.ContractType[] | ListEnumContractTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ContractType[] | ListEnumContractTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumContractTypeFilter<$PrismaModel> | $Enums.ContractType
+  }
+
+  export type PersonContractCountOrderByAggregateInput = {
+    id?: SortOrder
+    personId?: SortOrder
+    teamId?: SortOrder
+    contractType?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PersonContractMaxOrderByAggregateInput = {
+    id?: SortOrder
+    personId?: SortOrder
+    teamId?: SortOrder
+    contractType?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type PersonContractMinOrderByAggregateInput = {
+    id?: SortOrder
+    personId?: SortOrder
+    teamId?: SortOrder
+    contractType?: SortOrder
+    updatedAt?: SortOrder
+    createdAt?: SortOrder
+  }
+
+  export type EnumContractTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.ContractType | EnumContractTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.ContractType[] | ListEnumContractTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ContractType[] | ListEnumContractTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumContractTypeWithAggregatesFilter<$PrismaModel> | $Enums.ContractType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumContractTypeFilter<$PrismaModel>
+    _max?: NestedEnumContractTypeFilter<$PrismaModel>
   }
 
   export type SessionCreateNestedManyWithoutUserInput = {
@@ -29107,6 +40315,13 @@ export namespace Prisma {
     connect?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
   }
 
+  export type RegionPopulationCreateNestedManyWithoutRegionInput = {
+    create?: XOR<RegionPopulationCreateWithoutRegionInput, RegionPopulationUncheckedCreateWithoutRegionInput> | RegionPopulationCreateWithoutRegionInput[] | RegionPopulationUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: RegionPopulationCreateOrConnectWithoutRegionInput | RegionPopulationCreateOrConnectWithoutRegionInput[]
+    createMany?: RegionPopulationCreateManyRegionInputEnvelope
+    connect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+  }
+
   export type RegionI18nUncheckedCreateNestedManyWithoutRegionInput = {
     create?: XOR<RegionI18nCreateWithoutRegionInput, RegionI18nUncheckedCreateWithoutRegionInput> | RegionI18nCreateWithoutRegionInput[] | RegionI18nUncheckedCreateWithoutRegionInput[]
     connectOrCreate?: RegionI18nCreateOrConnectWithoutRegionInput | RegionI18nCreateOrConnectWithoutRegionInput[]
@@ -29119,6 +40334,13 @@ export namespace Prisma {
     connectOrCreate?: LocationCreateOrConnectWithoutRegionInput | LocationCreateOrConnectWithoutRegionInput[]
     createMany?: LocationCreateManyRegionInputEnvelope
     connect?: LocationWhereUniqueInput | LocationWhereUniqueInput[]
+  }
+
+  export type RegionPopulationUncheckedCreateNestedManyWithoutRegionInput = {
+    create?: XOR<RegionPopulationCreateWithoutRegionInput, RegionPopulationUncheckedCreateWithoutRegionInput> | RegionPopulationCreateWithoutRegionInput[] | RegionPopulationUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: RegionPopulationCreateOrConnectWithoutRegionInput | RegionPopulationCreateOrConnectWithoutRegionInput[]
+    createMany?: RegionPopulationCreateManyRegionInputEnvelope
+    connect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
   }
 
   export type RegionI18nUpdateManyWithoutRegionNestedInput = {
@@ -29149,6 +40371,20 @@ export namespace Prisma {
     deleteMany?: LocationScalarWhereInput | LocationScalarWhereInput[]
   }
 
+  export type RegionPopulationUpdateManyWithoutRegionNestedInput = {
+    create?: XOR<RegionPopulationCreateWithoutRegionInput, RegionPopulationUncheckedCreateWithoutRegionInput> | RegionPopulationCreateWithoutRegionInput[] | RegionPopulationUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: RegionPopulationCreateOrConnectWithoutRegionInput | RegionPopulationCreateOrConnectWithoutRegionInput[]
+    upsert?: RegionPopulationUpsertWithWhereUniqueWithoutRegionInput | RegionPopulationUpsertWithWhereUniqueWithoutRegionInput[]
+    createMany?: RegionPopulationCreateManyRegionInputEnvelope
+    set?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    disconnect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    delete?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    connect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    update?: RegionPopulationUpdateWithWhereUniqueWithoutRegionInput | RegionPopulationUpdateWithWhereUniqueWithoutRegionInput[]
+    updateMany?: RegionPopulationUpdateManyWithWhereWithoutRegionInput | RegionPopulationUpdateManyWithWhereWithoutRegionInput[]
+    deleteMany?: RegionPopulationScalarWhereInput | RegionPopulationScalarWhereInput[]
+  }
+
   export type RegionI18nUncheckedUpdateManyWithoutRegionNestedInput = {
     create?: XOR<RegionI18nCreateWithoutRegionInput, RegionI18nUncheckedCreateWithoutRegionInput> | RegionI18nCreateWithoutRegionInput[] | RegionI18nUncheckedCreateWithoutRegionInput[]
     connectOrCreate?: RegionI18nCreateOrConnectWithoutRegionInput | RegionI18nCreateOrConnectWithoutRegionInput[]
@@ -29177,6 +40413,20 @@ export namespace Prisma {
     deleteMany?: LocationScalarWhereInput | LocationScalarWhereInput[]
   }
 
+  export type RegionPopulationUncheckedUpdateManyWithoutRegionNestedInput = {
+    create?: XOR<RegionPopulationCreateWithoutRegionInput, RegionPopulationUncheckedCreateWithoutRegionInput> | RegionPopulationCreateWithoutRegionInput[] | RegionPopulationUncheckedCreateWithoutRegionInput[]
+    connectOrCreate?: RegionPopulationCreateOrConnectWithoutRegionInput | RegionPopulationCreateOrConnectWithoutRegionInput[]
+    upsert?: RegionPopulationUpsertWithWhereUniqueWithoutRegionInput | RegionPopulationUpsertWithWhereUniqueWithoutRegionInput[]
+    createMany?: RegionPopulationCreateManyRegionInputEnvelope
+    set?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    disconnect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    delete?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    connect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    update?: RegionPopulationUpdateWithWhereUniqueWithoutRegionInput | RegionPopulationUpdateWithWhereUniqueWithoutRegionInput[]
+    updateMany?: RegionPopulationUpdateManyWithWhereWithoutRegionInput | RegionPopulationUpdateManyWithWhereWithoutRegionInput[]
+    deleteMany?: RegionPopulationScalarWhereInput | RegionPopulationScalarWhereInput[]
+  }
+
   export type RegionCreateNestedOneWithoutI18nInput = {
     create?: XOR<RegionCreateWithoutI18nInput, RegionUncheckedCreateWithoutI18nInput>
     connectOrCreate?: RegionCreateOrConnectWithoutI18nInput
@@ -29196,6 +40446,13 @@ export namespace Prisma {
     connectOrCreate?: LocationI18nCreateOrConnectWithoutLocationInput | LocationI18nCreateOrConnectWithoutLocationInput[]
     createMany?: LocationI18nCreateManyLocationInputEnvelope
     connect?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+  }
+
+  export type BuildingCreateNestedManyWithoutLocationInput = {
+    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
+    createMany?: BuildingCreateManyLocationInputEnvelope
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
   }
 
   export type RegionCreateNestedOneWithoutLocationsInput = {
@@ -29218,11 +40475,11 @@ export namespace Prisma {
     connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
   }
 
-  export type BuildingCreateNestedManyWithoutLocationInput = {
-    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
-    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
-    createMany?: BuildingCreateManyLocationInputEnvelope
-    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+  export type TeamLocationCreateNestedManyWithoutLocationInput = {
+    create?: XOR<TeamLocationCreateWithoutLocationInput, TeamLocationUncheckedCreateWithoutLocationInput> | TeamLocationCreateWithoutLocationInput[] | TeamLocationUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: TeamLocationCreateOrConnectWithoutLocationInput | TeamLocationCreateOrConnectWithoutLocationInput[]
+    createMany?: TeamLocationCreateManyLocationInputEnvelope
+    connect?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
   }
 
   export type TownInformationCreateNestedOneWithoutLocationInput = {
@@ -29236,6 +40493,13 @@ export namespace Prisma {
     connectOrCreate?: LocationI18nCreateOrConnectWithoutLocationInput | LocationI18nCreateOrConnectWithoutLocationInput[]
     createMany?: LocationI18nCreateManyLocationInputEnvelope
     connect?: LocationI18nWhereUniqueInput | LocationI18nWhereUniqueInput[]
+  }
+
+  export type BuildingUncheckedCreateNestedManyWithoutLocationInput = {
+    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
+    createMany?: BuildingCreateManyLocationInputEnvelope
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
   }
 
   export type RouteUncheckedCreateNestedManyWithoutLocationFromInput = {
@@ -29252,11 +40516,11 @@ export namespace Prisma {
     connect?: RouteWhereUniqueInput | RouteWhereUniqueInput[]
   }
 
-  export type BuildingUncheckedCreateNestedManyWithoutLocationInput = {
-    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
-    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
-    createMany?: BuildingCreateManyLocationInputEnvelope
-    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+  export type TeamLocationUncheckedCreateNestedManyWithoutLocationInput = {
+    create?: XOR<TeamLocationCreateWithoutLocationInput, TeamLocationUncheckedCreateWithoutLocationInput> | TeamLocationCreateWithoutLocationInput[] | TeamLocationUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: TeamLocationCreateOrConnectWithoutLocationInput | TeamLocationCreateOrConnectWithoutLocationInput[]
+    createMany?: TeamLocationCreateManyLocationInputEnvelope
+    connect?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
   }
 
   export type TownInformationUncheckedCreateNestedOneWithoutLocationInput = {
@@ -29289,6 +40553,20 @@ export namespace Prisma {
     update?: LocationI18nUpdateWithWhereUniqueWithoutLocationInput | LocationI18nUpdateWithWhereUniqueWithoutLocationInput[]
     updateMany?: LocationI18nUpdateManyWithWhereWithoutLocationInput | LocationI18nUpdateManyWithWhereWithoutLocationInput[]
     deleteMany?: LocationI18nScalarWhereInput | LocationI18nScalarWhereInput[]
+  }
+
+  export type BuildingUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
+    upsert?: BuildingUpsertWithWhereUniqueWithoutLocationInput | BuildingUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: BuildingCreateManyLocationInputEnvelope
+    set?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    disconnect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    delete?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    update?: BuildingUpdateWithWhereUniqueWithoutLocationInput | BuildingUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: BuildingUpdateManyWithWhereWithoutLocationInput | BuildingUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
   }
 
   export type RegionUpdateOneRequiredWithoutLocationsNestedInput = {
@@ -29327,18 +40605,18 @@ export namespace Prisma {
     deleteMany?: RouteScalarWhereInput | RouteScalarWhereInput[]
   }
 
-  export type BuildingUpdateManyWithoutLocationNestedInput = {
-    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
-    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
-    upsert?: BuildingUpsertWithWhereUniqueWithoutLocationInput | BuildingUpsertWithWhereUniqueWithoutLocationInput[]
-    createMany?: BuildingCreateManyLocationInputEnvelope
-    set?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
-    disconnect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
-    delete?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
-    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
-    update?: BuildingUpdateWithWhereUniqueWithoutLocationInput | BuildingUpdateWithWhereUniqueWithoutLocationInput[]
-    updateMany?: BuildingUpdateManyWithWhereWithoutLocationInput | BuildingUpdateManyWithWhereWithoutLocationInput[]
-    deleteMany?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+  export type TeamLocationUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<TeamLocationCreateWithoutLocationInput, TeamLocationUncheckedCreateWithoutLocationInput> | TeamLocationCreateWithoutLocationInput[] | TeamLocationUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: TeamLocationCreateOrConnectWithoutLocationInput | TeamLocationCreateOrConnectWithoutLocationInput[]
+    upsert?: TeamLocationUpsertWithWhereUniqueWithoutLocationInput | TeamLocationUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: TeamLocationCreateManyLocationInputEnvelope
+    set?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
+    disconnect?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
+    delete?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
+    connect?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
+    update?: TeamLocationUpdateWithWhereUniqueWithoutLocationInput | TeamLocationUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: TeamLocationUpdateManyWithWhereWithoutLocationInput | TeamLocationUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: TeamLocationScalarWhereInput | TeamLocationScalarWhereInput[]
   }
 
   export type TownInformationUpdateOneWithoutLocationNestedInput = {
@@ -29363,6 +40641,20 @@ export namespace Prisma {
     update?: LocationI18nUpdateWithWhereUniqueWithoutLocationInput | LocationI18nUpdateWithWhereUniqueWithoutLocationInput[]
     updateMany?: LocationI18nUpdateManyWithWhereWithoutLocationInput | LocationI18nUpdateManyWithWhereWithoutLocationInput[]
     deleteMany?: LocationI18nScalarWhereInput | LocationI18nScalarWhereInput[]
+  }
+
+  export type BuildingUncheckedUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
+    upsert?: BuildingUpsertWithWhereUniqueWithoutLocationInput | BuildingUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: BuildingCreateManyLocationInputEnvelope
+    set?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    disconnect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    delete?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
+    update?: BuildingUpdateWithWhereUniqueWithoutLocationInput | BuildingUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: BuildingUpdateManyWithWhereWithoutLocationInput | BuildingUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
   }
 
   export type RouteUncheckedUpdateManyWithoutLocationFromNestedInput = {
@@ -29393,18 +40685,18 @@ export namespace Prisma {
     deleteMany?: RouteScalarWhereInput | RouteScalarWhereInput[]
   }
 
-  export type BuildingUncheckedUpdateManyWithoutLocationNestedInput = {
-    create?: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput> | BuildingCreateWithoutLocationInput[] | BuildingUncheckedCreateWithoutLocationInput[]
-    connectOrCreate?: BuildingCreateOrConnectWithoutLocationInput | BuildingCreateOrConnectWithoutLocationInput[]
-    upsert?: BuildingUpsertWithWhereUniqueWithoutLocationInput | BuildingUpsertWithWhereUniqueWithoutLocationInput[]
-    createMany?: BuildingCreateManyLocationInputEnvelope
-    set?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
-    disconnect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
-    delete?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
-    connect?: BuildingWhereUniqueInput | BuildingWhereUniqueInput[]
-    update?: BuildingUpdateWithWhereUniqueWithoutLocationInput | BuildingUpdateWithWhereUniqueWithoutLocationInput[]
-    updateMany?: BuildingUpdateManyWithWhereWithoutLocationInput | BuildingUpdateManyWithWhereWithoutLocationInput[]
-    deleteMany?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+  export type TeamLocationUncheckedUpdateManyWithoutLocationNestedInput = {
+    create?: XOR<TeamLocationCreateWithoutLocationInput, TeamLocationUncheckedCreateWithoutLocationInput> | TeamLocationCreateWithoutLocationInput[] | TeamLocationUncheckedCreateWithoutLocationInput[]
+    connectOrCreate?: TeamLocationCreateOrConnectWithoutLocationInput | TeamLocationCreateOrConnectWithoutLocationInput[]
+    upsert?: TeamLocationUpsertWithWhereUniqueWithoutLocationInput | TeamLocationUpsertWithWhereUniqueWithoutLocationInput[]
+    createMany?: TeamLocationCreateManyLocationInputEnvelope
+    set?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
+    disconnect?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
+    delete?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
+    connect?: TeamLocationWhereUniqueInput | TeamLocationWhereUniqueInput[]
+    update?: TeamLocationUpdateWithWhereUniqueWithoutLocationInput | TeamLocationUpdateWithWhereUniqueWithoutLocationInput[]
+    updateMany?: TeamLocationUpdateManyWithWhereWithoutLocationInput | TeamLocationUpdateManyWithWhereWithoutLocationInput[]
+    deleteMany?: TeamLocationScalarWhereInput | TeamLocationScalarWhereInput[]
   }
 
   export type TownInformationUncheckedUpdateOneWithoutLocationNestedInput = {
@@ -29720,6 +41012,13 @@ export namespace Prisma {
     connect?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
   }
 
+  export type CultureCreateNestedManyWithoutRaceInput = {
+    create?: XOR<CultureCreateWithoutRaceInput, CultureUncheckedCreateWithoutRaceInput> | CultureCreateWithoutRaceInput[] | CultureUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: CultureCreateOrConnectWithoutRaceInput | CultureCreateOrConnectWithoutRaceInput[]
+    createMany?: CultureCreateManyRaceInputEnvelope
+    connect?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
+  }
+
   export type PersonCreateNestedManyWithoutRaceInput = {
     create?: XOR<PersonCreateWithoutRaceInput, PersonUncheckedCreateWithoutRaceInput> | PersonCreateWithoutRaceInput[] | PersonUncheckedCreateWithoutRaceInput[]
     connectOrCreate?: PersonCreateOrConnectWithoutRaceInput | PersonCreateOrConnectWithoutRaceInput[]
@@ -29732,6 +41031,13 @@ export namespace Prisma {
     connectOrCreate?: RaceI18nCreateOrConnectWithoutRaceInput | RaceI18nCreateOrConnectWithoutRaceInput[]
     createMany?: RaceI18nCreateManyRaceInputEnvelope
     connect?: RaceI18nWhereUniqueInput | RaceI18nWhereUniqueInput[]
+  }
+
+  export type CultureUncheckedCreateNestedManyWithoutRaceInput = {
+    create?: XOR<CultureCreateWithoutRaceInput, CultureUncheckedCreateWithoutRaceInput> | CultureCreateWithoutRaceInput[] | CultureUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: CultureCreateOrConnectWithoutRaceInput | CultureCreateOrConnectWithoutRaceInput[]
+    createMany?: CultureCreateManyRaceInputEnvelope
+    connect?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
   }
 
   export type PersonUncheckedCreateNestedManyWithoutRaceInput = {
@@ -29753,6 +41059,20 @@ export namespace Prisma {
     update?: RaceI18nUpdateWithWhereUniqueWithoutRaceInput | RaceI18nUpdateWithWhereUniqueWithoutRaceInput[]
     updateMany?: RaceI18nUpdateManyWithWhereWithoutRaceInput | RaceI18nUpdateManyWithWhereWithoutRaceInput[]
     deleteMany?: RaceI18nScalarWhereInput | RaceI18nScalarWhereInput[]
+  }
+
+  export type CultureUpdateManyWithoutRaceNestedInput = {
+    create?: XOR<CultureCreateWithoutRaceInput, CultureUncheckedCreateWithoutRaceInput> | CultureCreateWithoutRaceInput[] | CultureUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: CultureCreateOrConnectWithoutRaceInput | CultureCreateOrConnectWithoutRaceInput[]
+    upsert?: CultureUpsertWithWhereUniqueWithoutRaceInput | CultureUpsertWithWhereUniqueWithoutRaceInput[]
+    createMany?: CultureCreateManyRaceInputEnvelope
+    set?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
+    disconnect?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
+    delete?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
+    connect?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
+    update?: CultureUpdateWithWhereUniqueWithoutRaceInput | CultureUpdateWithWhereUniqueWithoutRaceInput[]
+    updateMany?: CultureUpdateManyWithWhereWithoutRaceInput | CultureUpdateManyWithWhereWithoutRaceInput[]
+    deleteMany?: CultureScalarWhereInput | CultureScalarWhereInput[]
   }
 
   export type PersonUpdateManyWithoutRaceNestedInput = {
@@ -29783,6 +41103,20 @@ export namespace Prisma {
     deleteMany?: RaceI18nScalarWhereInput | RaceI18nScalarWhereInput[]
   }
 
+  export type CultureUncheckedUpdateManyWithoutRaceNestedInput = {
+    create?: XOR<CultureCreateWithoutRaceInput, CultureUncheckedCreateWithoutRaceInput> | CultureCreateWithoutRaceInput[] | CultureUncheckedCreateWithoutRaceInput[]
+    connectOrCreate?: CultureCreateOrConnectWithoutRaceInput | CultureCreateOrConnectWithoutRaceInput[]
+    upsert?: CultureUpsertWithWhereUniqueWithoutRaceInput | CultureUpsertWithWhereUniqueWithoutRaceInput[]
+    createMany?: CultureCreateManyRaceInputEnvelope
+    set?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
+    disconnect?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
+    delete?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
+    connect?: CultureWhereUniqueInput | CultureWhereUniqueInput[]
+    update?: CultureUpdateWithWhereUniqueWithoutRaceInput | CultureUpdateWithWhereUniqueWithoutRaceInput[]
+    updateMany?: CultureUpdateManyWithWhereWithoutRaceInput | CultureUpdateManyWithWhereWithoutRaceInput[]
+    deleteMany?: CultureScalarWhereInput | CultureScalarWhereInput[]
+  }
+
   export type PersonUncheckedUpdateManyWithoutRaceNestedInput = {
     create?: XOR<PersonCreateWithoutRaceInput, PersonUncheckedCreateWithoutRaceInput> | PersonCreateWithoutRaceInput[] | PersonUncheckedCreateWithoutRaceInput[]
     connectOrCreate?: PersonCreateOrConnectWithoutRaceInput | PersonCreateOrConnectWithoutRaceInput[]
@@ -29811,6 +41145,262 @@ export namespace Prisma {
     update?: XOR<XOR<RaceUpdateToOneWithWhereWithoutI18nInput, RaceUpdateWithoutI18nInput>, RaceUncheckedUpdateWithoutI18nInput>
   }
 
+  export type RaceCreateNestedOneWithoutCulturesInput = {
+    create?: XOR<RaceCreateWithoutCulturesInput, RaceUncheckedCreateWithoutCulturesInput>
+    connectOrCreate?: RaceCreateOrConnectWithoutCulturesInput
+    connect?: RaceWhereUniqueInput
+  }
+
+  export type CultureI18nCreateNestedManyWithoutCultureInput = {
+    create?: XOR<CultureI18nCreateWithoutCultureInput, CultureI18nUncheckedCreateWithoutCultureInput> | CultureI18nCreateWithoutCultureInput[] | CultureI18nUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: CultureI18nCreateOrConnectWithoutCultureInput | CultureI18nCreateOrConnectWithoutCultureInput[]
+    createMany?: CultureI18nCreateManyCultureInputEnvelope
+    connect?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+  }
+
+  export type NameModelCreateNestedManyWithoutCultureInput = {
+    create?: XOR<NameModelCreateWithoutCultureInput, NameModelUncheckedCreateWithoutCultureInput> | NameModelCreateWithoutCultureInput[] | NameModelUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: NameModelCreateOrConnectWithoutCultureInput | NameModelCreateOrConnectWithoutCultureInput[]
+    createMany?: NameModelCreateManyCultureInputEnvelope
+    connect?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+  }
+
+  export type RegionPopulationCreateNestedManyWithoutCultureInput = {
+    create?: XOR<RegionPopulationCreateWithoutCultureInput, RegionPopulationUncheckedCreateWithoutCultureInput> | RegionPopulationCreateWithoutCultureInput[] | RegionPopulationUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: RegionPopulationCreateOrConnectWithoutCultureInput | RegionPopulationCreateOrConnectWithoutCultureInput[]
+    createMany?: RegionPopulationCreateManyCultureInputEnvelope
+    connect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+  }
+
+  export type CultureI18nUncheckedCreateNestedManyWithoutCultureInput = {
+    create?: XOR<CultureI18nCreateWithoutCultureInput, CultureI18nUncheckedCreateWithoutCultureInput> | CultureI18nCreateWithoutCultureInput[] | CultureI18nUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: CultureI18nCreateOrConnectWithoutCultureInput | CultureI18nCreateOrConnectWithoutCultureInput[]
+    createMany?: CultureI18nCreateManyCultureInputEnvelope
+    connect?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+  }
+
+  export type NameModelUncheckedCreateNestedManyWithoutCultureInput = {
+    create?: XOR<NameModelCreateWithoutCultureInput, NameModelUncheckedCreateWithoutCultureInput> | NameModelCreateWithoutCultureInput[] | NameModelUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: NameModelCreateOrConnectWithoutCultureInput | NameModelCreateOrConnectWithoutCultureInput[]
+    createMany?: NameModelCreateManyCultureInputEnvelope
+    connect?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+  }
+
+  export type RegionPopulationUncheckedCreateNestedManyWithoutCultureInput = {
+    create?: XOR<RegionPopulationCreateWithoutCultureInput, RegionPopulationUncheckedCreateWithoutCultureInput> | RegionPopulationCreateWithoutCultureInput[] | RegionPopulationUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: RegionPopulationCreateOrConnectWithoutCultureInput | RegionPopulationCreateOrConnectWithoutCultureInput[]
+    createMany?: RegionPopulationCreateManyCultureInputEnvelope
+    connect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+  }
+
+  export type RaceUpdateOneRequiredWithoutCulturesNestedInput = {
+    create?: XOR<RaceCreateWithoutCulturesInput, RaceUncheckedCreateWithoutCulturesInput>
+    connectOrCreate?: RaceCreateOrConnectWithoutCulturesInput
+    upsert?: RaceUpsertWithoutCulturesInput
+    connect?: RaceWhereUniqueInput
+    update?: XOR<XOR<RaceUpdateToOneWithWhereWithoutCulturesInput, RaceUpdateWithoutCulturesInput>, RaceUncheckedUpdateWithoutCulturesInput>
+  }
+
+  export type CultureI18nUpdateManyWithoutCultureNestedInput = {
+    create?: XOR<CultureI18nCreateWithoutCultureInput, CultureI18nUncheckedCreateWithoutCultureInput> | CultureI18nCreateWithoutCultureInput[] | CultureI18nUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: CultureI18nCreateOrConnectWithoutCultureInput | CultureI18nCreateOrConnectWithoutCultureInput[]
+    upsert?: CultureI18nUpsertWithWhereUniqueWithoutCultureInput | CultureI18nUpsertWithWhereUniqueWithoutCultureInput[]
+    createMany?: CultureI18nCreateManyCultureInputEnvelope
+    set?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+    disconnect?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+    delete?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+    connect?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+    update?: CultureI18nUpdateWithWhereUniqueWithoutCultureInput | CultureI18nUpdateWithWhereUniqueWithoutCultureInput[]
+    updateMany?: CultureI18nUpdateManyWithWhereWithoutCultureInput | CultureI18nUpdateManyWithWhereWithoutCultureInput[]
+    deleteMany?: CultureI18nScalarWhereInput | CultureI18nScalarWhereInput[]
+  }
+
+  export type NameModelUpdateManyWithoutCultureNestedInput = {
+    create?: XOR<NameModelCreateWithoutCultureInput, NameModelUncheckedCreateWithoutCultureInput> | NameModelCreateWithoutCultureInput[] | NameModelUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: NameModelCreateOrConnectWithoutCultureInput | NameModelCreateOrConnectWithoutCultureInput[]
+    upsert?: NameModelUpsertWithWhereUniqueWithoutCultureInput | NameModelUpsertWithWhereUniqueWithoutCultureInput[]
+    createMany?: NameModelCreateManyCultureInputEnvelope
+    set?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+    disconnect?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+    delete?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+    connect?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+    update?: NameModelUpdateWithWhereUniqueWithoutCultureInput | NameModelUpdateWithWhereUniqueWithoutCultureInput[]
+    updateMany?: NameModelUpdateManyWithWhereWithoutCultureInput | NameModelUpdateManyWithWhereWithoutCultureInput[]
+    deleteMany?: NameModelScalarWhereInput | NameModelScalarWhereInput[]
+  }
+
+  export type RegionPopulationUpdateManyWithoutCultureNestedInput = {
+    create?: XOR<RegionPopulationCreateWithoutCultureInput, RegionPopulationUncheckedCreateWithoutCultureInput> | RegionPopulationCreateWithoutCultureInput[] | RegionPopulationUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: RegionPopulationCreateOrConnectWithoutCultureInput | RegionPopulationCreateOrConnectWithoutCultureInput[]
+    upsert?: RegionPopulationUpsertWithWhereUniqueWithoutCultureInput | RegionPopulationUpsertWithWhereUniqueWithoutCultureInput[]
+    createMany?: RegionPopulationCreateManyCultureInputEnvelope
+    set?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    disconnect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    delete?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    connect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    update?: RegionPopulationUpdateWithWhereUniqueWithoutCultureInput | RegionPopulationUpdateWithWhereUniqueWithoutCultureInput[]
+    updateMany?: RegionPopulationUpdateManyWithWhereWithoutCultureInput | RegionPopulationUpdateManyWithWhereWithoutCultureInput[]
+    deleteMany?: RegionPopulationScalarWhereInput | RegionPopulationScalarWhereInput[]
+  }
+
+  export type CultureI18nUncheckedUpdateManyWithoutCultureNestedInput = {
+    create?: XOR<CultureI18nCreateWithoutCultureInput, CultureI18nUncheckedCreateWithoutCultureInput> | CultureI18nCreateWithoutCultureInput[] | CultureI18nUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: CultureI18nCreateOrConnectWithoutCultureInput | CultureI18nCreateOrConnectWithoutCultureInput[]
+    upsert?: CultureI18nUpsertWithWhereUniqueWithoutCultureInput | CultureI18nUpsertWithWhereUniqueWithoutCultureInput[]
+    createMany?: CultureI18nCreateManyCultureInputEnvelope
+    set?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+    disconnect?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+    delete?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+    connect?: CultureI18nWhereUniqueInput | CultureI18nWhereUniqueInput[]
+    update?: CultureI18nUpdateWithWhereUniqueWithoutCultureInput | CultureI18nUpdateWithWhereUniqueWithoutCultureInput[]
+    updateMany?: CultureI18nUpdateManyWithWhereWithoutCultureInput | CultureI18nUpdateManyWithWhereWithoutCultureInput[]
+    deleteMany?: CultureI18nScalarWhereInput | CultureI18nScalarWhereInput[]
+  }
+
+  export type NameModelUncheckedUpdateManyWithoutCultureNestedInput = {
+    create?: XOR<NameModelCreateWithoutCultureInput, NameModelUncheckedCreateWithoutCultureInput> | NameModelCreateWithoutCultureInput[] | NameModelUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: NameModelCreateOrConnectWithoutCultureInput | NameModelCreateOrConnectWithoutCultureInput[]
+    upsert?: NameModelUpsertWithWhereUniqueWithoutCultureInput | NameModelUpsertWithWhereUniqueWithoutCultureInput[]
+    createMany?: NameModelCreateManyCultureInputEnvelope
+    set?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+    disconnect?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+    delete?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+    connect?: NameModelWhereUniqueInput | NameModelWhereUniqueInput[]
+    update?: NameModelUpdateWithWhereUniqueWithoutCultureInput | NameModelUpdateWithWhereUniqueWithoutCultureInput[]
+    updateMany?: NameModelUpdateManyWithWhereWithoutCultureInput | NameModelUpdateManyWithWhereWithoutCultureInput[]
+    deleteMany?: NameModelScalarWhereInput | NameModelScalarWhereInput[]
+  }
+
+  export type RegionPopulationUncheckedUpdateManyWithoutCultureNestedInput = {
+    create?: XOR<RegionPopulationCreateWithoutCultureInput, RegionPopulationUncheckedCreateWithoutCultureInput> | RegionPopulationCreateWithoutCultureInput[] | RegionPopulationUncheckedCreateWithoutCultureInput[]
+    connectOrCreate?: RegionPopulationCreateOrConnectWithoutCultureInput | RegionPopulationCreateOrConnectWithoutCultureInput[]
+    upsert?: RegionPopulationUpsertWithWhereUniqueWithoutCultureInput | RegionPopulationUpsertWithWhereUniqueWithoutCultureInput[]
+    createMany?: RegionPopulationCreateManyCultureInputEnvelope
+    set?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    disconnect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    delete?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    connect?: RegionPopulationWhereUniqueInput | RegionPopulationWhereUniqueInput[]
+    update?: RegionPopulationUpdateWithWhereUniqueWithoutCultureInput | RegionPopulationUpdateWithWhereUniqueWithoutCultureInput[]
+    updateMany?: RegionPopulationUpdateManyWithWhereWithoutCultureInput | RegionPopulationUpdateManyWithWhereWithoutCultureInput[]
+    deleteMany?: RegionPopulationScalarWhereInput | RegionPopulationScalarWhereInput[]
+  }
+
+  export type CultureCreateNestedOneWithoutI18nInput = {
+    create?: XOR<CultureCreateWithoutI18nInput, CultureUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: CultureCreateOrConnectWithoutI18nInput
+    connect?: CultureWhereUniqueInput
+  }
+
+  export type CultureUpdateOneRequiredWithoutI18nNestedInput = {
+    create?: XOR<CultureCreateWithoutI18nInput, CultureUncheckedCreateWithoutI18nInput>
+    connectOrCreate?: CultureCreateOrConnectWithoutI18nInput
+    upsert?: CultureUpsertWithoutI18nInput
+    connect?: CultureWhereUniqueInput
+    update?: XOR<XOR<CultureUpdateToOneWithWhereWithoutI18nInput, CultureUpdateWithoutI18nInput>, CultureUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type RegionCreateNestedOneWithoutRegionPopulationsInput = {
+    create?: XOR<RegionCreateWithoutRegionPopulationsInput, RegionUncheckedCreateWithoutRegionPopulationsInput>
+    connectOrCreate?: RegionCreateOrConnectWithoutRegionPopulationsInput
+    connect?: RegionWhereUniqueInput
+  }
+
+  export type CultureCreateNestedOneWithoutRegionPopulationsInput = {
+    create?: XOR<CultureCreateWithoutRegionPopulationsInput, CultureUncheckedCreateWithoutRegionPopulationsInput>
+    connectOrCreate?: CultureCreateOrConnectWithoutRegionPopulationsInput
+    connect?: CultureWhereUniqueInput
+  }
+
+  export type RegionUpdateOneRequiredWithoutRegionPopulationsNestedInput = {
+    create?: XOR<RegionCreateWithoutRegionPopulationsInput, RegionUncheckedCreateWithoutRegionPopulationsInput>
+    connectOrCreate?: RegionCreateOrConnectWithoutRegionPopulationsInput
+    upsert?: RegionUpsertWithoutRegionPopulationsInput
+    connect?: RegionWhereUniqueInput
+    update?: XOR<XOR<RegionUpdateToOneWithWhereWithoutRegionPopulationsInput, RegionUpdateWithoutRegionPopulationsInput>, RegionUncheckedUpdateWithoutRegionPopulationsInput>
+  }
+
+  export type CultureUpdateOneRequiredWithoutRegionPopulationsNestedInput = {
+    create?: XOR<CultureCreateWithoutRegionPopulationsInput, CultureUncheckedCreateWithoutRegionPopulationsInput>
+    connectOrCreate?: CultureCreateOrConnectWithoutRegionPopulationsInput
+    upsert?: CultureUpsertWithoutRegionPopulationsInput
+    connect?: CultureWhereUniqueInput
+    update?: XOR<XOR<CultureUpdateToOneWithWhereWithoutRegionPopulationsInput, CultureUpdateWithoutRegionPopulationsInput>, CultureUncheckedUpdateWithoutRegionPopulationsInput>
+  }
+
+  export type CultureCreateNestedOneWithoutNameModelsInput = {
+    create?: XOR<CultureCreateWithoutNameModelsInput, CultureUncheckedCreateWithoutNameModelsInput>
+    connectOrCreate?: CultureCreateOrConnectWithoutNameModelsInput
+    connect?: CultureWhereUniqueInput
+  }
+
+  export type EnumSexTypeFieldUpdateOperationsInput = {
+    set?: $Enums.SexType
+  }
+
+  export type CultureUpdateOneRequiredWithoutNameModelsNestedInput = {
+    create?: XOR<CultureCreateWithoutNameModelsInput, CultureUncheckedCreateWithoutNameModelsInput>
+    connectOrCreate?: CultureCreateOrConnectWithoutNameModelsInput
+    upsert?: CultureUpsertWithoutNameModelsInput
+    connect?: CultureWhereUniqueInput
+    update?: XOR<XOR<CultureUpdateToOneWithWhereWithoutNameModelsInput, CultureUpdateWithoutNameModelsInput>, CultureUncheckedUpdateWithoutNameModelsInput>
+  }
+
+  export type NameComponentValueCreateNestedManyWithoutKeyInput = {
+    create?: XOR<NameComponentValueCreateWithoutKeyInput, NameComponentValueUncheckedCreateWithoutKeyInput> | NameComponentValueCreateWithoutKeyInput[] | NameComponentValueUncheckedCreateWithoutKeyInput[]
+    connectOrCreate?: NameComponentValueCreateOrConnectWithoutKeyInput | NameComponentValueCreateOrConnectWithoutKeyInput[]
+    createMany?: NameComponentValueCreateManyKeyInputEnvelope
+    connect?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+  }
+
+  export type NameComponentValueUncheckedCreateNestedManyWithoutKeyInput = {
+    create?: XOR<NameComponentValueCreateWithoutKeyInput, NameComponentValueUncheckedCreateWithoutKeyInput> | NameComponentValueCreateWithoutKeyInput[] | NameComponentValueUncheckedCreateWithoutKeyInput[]
+    connectOrCreate?: NameComponentValueCreateOrConnectWithoutKeyInput | NameComponentValueCreateOrConnectWithoutKeyInput[]
+    createMany?: NameComponentValueCreateManyKeyInputEnvelope
+    connect?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+  }
+
+  export type NameComponentValueUpdateManyWithoutKeyNestedInput = {
+    create?: XOR<NameComponentValueCreateWithoutKeyInput, NameComponentValueUncheckedCreateWithoutKeyInput> | NameComponentValueCreateWithoutKeyInput[] | NameComponentValueUncheckedCreateWithoutKeyInput[]
+    connectOrCreate?: NameComponentValueCreateOrConnectWithoutKeyInput | NameComponentValueCreateOrConnectWithoutKeyInput[]
+    upsert?: NameComponentValueUpsertWithWhereUniqueWithoutKeyInput | NameComponentValueUpsertWithWhereUniqueWithoutKeyInput[]
+    createMany?: NameComponentValueCreateManyKeyInputEnvelope
+    set?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+    disconnect?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+    delete?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+    connect?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+    update?: NameComponentValueUpdateWithWhereUniqueWithoutKeyInput | NameComponentValueUpdateWithWhereUniqueWithoutKeyInput[]
+    updateMany?: NameComponentValueUpdateManyWithWhereWithoutKeyInput | NameComponentValueUpdateManyWithWhereWithoutKeyInput[]
+    deleteMany?: NameComponentValueScalarWhereInput | NameComponentValueScalarWhereInput[]
+  }
+
+  export type NameComponentValueUncheckedUpdateManyWithoutKeyNestedInput = {
+    create?: XOR<NameComponentValueCreateWithoutKeyInput, NameComponentValueUncheckedCreateWithoutKeyInput> | NameComponentValueCreateWithoutKeyInput[] | NameComponentValueUncheckedCreateWithoutKeyInput[]
+    connectOrCreate?: NameComponentValueCreateOrConnectWithoutKeyInput | NameComponentValueCreateOrConnectWithoutKeyInput[]
+    upsert?: NameComponentValueUpsertWithWhereUniqueWithoutKeyInput | NameComponentValueUpsertWithWhereUniqueWithoutKeyInput[]
+    createMany?: NameComponentValueCreateManyKeyInputEnvelope
+    set?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+    disconnect?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+    delete?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+    connect?: NameComponentValueWhereUniqueInput | NameComponentValueWhereUniqueInput[]
+    update?: NameComponentValueUpdateWithWhereUniqueWithoutKeyInput | NameComponentValueUpdateWithWhereUniqueWithoutKeyInput[]
+    updateMany?: NameComponentValueUpdateManyWithWhereWithoutKeyInput | NameComponentValueUpdateManyWithWhereWithoutKeyInput[]
+    deleteMany?: NameComponentValueScalarWhereInput | NameComponentValueScalarWhereInput[]
+  }
+
+  export type NameComponentKeyCreateNestedOneWithoutValuesInput = {
+    create?: XOR<NameComponentKeyCreateWithoutValuesInput, NameComponentKeyUncheckedCreateWithoutValuesInput>
+    connectOrCreate?: NameComponentKeyCreateOrConnectWithoutValuesInput
+    connect?: NameComponentKeyWhereUniqueInput
+  }
+
+  export type NameComponentKeyUpdateOneRequiredWithoutValuesNestedInput = {
+    create?: XOR<NameComponentKeyCreateWithoutValuesInput, NameComponentKeyUncheckedCreateWithoutValuesInput>
+    connectOrCreate?: NameComponentKeyCreateOrConnectWithoutValuesInput
+    upsert?: NameComponentKeyUpsertWithoutValuesInput
+    connect?: NameComponentKeyWhereUniqueInput
+    update?: XOR<XOR<NameComponentKeyUpdateToOneWithWhereWithoutValuesInput, NameComponentKeyUpdateWithoutValuesInput>, NameComponentKeyUncheckedUpdateWithoutValuesInput>
+  }
+
   export type RaceCreateNestedOneWithoutPersonsInput = {
     create?: XOR<RaceCreateWithoutPersonsInput, RaceUncheckedCreateWithoutPersonsInput>
     connectOrCreate?: RaceCreateOrConnectWithoutPersonsInput
@@ -29823,10 +41413,24 @@ export namespace Prisma {
     connect?: PlayerCharacteristicsWhereUniqueInput
   }
 
+  export type PersonContractCreateNestedManyWithoutPersonInput = {
+    create?: XOR<PersonContractCreateWithoutPersonInput, PersonContractUncheckedCreateWithoutPersonInput> | PersonContractCreateWithoutPersonInput[] | PersonContractUncheckedCreateWithoutPersonInput[]
+    connectOrCreate?: PersonContractCreateOrConnectWithoutPersonInput | PersonContractCreateOrConnectWithoutPersonInput[]
+    createMany?: PersonContractCreateManyPersonInputEnvelope
+    connect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+  }
+
   export type PlayerCharacteristicsUncheckedCreateNestedOneWithoutPlayerInput = {
     create?: XOR<PlayerCharacteristicsCreateWithoutPlayerInput, PlayerCharacteristicsUncheckedCreateWithoutPlayerInput>
     connectOrCreate?: PlayerCharacteristicsCreateOrConnectWithoutPlayerInput
     connect?: PlayerCharacteristicsWhereUniqueInput
+  }
+
+  export type PersonContractUncheckedCreateNestedManyWithoutPersonInput = {
+    create?: XOR<PersonContractCreateWithoutPersonInput, PersonContractUncheckedCreateWithoutPersonInput> | PersonContractCreateWithoutPersonInput[] | PersonContractUncheckedCreateWithoutPersonInput[]
+    connectOrCreate?: PersonContractCreateOrConnectWithoutPersonInput | PersonContractCreateOrConnectWithoutPersonInput[]
+    createMany?: PersonContractCreateManyPersonInputEnvelope
+    connect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
   }
 
   export type RaceUpdateOneRequiredWithoutPersonsNestedInput = {
@@ -29847,6 +41451,20 @@ export namespace Prisma {
     update?: XOR<XOR<PlayerCharacteristicsUpdateToOneWithWhereWithoutPlayerInput, PlayerCharacteristicsUpdateWithoutPlayerInput>, PlayerCharacteristicsUncheckedUpdateWithoutPlayerInput>
   }
 
+  export type PersonContractUpdateManyWithoutPersonNestedInput = {
+    create?: XOR<PersonContractCreateWithoutPersonInput, PersonContractUncheckedCreateWithoutPersonInput> | PersonContractCreateWithoutPersonInput[] | PersonContractUncheckedCreateWithoutPersonInput[]
+    connectOrCreate?: PersonContractCreateOrConnectWithoutPersonInput | PersonContractCreateOrConnectWithoutPersonInput[]
+    upsert?: PersonContractUpsertWithWhereUniqueWithoutPersonInput | PersonContractUpsertWithWhereUniqueWithoutPersonInput[]
+    createMany?: PersonContractCreateManyPersonInputEnvelope
+    set?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    disconnect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    delete?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    connect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    update?: PersonContractUpdateWithWhereUniqueWithoutPersonInput | PersonContractUpdateWithWhereUniqueWithoutPersonInput[]
+    updateMany?: PersonContractUpdateManyWithWhereWithoutPersonInput | PersonContractUpdateManyWithWhereWithoutPersonInput[]
+    deleteMany?: PersonContractScalarWhereInput | PersonContractScalarWhereInput[]
+  }
+
   export type PlayerCharacteristicsUncheckedUpdateOneWithoutPlayerNestedInput = {
     create?: XOR<PlayerCharacteristicsCreateWithoutPlayerInput, PlayerCharacteristicsUncheckedCreateWithoutPlayerInput>
     connectOrCreate?: PlayerCharacteristicsCreateOrConnectWithoutPlayerInput
@@ -29855,6 +41473,20 @@ export namespace Prisma {
     delete?: PlayerCharacteristicsWhereInput | boolean
     connect?: PlayerCharacteristicsWhereUniqueInput
     update?: XOR<XOR<PlayerCharacteristicsUpdateToOneWithWhereWithoutPlayerInput, PlayerCharacteristicsUpdateWithoutPlayerInput>, PlayerCharacteristicsUncheckedUpdateWithoutPlayerInput>
+  }
+
+  export type PersonContractUncheckedUpdateManyWithoutPersonNestedInput = {
+    create?: XOR<PersonContractCreateWithoutPersonInput, PersonContractUncheckedCreateWithoutPersonInput> | PersonContractCreateWithoutPersonInput[] | PersonContractUncheckedCreateWithoutPersonInput[]
+    connectOrCreate?: PersonContractCreateOrConnectWithoutPersonInput | PersonContractCreateOrConnectWithoutPersonInput[]
+    upsert?: PersonContractUpsertWithWhereUniqueWithoutPersonInput | PersonContractUpsertWithWhereUniqueWithoutPersonInput[]
+    createMany?: PersonContractCreateManyPersonInputEnvelope
+    set?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    disconnect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    delete?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    connect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    update?: PersonContractUpdateWithWhereUniqueWithoutPersonInput | PersonContractUpdateWithWhereUniqueWithoutPersonInput[]
+    updateMany?: PersonContractUpdateManyWithWhereWithoutPersonInput | PersonContractUpdateManyWithWhereWithoutPersonInput[]
+    deleteMany?: PersonContractScalarWhereInput | PersonContractScalarWhereInput[]
   }
 
   export type PersonCreateNestedOneWithoutPlayercharacteristicsInput = {
@@ -29877,6 +41509,32 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
+  export type TeamLocationCreateNestedOneWithoutTeamInput = {
+    create?: XOR<TeamLocationCreateWithoutTeamInput, TeamLocationUncheckedCreateWithoutTeamInput>
+    connectOrCreate?: TeamLocationCreateOrConnectWithoutTeamInput
+    connect?: TeamLocationWhereUniqueInput
+  }
+
+  export type PersonContractCreateNestedManyWithoutTeamInput = {
+    create?: XOR<PersonContractCreateWithoutTeamInput, PersonContractUncheckedCreateWithoutTeamInput> | PersonContractCreateWithoutTeamInput[] | PersonContractUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: PersonContractCreateOrConnectWithoutTeamInput | PersonContractCreateOrConnectWithoutTeamInput[]
+    createMany?: PersonContractCreateManyTeamInputEnvelope
+    connect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+  }
+
+  export type TeamLocationUncheckedCreateNestedOneWithoutTeamInput = {
+    create?: XOR<TeamLocationCreateWithoutTeamInput, TeamLocationUncheckedCreateWithoutTeamInput>
+    connectOrCreate?: TeamLocationCreateOrConnectWithoutTeamInput
+    connect?: TeamLocationWhereUniqueInput
+  }
+
+  export type PersonContractUncheckedCreateNestedManyWithoutTeamInput = {
+    create?: XOR<PersonContractCreateWithoutTeamInput, PersonContractUncheckedCreateWithoutTeamInput> | PersonContractCreateWithoutTeamInput[] | PersonContractUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: PersonContractCreateOrConnectWithoutTeamInput | PersonContractCreateOrConnectWithoutTeamInput[]
+    createMany?: PersonContractCreateManyTeamInputEnvelope
+    connect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+  }
+
   export type UserUpdateOneWithoutTeamsNestedInput = {
     create?: XOR<UserCreateWithoutTeamsInput, UserUncheckedCreateWithoutTeamsInput>
     connectOrCreate?: UserCreateOrConnectWithoutTeamsInput
@@ -29885,6 +41543,114 @@ export namespace Prisma {
     delete?: UserWhereInput | boolean
     connect?: UserWhereUniqueInput
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutTeamsInput, UserUpdateWithoutTeamsInput>, UserUncheckedUpdateWithoutTeamsInput>
+  }
+
+  export type TeamLocationUpdateOneWithoutTeamNestedInput = {
+    create?: XOR<TeamLocationCreateWithoutTeamInput, TeamLocationUncheckedCreateWithoutTeamInput>
+    connectOrCreate?: TeamLocationCreateOrConnectWithoutTeamInput
+    upsert?: TeamLocationUpsertWithoutTeamInput
+    disconnect?: TeamLocationWhereInput | boolean
+    delete?: TeamLocationWhereInput | boolean
+    connect?: TeamLocationWhereUniqueInput
+    update?: XOR<XOR<TeamLocationUpdateToOneWithWhereWithoutTeamInput, TeamLocationUpdateWithoutTeamInput>, TeamLocationUncheckedUpdateWithoutTeamInput>
+  }
+
+  export type PersonContractUpdateManyWithoutTeamNestedInput = {
+    create?: XOR<PersonContractCreateWithoutTeamInput, PersonContractUncheckedCreateWithoutTeamInput> | PersonContractCreateWithoutTeamInput[] | PersonContractUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: PersonContractCreateOrConnectWithoutTeamInput | PersonContractCreateOrConnectWithoutTeamInput[]
+    upsert?: PersonContractUpsertWithWhereUniqueWithoutTeamInput | PersonContractUpsertWithWhereUniqueWithoutTeamInput[]
+    createMany?: PersonContractCreateManyTeamInputEnvelope
+    set?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    disconnect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    delete?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    connect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    update?: PersonContractUpdateWithWhereUniqueWithoutTeamInput | PersonContractUpdateWithWhereUniqueWithoutTeamInput[]
+    updateMany?: PersonContractUpdateManyWithWhereWithoutTeamInput | PersonContractUpdateManyWithWhereWithoutTeamInput[]
+    deleteMany?: PersonContractScalarWhereInput | PersonContractScalarWhereInput[]
+  }
+
+  export type TeamLocationUncheckedUpdateOneWithoutTeamNestedInput = {
+    create?: XOR<TeamLocationCreateWithoutTeamInput, TeamLocationUncheckedCreateWithoutTeamInput>
+    connectOrCreate?: TeamLocationCreateOrConnectWithoutTeamInput
+    upsert?: TeamLocationUpsertWithoutTeamInput
+    disconnect?: TeamLocationWhereInput | boolean
+    delete?: TeamLocationWhereInput | boolean
+    connect?: TeamLocationWhereUniqueInput
+    update?: XOR<XOR<TeamLocationUpdateToOneWithWhereWithoutTeamInput, TeamLocationUpdateWithoutTeamInput>, TeamLocationUncheckedUpdateWithoutTeamInput>
+  }
+
+  export type PersonContractUncheckedUpdateManyWithoutTeamNestedInput = {
+    create?: XOR<PersonContractCreateWithoutTeamInput, PersonContractUncheckedCreateWithoutTeamInput> | PersonContractCreateWithoutTeamInput[] | PersonContractUncheckedCreateWithoutTeamInput[]
+    connectOrCreate?: PersonContractCreateOrConnectWithoutTeamInput | PersonContractCreateOrConnectWithoutTeamInput[]
+    upsert?: PersonContractUpsertWithWhereUniqueWithoutTeamInput | PersonContractUpsertWithWhereUniqueWithoutTeamInput[]
+    createMany?: PersonContractCreateManyTeamInputEnvelope
+    set?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    disconnect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    delete?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    connect?: PersonContractWhereUniqueInput | PersonContractWhereUniqueInput[]
+    update?: PersonContractUpdateWithWhereUniqueWithoutTeamInput | PersonContractUpdateWithWhereUniqueWithoutTeamInput[]
+    updateMany?: PersonContractUpdateManyWithWhereWithoutTeamInput | PersonContractUpdateManyWithWhereWithoutTeamInput[]
+    deleteMany?: PersonContractScalarWhereInput | PersonContractScalarWhereInput[]
+  }
+
+  export type TeamCreateNestedOneWithoutTeamLocationInput = {
+    create?: XOR<TeamCreateWithoutTeamLocationInput, TeamUncheckedCreateWithoutTeamLocationInput>
+    connectOrCreate?: TeamCreateOrConnectWithoutTeamLocationInput
+    connect?: TeamWhereUniqueInput
+  }
+
+  export type LocationCreateNestedOneWithoutTeamsInput = {
+    create?: XOR<LocationCreateWithoutTeamsInput, LocationUncheckedCreateWithoutTeamsInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutTeamsInput
+    connect?: LocationWhereUniqueInput
+  }
+
+  export type TeamUpdateOneRequiredWithoutTeamLocationNestedInput = {
+    create?: XOR<TeamCreateWithoutTeamLocationInput, TeamUncheckedCreateWithoutTeamLocationInput>
+    connectOrCreate?: TeamCreateOrConnectWithoutTeamLocationInput
+    upsert?: TeamUpsertWithoutTeamLocationInput
+    connect?: TeamWhereUniqueInput
+    update?: XOR<XOR<TeamUpdateToOneWithWhereWithoutTeamLocationInput, TeamUpdateWithoutTeamLocationInput>, TeamUncheckedUpdateWithoutTeamLocationInput>
+  }
+
+  export type LocationUpdateOneRequiredWithoutTeamsNestedInput = {
+    create?: XOR<LocationCreateWithoutTeamsInput, LocationUncheckedCreateWithoutTeamsInput>
+    connectOrCreate?: LocationCreateOrConnectWithoutTeamsInput
+    upsert?: LocationUpsertWithoutTeamsInput
+    connect?: LocationWhereUniqueInput
+    update?: XOR<XOR<LocationUpdateToOneWithWhereWithoutTeamsInput, LocationUpdateWithoutTeamsInput>, LocationUncheckedUpdateWithoutTeamsInput>
+  }
+
+  export type PersonCreateNestedOneWithoutPersonContractInput = {
+    create?: XOR<PersonCreateWithoutPersonContractInput, PersonUncheckedCreateWithoutPersonContractInput>
+    connectOrCreate?: PersonCreateOrConnectWithoutPersonContractInput
+    connect?: PersonWhereUniqueInput
+  }
+
+  export type TeamCreateNestedOneWithoutPersonContractInput = {
+    create?: XOR<TeamCreateWithoutPersonContractInput, TeamUncheckedCreateWithoutPersonContractInput>
+    connectOrCreate?: TeamCreateOrConnectWithoutPersonContractInput
+    connect?: TeamWhereUniqueInput
+  }
+
+  export type EnumContractTypeFieldUpdateOperationsInput = {
+    set?: $Enums.ContractType
+  }
+
+  export type PersonUpdateOneRequiredWithoutPersonContractNestedInput = {
+    create?: XOR<PersonCreateWithoutPersonContractInput, PersonUncheckedCreateWithoutPersonContractInput>
+    connectOrCreate?: PersonCreateOrConnectWithoutPersonContractInput
+    upsert?: PersonUpsertWithoutPersonContractInput
+    connect?: PersonWhereUniqueInput
+    update?: XOR<XOR<PersonUpdateToOneWithWhereWithoutPersonContractInput, PersonUpdateWithoutPersonContractInput>, PersonUncheckedUpdateWithoutPersonContractInput>
+  }
+
+  export type TeamUpdateOneRequiredWithoutPersonContractNestedInput = {
+    create?: XOR<TeamCreateWithoutPersonContractInput, TeamUncheckedCreateWithoutPersonContractInput>
+    connectOrCreate?: TeamCreateOrConnectWithoutPersonContractInput
+    upsert?: TeamUpsertWithoutPersonContractInput
+    connect?: TeamWhereUniqueInput
+    update?: XOR<XOR<TeamUpdateToOneWithWhereWithoutPersonContractInput, TeamUpdateWithoutPersonContractInput>, TeamUncheckedUpdateWithoutPersonContractInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -30124,6 +41890,40 @@ export namespace Prisma {
     _max?: NestedEnumRouteTypeFilter<$PrismaModel>
   }
 
+  export type NestedEnumSexTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.SexType | EnumSexTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.SexType[] | ListEnumSexTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SexType[] | ListEnumSexTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumSexTypeFilter<$PrismaModel> | $Enums.SexType
+  }
+
+  export type NestedEnumSexTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.SexType | EnumSexTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.SexType[] | ListEnumSexTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.SexType[] | ListEnumSexTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumSexTypeWithAggregatesFilter<$PrismaModel> | $Enums.SexType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumSexTypeFilter<$PrismaModel>
+    _max?: NestedEnumSexTypeFilter<$PrismaModel>
+  }
+
+  export type NestedEnumContractTypeFilter<$PrismaModel = never> = {
+    equals?: $Enums.ContractType | EnumContractTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.ContractType[] | ListEnumContractTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ContractType[] | ListEnumContractTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumContractTypeFilter<$PrismaModel> | $Enums.ContractType
+  }
+
+  export type NestedEnumContractTypeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.ContractType | EnumContractTypeFieldRefInput<$PrismaModel>
+    in?: $Enums.ContractType[] | ListEnumContractTypeFieldRefInput<$PrismaModel>
+    notIn?: $Enums.ContractType[] | ListEnumContractTypeFieldRefInput<$PrismaModel>
+    not?: NestedEnumContractTypeWithAggregatesFilter<$PrismaModel> | $Enums.ContractType
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumContractTypeFilter<$PrismaModel>
+    _max?: NestedEnumContractTypeFilter<$PrismaModel>
+  }
+
   export type SessionCreateWithoutUserInput = {
     id: string
     expiresAt: Date | string
@@ -30203,6 +42003,8 @@ export namespace Prisma {
     isActive: boolean
     updatedAt?: Date | string
     createdAt?: Date | string
+    teamLocation?: TeamLocationCreateNestedOneWithoutTeamInput
+    PersonContract?: PersonContractCreateNestedManyWithoutTeamInput
   }
 
   export type TeamUncheckedCreateWithoutOwnerInput = {
@@ -30212,6 +42014,8 @@ export namespace Prisma {
     isActive: boolean
     updatedAt?: Date | string
     createdAt?: Date | string
+    teamLocation?: TeamLocationUncheckedCreateNestedOneWithoutTeamInput
+    PersonContract?: PersonContractUncheckedCreateNestedManyWithoutTeamInput
   }
 
   export type TeamCreateOrConnectWithoutOwnerInput = {
@@ -30513,9 +42317,10 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
     routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteCreateNestedManyWithoutLocationToInput
-    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationCreateNestedOneWithoutLocationInput
   }
 
@@ -30527,9 +42332,10 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
     routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
-    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationUncheckedCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
   }
 
@@ -30540,6 +42346,32 @@ export namespace Prisma {
 
   export type LocationCreateManyRegionInputEnvelope = {
     data: LocationCreateManyRegionInput | LocationCreateManyRegionInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RegionPopulationCreateWithoutRegionInput = {
+    id?: string
+    percentage: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    culture: CultureCreateNestedOneWithoutRegionPopulationsInput
+  }
+
+  export type RegionPopulationUncheckedCreateWithoutRegionInput = {
+    id?: string
+    cultureId: string
+    percentage: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionPopulationCreateOrConnectWithoutRegionInput = {
+    where: RegionPopulationWhereUniqueInput
+    create: XOR<RegionPopulationCreateWithoutRegionInput, RegionPopulationUncheckedCreateWithoutRegionInput>
+  }
+
+  export type RegionPopulationCreateManyRegionInputEnvelope = {
+    data: RegionPopulationCreateManyRegionInput | RegionPopulationCreateManyRegionInput[]
     skipDuplicates?: boolean
   }
 
@@ -30600,11 +42432,40 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Location"> | Date | string
   }
 
+  export type RegionPopulationUpsertWithWhereUniqueWithoutRegionInput = {
+    where: RegionPopulationWhereUniqueInput
+    update: XOR<RegionPopulationUpdateWithoutRegionInput, RegionPopulationUncheckedUpdateWithoutRegionInput>
+    create: XOR<RegionPopulationCreateWithoutRegionInput, RegionPopulationUncheckedCreateWithoutRegionInput>
+  }
+
+  export type RegionPopulationUpdateWithWhereUniqueWithoutRegionInput = {
+    where: RegionPopulationWhereUniqueInput
+    data: XOR<RegionPopulationUpdateWithoutRegionInput, RegionPopulationUncheckedUpdateWithoutRegionInput>
+  }
+
+  export type RegionPopulationUpdateManyWithWhereWithoutRegionInput = {
+    where: RegionPopulationScalarWhereInput
+    data: XOR<RegionPopulationUpdateManyMutationInput, RegionPopulationUncheckedUpdateManyWithoutRegionInput>
+  }
+
+  export type RegionPopulationScalarWhereInput = {
+    AND?: RegionPopulationScalarWhereInput | RegionPopulationScalarWhereInput[]
+    OR?: RegionPopulationScalarWhereInput[]
+    NOT?: RegionPopulationScalarWhereInput | RegionPopulationScalarWhereInput[]
+    id?: StringFilter<"RegionPopulation"> | string
+    regionId?: StringFilter<"RegionPopulation"> | string
+    cultureId?: StringFilter<"RegionPopulation"> | string
+    percentage?: IntFilter<"RegionPopulation"> | number
+    updatedAt?: DateTimeFilter<"RegionPopulation"> | Date | string
+    createdAt?: DateTimeFilter<"RegionPopulation"> | Date | string
+  }
+
   export type RegionCreateWithoutI18nInput = {
     id: string
     updatedAt?: Date | string
     createdAt?: Date | string
     locations?: LocationCreateNestedManyWithoutRegionInput
+    regionPopulations?: RegionPopulationCreateNestedManyWithoutRegionInput
   }
 
   export type RegionUncheckedCreateWithoutI18nInput = {
@@ -30612,6 +42473,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     locations?: LocationUncheckedCreateNestedManyWithoutRegionInput
+    regionPopulations?: RegionPopulationUncheckedCreateNestedManyWithoutRegionInput
   }
 
   export type RegionCreateOrConnectWithoutI18nInput = {
@@ -30635,6 +42497,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     locations?: LocationUpdateManyWithoutRegionNestedInput
+    regionPopulations?: RegionPopulationUpdateManyWithoutRegionNestedInput
   }
 
   export type RegionUncheckedUpdateWithoutI18nInput = {
@@ -30642,6 +42505,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     locations?: LocationUncheckedUpdateManyWithoutRegionNestedInput
+    regionPopulations?: RegionPopulationUncheckedUpdateManyWithoutRegionNestedInput
   }
 
   export type LocationI18nCreateWithoutLocationInput = {
@@ -30670,11 +42534,40 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type BuildingCreateWithoutLocationInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    buildingType: BuildingTypeCreateNestedOneWithoutBuildingsInput
+    i18n?: BuildingI18nCreateNestedManyWithoutBuildingInput
+    stadiumInfo?: StadiumInfoCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingUncheckedCreateWithoutLocationInput = {
+    id?: string
+    buildingTypeId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: BuildingI18nUncheckedCreateNestedManyWithoutBuildingInput
+    stadiumInfo?: StadiumInfoUncheckedCreateNestedOneWithoutBuildingInput
+  }
+
+  export type BuildingCreateOrConnectWithoutLocationInput = {
+    where: BuildingWhereUniqueInput
+    create: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput>
+  }
+
+  export type BuildingCreateManyLocationInputEnvelope = {
+    data: BuildingCreateManyLocationInput | BuildingCreateManyLocationInput[]
+    skipDuplicates?: boolean
+  }
+
   export type RegionCreateWithoutLocationsInput = {
     id: string
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: RegionI18nCreateNestedManyWithoutRegionInput
+    regionPopulations?: RegionPopulationCreateNestedManyWithoutRegionInput
   }
 
   export type RegionUncheckedCreateWithoutLocationsInput = {
@@ -30682,6 +42575,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: RegionI18nUncheckedCreateNestedManyWithoutRegionInput
+    regionPopulations?: RegionPopulationUncheckedCreateNestedManyWithoutRegionInput
   }
 
   export type RegionCreateOrConnectWithoutLocationsInput = {
@@ -30745,31 +42639,27 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type BuildingCreateWithoutLocationInput = {
+  export type TeamLocationCreateWithoutLocationInput = {
     id?: string
     updatedAt?: Date | string
     createdAt?: Date | string
-    buildingType: BuildingTypeCreateNestedOneWithoutBuildingsInput
-    i18n?: BuildingI18nCreateNestedManyWithoutBuildingInput
-    stadiumInfo?: StadiumInfoCreateNestedOneWithoutBuildingInput
+    team: TeamCreateNestedOneWithoutTeamLocationInput
   }
 
-  export type BuildingUncheckedCreateWithoutLocationInput = {
+  export type TeamLocationUncheckedCreateWithoutLocationInput = {
     id?: string
-    buildingTypeId: string
+    teamId: string
     updatedAt?: Date | string
     createdAt?: Date | string
-    i18n?: BuildingI18nUncheckedCreateNestedManyWithoutBuildingInput
-    stadiumInfo?: StadiumInfoUncheckedCreateNestedOneWithoutBuildingInput
   }
 
-  export type BuildingCreateOrConnectWithoutLocationInput = {
-    where: BuildingWhereUniqueInput
-    create: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput>
+  export type TeamLocationCreateOrConnectWithoutLocationInput = {
+    where: TeamLocationWhereUniqueInput
+    create: XOR<TeamLocationCreateWithoutLocationInput, TeamLocationUncheckedCreateWithoutLocationInput>
   }
 
-  export type BuildingCreateManyLocationInputEnvelope = {
-    data: BuildingCreateManyLocationInput | BuildingCreateManyLocationInput[]
+  export type TeamLocationCreateManyLocationInputEnvelope = {
+    data: TeamLocationCreateManyLocationInput | TeamLocationCreateManyLocationInput[]
     skipDuplicates?: boolean
   }
 
@@ -30820,6 +42710,33 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"LocationI18n"> | Date | string
   }
 
+  export type BuildingUpsertWithWhereUniqueWithoutLocationInput = {
+    where: BuildingWhereUniqueInput
+    update: XOR<BuildingUpdateWithoutLocationInput, BuildingUncheckedUpdateWithoutLocationInput>
+    create: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput>
+  }
+
+  export type BuildingUpdateWithWhereUniqueWithoutLocationInput = {
+    where: BuildingWhereUniqueInput
+    data: XOR<BuildingUpdateWithoutLocationInput, BuildingUncheckedUpdateWithoutLocationInput>
+  }
+
+  export type BuildingUpdateManyWithWhereWithoutLocationInput = {
+    where: BuildingScalarWhereInput
+    data: XOR<BuildingUpdateManyMutationInput, BuildingUncheckedUpdateManyWithoutLocationInput>
+  }
+
+  export type BuildingScalarWhereInput = {
+    AND?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+    OR?: BuildingScalarWhereInput[]
+    NOT?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
+    id?: StringFilter<"Building"> | string
+    buildingTypeId?: StringFilter<"Building"> | string
+    locationId?: StringFilter<"Building"> | string
+    updatedAt?: DateTimeFilter<"Building"> | Date | string
+    createdAt?: DateTimeFilter<"Building"> | Date | string
+  }
+
   export type RegionUpsertWithoutLocationsInput = {
     update: XOR<RegionUpdateWithoutLocationsInput, RegionUncheckedUpdateWithoutLocationsInput>
     create: XOR<RegionCreateWithoutLocationsInput, RegionUncheckedCreateWithoutLocationsInput>
@@ -30836,6 +42753,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: RegionI18nUpdateManyWithoutRegionNestedInput
+    regionPopulations?: RegionPopulationUpdateManyWithoutRegionNestedInput
   }
 
   export type RegionUncheckedUpdateWithoutLocationsInput = {
@@ -30843,6 +42761,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: RegionI18nUncheckedUpdateManyWithoutRegionNestedInput
+    regionPopulations?: RegionPopulationUncheckedUpdateManyWithoutRegionNestedInput
   }
 
   export type RouteUpsertWithWhereUniqueWithoutLocationFromInput = {
@@ -30890,31 +42809,31 @@ export namespace Prisma {
     data: XOR<RouteUpdateManyMutationInput, RouteUncheckedUpdateManyWithoutLocationToInput>
   }
 
-  export type BuildingUpsertWithWhereUniqueWithoutLocationInput = {
-    where: BuildingWhereUniqueInput
-    update: XOR<BuildingUpdateWithoutLocationInput, BuildingUncheckedUpdateWithoutLocationInput>
-    create: XOR<BuildingCreateWithoutLocationInput, BuildingUncheckedCreateWithoutLocationInput>
+  export type TeamLocationUpsertWithWhereUniqueWithoutLocationInput = {
+    where: TeamLocationWhereUniqueInput
+    update: XOR<TeamLocationUpdateWithoutLocationInput, TeamLocationUncheckedUpdateWithoutLocationInput>
+    create: XOR<TeamLocationCreateWithoutLocationInput, TeamLocationUncheckedCreateWithoutLocationInput>
   }
 
-  export type BuildingUpdateWithWhereUniqueWithoutLocationInput = {
-    where: BuildingWhereUniqueInput
-    data: XOR<BuildingUpdateWithoutLocationInput, BuildingUncheckedUpdateWithoutLocationInput>
+  export type TeamLocationUpdateWithWhereUniqueWithoutLocationInput = {
+    where: TeamLocationWhereUniqueInput
+    data: XOR<TeamLocationUpdateWithoutLocationInput, TeamLocationUncheckedUpdateWithoutLocationInput>
   }
 
-  export type BuildingUpdateManyWithWhereWithoutLocationInput = {
-    where: BuildingScalarWhereInput
-    data: XOR<BuildingUpdateManyMutationInput, BuildingUncheckedUpdateManyWithoutLocationInput>
+  export type TeamLocationUpdateManyWithWhereWithoutLocationInput = {
+    where: TeamLocationScalarWhereInput
+    data: XOR<TeamLocationUpdateManyMutationInput, TeamLocationUncheckedUpdateManyWithoutLocationInput>
   }
 
-  export type BuildingScalarWhereInput = {
-    AND?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
-    OR?: BuildingScalarWhereInput[]
-    NOT?: BuildingScalarWhereInput | BuildingScalarWhereInput[]
-    id?: StringFilter<"Building"> | string
-    buildingTypeId?: StringFilter<"Building"> | string
-    locationId?: StringFilter<"Building"> | string
-    updatedAt?: DateTimeFilter<"Building"> | Date | string
-    createdAt?: DateTimeFilter<"Building"> | Date | string
+  export type TeamLocationScalarWhereInput = {
+    AND?: TeamLocationScalarWhereInput | TeamLocationScalarWhereInput[]
+    OR?: TeamLocationScalarWhereInput[]
+    NOT?: TeamLocationScalarWhereInput | TeamLocationScalarWhereInput[]
+    id?: StringFilter<"TeamLocation"> | string
+    teamId?: StringFilter<"TeamLocation"> | string
+    locationId?: StringFilter<"TeamLocation"> | string
+    updatedAt?: DateTimeFilter<"TeamLocation"> | Date | string
+    createdAt?: DateTimeFilter<"TeamLocation"> | Date | string
   }
 
   export type TownInformationUpsertWithoutLocationInput = {
@@ -30949,10 +42868,11 @@ export namespace Prisma {
     longitude: number
     updatedAt?: Date | string
     createdAt?: Date | string
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
     region: RegionCreateNestedOneWithoutLocationsInput
     routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteCreateNestedManyWithoutLocationToInput
-    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationCreateNestedOneWithoutLocationInput
   }
 
@@ -30964,9 +42884,10 @@ export namespace Prisma {
     longitude: number
     updatedAt?: Date | string
     createdAt?: Date | string
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
     routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
-    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationUncheckedCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
   }
 
@@ -30993,10 +42914,11 @@ export namespace Prisma {
     longitude?: FloatFieldUpdateOperationsInput | number
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
     region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
     routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUpdateManyWithoutLocationToNestedInput
-    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
   }
 
@@ -31008,9 +42930,10 @@ export namespace Prisma {
     longitude?: FloatFieldUpdateOperationsInput | number
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
     routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
-    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUncheckedUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
   }
 
@@ -31022,10 +42945,11 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
     region: RegionCreateNestedOneWithoutLocationsInput
     routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteCreateNestedManyWithoutLocationToInput
-    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationCreateNestedManyWithoutLocationInput
   }
 
   export type LocationUncheckedCreateWithoutTownInfoInput = {
@@ -31037,9 +42961,10 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
     routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
-    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationUncheckedCreateNestedManyWithoutLocationInput
   }
 
   export type LocationCreateOrConnectWithoutTownInfoInput = {
@@ -31066,10 +42991,11 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
     region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
     routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUpdateManyWithoutLocationToNestedInput
-    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUpdateManyWithoutLocationNestedInput
   }
 
   export type LocationUncheckedUpdateWithoutTownInfoInput = {
@@ -31081,9 +43007,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
     routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
-    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUncheckedUpdateManyWithoutLocationNestedInput
   }
 
   export type LocationCreateWithoutRoutesFromInput = {
@@ -31094,9 +43021,10 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
     region: RegionCreateNestedOneWithoutLocationsInput
     routesTo?: RouteCreateNestedManyWithoutLocationToInput
-    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationCreateNestedOneWithoutLocationInput
   }
 
@@ -31109,8 +43037,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
-    routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
     buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
+    teams?: TeamLocationUncheckedCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
   }
 
@@ -31127,9 +43056,10 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
     region: RegionCreateNestedOneWithoutLocationsInput
     routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
-    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    teams?: TeamLocationCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationCreateNestedOneWithoutLocationInput
   }
 
@@ -31142,8 +43072,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
-    routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
     buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
+    teams?: TeamLocationUncheckedCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
   }
 
@@ -31171,9 +43102,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
     region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
     routesTo?: RouteUpdateManyWithoutLocationToNestedInput
-    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
   }
 
@@ -31186,8 +43118,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
-    routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
     buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
+    teams?: TeamLocationUncheckedUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
   }
 
@@ -31210,9 +43143,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
     region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
     routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
-    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
   }
 
@@ -31225,8 +43159,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
-    routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
     buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
+    teams?: TeamLocationUncheckedUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
   }
 
@@ -31402,6 +43337,7 @@ export namespace Prisma {
     region: RegionCreateNestedOneWithoutLocationsInput
     routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteCreateNestedManyWithoutLocationToInput
+    teams?: TeamLocationCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationCreateNestedOneWithoutLocationInput
   }
 
@@ -31416,6 +43352,7 @@ export namespace Prisma {
     i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
     routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
     routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
+    teams?: TeamLocationUncheckedCreateNestedManyWithoutLocationInput
     townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
   }
 
@@ -31518,6 +43455,7 @@ export namespace Prisma {
     region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
     routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUpdateManyWithoutLocationToNestedInput
+    teams?: TeamLocationUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
   }
 
@@ -31532,6 +43470,7 @@ export namespace Prisma {
     i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
     routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
+    teams?: TeamLocationUncheckedUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
   }
 
@@ -31719,6 +43658,34 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type CultureCreateWithoutRaceInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: CultureI18nCreateNestedManyWithoutCultureInput
+    nameModels?: NameModelCreateNestedManyWithoutCultureInput
+    regionPopulations?: RegionPopulationCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureUncheckedCreateWithoutRaceInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: CultureI18nUncheckedCreateNestedManyWithoutCultureInput
+    nameModels?: NameModelUncheckedCreateNestedManyWithoutCultureInput
+    regionPopulations?: RegionPopulationUncheckedCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureCreateOrConnectWithoutRaceInput = {
+    where: CultureWhereUniqueInput
+    create: XOR<CultureCreateWithoutRaceInput, CultureUncheckedCreateWithoutRaceInput>
+  }
+
+  export type CultureCreateManyRaceInputEnvelope = {
+    data: CultureCreateManyRaceInput | CultureCreateManyRaceInput[]
+    skipDuplicates?: boolean
+  }
+
   export type PersonCreateWithoutRaceInput = {
     id?: string
     name: string
@@ -31726,6 +43693,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     playercharacteristics?: PlayerCharacteristicsCreateNestedOneWithoutPlayerInput
+    PersonContract?: PersonContractCreateNestedManyWithoutPersonInput
   }
 
   export type PersonUncheckedCreateWithoutRaceInput = {
@@ -31735,6 +43703,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     playercharacteristics?: PlayerCharacteristicsUncheckedCreateNestedOneWithoutPlayerInput
+    PersonContract?: PersonContractUncheckedCreateNestedManyWithoutPersonInput
   }
 
   export type PersonCreateOrConnectWithoutRaceInput = {
@@ -31775,6 +43744,32 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"RaceI18n"> | Date | string
   }
 
+  export type CultureUpsertWithWhereUniqueWithoutRaceInput = {
+    where: CultureWhereUniqueInput
+    update: XOR<CultureUpdateWithoutRaceInput, CultureUncheckedUpdateWithoutRaceInput>
+    create: XOR<CultureCreateWithoutRaceInput, CultureUncheckedCreateWithoutRaceInput>
+  }
+
+  export type CultureUpdateWithWhereUniqueWithoutRaceInput = {
+    where: CultureWhereUniqueInput
+    data: XOR<CultureUpdateWithoutRaceInput, CultureUncheckedUpdateWithoutRaceInput>
+  }
+
+  export type CultureUpdateManyWithWhereWithoutRaceInput = {
+    where: CultureScalarWhereInput
+    data: XOR<CultureUpdateManyMutationInput, CultureUncheckedUpdateManyWithoutRaceInput>
+  }
+
+  export type CultureScalarWhereInput = {
+    AND?: CultureScalarWhereInput | CultureScalarWhereInput[]
+    OR?: CultureScalarWhereInput[]
+    NOT?: CultureScalarWhereInput | CultureScalarWhereInput[]
+    id?: StringFilter<"Culture"> | string
+    raceId?: StringFilter<"Culture"> | string
+    updatedAt?: DateTimeFilter<"Culture"> | Date | string
+    createdAt?: DateTimeFilter<"Culture"> | Date | string
+  }
+
   export type PersonUpsertWithWhereUniqueWithoutRaceInput = {
     where: PersonWhereUniqueInput
     update: XOR<PersonUpdateWithoutRaceInput, PersonUncheckedUpdateWithoutRaceInput>
@@ -31807,6 +43802,7 @@ export namespace Prisma {
     id: string
     updatedAt?: Date | string
     createdAt?: Date | string
+    cultures?: CultureCreateNestedManyWithoutRaceInput
     persons?: PersonCreateNestedManyWithoutRaceInput
   }
 
@@ -31814,6 +43810,7 @@ export namespace Prisma {
     id: string
     updatedAt?: Date | string
     createdAt?: Date | string
+    cultures?: CultureUncheckedCreateNestedManyWithoutRaceInput
     persons?: PersonUncheckedCreateNestedManyWithoutRaceInput
   }
 
@@ -31837,6 +43834,7 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    cultures?: CultureUpdateManyWithoutRaceNestedInput
     persons?: PersonUpdateManyWithoutRaceNestedInput
   }
 
@@ -31844,7 +43842,508 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    cultures?: CultureUncheckedUpdateManyWithoutRaceNestedInput
     persons?: PersonUncheckedUpdateManyWithoutRaceNestedInput
+  }
+
+  export type RaceCreateWithoutCulturesInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RaceI18nCreateNestedManyWithoutRaceInput
+    persons?: PersonCreateNestedManyWithoutRaceInput
+  }
+
+  export type RaceUncheckedCreateWithoutCulturesInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RaceI18nUncheckedCreateNestedManyWithoutRaceInput
+    persons?: PersonUncheckedCreateNestedManyWithoutRaceInput
+  }
+
+  export type RaceCreateOrConnectWithoutCulturesInput = {
+    where: RaceWhereUniqueInput
+    create: XOR<RaceCreateWithoutCulturesInput, RaceUncheckedCreateWithoutCulturesInput>
+  }
+
+  export type CultureI18nCreateWithoutCultureInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type CultureI18nUncheckedCreateWithoutCultureInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type CultureI18nCreateOrConnectWithoutCultureInput = {
+    where: CultureI18nWhereUniqueInput
+    create: XOR<CultureI18nCreateWithoutCultureInput, CultureI18nUncheckedCreateWithoutCultureInput>
+  }
+
+  export type CultureI18nCreateManyCultureInputEnvelope = {
+    data: CultureI18nCreateManyCultureInput | CultureI18nCreateManyCultureInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type NameModelCreateWithoutCultureInput = {
+    id?: string
+    sex: $Enums.SexType
+    firstnameTemplate: string
+    lastnameTemplate: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameModelUncheckedCreateWithoutCultureInput = {
+    id?: string
+    sex: $Enums.SexType
+    firstnameTemplate: string
+    lastnameTemplate: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameModelCreateOrConnectWithoutCultureInput = {
+    where: NameModelWhereUniqueInput
+    create: XOR<NameModelCreateWithoutCultureInput, NameModelUncheckedCreateWithoutCultureInput>
+  }
+
+  export type NameModelCreateManyCultureInputEnvelope = {
+    data: NameModelCreateManyCultureInput | NameModelCreateManyCultureInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RegionPopulationCreateWithoutCultureInput = {
+    id?: string
+    percentage: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    region: RegionCreateNestedOneWithoutRegionPopulationsInput
+  }
+
+  export type RegionPopulationUncheckedCreateWithoutCultureInput = {
+    id?: string
+    regionId: string
+    percentage: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionPopulationCreateOrConnectWithoutCultureInput = {
+    where: RegionPopulationWhereUniqueInput
+    create: XOR<RegionPopulationCreateWithoutCultureInput, RegionPopulationUncheckedCreateWithoutCultureInput>
+  }
+
+  export type RegionPopulationCreateManyCultureInputEnvelope = {
+    data: RegionPopulationCreateManyCultureInput | RegionPopulationCreateManyCultureInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type RaceUpsertWithoutCulturesInput = {
+    update: XOR<RaceUpdateWithoutCulturesInput, RaceUncheckedUpdateWithoutCulturesInput>
+    create: XOR<RaceCreateWithoutCulturesInput, RaceUncheckedCreateWithoutCulturesInput>
+    where?: RaceWhereInput
+  }
+
+  export type RaceUpdateToOneWithWhereWithoutCulturesInput = {
+    where?: RaceWhereInput
+    data: XOR<RaceUpdateWithoutCulturesInput, RaceUncheckedUpdateWithoutCulturesInput>
+  }
+
+  export type RaceUpdateWithoutCulturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RaceI18nUpdateManyWithoutRaceNestedInput
+    persons?: PersonUpdateManyWithoutRaceNestedInput
+  }
+
+  export type RaceUncheckedUpdateWithoutCulturesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RaceI18nUncheckedUpdateManyWithoutRaceNestedInput
+    persons?: PersonUncheckedUpdateManyWithoutRaceNestedInput
+  }
+
+  export type CultureI18nUpsertWithWhereUniqueWithoutCultureInput = {
+    where: CultureI18nWhereUniqueInput
+    update: XOR<CultureI18nUpdateWithoutCultureInput, CultureI18nUncheckedUpdateWithoutCultureInput>
+    create: XOR<CultureI18nCreateWithoutCultureInput, CultureI18nUncheckedCreateWithoutCultureInput>
+  }
+
+  export type CultureI18nUpdateWithWhereUniqueWithoutCultureInput = {
+    where: CultureI18nWhereUniqueInput
+    data: XOR<CultureI18nUpdateWithoutCultureInput, CultureI18nUncheckedUpdateWithoutCultureInput>
+  }
+
+  export type CultureI18nUpdateManyWithWhereWithoutCultureInput = {
+    where: CultureI18nScalarWhereInput
+    data: XOR<CultureI18nUpdateManyMutationInput, CultureI18nUncheckedUpdateManyWithoutCultureInput>
+  }
+
+  export type CultureI18nScalarWhereInput = {
+    AND?: CultureI18nScalarWhereInput | CultureI18nScalarWhereInput[]
+    OR?: CultureI18nScalarWhereInput[]
+    NOT?: CultureI18nScalarWhereInput | CultureI18nScalarWhereInput[]
+    id?: StringFilter<"CultureI18n"> | string
+    cultureId?: StringFilter<"CultureI18n"> | string
+    language?: StringFilter<"CultureI18n"> | string
+    name?: StringFilter<"CultureI18n"> | string
+    updatedAt?: DateTimeFilter<"CultureI18n"> | Date | string
+    createdAt?: DateTimeFilter<"CultureI18n"> | Date | string
+  }
+
+  export type NameModelUpsertWithWhereUniqueWithoutCultureInput = {
+    where: NameModelWhereUniqueInput
+    update: XOR<NameModelUpdateWithoutCultureInput, NameModelUncheckedUpdateWithoutCultureInput>
+    create: XOR<NameModelCreateWithoutCultureInput, NameModelUncheckedCreateWithoutCultureInput>
+  }
+
+  export type NameModelUpdateWithWhereUniqueWithoutCultureInput = {
+    where: NameModelWhereUniqueInput
+    data: XOR<NameModelUpdateWithoutCultureInput, NameModelUncheckedUpdateWithoutCultureInput>
+  }
+
+  export type NameModelUpdateManyWithWhereWithoutCultureInput = {
+    where: NameModelScalarWhereInput
+    data: XOR<NameModelUpdateManyMutationInput, NameModelUncheckedUpdateManyWithoutCultureInput>
+  }
+
+  export type NameModelScalarWhereInput = {
+    AND?: NameModelScalarWhereInput | NameModelScalarWhereInput[]
+    OR?: NameModelScalarWhereInput[]
+    NOT?: NameModelScalarWhereInput | NameModelScalarWhereInput[]
+    id?: StringFilter<"NameModel"> | string
+    cultureId?: StringFilter<"NameModel"> | string
+    sex?: EnumSexTypeFilter<"NameModel"> | $Enums.SexType
+    firstnameTemplate?: StringFilter<"NameModel"> | string
+    lastnameTemplate?: StringFilter<"NameModel"> | string
+    updatedAt?: DateTimeFilter<"NameModel"> | Date | string
+    createdAt?: DateTimeFilter<"NameModel"> | Date | string
+  }
+
+  export type RegionPopulationUpsertWithWhereUniqueWithoutCultureInput = {
+    where: RegionPopulationWhereUniqueInput
+    update: XOR<RegionPopulationUpdateWithoutCultureInput, RegionPopulationUncheckedUpdateWithoutCultureInput>
+    create: XOR<RegionPopulationCreateWithoutCultureInput, RegionPopulationUncheckedCreateWithoutCultureInput>
+  }
+
+  export type RegionPopulationUpdateWithWhereUniqueWithoutCultureInput = {
+    where: RegionPopulationWhereUniqueInput
+    data: XOR<RegionPopulationUpdateWithoutCultureInput, RegionPopulationUncheckedUpdateWithoutCultureInput>
+  }
+
+  export type RegionPopulationUpdateManyWithWhereWithoutCultureInput = {
+    where: RegionPopulationScalarWhereInput
+    data: XOR<RegionPopulationUpdateManyMutationInput, RegionPopulationUncheckedUpdateManyWithoutCultureInput>
+  }
+
+  export type CultureCreateWithoutI18nInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    race: RaceCreateNestedOneWithoutCulturesInput
+    nameModels?: NameModelCreateNestedManyWithoutCultureInput
+    regionPopulations?: RegionPopulationCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureUncheckedCreateWithoutI18nInput = {
+    id: string
+    raceId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    nameModels?: NameModelUncheckedCreateNestedManyWithoutCultureInput
+    regionPopulations?: RegionPopulationUncheckedCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureCreateOrConnectWithoutI18nInput = {
+    where: CultureWhereUniqueInput
+    create: XOR<CultureCreateWithoutI18nInput, CultureUncheckedCreateWithoutI18nInput>
+  }
+
+  export type CultureUpsertWithoutI18nInput = {
+    update: XOR<CultureUpdateWithoutI18nInput, CultureUncheckedUpdateWithoutI18nInput>
+    create: XOR<CultureCreateWithoutI18nInput, CultureUncheckedCreateWithoutI18nInput>
+    where?: CultureWhereInput
+  }
+
+  export type CultureUpdateToOneWithWhereWithoutI18nInput = {
+    where?: CultureWhereInput
+    data: XOR<CultureUpdateWithoutI18nInput, CultureUncheckedUpdateWithoutI18nInput>
+  }
+
+  export type CultureUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    race?: RaceUpdateOneRequiredWithoutCulturesNestedInput
+    nameModels?: NameModelUpdateManyWithoutCultureNestedInput
+    regionPopulations?: RegionPopulationUpdateManyWithoutCultureNestedInput
+  }
+
+  export type CultureUncheckedUpdateWithoutI18nInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    nameModels?: NameModelUncheckedUpdateManyWithoutCultureNestedInput
+    regionPopulations?: RegionPopulationUncheckedUpdateManyWithoutCultureNestedInput
+  }
+
+  export type RegionCreateWithoutRegionPopulationsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RegionI18nCreateNestedManyWithoutRegionInput
+    locations?: LocationCreateNestedManyWithoutRegionInput
+  }
+
+  export type RegionUncheckedCreateWithoutRegionPopulationsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: RegionI18nUncheckedCreateNestedManyWithoutRegionInput
+    locations?: LocationUncheckedCreateNestedManyWithoutRegionInput
+  }
+
+  export type RegionCreateOrConnectWithoutRegionPopulationsInput = {
+    where: RegionWhereUniqueInput
+    create: XOR<RegionCreateWithoutRegionPopulationsInput, RegionUncheckedCreateWithoutRegionPopulationsInput>
+  }
+
+  export type CultureCreateWithoutRegionPopulationsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    race: RaceCreateNestedOneWithoutCulturesInput
+    i18n?: CultureI18nCreateNestedManyWithoutCultureInput
+    nameModels?: NameModelCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureUncheckedCreateWithoutRegionPopulationsInput = {
+    id: string
+    raceId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: CultureI18nUncheckedCreateNestedManyWithoutCultureInput
+    nameModels?: NameModelUncheckedCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureCreateOrConnectWithoutRegionPopulationsInput = {
+    where: CultureWhereUniqueInput
+    create: XOR<CultureCreateWithoutRegionPopulationsInput, CultureUncheckedCreateWithoutRegionPopulationsInput>
+  }
+
+  export type RegionUpsertWithoutRegionPopulationsInput = {
+    update: XOR<RegionUpdateWithoutRegionPopulationsInput, RegionUncheckedUpdateWithoutRegionPopulationsInput>
+    create: XOR<RegionCreateWithoutRegionPopulationsInput, RegionUncheckedCreateWithoutRegionPopulationsInput>
+    where?: RegionWhereInput
+  }
+
+  export type RegionUpdateToOneWithWhereWithoutRegionPopulationsInput = {
+    where?: RegionWhereInput
+    data: XOR<RegionUpdateWithoutRegionPopulationsInput, RegionUncheckedUpdateWithoutRegionPopulationsInput>
+  }
+
+  export type RegionUpdateWithoutRegionPopulationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RegionI18nUpdateManyWithoutRegionNestedInput
+    locations?: LocationUpdateManyWithoutRegionNestedInput
+  }
+
+  export type RegionUncheckedUpdateWithoutRegionPopulationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: RegionI18nUncheckedUpdateManyWithoutRegionNestedInput
+    locations?: LocationUncheckedUpdateManyWithoutRegionNestedInput
+  }
+
+  export type CultureUpsertWithoutRegionPopulationsInput = {
+    update: XOR<CultureUpdateWithoutRegionPopulationsInput, CultureUncheckedUpdateWithoutRegionPopulationsInput>
+    create: XOR<CultureCreateWithoutRegionPopulationsInput, CultureUncheckedCreateWithoutRegionPopulationsInput>
+    where?: CultureWhereInput
+  }
+
+  export type CultureUpdateToOneWithWhereWithoutRegionPopulationsInput = {
+    where?: CultureWhereInput
+    data: XOR<CultureUpdateWithoutRegionPopulationsInput, CultureUncheckedUpdateWithoutRegionPopulationsInput>
+  }
+
+  export type CultureUpdateWithoutRegionPopulationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    race?: RaceUpdateOneRequiredWithoutCulturesNestedInput
+    i18n?: CultureI18nUpdateManyWithoutCultureNestedInput
+    nameModels?: NameModelUpdateManyWithoutCultureNestedInput
+  }
+
+  export type CultureUncheckedUpdateWithoutRegionPopulationsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: CultureI18nUncheckedUpdateManyWithoutCultureNestedInput
+    nameModels?: NameModelUncheckedUpdateManyWithoutCultureNestedInput
+  }
+
+  export type CultureCreateWithoutNameModelsInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    race: RaceCreateNestedOneWithoutCulturesInput
+    i18n?: CultureI18nCreateNestedManyWithoutCultureInput
+    regionPopulations?: RegionPopulationCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureUncheckedCreateWithoutNameModelsInput = {
+    id: string
+    raceId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: CultureI18nUncheckedCreateNestedManyWithoutCultureInput
+    regionPopulations?: RegionPopulationUncheckedCreateNestedManyWithoutCultureInput
+  }
+
+  export type CultureCreateOrConnectWithoutNameModelsInput = {
+    where: CultureWhereUniqueInput
+    create: XOR<CultureCreateWithoutNameModelsInput, CultureUncheckedCreateWithoutNameModelsInput>
+  }
+
+  export type CultureUpsertWithoutNameModelsInput = {
+    update: XOR<CultureUpdateWithoutNameModelsInput, CultureUncheckedUpdateWithoutNameModelsInput>
+    create: XOR<CultureCreateWithoutNameModelsInput, CultureUncheckedCreateWithoutNameModelsInput>
+    where?: CultureWhereInput
+  }
+
+  export type CultureUpdateToOneWithWhereWithoutNameModelsInput = {
+    where?: CultureWhereInput
+    data: XOR<CultureUpdateWithoutNameModelsInput, CultureUncheckedUpdateWithoutNameModelsInput>
+  }
+
+  export type CultureUpdateWithoutNameModelsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    race?: RaceUpdateOneRequiredWithoutCulturesNestedInput
+    i18n?: CultureI18nUpdateManyWithoutCultureNestedInput
+    regionPopulations?: RegionPopulationUpdateManyWithoutCultureNestedInput
+  }
+
+  export type CultureUncheckedUpdateWithoutNameModelsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: CultureI18nUncheckedUpdateManyWithoutCultureNestedInput
+    regionPopulations?: RegionPopulationUncheckedUpdateManyWithoutCultureNestedInput
+  }
+
+  export type NameComponentValueCreateWithoutKeyInput = {
+    id?: string
+    value: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameComponentValueUncheckedCreateWithoutKeyInput = {
+    id?: string
+    value: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameComponentValueCreateOrConnectWithoutKeyInput = {
+    where: NameComponentValueWhereUniqueInput
+    create: XOR<NameComponentValueCreateWithoutKeyInput, NameComponentValueUncheckedCreateWithoutKeyInput>
+  }
+
+  export type NameComponentValueCreateManyKeyInputEnvelope = {
+    data: NameComponentValueCreateManyKeyInput | NameComponentValueCreateManyKeyInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type NameComponentValueUpsertWithWhereUniqueWithoutKeyInput = {
+    where: NameComponentValueWhereUniqueInput
+    update: XOR<NameComponentValueUpdateWithoutKeyInput, NameComponentValueUncheckedUpdateWithoutKeyInput>
+    create: XOR<NameComponentValueCreateWithoutKeyInput, NameComponentValueUncheckedCreateWithoutKeyInput>
+  }
+
+  export type NameComponentValueUpdateWithWhereUniqueWithoutKeyInput = {
+    where: NameComponentValueWhereUniqueInput
+    data: XOR<NameComponentValueUpdateWithoutKeyInput, NameComponentValueUncheckedUpdateWithoutKeyInput>
+  }
+
+  export type NameComponentValueUpdateManyWithWhereWithoutKeyInput = {
+    where: NameComponentValueScalarWhereInput
+    data: XOR<NameComponentValueUpdateManyMutationInput, NameComponentValueUncheckedUpdateManyWithoutKeyInput>
+  }
+
+  export type NameComponentValueScalarWhereInput = {
+    AND?: NameComponentValueScalarWhereInput | NameComponentValueScalarWhereInput[]
+    OR?: NameComponentValueScalarWhereInput[]
+    NOT?: NameComponentValueScalarWhereInput | NameComponentValueScalarWhereInput[]
+    id?: StringFilter<"NameComponentValue"> | string
+    keyId?: StringFilter<"NameComponentValue"> | string
+    value?: StringFilter<"NameComponentValue"> | string
+    updatedAt?: DateTimeFilter<"NameComponentValue"> | Date | string
+    createdAt?: DateTimeFilter<"NameComponentValue"> | Date | string
+  }
+
+  export type NameComponentKeyCreateWithoutValuesInput = {
+    id?: string
+    key: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameComponentKeyUncheckedCreateWithoutValuesInput = {
+    id?: string
+    key: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameComponentKeyCreateOrConnectWithoutValuesInput = {
+    where: NameComponentKeyWhereUniqueInput
+    create: XOR<NameComponentKeyCreateWithoutValuesInput, NameComponentKeyUncheckedCreateWithoutValuesInput>
+  }
+
+  export type NameComponentKeyUpsertWithoutValuesInput = {
+    update: XOR<NameComponentKeyUpdateWithoutValuesInput, NameComponentKeyUncheckedUpdateWithoutValuesInput>
+    create: XOR<NameComponentKeyCreateWithoutValuesInput, NameComponentKeyUncheckedCreateWithoutValuesInput>
+    where?: NameComponentKeyWhereInput
+  }
+
+  export type NameComponentKeyUpdateToOneWithWhereWithoutValuesInput = {
+    where?: NameComponentKeyWhereInput
+    data: XOR<NameComponentKeyUpdateWithoutValuesInput, NameComponentKeyUncheckedUpdateWithoutValuesInput>
+  }
+
+  export type NameComponentKeyUpdateWithoutValuesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameComponentKeyUncheckedUpdateWithoutValuesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    key?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type RaceCreateWithoutPersonsInput = {
@@ -31852,6 +44351,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: RaceI18nCreateNestedManyWithoutRaceInput
+    cultures?: CultureCreateNestedManyWithoutRaceInput
   }
 
   export type RaceUncheckedCreateWithoutPersonsInput = {
@@ -31859,6 +44359,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     i18n?: RaceI18nUncheckedCreateNestedManyWithoutRaceInput
+    cultures?: CultureUncheckedCreateNestedManyWithoutRaceInput
   }
 
   export type RaceCreateOrConnectWithoutPersonsInput = {
@@ -31883,6 +44384,32 @@ export namespace Prisma {
     create: XOR<PlayerCharacteristicsCreateWithoutPlayerInput, PlayerCharacteristicsUncheckedCreateWithoutPlayerInput>
   }
 
+  export type PersonContractCreateWithoutPersonInput = {
+    id?: string
+    contractType: $Enums.ContractType
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    team: TeamCreateNestedOneWithoutPersonContractInput
+  }
+
+  export type PersonContractUncheckedCreateWithoutPersonInput = {
+    id?: string
+    teamId: string
+    contractType: $Enums.ContractType
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PersonContractCreateOrConnectWithoutPersonInput = {
+    where: PersonContractWhereUniqueInput
+    create: XOR<PersonContractCreateWithoutPersonInput, PersonContractUncheckedCreateWithoutPersonInput>
+  }
+
+  export type PersonContractCreateManyPersonInputEnvelope = {
+    data: PersonContractCreateManyPersonInput | PersonContractCreateManyPersonInput[]
+    skipDuplicates?: boolean
+  }
+
   export type RaceUpsertWithoutPersonsInput = {
     update: XOR<RaceUpdateWithoutPersonsInput, RaceUncheckedUpdateWithoutPersonsInput>
     create: XOR<RaceCreateWithoutPersonsInput, RaceUncheckedCreateWithoutPersonsInput>
@@ -31899,6 +44426,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: RaceI18nUpdateManyWithoutRaceNestedInput
+    cultures?: CultureUpdateManyWithoutRaceNestedInput
   }
 
   export type RaceUncheckedUpdateWithoutPersonsInput = {
@@ -31906,6 +44434,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: RaceI18nUncheckedUpdateManyWithoutRaceNestedInput
+    cultures?: CultureUncheckedUpdateManyWithoutRaceNestedInput
   }
 
   export type PlayerCharacteristicsUpsertWithoutPlayerInput = {
@@ -31931,6 +44460,34 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type PersonContractUpsertWithWhereUniqueWithoutPersonInput = {
+    where: PersonContractWhereUniqueInput
+    update: XOR<PersonContractUpdateWithoutPersonInput, PersonContractUncheckedUpdateWithoutPersonInput>
+    create: XOR<PersonContractCreateWithoutPersonInput, PersonContractUncheckedCreateWithoutPersonInput>
+  }
+
+  export type PersonContractUpdateWithWhereUniqueWithoutPersonInput = {
+    where: PersonContractWhereUniqueInput
+    data: XOR<PersonContractUpdateWithoutPersonInput, PersonContractUncheckedUpdateWithoutPersonInput>
+  }
+
+  export type PersonContractUpdateManyWithWhereWithoutPersonInput = {
+    where: PersonContractScalarWhereInput
+    data: XOR<PersonContractUpdateManyMutationInput, PersonContractUncheckedUpdateManyWithoutPersonInput>
+  }
+
+  export type PersonContractScalarWhereInput = {
+    AND?: PersonContractScalarWhereInput | PersonContractScalarWhereInput[]
+    OR?: PersonContractScalarWhereInput[]
+    NOT?: PersonContractScalarWhereInput | PersonContractScalarWhereInput[]
+    id?: StringFilter<"PersonContract"> | string
+    personId?: StringFilter<"PersonContract"> | string
+    teamId?: StringFilter<"PersonContract"> | string
+    contractType?: EnumContractTypeFilter<"PersonContract"> | $Enums.ContractType
+    updatedAt?: DateTimeFilter<"PersonContract"> | Date | string
+    createdAt?: DateTimeFilter<"PersonContract"> | Date | string
+  }
+
   export type PersonCreateWithoutPlayercharacteristicsInput = {
     id?: string
     name: string
@@ -31938,6 +44495,7 @@ export namespace Prisma {
     updatedAt?: Date | string
     createdAt?: Date | string
     race: RaceCreateNestedOneWithoutPersonsInput
+    PersonContract?: PersonContractCreateNestedManyWithoutPersonInput
   }
 
   export type PersonUncheckedCreateWithoutPlayercharacteristicsInput = {
@@ -31947,6 +44505,7 @@ export namespace Prisma {
     raceId: string
     updatedAt?: Date | string
     createdAt?: Date | string
+    PersonContract?: PersonContractUncheckedCreateNestedManyWithoutPersonInput
   }
 
   export type PersonCreateOrConnectWithoutPlayercharacteristicsInput = {
@@ -31972,6 +44531,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     race?: RaceUpdateOneRequiredWithoutPersonsNestedInput
+    PersonContract?: PersonContractUpdateManyWithoutPersonNestedInput
   }
 
   export type PersonUncheckedUpdateWithoutPlayercharacteristicsInput = {
@@ -31981,6 +44541,7 @@ export namespace Prisma {
     raceId?: StringFieldUpdateOperationsInput | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    PersonContract?: PersonContractUncheckedUpdateManyWithoutPersonNestedInput
   }
 
   export type UserCreateWithoutTeamsInput = {
@@ -32018,6 +44579,51 @@ export namespace Prisma {
   export type UserCreateOrConnectWithoutTeamsInput = {
     where: UserWhereUniqueInput
     create: XOR<UserCreateWithoutTeamsInput, UserUncheckedCreateWithoutTeamsInput>
+  }
+
+  export type TeamLocationCreateWithoutTeamInput = {
+    id?: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    location: LocationCreateNestedOneWithoutTeamsInput
+  }
+
+  export type TeamLocationUncheckedCreateWithoutTeamInput = {
+    id?: string
+    locationId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type TeamLocationCreateOrConnectWithoutTeamInput = {
+    where: TeamLocationWhereUniqueInput
+    create: XOR<TeamLocationCreateWithoutTeamInput, TeamLocationUncheckedCreateWithoutTeamInput>
+  }
+
+  export type PersonContractCreateWithoutTeamInput = {
+    id?: string
+    contractType: $Enums.ContractType
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    person: PersonCreateNestedOneWithoutPersonContractInput
+  }
+
+  export type PersonContractUncheckedCreateWithoutTeamInput = {
+    id?: string
+    personId: string
+    contractType: $Enums.ContractType
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PersonContractCreateOrConnectWithoutTeamInput = {
+    where: PersonContractWhereUniqueInput
+    create: XOR<PersonContractCreateWithoutTeamInput, PersonContractUncheckedCreateWithoutTeamInput>
+  }
+
+  export type PersonContractCreateManyTeamInputEnvelope = {
+    data: PersonContractCreateManyTeamInput | PersonContractCreateManyTeamInput[]
+    skipDuplicates?: boolean
   }
 
   export type UserUpsertWithoutTeamsInput = {
@@ -32061,6 +44667,299 @@ export namespace Prisma {
     banExpires?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     sessions?: SessionUncheckedUpdateManyWithoutUserNestedInput
     accounts?: AccountUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type TeamLocationUpsertWithoutTeamInput = {
+    update: XOR<TeamLocationUpdateWithoutTeamInput, TeamLocationUncheckedUpdateWithoutTeamInput>
+    create: XOR<TeamLocationCreateWithoutTeamInput, TeamLocationUncheckedCreateWithoutTeamInput>
+    where?: TeamLocationWhereInput
+  }
+
+  export type TeamLocationUpdateToOneWithWhereWithoutTeamInput = {
+    where?: TeamLocationWhereInput
+    data: XOR<TeamLocationUpdateWithoutTeamInput, TeamLocationUncheckedUpdateWithoutTeamInput>
+  }
+
+  export type TeamLocationUpdateWithoutTeamInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    location?: LocationUpdateOneRequiredWithoutTeamsNestedInput
+  }
+
+  export type TeamLocationUncheckedUpdateWithoutTeamInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    locationId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonContractUpsertWithWhereUniqueWithoutTeamInput = {
+    where: PersonContractWhereUniqueInput
+    update: XOR<PersonContractUpdateWithoutTeamInput, PersonContractUncheckedUpdateWithoutTeamInput>
+    create: XOR<PersonContractCreateWithoutTeamInput, PersonContractUncheckedCreateWithoutTeamInput>
+  }
+
+  export type PersonContractUpdateWithWhereUniqueWithoutTeamInput = {
+    where: PersonContractWhereUniqueInput
+    data: XOR<PersonContractUpdateWithoutTeamInput, PersonContractUncheckedUpdateWithoutTeamInput>
+  }
+
+  export type PersonContractUpdateManyWithWhereWithoutTeamInput = {
+    where: PersonContractScalarWhereInput
+    data: XOR<PersonContractUpdateManyMutationInput, PersonContractUncheckedUpdateManyWithoutTeamInput>
+  }
+
+  export type TeamCreateWithoutTeamLocationInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    owner?: UserCreateNestedOneWithoutTeamsInput
+    PersonContract?: PersonContractCreateNestedManyWithoutTeamInput
+  }
+
+  export type TeamUncheckedCreateWithoutTeamLocationInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    ownerId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    PersonContract?: PersonContractUncheckedCreateNestedManyWithoutTeamInput
+  }
+
+  export type TeamCreateOrConnectWithoutTeamLocationInput = {
+    where: TeamWhereUniqueInput
+    create: XOR<TeamCreateWithoutTeamLocationInput, TeamUncheckedCreateWithoutTeamLocationInput>
+  }
+
+  export type LocationCreateWithoutTeamsInput = {
+    id: string
+    type: $Enums.LocationType
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nCreateNestedManyWithoutLocationInput
+    buildings?: BuildingCreateNestedManyWithoutLocationInput
+    region: RegionCreateNestedOneWithoutLocationsInput
+    routesFrom?: RouteCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteCreateNestedManyWithoutLocationToInput
+    townInfo?: TownInformationCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationUncheckedCreateWithoutTeamsInput = {
+    id: string
+    type: $Enums.LocationType
+    regionId: string
+    latitude: number
+    longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    i18n?: LocationI18nUncheckedCreateNestedManyWithoutLocationInput
+    buildings?: BuildingUncheckedCreateNestedManyWithoutLocationInput
+    routesFrom?: RouteUncheckedCreateNestedManyWithoutLocationFromInput
+    routesTo?: RouteUncheckedCreateNestedManyWithoutLocationToInput
+    townInfo?: TownInformationUncheckedCreateNestedOneWithoutLocationInput
+  }
+
+  export type LocationCreateOrConnectWithoutTeamsInput = {
+    where: LocationWhereUniqueInput
+    create: XOR<LocationCreateWithoutTeamsInput, LocationUncheckedCreateWithoutTeamsInput>
+  }
+
+  export type TeamUpsertWithoutTeamLocationInput = {
+    update: XOR<TeamUpdateWithoutTeamLocationInput, TeamUncheckedUpdateWithoutTeamLocationInput>
+    create: XOR<TeamCreateWithoutTeamLocationInput, TeamUncheckedCreateWithoutTeamLocationInput>
+    where?: TeamWhereInput
+  }
+
+  export type TeamUpdateToOneWithWhereWithoutTeamLocationInput = {
+    where?: TeamWhereInput
+    data: XOR<TeamUpdateWithoutTeamLocationInput, TeamUncheckedUpdateWithoutTeamLocationInput>
+  }
+
+  export type TeamUpdateWithoutTeamLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    owner?: UserUpdateOneWithoutTeamsNestedInput
+    PersonContract?: PersonContractUpdateManyWithoutTeamNestedInput
+  }
+
+  export type TeamUncheckedUpdateWithoutTeamLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    ownerId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    PersonContract?: PersonContractUncheckedUpdateManyWithoutTeamNestedInput
+  }
+
+  export type LocationUpsertWithoutTeamsInput = {
+    update: XOR<LocationUpdateWithoutTeamsInput, LocationUncheckedUpdateWithoutTeamsInput>
+    create: XOR<LocationCreateWithoutTeamsInput, LocationUncheckedCreateWithoutTeamsInput>
+    where?: LocationWhereInput
+  }
+
+  export type LocationUpdateToOneWithWhereWithoutTeamsInput = {
+    where?: LocationWhereInput
+    data: XOR<LocationUpdateWithoutTeamsInput, LocationUncheckedUpdateWithoutTeamsInput>
+  }
+
+  export type LocationUpdateWithoutTeamsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    region?: RegionUpdateOneRequiredWithoutLocationsNestedInput
+    routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUpdateManyWithoutLocationToNestedInput
+    townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
+  }
+
+  export type LocationUncheckedUpdateWithoutTeamsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    type?: EnumLocationTypeFieldUpdateOperationsInput | $Enums.LocationType
+    regionId?: StringFieldUpdateOperationsInput | string
+    latitude?: FloatFieldUpdateOperationsInput | number
+    longitude?: FloatFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
+    routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
+    townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
+  }
+
+  export type PersonCreateWithoutPersonContractInput = {
+    id?: string
+    name: string
+    shortName: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    race: RaceCreateNestedOneWithoutPersonsInput
+    playercharacteristics?: PlayerCharacteristicsCreateNestedOneWithoutPlayerInput
+  }
+
+  export type PersonUncheckedCreateWithoutPersonContractInput = {
+    id?: string
+    name: string
+    shortName: string
+    raceId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    playercharacteristics?: PlayerCharacteristicsUncheckedCreateNestedOneWithoutPlayerInput
+  }
+
+  export type PersonCreateOrConnectWithoutPersonContractInput = {
+    where: PersonWhereUniqueInput
+    create: XOR<PersonCreateWithoutPersonContractInput, PersonUncheckedCreateWithoutPersonContractInput>
+  }
+
+  export type TeamCreateWithoutPersonContractInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    owner?: UserCreateNestedOneWithoutTeamsInput
+    teamLocation?: TeamLocationCreateNestedOneWithoutTeamInput
+  }
+
+  export type TeamUncheckedCreateWithoutPersonContractInput = {
+    id?: string
+    name: string
+    shortName: string
+    isActive: boolean
+    ownerId: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+    teamLocation?: TeamLocationUncheckedCreateNestedOneWithoutTeamInput
+  }
+
+  export type TeamCreateOrConnectWithoutPersonContractInput = {
+    where: TeamWhereUniqueInput
+    create: XOR<TeamCreateWithoutPersonContractInput, TeamUncheckedCreateWithoutPersonContractInput>
+  }
+
+  export type PersonUpsertWithoutPersonContractInput = {
+    update: XOR<PersonUpdateWithoutPersonContractInput, PersonUncheckedUpdateWithoutPersonContractInput>
+    create: XOR<PersonCreateWithoutPersonContractInput, PersonUncheckedCreateWithoutPersonContractInput>
+    where?: PersonWhereInput
+  }
+
+  export type PersonUpdateToOneWithWhereWithoutPersonContractInput = {
+    where?: PersonWhereInput
+    data: XOR<PersonUpdateWithoutPersonContractInput, PersonUncheckedUpdateWithoutPersonContractInput>
+  }
+
+  export type PersonUpdateWithoutPersonContractInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    race?: RaceUpdateOneRequiredWithoutPersonsNestedInput
+    playercharacteristics?: PlayerCharacteristicsUpdateOneWithoutPlayerNestedInput
+  }
+
+  export type PersonUncheckedUpdateWithoutPersonContractInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    raceId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    playercharacteristics?: PlayerCharacteristicsUncheckedUpdateOneWithoutPlayerNestedInput
+  }
+
+  export type TeamUpsertWithoutPersonContractInput = {
+    update: XOR<TeamUpdateWithoutPersonContractInput, TeamUncheckedUpdateWithoutPersonContractInput>
+    create: XOR<TeamCreateWithoutPersonContractInput, TeamUncheckedCreateWithoutPersonContractInput>
+    where?: TeamWhereInput
+  }
+
+  export type TeamUpdateToOneWithWhereWithoutPersonContractInput = {
+    where?: TeamWhereInput
+    data: XOR<TeamUpdateWithoutPersonContractInput, TeamUncheckedUpdateWithoutPersonContractInput>
+  }
+
+  export type TeamUpdateWithoutPersonContractInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    owner?: UserUpdateOneWithoutTeamsNestedInput
+    teamLocation?: TeamLocationUpdateOneWithoutTeamNestedInput
+  }
+
+  export type TeamUncheckedUpdateWithoutPersonContractInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    shortName?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    ownerId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    teamLocation?: TeamLocationUncheckedUpdateOneWithoutTeamNestedInput
   }
 
   export type SessionCreateManyUserInput = {
@@ -32183,6 +45082,8 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    teamLocation?: TeamLocationUpdateOneWithoutTeamNestedInput
+    PersonContract?: PersonContractUpdateManyWithoutTeamNestedInput
   }
 
   export type TeamUncheckedUpdateWithoutOwnerInput = {
@@ -32192,6 +45093,8 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    teamLocation?: TeamLocationUncheckedUpdateOneWithoutTeamNestedInput
+    PersonContract?: PersonContractUncheckedUpdateManyWithoutTeamNestedInput
   }
 
   export type TeamUncheckedUpdateManyWithoutOwnerInput = {
@@ -32216,6 +45119,14 @@ export namespace Prisma {
     type: $Enums.LocationType
     latitude: number
     longitude: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionPopulationCreateManyRegionInput = {
+    id?: string
+    cultureId: string
+    percentage: number
     updatedAt?: Date | string
     createdAt?: Date | string
   }
@@ -32252,9 +45163,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUpdateManyWithoutLocationNestedInput
     routesFrom?: RouteUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUpdateManyWithoutLocationToNestedInput
-    buildings?: BuildingUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUpdateOneWithoutLocationNestedInput
   }
 
@@ -32266,9 +45178,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     i18n?: LocationI18nUncheckedUpdateManyWithoutLocationNestedInput
+    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
     routesFrom?: RouteUncheckedUpdateManyWithoutLocationFromNestedInput
     routesTo?: RouteUncheckedUpdateManyWithoutLocationToNestedInput
-    buildings?: BuildingUncheckedUpdateManyWithoutLocationNestedInput
+    teams?: TeamLocationUncheckedUpdateManyWithoutLocationNestedInput
     townInfo?: TownInformationUncheckedUpdateOneWithoutLocationNestedInput
   }
 
@@ -32281,10 +45194,41 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type RegionPopulationUpdateWithoutRegionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    culture?: CultureUpdateOneRequiredWithoutRegionPopulationsNestedInput
+  }
+
+  export type RegionPopulationUncheckedUpdateWithoutRegionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    cultureId?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionPopulationUncheckedUpdateManyWithoutRegionInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    cultureId?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type LocationI18nCreateManyLocationInput = {
     id?: string
     language: string
     name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type BuildingCreateManyLocationInput = {
+    id?: string
+    buildingTypeId: string
     updatedAt?: Date | string
     createdAt?: Date | string
   }
@@ -32307,9 +45251,9 @@ export namespace Prisma {
     createdAt?: Date | string
   }
 
-  export type BuildingCreateManyLocationInput = {
+  export type TeamLocationCreateManyLocationInput = {
     id?: string
-    buildingTypeId: string
+    teamId: string
     updatedAt?: Date | string
     createdAt?: Date | string
   }
@@ -32334,6 +45278,31 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     language?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type BuildingUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    buildingType?: BuildingTypeUpdateOneRequiredWithoutBuildingsNestedInput
+    i18n?: BuildingI18nUpdateManyWithoutBuildingNestedInput
+    stadiumInfo?: StadiumInfoUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingUncheckedUpdateWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: BuildingI18nUncheckedUpdateManyWithoutBuildingNestedInput
+    stadiumInfo?: StadiumInfoUncheckedUpdateOneWithoutBuildingNestedInput
+  }
+
+  export type BuildingUncheckedUpdateManyWithoutLocationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    buildingTypeId?: StringFieldUpdateOperationsInput | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -32392,27 +45361,23 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type BuildingUpdateWithoutLocationInput = {
+  export type TeamLocationUpdateWithoutLocationInput = {
     id?: StringFieldUpdateOperationsInput | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    buildingType?: BuildingTypeUpdateOneRequiredWithoutBuildingsNestedInput
-    i18n?: BuildingI18nUpdateManyWithoutBuildingNestedInput
-    stadiumInfo?: StadiumInfoUpdateOneWithoutBuildingNestedInput
+    team?: TeamUpdateOneRequiredWithoutTeamLocationNestedInput
   }
 
-  export type BuildingUncheckedUpdateWithoutLocationInput = {
+  export type TeamLocationUncheckedUpdateWithoutLocationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    i18n?: BuildingI18nUncheckedUpdateManyWithoutBuildingNestedInput
-    stadiumInfo?: StadiumInfoUncheckedUpdateOneWithoutBuildingNestedInput
   }
 
-  export type BuildingUncheckedUpdateManyWithoutLocationInput = {
+  export type TeamLocationUncheckedUpdateManyWithoutLocationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    buildingTypeId?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -32525,6 +45490,12 @@ export namespace Prisma {
     createdAt?: Date | string
   }
 
+  export type CultureCreateManyRaceInput = {
+    id: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
   export type PersonCreateManyRaceInput = {
     id?: string
     name: string
@@ -32557,6 +45528,30 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type CultureUpdateWithoutRaceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: CultureI18nUpdateManyWithoutCultureNestedInput
+    nameModels?: NameModelUpdateManyWithoutCultureNestedInput
+    regionPopulations?: RegionPopulationUpdateManyWithoutCultureNestedInput
+  }
+
+  export type CultureUncheckedUpdateWithoutRaceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    i18n?: CultureI18nUncheckedUpdateManyWithoutCultureNestedInput
+    nameModels?: NameModelUncheckedUpdateManyWithoutCultureNestedInput
+    regionPopulations?: RegionPopulationUncheckedUpdateManyWithoutCultureNestedInput
+  }
+
+  export type CultureUncheckedUpdateManyWithoutRaceInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type PersonUpdateWithoutRaceInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
@@ -32564,6 +45559,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     playercharacteristics?: PlayerCharacteristicsUpdateOneWithoutPlayerNestedInput
+    PersonContract?: PersonContractUpdateManyWithoutPersonNestedInput
   }
 
   export type PersonUncheckedUpdateWithoutRaceInput = {
@@ -32573,12 +45569,205 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     playercharacteristics?: PlayerCharacteristicsUncheckedUpdateOneWithoutPlayerNestedInput
+    PersonContract?: PersonContractUncheckedUpdateManyWithoutPersonNestedInput
   }
 
   export type PersonUncheckedUpdateManyWithoutRaceInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     shortName?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CultureI18nCreateManyCultureInput = {
+    id?: string
+    language: string
+    name: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameModelCreateManyCultureInput = {
+    id?: string
+    sex: $Enums.SexType
+    firstnameTemplate: string
+    lastnameTemplate: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type RegionPopulationCreateManyCultureInput = {
+    id?: string
+    regionId: string
+    percentage: number
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type CultureI18nUpdateWithoutCultureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CultureI18nUncheckedUpdateWithoutCultureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CultureI18nUncheckedUpdateManyWithoutCultureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    language?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameModelUpdateWithoutCultureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    sex?: EnumSexTypeFieldUpdateOperationsInput | $Enums.SexType
+    firstnameTemplate?: StringFieldUpdateOperationsInput | string
+    lastnameTemplate?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameModelUncheckedUpdateWithoutCultureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    sex?: EnumSexTypeFieldUpdateOperationsInput | $Enums.SexType
+    firstnameTemplate?: StringFieldUpdateOperationsInput | string
+    lastnameTemplate?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameModelUncheckedUpdateManyWithoutCultureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    sex?: EnumSexTypeFieldUpdateOperationsInput | $Enums.SexType
+    firstnameTemplate?: StringFieldUpdateOperationsInput | string
+    lastnameTemplate?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionPopulationUpdateWithoutCultureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    region?: RegionUpdateOneRequiredWithoutRegionPopulationsNestedInput
+  }
+
+  export type RegionPopulationUncheckedUpdateWithoutCultureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    regionId?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type RegionPopulationUncheckedUpdateManyWithoutCultureInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    regionId?: StringFieldUpdateOperationsInput | string
+    percentage?: IntFieldUpdateOperationsInput | number
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameComponentValueCreateManyKeyInput = {
+    id?: string
+    value: string
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type NameComponentValueUpdateWithoutKeyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameComponentValueUncheckedUpdateWithoutKeyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type NameComponentValueUncheckedUpdateManyWithoutKeyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    value?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonContractCreateManyPersonInput = {
+    id?: string
+    teamId: string
+    contractType: $Enums.ContractType
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PersonContractUpdateWithoutPersonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    team?: TeamUpdateOneRequiredWithoutPersonContractNestedInput
+  }
+
+  export type PersonContractUncheckedUpdateWithoutPersonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonContractUncheckedUpdateManyWithoutPersonInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    teamId?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonContractCreateManyTeamInput = {
+    id?: string
+    personId: string
+    contractType: $Enums.ContractType
+    updatedAt?: Date | string
+    createdAt?: Date | string
+  }
+
+  export type PersonContractUpdateWithoutTeamInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    person?: PersonUpdateOneRequiredWithoutPersonContractNestedInput
+  }
+
+  export type PersonContractUncheckedUpdateWithoutTeamInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    personId?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type PersonContractUncheckedUpdateManyWithoutTeamInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    personId?: StringFieldUpdateOperationsInput | string
+    contractType?: EnumContractTypeFieldUpdateOperationsInput | $Enums.ContractType
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

@@ -20,3 +20,16 @@ export const regionData: Prisma.RegionCreateInput[] = [
     },
   },
 ];
+
+export const regionPopulationData: Prisma.RegionPopulationCreateInput[] = [
+  {
+    id: "gers_human_occitan",
+    region: {
+      connect: { id: "gers" },
+    },
+    culture: {
+      connect: { id: "human-occitan" },
+    },
+    percentage: 100,
+  },
+];
